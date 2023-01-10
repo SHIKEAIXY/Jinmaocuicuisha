@@ -13,9 +13,9 @@ if(!fs.existsSync(chtime)) {
   })
 }
 
-let ciku='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/ciku.yaml'
+let ciku='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
 if(!fs.existsSync(ciku)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/ciku.txt',ciku,(err)=>{
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/词库.txt',ciku,(err)=>{
 	if(err){
             logger.info(err)
        }
