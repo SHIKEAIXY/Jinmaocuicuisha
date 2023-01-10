@@ -105,7 +105,7 @@ async HitMeapi(e){
     forwardMsg = await e.friend.makeForwardMsg(forwardMsg)
     }
     forwardMsg.data = forwardMsg.data
-        .replace(/ /g, '')
+        .replace(/\n/g, '')
         .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
         .replace(/___+/, `<title color="#777777" size="26">api:</title>`)
     //发送消息
@@ -133,8 +133,8 @@ async setHitMeapi(e){
         if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
         let num = e.msg.match(/1/)
         if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
-        let ht=data.push[num-1]
-        await data.push.splice(data.push.indexOf(ht), 1)
+        let ht=data[num-1]
+        await data.splice(data.indexOf(ht), 1)
         await getwrite(data)
         await e.reply(`删除成功~`)
         return true
