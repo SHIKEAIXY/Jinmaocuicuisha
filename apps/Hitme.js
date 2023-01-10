@@ -127,7 +127,7 @@ async setHitMeapi(e){
         }
         if (e.msg.includes('删除打我api')){
         let data=await getread()
-        if (!data.length > 2) { return  e.reply('api都没添加，你删毛线呢？') }
+        if (!data.length > 0) { return  e.reply('api都没添加，你删毛线呢？') }
         let ht=data[num-1]
         await data.splice(data.indexOf(ht), 1)
         await getwrite(data)
