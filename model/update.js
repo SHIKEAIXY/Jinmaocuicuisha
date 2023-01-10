@@ -1,25 +1,26 @@
-import plugin from "../../../lib/plugins/plugin.js"
+//嘿嘿抄的花佬的
+import plugin from '../../../lib/plugins/plugin.js'
 import { createRequire } from 'module'
 import lodash from 'lodash'
 import fs from 'node:fs'
 import { Restart } from '../../other/restart.js'
 import common from '../../../lib/common/common.js'
+import moment from 'moment';
 
 const require = createRequire(import.meta.url)
 const { exec, execSync } = require('child_process')
-
 let uping = false
 
 export class update extends plugin {
   constructor () {
     super({
       name: '更新',
-      dsc: '更新',
+      dsc: '#更新|强制更新',
       event: 'message',
       priority: 5000,
       rule: [
         {
-          reg: '^#(强制)*更新(.*)',
+          reg: '^#?(强制)*更新(.*)',
           fnc: 'update'
         }
       ]
@@ -35,22 +36,15 @@ export class update extends plugin {
       return
     }
 
-    if (/详细|详情|面板|面版/.test(this.e.msg)) return false
-
-    /** 获取插件 */
     let plugin = this.getPlugin()
 
     if (plugin === false) return false
 
-    /** 检查git安装 */
     if (!await this.checkGit()) return
 
-    /** 执行更新 */
     await this.runUpdate(plugin)
 
-    /** 是否需要重启 */
     if (this.isUp) {
-      // await this.reply('即将执行重启，以应用更新')
       setTimeout(() => this.restart(), 2000)
     }
   }
@@ -141,7 +135,6 @@ export class update extends plugin {
 
     let commitId = await execSync(cm, { encoding: 'utf-8' })
     commitId = lodash.trim(commitId)
-
     return commitId
   }
 
@@ -155,6 +148,10 @@ export class update extends plugin {
     try {
       time = await execSync(cm, { encoding: 'utf-8' })
       time = lodash.trim(time)
+      time=`2023-${time}:59`
+      time=new Date(time);
+      time=time.getTime()+28800000
+  time= moment(time).format('MM'+'月'+'DD'+'日'+' '+'HH'+'时'+'mm'+'分')
     } catch (error) {
       logger.error(error.toString())
       time = '获取时间失败'
@@ -181,12 +178,12 @@ export class update extends plugin {
     }
 
     if (errMsg.includes('be overwritten by merge')) {
-      await this.reply(msg + `存在冲突：\n${errMsg}\n` + '请解决冲突后再更新，或者执行#强制更新，放弃本地修改')
+      await this.reply(msg + `存在冲突：\n${errMsg}\n` + '请解决冲突后再更新，或者执行#脆脆鲨强制更新 ，放弃本地修改')
       return
     }
 
     if (stdout.includes('CONFLICT')) {
-      await this.reply([msg + '存在冲突\n', errMsg, stdout, '\n请解决冲突后再更新，或者执行#强制更新，放弃本地修改'])
+      await this.reply([msg + '存在冲突\n', errMsg, stdout, '\n请解决冲突后再更新，或者执行#脆脆鲨强制更新 ，放弃本地修改'])
       return
     }
 
@@ -206,7 +203,6 @@ export class update extends plugin {
     }
 
     if (this.isUp) {
-      // await this.reply('即将执行重启，以应用更新')
       setTimeout(() => this.restart(), 2000)
     }
   }
@@ -238,7 +234,27 @@ export class update extends plugin {
       str = str.split('||')
       if (str[0] == this.oldCommitId) break
       if (str[1].includes('Merge branch')) continue
-      log.push(str[1])
+      let sz = str[1].match(/\d/g)
+      let 月=`${sz[0]}${sz[1]}`
+      let 日=`${sz[2]}${sz[3]}`
+      let 时=`${sz[4]}${sz[5]}`
+      let 分=`${sz[6]}${sz[7]}`
+      str[1]=str[1].replace(月,'')
+      str[1]=str[1].replace(日,'')
+      str[1]=str[1].replace(时,'')
+      str[1]=str[1].replace(分,'')
+      str[1]=str[1].replace(/\[/,'')
+      str[1]=str[1].replace(/\]/,'')
+      str[1]=str[1].replace(/:/,'')
+      str[1]=str[1].replace(/-/,'')
+      let 时间=`2023-${月}-${日} ${时}:${分}:59`
+      logger.info(时间)
+      时间=new Date(时间);
+      时间=时间.getTime()+28800000
+      时间= moment(时间).format('MM'+'月'+'DD'+'日'+' '+'HH'+'时'+'mm'+'分')
+      log.push('〖'+时间+'〗'+str[1])
+      logger.info(str[1])
+      
     }
     let line = log.length
     log = log.join('\n\n')
@@ -246,9 +262,7 @@ export class update extends plugin {
     if (log.length <= 0) return ''
 
     let end = ''
-    if (!plugin) {
-      end = '更多详细信息，请前往github查看\nhttps://github.com/Le-niao/Yunzai-Bot/commits/main'
-    }
+    end = '如果更新后遇到未知bug，请加金毛脆脆鲨QQ群反馈：657142904'
 
     log = await this.makeForwardMsg(`${plugin || 'Yunzai-Bot'}更新日志，共${line}条`, log, end)
 
@@ -295,13 +309,8 @@ export class update extends plugin {
     forwardMsg.data = forwardMsg.data
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-      .replace(/___+/, `<title color="#777777" size="26">${title}</title>`)
+      .replace(/___+/, `<title color="#777777" size="26">脆脆鲨更新日志(˃ ⌑ ˂ഃ )</title>`)
 
     return forwardMsg
-  }
-
-  async updateLog () {
-    let log = await this.getLog()
-    await this.reply(log)
   }
 }
