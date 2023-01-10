@@ -1,5 +1,3 @@
-
-// 欢迎各位大佬萌新进群玩：657142904
 import plugin from "../../../lib/plugins/plugin.js"
 import { segment } from "oicq";
 
