@@ -140,19 +140,19 @@ async setHitMeapi(e){
 
 async ofHitMe(e){
 
- if (!e.isGroup) return false;
+if (!e.isGroup) return false;
  
- let data=await getread1()
+    let data=await Yaml.getread(path1)
     if (!data) data= [];
     if (data.indexOf(e.group_id) == -1&&e.msg.includes('禁用')){
     await data.push(e.group_id)
-    await e.reply('本群已禁用打我功能')
+    await e.reply(`本群已禁用打我功能~`)
     }
     if (data.indexOf(e.group_id)!== -1&&e.msg.includes('启用')){
-    await data.splice(data.indexOf(e.group_id), 1)//位置索引，删除1个
-    await e.reply('本群已启用打我功能')
+    await data.splice(data.indexOf(e.group_id), 1)
+    await e.reply(`本群已启用打我功能~`)
     }
-    getwrite1(data)
+    Yaml.getwrite(path1,data)
 }
 
 async setBotname(e){
