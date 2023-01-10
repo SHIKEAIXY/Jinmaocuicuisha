@@ -2,7 +2,7 @@ import plugin from '../../../lib/plugins/plugin.js'
 import { execSync } from 'child_process'
 import { update } from '../model/update.js'
 import fs from 'fs'
-import { Version , Common, Plugin_Name} from '../components/index.js'
+import { Common, Plugin_Name} from '../components/index.js'
 
 if(!fs.existsSync(u)) {
     fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Sys.txt',u,(err)=>{
