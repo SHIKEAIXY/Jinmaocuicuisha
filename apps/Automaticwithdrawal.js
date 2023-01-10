@@ -25,7 +25,7 @@ export class Automaticwithdrawal extends plugin {
             dsc: 'Automaticwithdrawal',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
-            priority: 5000000
+            priority: 6000,
         })
     }
     async accept(e) {
@@ -40,8 +40,12 @@ export class Automaticwithdrawal extends plugin {
     }
 
     if (e.user_id == Bot.uin) {
-    let cfg=await Yaml.getread(bot)
-    cfg.ignore_self=false; await Yaml.getwrite(bot,cfg);
+
+    const cfg = this.YAML.load(bot);
+    cfg.ignore_self = false;
+    const yamlStr = this.yaml.dump(cfg);
+    fs.writeFileSync(bot, yamlStr, 'utf8');
+
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
 
             if(e.xml){
@@ -49,8 +53,10 @@ export class Automaticwithdrawal extends plugin {
                 F = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(F.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
 
                 } else if(e.forward){
@@ -58,8 +64,10 @@ export class Automaticwithdrawal extends plugin {
                 E = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(E.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
 
                 } else if(e.video){
@@ -67,8 +75,10 @@ export class Automaticwithdrawal extends plugin {
                 D = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(D.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
 
                 } else if(e.voice){
@@ -76,8 +86,10 @@ export class Automaticwithdrawal extends plugin {
                 C = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(C.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
 
                 } else if(e.img){
@@ -85,8 +97,10 @@ export class Automaticwithdrawal extends plugin {
                 B = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(B.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
 
                 } else if(e.msg){
@@ -94,8 +108,10 @@ export class Automaticwithdrawal extends plugin {
                 A = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
                 await sleep(30000)
                 await e.group.recallMsg(A.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
             
                 } else {
@@ -103,8 +119,10 @@ export class Automaticwithdrawal extends plugin {
                 J = (await e.group.getChatHistory(e.message_id.seq, 1))[0].message_id
                 await sleep(30000)
                 await e.group.recallMsg(J.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self=true; await Yaml.getwrite(bot,cfg);
+                const cfg = this.YAML.load(bot);
+                cfg.ignore_self = true;
+                const yamlStr = this.yaml.dump(cfg);
+                fs.writeFileSync(bot, yamlStr, 'utf8');
                 return true;
             }
         }
