@@ -7,8 +7,8 @@ import { segment } from "oicq";
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
-import moment from 'moment'
 import fetch from 'node-fetch'
+import common from'../../../lib/common/common.js'
 const _path = process.cwd();
 
 let bot = './config/config/bot.yaml';
@@ -48,7 +48,6 @@ export class Automaticwithdrawal extends plugin {
     if (e.user_id == Bot.uin) {
     let data = await Yaml.getread(path)
     let 自动撤回时间 = data.自动撤回时间
-    async function sleep (ms) { return new Promise((resolve) => setTimeout(resolve, ms))}
     let J = (await e.group.getChatHistory(e.My_message, 1))[0].message_id
         await common.sleep(时间);
         await e.group.recallMsg(J);
