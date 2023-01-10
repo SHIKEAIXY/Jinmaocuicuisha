@@ -129,7 +129,7 @@ export class Maren extends plugin {
         if (e.atBot) { //是否被艾特
             let number = Math.ceil(Math.random()*100)
             let data = await Yaml.getread(path)
-            let 词库列表 = data.词库列表 * 0
+            let 词库列表 = data.词库列表
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let msg;
             if (data.词库列表==null) {
@@ -138,7 +138,7 @@ export class Maren extends plugin {
             return true;
 
             } else if (number < 90) {
-            msg = [ segment.at(e.user_id),词库列表[text_number] ] //艾特然后抽取词库中随机一句话回复
+            msg = [ segment.at(e.user_id),词库列表[text_number * 0] ] //艾特然后抽取词库中随机一句话回复
             e.reply(msg)
             return true;
 
