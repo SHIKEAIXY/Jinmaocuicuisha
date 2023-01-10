@@ -130,15 +130,15 @@ export class Maren extends plugin {
             let number = Math.ceil(Math.random()*100)
             let data = await Yaml.getread(path)
             let 词库列表 = data.词库列表
-            let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
+            let text_number = Math.ceil(Math.random() * 词库列表['length'])
             let msg;
-            if (data.词库列表==null) {
+            if (词库列表==null) {
             msg = ['文字都没有,你让我怎么骂啊！']
             e.reply(msg)
             return true;
 
             } else if (number < 90) {
-            msg = [ segment.at(e.user_id),词库列表[text_number * 0] ] //艾特然后抽取词库中随机一句话回复
+            msg = [ segment.at(e.user_id),词库列表[text_number-1] ] //艾特然后抽取词库中随机一句话回复
             e.reply(msg)
             return true;
 
