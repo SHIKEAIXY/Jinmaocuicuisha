@@ -47,61 +47,21 @@ export class Automaticwithdrawal extends plugin {
 
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
 
-            if(e.forward){
-                let E;
-                E = await e.group.getChatHistory(segment.forward())
-                await sleep(30000)
-                await e.group.recallMsg(E.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-
-                } else if(e.video){
-                let D;
-                D = await e.group.getChatHistory(segment.video())
-                await sleep(30000)
-                await e.group.recallMsg(D.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-
-                } else if(e.voice){
-                let C;
-                C = await e.group.getChatHistory(segment.voice())
-                await sleep(30000)
-                await e.group.recallMsg(C.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-
-                } else if(e.img){
-                let B;
-                B = await e.group.getChatHistory(segment.image())
-                await sleep(30000)
-                await e.group.recallMsg(B.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-
-                } else if(e.msg){
+            if(e.msg){
                 let A;
-                A = (await e.group.getChatHistory(e.message.seq, 1))[0].message_id
+                A = (await e.group.getChatHistory(e.all.seq, 1))[0].message_id
                 await sleep(30000)
                 await e.group.recallMsg(A.message_id);
-                let cfg=await Yaml.getread(bot)
+                let cfg=await Yaml.getread(All)
                 cfg.ignore_self = true;
                 await Yaml.getwrite(bot, cfg, 'utf8')
                 return true;
             
                 } else {
-                let J;
-                J = (await e.group.getChatHistory(e.message.seq, 1))[0].message_id
+                let B;
+                B = (await e.group.getChatHistory(e.all.seq, 1))[0].message_id
                 await sleep(30000)
-                await e.group.recallMsg(J.message_id);
+                await e.group.recallMsg(All);
                 let cfg=await Yaml.getread(bot)
                 cfg.ignore_self = true;
                 await Yaml.getwrite(bot, cfg, 'utf8')
