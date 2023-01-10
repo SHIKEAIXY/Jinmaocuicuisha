@@ -24,7 +24,7 @@ export class Automaticwithdrawal extends plugin {
             name: 'Automaticwithdrawal',
             dsc: 'Automaticwithdrawal',
             /** https://oicqjs.github.io/oicq/#events */
-            event: 'message',
+            event: 'message.group',
             priority: 5000000,
         })
     }
