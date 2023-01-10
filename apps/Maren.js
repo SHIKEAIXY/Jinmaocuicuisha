@@ -57,7 +57,7 @@ export class Maren extends plugin {
 
     async Marenhelp(e) {
 
-        await e.reply('骂人帮助(文字版)\n#词库列表\n#加入|写入|删除|去掉词库+要加的词\n触发指令艾特机器人输入XX闭嘴XX|XX滚XX|XX傻逼XX|XXsbXX|XXgunXX|XXcnmXX|XX草泥马XX|XX操你妈XX|XX草你妈XX\n#骂人帮助\n#脆脆鲨更新|强制更新')
+        await e.reply('使用说明:\n#词库列表\n#加入|写入|删除|去掉词库+要加的词\n触发指令艾特机器人输入XX闭嘴XX|XX滚XX|XX傻逼XX|XXsbXX|XXgunXX|XXcnmXX|XX草泥马XX|XX操你妈XX|XX草你妈XX\n#骂人帮助\n#脆脆鲨更新|强制更新')
         return true  
     }
 
