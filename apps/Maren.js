@@ -129,10 +129,10 @@ export class Maren extends plugin {
         if (e.atBot) { //是否被艾特
             let number = Math.ceil(Math.random()*100)
             let data = await Yaml.getread(path)
-            let 词库列表 = data.词库列表
+            let 词库列表 = data.词库列表 * 0
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let msg;
-            if (data.词库列表==null&&data.词库列表.length==0) {
+            if (data.词库列表==null) {
             msg = ['文字都没有,你让我怎么骂啊！']
             e.reply(msg)
             return true;
