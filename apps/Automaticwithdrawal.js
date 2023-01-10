@@ -99,7 +99,7 @@ export class Automaticwithdrawal extends plugin {
 
                 } else if(e.msg){
                 let A;
-                A = await e.group.getChatHistory(segment.message())
+                J = (await e.group.getChatHistory(e.source.seq, 1))[0].message_id
                 await sleep(30000)
                 await e.group.recallMsg(A.message_id);
                 let cfg=await Yaml.getread(bot)
