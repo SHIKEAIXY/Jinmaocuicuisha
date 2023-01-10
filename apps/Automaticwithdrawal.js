@@ -47,17 +47,7 @@ export class Automaticwithdrawal extends plugin {
 
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
 
-            if(e.xml){
-                let F;
-                F = await e.group.getChatHistory(segment.xml())
-                await sleep(30000)
-                await e.group.recallMsg(F.message_id);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-
-                } else if(e.forward){
+            if(e.forward){
                 let E;
                 E = await e.group.getChatHistory(segment.forward())
                 await sleep(30000)
@@ -99,7 +89,7 @@ export class Automaticwithdrawal extends plugin {
 
                 } else if(e.msg){
                 let A;
-                J = (await e.group.getChatHistory(e.source.seq, 1))[0].message_id
+                J = (await e.group.getChatHistory(e.message.seq, 1))[0].message_id
                 await sleep(30000)
                 await e.group.recallMsg(A.message_id);
                 let cfg=await Yaml.getread(bot)
@@ -109,7 +99,7 @@ export class Automaticwithdrawal extends plugin {
             
                 } else {
                 let J;
-                J = (await e.group.getChatHistory(e.source.seq, 1))[0].message_id
+                J = (await e.group.getChatHistory(e.message.seq, 1))[0].message_id
                 await sleep(30000)
                 await e.group.recallMsg(J.message_id);
                 let cfg=await Yaml.getread(bot)
