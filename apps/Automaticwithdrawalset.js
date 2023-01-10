@@ -12,7 +12,7 @@ import Yaml from '../Jinmaocuicuisha-plugin/Yaml.js'
 import fs from 'fs'
 const _path = process.cwd();
 
-let path1='./plugins/Jinmaocuicuisha-plugin/Automaticwithdrawalset/qq.yaml'
+let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml'
 if (!fs.existsSync(path1)) {fs.writeFileSync(path1,'')}
 
 export class Automaticwithdrawalset extends plugin {
