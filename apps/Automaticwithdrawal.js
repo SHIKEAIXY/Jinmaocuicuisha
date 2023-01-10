@@ -45,7 +45,7 @@ export class Automaticwithdrawal extends plugin {
 
     if (e.user_id == Bot.uin) {
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
-    let J = (await e.group.getChatHistory(e.msg.seq, 1))[0].message_id
+    let J = (await e.group.getChatHistory(e.Mymessage.seq, 1))[0].message_id
         await sleep(30000)
         await e.group.recallMsg(J);
     } else {
