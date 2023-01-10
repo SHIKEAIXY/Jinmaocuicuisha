@@ -1,12 +1,26 @@
-import plugin from "../../../lib/plugins/plugin.js"
+import plugin from '../../../lib/plugins/plugin.js'
 import { execSync } from 'child_process'
 import { update } from '../model/update.js'
 import fs from 'fs'
-const Path = process.cwd();
-const Plugin_Name = 'Jinmaocuicuisha-plugin'
-const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
+import { Version , Common, Plugin_Name} from '../components/index.js'
 
-export class hs_update extends plugin {
+if(!fs.existsSync(u)) {
+    fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Sys.txt',u,(err)=>{
+	if(err){
+		logger.info(err)
+     }
+  })
+}
+let v='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
+if(!fs.existsSync(v)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt',v,(err)=>{
+	if(err){
+            logger.info(err)
+       }
+  })
+}
+
+export class update extends plugin {
 	constructor () {
 		super({
 			/** 功能名称 */
@@ -16,7 +30,7 @@ export class hs_update extends plugin {
 			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			/** 优先级，数字越小等级越高 */
-			priority: 700,
+			priority: -9999999999999999999999999999999,
 			rule: [
 				{
 					/** 命令正则匹配 */
@@ -30,11 +44,11 @@ export class hs_update extends plugin {
 	
 	async update_plugin(){
         //限制
-        if (!this.e.isMaster) {
-        if (!(this.e.user_id==2471344750)){
-        return false
-        }
-    }
+          if (!this.e.isMaster) {
+         if (!(this.e.user_id==2471344750)){
+          return false
+          }
+       }
 		let Update_Plugin = new update();
 		Update_Plugin.e = this.e;
 		Update_Plugin.reply = this.reply;
@@ -53,4 +67,7 @@ export class hs_update extends plugin {
 		return true;
 	}
 	
+	async plugin_version(){
+		return versionInfo(this.e);
+	}
 }
