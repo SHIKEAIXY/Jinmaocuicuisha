@@ -146,7 +146,7 @@ export class Maren extends plugin {
             } else if (number < 15 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
             return e.reply("有种给我管理啊！", true);
 
-            } else if (number < 15 && e.group.is_admin && e.group.is_owner) {  
+            } else if (number < 20 && e.group.is_admin && e.group.is_owner) {  
             let i = 0;
             e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
             msg = [ segment.at(e.user_id),`你怎么不骂了？你继续啊！` ];
