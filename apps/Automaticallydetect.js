@@ -13,7 +13,7 @@ export class Automaticwithdrawal extends plugin {
             /** https://oicqjs.github.io/oicq/#eveAnts */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 1,
+            priority: 5000,
             rule: [
                 {
                     /** 命令正则匹配 */
