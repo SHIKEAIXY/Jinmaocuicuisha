@@ -35,7 +35,8 @@ export class Automaticwithdrawal extends plugin {
             return false
             }
         }
-    }catch (e){}
+        }catch (e){}
+    }
 
 
     let cfg=await Yaml.getread(bot)
@@ -120,28 +121,3 @@ export class Automaticwithdrawal extends plugin {
     }
 }
 
-    /** 读取 */
-    function getread() {
-    try {
-        var fileContents = fs.readFileSync(path1, 'utf8');
-        } catch (e) {
-        console.log(e);
-        return false;
-        }
-        //转换
-        return YAML.parse(fileContents);
-        }
-
-    /** 写入 */
-    function getwrite(data) {
-    try {
-        //转换
-        let yaml = YAML.stringify(data);
-        fs.writeFileSync(path1, yaml, 'utf8');
-        return true
-        } catch (e) {
-        //错误处理
-        console.log(e);
-        return false
-        }
-     }
