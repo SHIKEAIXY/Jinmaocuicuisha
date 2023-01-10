@@ -41,12 +41,12 @@ export class Automaticwithdrawalset extends plugin {
     async recalltime(e){
 
     if (!e.isMaster)  {return false}
-    let Cfg = await Yaml.getread(rectime)
+    let Cfgtime = await Yaml.getread(rectime)
     let recalltime = e.msg.replace(/#|设置自动撤回时间|秒/g,'')
     let 时间 = recalltime
     recalltime = recalltime*1000
-    Cfg.自动撤回时间=recalltime
-    await Yaml.getwrite(rectime,Cfg)
+    Cfgtime.自动撤回时间=recalltime
+    await Yaml.getwrite(rectime, Cfgtime)
     return e.reply(`自动撤回时间,成功设置为${时间}秒`)
     }
 
