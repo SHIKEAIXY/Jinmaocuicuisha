@@ -13,6 +13,7 @@ const _path = process.cwd();
 
 let bot = './config/config/bot.yaml';
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml';
+let rectime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 
 export class Automaticwithdrawal extends plugin {
@@ -46,8 +47,8 @@ export class Automaticwithdrawal extends plugin {
     await Yaml.getwrite(bot, cfg, 'utf8')
 
     if (e.user_id == Bot.uin) {
-    let data = await Yaml.getread(path)
-    let 时间 = data.自动撤回时间
+    let Cfgtime = await Yaml.getread(rectime)
+    let 时间 = Cfgtime.自动撤回时间
     let J = (await e.group.getChatHistory(e.My_message, 1))[0].message_id
         await common.sleep(时间);
         await e.group.recallMsg(J);
