@@ -4,11 +4,11 @@
 // 东拼西凑的东西
 // 欢迎各位大佬萌新进群玩：657142904
 
-import plugin from "../../lib/plugins/plugin.js"
+import plugin from "../../../lib/plugins/plugin.js"
 import { segment } from "oicq";
 import fetch from 'node-fetch'
 import YAML from 'yaml'
-import Yaml from '../Jinmaocuicuisha-plugin/Yaml.js'
+import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
 const _path = process.cwd();
 
