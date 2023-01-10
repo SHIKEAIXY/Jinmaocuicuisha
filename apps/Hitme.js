@@ -85,7 +85,7 @@ export class Hitme extends plugin {
 
 async HitMehelp(e) {
 
-    await e.reply('使用说明:\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api\n#打我帮助')
+    await e.reply('使用说明:\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api')
     return true  
 }
 
@@ -105,7 +105,7 @@ async HitMeapi(e){
     forwardMsg = await e.friend.makeForwardMsg(forwardMsg)
     }
     forwardMsg.data = forwardMsg.data
-        .replace(/\n/g, '')
+        .replace(/ /g, '')
         .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
         .replace(/___+/, `<title color="#777777" size="26">api:</title>`)
     //发送消息
@@ -128,11 +128,16 @@ async setHitMeapi(e){
         return e.reply("api只能添加一个哦请先删除掉~", true);
         } else if (data.indexOf(api) == -1&&e.msg.includes('打我api')){
         await data.push(api)
-        await e.reply(`添加${api}成功~`)
+        await e.reply(`添加成功~`)
         }
         if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
-        await data.splice(data.indexOf(api), 1)//位置索引，删除1个
-        await e.reply(`${api}删除成功~`)
+        let num = e.msg.match(/1/)
+        if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
+        let ht=data.push[num-1]
+        await data.push.splice(data.push.indexOf(ht), 1)
+        await getwrite(data)
+        await e.reply(`删除成功~`)
+        return true
         }
        await getwrite(data)
     return true
