@@ -8,7 +8,6 @@ const _path = process.cwd();
 
 let MuteTime = 600; // 禁言时间秒(需bot管理员)
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
-if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 
 export class Maren extends plugin {
     constructor() {
