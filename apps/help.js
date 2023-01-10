@@ -24,7 +24,7 @@ export class help extends plugin {
 
     async Marenhelp(e) {
 
-        await e.reply('脆脆鲨帮助(文字版)\n#本群(禁用|启用)自动撤回\n#打我使用说明\n#骂人使用说明\n#禁用功能(施工中...)\n#脆脆鲨更新|脆脆鲨强制更新')
+        await e.reply('脆脆鲨帮助(文字版)\n#本群(禁用|启用)自动撤回\n#设置自动撤回时间+(秒)\n#打我使用说明\n#骂人使用说明\n#禁用功能(施工中...)\n#脆脆鲨更新|脆脆鲨强制更新')
         return true  
     }
 }
