@@ -30,7 +30,7 @@ export class Automaticwithdrawal extends plugin {
     }
     async accept(e) {
 
-    if(!e.isGroup){ return false; }
+    if (!e.isGroup) return false;
 
     if(e.isGroup){
     let 禁用 = await getread()
