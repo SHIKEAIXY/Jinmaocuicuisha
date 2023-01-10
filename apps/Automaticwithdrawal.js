@@ -1,4 +1,3 @@
-// 欢迎各位大佬萌新进群玩：657142904
 import plugin from "../../../lib/plugins/plugin.js"
 import co from '../../../lib/common/common.js'
 import cfg from'../../../lib/config/config.js'
@@ -44,7 +43,7 @@ export class Automaticwithdrawal extends plugin {
 
     let cfg = await Yaml.getread(bot)
     cfg.ignore_self = false;
-    await Yaml.getwrite(bot, cfg, 'utf8')
+    await Yaml.getwrite(bot, cfg)
 
     if (e.user_id == Bot.uin) {
     let Cfgtime = await Yaml.getread(rectime)
@@ -54,7 +53,7 @@ export class Automaticwithdrawal extends plugin {
         await e.group.recallMsg(J);
         let cfg = await Yaml.getread(bot)
         cfg.ignore_self = true;
-        await Yaml.getwrite(bot, cfg, 'utf8')
+        await Yaml.getwrite(bot, cfg)
         return true;
         }
     }
