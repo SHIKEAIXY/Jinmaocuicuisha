@@ -16,7 +16,7 @@ import fetch from 'node-fetch'
 const _path = process.cwd();
 
 let bot = './config/config/bot.yaml';
-let path1='./plugins/Jinmaocuicuisha-plugin/Automaticwithdrawalset/qq.yaml';
+let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml';
 if (!fs.existsSync(path1)) {fs.writeFileSync(path1,'')}
 
 export class Automaticwithdrawal extends plugin {
