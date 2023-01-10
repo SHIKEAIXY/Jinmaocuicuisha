@@ -146,11 +146,11 @@ async ofHitMe(e){
     if (!data) data= [];
     if (data.indexOf(e.group_id) == -1&&e.msg.includes('禁用')){
     await data.push(e.group_id)
-    await e.reply('本群禁用打我功能')
+    await e.reply('本群已禁用打我功能')
     }
     if (data.indexOf(e.group_id)!== -1&&e.msg.includes('启用')){
     await data.splice(data.indexOf(e.group_id), 1)//位置索引，删除1个
-    await e.reply('本群启用打我功能')
+    await e.reply('本群已启用打我功能')
     }
     getwrite1(data)
 }
