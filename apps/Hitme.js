@@ -63,7 +63,7 @@ export class Hitme extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?打我说明$',
+                    reg: '^#?打我使用说明$',
                     /** 执行方法 */
                     fnc: 'HitMehelp'
                 },
