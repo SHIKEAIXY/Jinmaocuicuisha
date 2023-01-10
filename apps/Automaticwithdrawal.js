@@ -45,8 +45,10 @@ export class Automaticwithdrawal extends plugin {
 
     if (e.user_id == Bot.uin) {
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
+    let J = (await e.group.getChatHistory(e.memsg.seq, 1))[0].message_id
         await sleep(30000)
-        await e.group.recallMsg();
+        await e.group.recallMsg(J);
+    } else {
         let cfg=await Yaml.getread(bot)
         cfg.ignore_self = true;
         await Yaml.getwrite(bot, cfg, 'utf8')
