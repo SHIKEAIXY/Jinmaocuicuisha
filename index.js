@@ -5,9 +5,9 @@ const files = fs.readdirSync('./plugins/Jinmaocuicuisha-plugin/apps').filter(fil
 
 let ret = []
 
-logger.info(chalk.cyan('Σ(°Д°;--Σ(°Д°;--Σ(°Д°;--Σ(°Д°;--Σ(°Д°;'))
-logger.info(`非常感谢您的使用!脆脆鲨插件载入中...`)
-logger.info(chalk.magenta('------------------------------------'))
+logger.info(chalk.rgb(153, 255, 165)('Σ(°Д°;--Σ(°Д°;--Σ(°Д°;--Σ(°Д°;--Σ(°Д°;'))
+logger.info(chalk.rgb(153, 255, 165)(`非常感谢您的使用!脆脆鲨插件载入中...`))
+logger.info(chalk.rgb(153, 255, 165)('------------------------------------'))
 
 
 files.forEach((file) => {
