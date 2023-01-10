@@ -47,7 +47,7 @@ export class Automaticwithdrawal extends plugin {
 
     if (e.user_id == Bot.uin) {
     let data = await Yaml.getread(path)
-    let 自动撤回时间 = data.自动撤回时间
+    let 时间 = data.自动撤回时间
     let J = (await e.group.getChatHistory(e.My_message, 1))[0].message_id
         await common.sleep(时间);
         await e.group.recallMsg(J);
