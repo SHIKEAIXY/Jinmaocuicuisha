@@ -27,18 +27,15 @@ export class Automaticwithdrawal extends plugin {
 
     if (!e.isGroup) return false;
 
-    let group = await Yaml.getread(path)
+    if(e.isGroup){
     try {
+    let group = await Yaml.getread(path)
         for (let qqq of group) {
             if(e.group_id == qqq){
-            return true
-            }else{
             return false
             }
         }
-        } catch (e) {
-        return false
-    }
+    }catch (e){}
 
 
     let cfg=await Yaml.getread(bot)
