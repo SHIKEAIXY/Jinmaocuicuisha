@@ -25,7 +25,7 @@ export class Automaticwithdrawal extends plugin {
             dsc: 'Automaticwithdrawal',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message.group',
-            priority: 5000000
+            priority: 5000
         })
     }
     async accept(e) {
