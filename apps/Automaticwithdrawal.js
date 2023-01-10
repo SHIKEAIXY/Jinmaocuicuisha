@@ -9,7 +9,6 @@ import co from '../../../lib/common/common.js'
 import { segment } from "oicq";
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
-import Automaticallydetect from '../model/Automaticallydetect.js'
 import fs from 'fs'
 import moment from 'moment'
 import fetch from 'node-fetch'
