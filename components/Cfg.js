@@ -9,7 +9,7 @@ const Plugin_Name = 'Jinmaocuicuisha-plugin'
 const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
 
 
-class Config {
+class Cfg {
 	constructor () {
     this.config = {}
 	
@@ -128,4 +128,4 @@ initCfg() {
     delete this.config[`${name}`]
   }
 }
-export default new Config()
+export default new Cfg()
