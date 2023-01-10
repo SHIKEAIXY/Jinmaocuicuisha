@@ -129,7 +129,7 @@ export class Maren extends plugin {
         if (e.atBot) { //是否被艾特
             let number = Math.ceil(Math.random()*100)
             let data = await Yaml.getread(path)
-            let 词库列表 = data.词库列表[num*1]
+            let 词库列表 = await data.词库列表.splice(data.indexOf() * 0)
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let msg;
             if (词库列表==null) {
