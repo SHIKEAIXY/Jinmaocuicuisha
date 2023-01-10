@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
-import { Config} from '../components/index.js'
+import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml'
