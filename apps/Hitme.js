@@ -1,8 +1,8 @@
-import plugin from "../../lib/plugins/plugin.js"
+import plugin from "../../../lib/plugins/plugin.js"
 import { segment } from "oicq";
 import fetch from 'node-fetch'
 import YAML from 'yaml'
-import Yaml from '../Jinmaocuicuisha-plugin/Yaml.js'
+import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
 import moment from 'moment'
 const _path = process.cwd();
@@ -18,8 +18,8 @@ let HitMeCD = false;
 // CD时长，单位分钟
 let HitMe_time = 10;
 
-let path='./plugins/Jinmaocuicuisha-plugin/Hitme/api.yaml'
-let path1='./plugins/Jinmaocuicuisha-plugin/Hitme/qq.yaml'
+let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
+let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
 
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 if (!fs.existsSync(path1)) {fs.writeFileSync(path1,'')}
