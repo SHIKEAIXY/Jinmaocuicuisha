@@ -1,6 +1,8 @@
 // 欢迎各位大佬萌新进群玩：657142904
 import plugin from "../../../lib/plugins/plugin.js"
 import co from '../../../lib/common/common.js'
+import cfg from'../../../lib/config/config.js'
+import schedule from 'node-schedule'
 import { segment } from "oicq";
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
@@ -39,16 +41,18 @@ export class Automaticwithdrawal extends plugin {
     }
 
 
-    let cfg=await Yaml.getread(bot)
+    let cfg = await Yaml.getread(bot)
     cfg.ignore_self = false;
     await Yaml.getwrite(bot, cfg, 'utf8')
 
     if (e.user_id == Bot.uin) {
-    async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
+    let data = await Yaml.getread(path)
+    let 自动撤回时间 = data.自动撤回时间
+    async function sleep (ms) { return new Promise((resolve) => setTimeout(resolve, ms))}
     let J = (await e.group.getChatHistory(e.My_message, 1))[0].message_id
-        await sleep(30000)
+        await common.sleep(时间);
         await e.group.recallMsg(J);
-        let cfg=await Yaml.getread(bot)
+        let cfg = await Yaml.getread(bot)
         cfg.ignore_self = true;
         await Yaml.getwrite(bot, cfg, 'utf8')
         return true;
