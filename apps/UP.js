@@ -1,6 +1,6 @@
-import plugin from "../../lib/plugins/plugin.js"
+import plugin from "../../../lib/plugins/plugin.js"
 import { execSync } from 'child_process'
-import { update } from '../Jinmaocuicuisha-plugin/update.js'
+import { update } from '../model/update.js'
 import fs from 'fs'
 const Path = process.cwd();
 const Plugin_Name = 'Jinmaocuicuisha-plugin'
