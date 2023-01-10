@@ -97,6 +97,15 @@ let Data = {
     return ret.default || {}
   },
 
+  async importCfg (key) {
+    let sysCfg = await Data.importModule(`Cfg/Sys/${key}_system.js`)
+    let diyCfg = await Data.importModule(`Cfg/${key}.js`)
+    return {
+      sysCfg,
+      diyCfg
+    }
+  },
+
   /*
   * 返回一个从 target 中选中的属性的对象
   *
