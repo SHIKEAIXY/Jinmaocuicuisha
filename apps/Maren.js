@@ -27,7 +27,7 @@ export class Maren extends plugin {
 			rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?骂人帮助$',
+                    reg: '^#?骂人使用说明$',
                     /** 执行方法 */
                     fnc: 'Marenhelp'
                 },
