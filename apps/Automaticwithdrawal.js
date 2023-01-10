@@ -24,8 +24,8 @@ export class Automaticwithdrawal extends plugin {
             name: 'Automaticwithdrawal',
             dsc: 'Automaticwithdrawal',
             /** https://oicqjs.github.io/oicq/#events */
-            event: 'message.group',
-            priority: 5000
+            event: 'message',
+            priority: 5000000
         })
     }
     async accept(e) {
@@ -39,11 +39,11 @@ export class Automaticwithdrawal extends plugin {
         }
     }
 
+    let cfg=await Yaml.getread(bot)
+    cfg.ignore_self=false; await Yaml.getwrite(bot,cfg);
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
 
         if (e.user_id == Bot.uin) {
-            let cfg=await Yaml.getread(bot)
-            cfg.ignore_self=false; await Yaml.getwrite(bot,cfg);
             if(e.xml){
                 let F;
                 F = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
