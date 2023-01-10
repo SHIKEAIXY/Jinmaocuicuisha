@@ -24,11 +24,11 @@ export class Automaticwithdrawal extends plugin {
             name: 'Automaticwithdrawal',
             dsc: 'Automaticwithdrawal',
             /** https://oicqjs.github.io/oicq/#events */
-            event: 'message.group',
+            event: 'message',
             priority: 5000000,
         })
     }
-    async Automaticwithdrawal(e) {
+    async accept(e) {
 
     if(!e.isGroup){ return false; }
 
