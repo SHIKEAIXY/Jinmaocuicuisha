@@ -85,7 +85,7 @@ export class Hitme extends plugin {
 
 async HitMehelp(e) {
 
-    await e.reply('打我帮助(文字版)\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api\n#打我帮助')
+    await e.reply('使用说明:\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api\n#打我帮助')
     return true  
 }
 
