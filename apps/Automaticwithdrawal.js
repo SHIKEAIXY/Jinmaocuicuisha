@@ -44,29 +44,13 @@ export class Automaticwithdrawal extends plugin {
     await Yaml.getwrite(bot, cfg, 'utf8')
 
     if (e.user_id == Bot.uin) {
-
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
-
-            if(e.msg){
-                let A;
-                A = (await e.group.getChatHistory(e.all.seq, 1))[0].message_id
-                await sleep(30000)
-                await e.group.recallMsg(A.message_id);
-                let cfg=await Yaml.getread(All)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-            
-                } else {
-                let B;
-                B = (await e.group.getChatHistory(e.all.seq, 1))[0].message_id
-                await sleep(30000)
-                await e.group.recallMsg(All);
-                let cfg=await Yaml.getread(bot)
-                cfg.ignore_self = true;
-                await Yaml.getwrite(bot, cfg, 'utf8')
-                return true;
-            }
+        await sleep(30000)
+        await e.group.recallMsg();
+        let cfg=await Yaml.getread(bot)
+        cfg.ignore_self = true;
+        await Yaml.getwrite(bot, cfg, 'utf8')
+        return true;
         }
     }
 }
