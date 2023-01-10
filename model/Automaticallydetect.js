@@ -1,5 +1,5 @@
+import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq'
-import plugin from '../../lib/plugins/plugin.js'
 
 const Automaticwithdrawalbot = 2; //检测消息数\/小于2会失效
 
