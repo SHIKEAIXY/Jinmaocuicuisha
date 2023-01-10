@@ -68,7 +68,7 @@ export class Maren extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '     词库列表     \n可使用指令【删除文字+(序号)】删除掉对应的文字'
+        message: '词库列表\n可使用指令【删除文字+(序号)】删除掉对应的文字'
       }
     ]
     let data=await Yaml.getread(path)
@@ -105,7 +105,7 @@ export class Maren extends plugin {
             if(!文字){return e.reply('嗯？要写入的文字内容呢？')}
             data.词库列表.push(文字)
             await Yaml.getwrite(path,data)
-            return e.reply(`【${e.msg}】成功添加进词库可使用指令【词库列表】查看！`)
+            return e.reply(`【${文字}】成功添加进词库可使用指令【词库列表】查看！`)
             }
         if(e.msg.includes('删除文字')){
         let num = e.msg.match(/\d+/)
