@@ -186,10 +186,14 @@ async HitMe(e){
     if (!e.isGroup) return false;
 
     if(e.isGroup){
-    let 禁用 = await getread1()
-        if(e.group_id == 禁用){
-            return false;
+    try {
+    let group = await Yaml.getread(path1)
+        for (let qqq of group) {
+            if(e.group_id == qqq){
+            return false
+            }
         }
+        }catch (e){}
     }
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
@@ -287,10 +291,14 @@ async Hitta(e){
     if (!e.isGroup) return false;
 
     if(e.isGroup){
-    let 禁用 = await getread1()
-        if(e.group_id == 禁用){
-            return false;
+    try {
+    let group = await Yaml.getread(path1)
+        for (let qqq of group) {
+            if(e.group_id == qqq){
+            return false
+            }
         }
+        }catch (e){}
     }
     
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
@@ -430,29 +438,3 @@ async Hitta(e){
         return false
         }
     }
-
-    /** 读取 */
-    function getread1() {
-    try {
-        var fileContents = fs.readFileSync(path1, 'utf8');
-        } catch (e) {
-        console.log(e);
-        return false;
-        }
-        //转换
-        return YAML.parse(fileContents);
-        }
-
-    /** 写入 */
-    function getwrite1(data) {
-    try {
-        //转换
-        let yaml = YAML.stringify(data);
-        fs.writeFileSync(path1, yaml, 'utf8');
-        return true
-        } catch (e) {
-        //错误处理
-        console.log(e);
-        return false
-        }
-     }
