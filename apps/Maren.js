@@ -137,15 +137,15 @@ export class Maren extends plugin {
             e.reply(msg)
             return true;
 
-            } else if (number < 15) {
+            } else if (number < 100) {
             msg = [ segment.at(e.user_id),词库列表[text_number] ] //艾特然后抽取词库中随机一句话回复
             e.reply(msg)
             return true;
 
-            } else if (number < 30 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
+            } else if (number < 50 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
             return e.reply("有种给我管理啊！", true);
 
-            } else if (number < 55 && e.group.is_admin && e.group.is_owner) {  
+            } else if (number < 30 && e.group.is_admin && e.group.is_owner) {  
             let i = 0;
             e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
             msg = [ segment.at(e.user_id),`你怎么不骂了？你继续啊！` ];
