@@ -39,11 +39,11 @@ export class Automaticwithdrawal extends plugin {
         }
     }
 
+    if (e.user_id == Bot.uin) {
     let cfg=await Yaml.getread(bot)
     cfg.ignore_self=false; await Yaml.getwrite(bot,cfg);
     async function sleep(time) { return new Promise(resolve => { setTimeout(resolve, time); })}
 
-        if (e.user_id == Bot.uin) {
             if(e.xml){
                 let F;
                 F = (await e.group.getChatHistory(e.message_id.seq, 1)).pop();
