@@ -13,6 +13,15 @@ if(!fs.existsSync(chtime)) {
   })
 }
 
+let ciku='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/ciku.yaml'
+if(!fs.existsSync(ciku)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/ciku.txt',ciku,(err)=>{
+	if(err){
+            logger.info(err)
+       }
+  })
+}
+
 export class jmccs_update extends plugin {
 	constructor () {
 		super({
