@@ -1,9 +1,3 @@
-
-// by金毛脆脆鲨
-// 抄的各位大佬的
-// 东拼西凑的东西
-// 欢迎各位大佬萌新进群玩：657142904
-
 import plugin from "../../../lib/plugins/plugin.js"
 import { segment } from "oicq";
 import fetch from 'node-fetch'
@@ -40,7 +34,7 @@ export class Maren extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(加入|写入|删除|去掉)词库(.*)$',
+                    reg: '^#?(写入|删除)文字(.*)$',
                     /** 执行方法 */
                     fnc: 'ciku',
                     permission: 'master'
@@ -57,51 +51,74 @@ export class Maren extends plugin {
 
     async Marenhelp(e) {
 
-        await e.reply('使用说明:\n#词库列表\n#加入|写入|删除|去掉词库+要加的词\n触发指令艾特机器人输入XX闭嘴XX|XX滚XX|XX傻逼XX|XXsbXX|XXgunXX|XXcnmXX|XX草泥马XX|XX操你妈XX|XX草你妈XX\n#骂人帮助\n#脆脆鲨更新|强制更新')
+        await e.reply('使用说明:\n#词库列表\n#写入文字+(文字)|删除文字+(序号)\n触发指令艾特机器人输入XX闭嘴XX|XX滚XX|XX傻逼XX|XXsbXX|XXgunXX|XXcnmXX|XX草泥马XX|XX操你妈XX|XX草你妈XX')
         return true  
     }
 
     async cikuliebiao(e){
-        let data = getread()
-        let msg = ['词库空空如也呢~']
-        if(data){
-        data.map((v,i)=>{
-        msg[0]='词库\n'
-        msg.push(`${i+1},${v}\n`)
-        })
-        }
-        let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
-        if (e.isGroup) {
-        forwardMsg = await e.group.makeForwardMsg(forwardMsg)
-        } else {
-        forwardMsg = await e.friend.makeForwardMsg(forwardMsg)
-        }
-        forwardMsg.data = forwardMsg.data
-            .replace(/\n/g, '')
-            .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-            .replace(/___+/, `<title color="#777777" size="26">Σ(°Д°;词库列表</title>`)
-        //发送消息
-        e.reply(forwardMsg)
+
+    let nickname = Bot.nickname
+    if (this.e.isGroup) {
+      let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
+      nickname = info.card ?? info.nickname
     }
+    let userInfo = {
+      user_id: Bot.uin,
+      nickname
+    }
+    let forwardMsg = [
+      {
+        ...userInfo,
+        message: '     词库列表     \n可使用指令【删除文字+(序号)】删除掉对应的文字'
+      }
+    ]
+    let data=await Yaml.getread(path)
+    let msg=[]
+    logger.info(data.词库列表)
+    if(data.词库列表==null||data.词库列表.length==0){return e.reply('词库还没有文字可以用呢~请用指令【写入文字+(文字)】添加文字')}
+    for (let v = 0; v < data.词库列表.length; v++) {
+      msg.push(`${v+1}.`+data.词库列表[v]+'\n')
+    }
+    forwardMsg.push(
+          {
+            ...userInfo,
+            message: msg
+          }
+        )
+    if (this.e.isGroup) {
+      forwardMsg = await this.e.group.makeForwardMsg(forwardMsg)
+    } else {
+      forwardMsg = await this.e.friend.makeForwardMsg(forwardMsg)
+    }
+    forwardMsg.data = forwardMsg.data
+      .replace(/\n/g, '')
+      .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
+      .replace(/___+/, `<title color="#777777" size="26">词库列表</title>`)
+    return e.reply(forwardMsg)
+  }
 
     async ciku(e) {
-        let Ciku=e.msg.replace(/#|加入|写入|删除|去掉|词库/g,'')
-        let data=await getread()
-            if (!data) data= [];
-            if (data.indexOf(Ciku) == -1&&e.msg.includes('词库')){
-            await data.push(Ciku)
-            await e.reply(`已经将【${Ciku}】添加进词库啦~`)
+
+    let data=await Yaml.getread(path)
+    if(data.词库列表==null){data.词库列表=[]}
+        if(e.msg.includes('写入文字')){
+        let 文字 = e.msg.replace(/#|写入文字/g,'')
+            if(!文字){return e.reply('嗯？要写入的文字内容呢？')}
+            data.词库列表.push(文字)
+            await Yaml.getwrite(path,data)
+            return e.reply(`【${e.msg}】成功添加进词库可使用指令【词库列表】查看！`)
             }
-            if (data.indexOf(Ciku)!== -1&&e.msg.includes('删除词库')){
-            await data.splice(data.indexOf(Ciku), 1)//位置索引，删除1个
-            await e.reply(`已经将【${Ciku}】从词库中删除啦~`)
+        if(e.msg.includes('删除文字')){
+        let num = e.msg.match(/\d+/)
+            if (!num) {
+            return  e.reply('序号呢？要不先用指令【词库列表】查看下文字对应的序号啊')
             }
-            if (data.indexOf(Ciku)!== -1&&e.msg.includes('去掉词库')){
-            await data.splice(data.indexOf(Ciku), 1)//位置索引，删除1个
-            await e.reply(`已经将【${Ciku}】从词库中删除啦~`)
-            }
-           await getwrite(data)
-        return true
+            let 内容=data.词库列表[num-1]
+                if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！')}
+                await data.词库列表.splice(data.词库列表.indexOf(内容), 1)
+                await Yaml.getwrite(path,data)
+                await e.reply(`成功把【${内容}】从词库列表中删除~`)
+                }
     }
 
     async Maren(e) {
@@ -111,59 +128,31 @@ export class Maren extends plugin {
         }
         
         if (e.atBot) { //是否被艾特
-            let random_type = Math.random()
-            let number = Math.round(Math.random() * 100 + 1)
-            let data = getread()
-            let Ciku = await data.splice(data.indexOf() * 0)
-            let text_number = Math.ceil(Math.random() * Ciku['length'])
+            let number = Math.ceil(Math.random()*100)
+            let data = await Yaml.getread(path)
+            let 词库列表 = data.词库列表
+            let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let msg;
-            if (Ciku.length == 0 ) {
-            msg = ['额,词库空空如也呢~']
-            } else if (Ciku.length > 0 && number < 15) {
-            msg = [ segment.at(e.user_id),Ciku[text_number-1] ] //艾特然后抽取词库中随机一句话回复
-            } else if (Ciku.length > 0 && number < 30) {
-            msg = [ segment.at(e.user_id),Ciku[text_number-1] ] //艾特然后抽取词库中随机一句话回复
-            } else if (Ciku.length > 0 && number < 45) {
-            msg = [ segment.at(e.user_id),Ciku[text_number-1] ] //艾特然后抽取词库中随机一句话回复
-            } else if (Ciku.length > 0 && number < 60) {
-            msg = [ segment.at(e.user_id),Ciku[text_number-1] ] //艾特然后抽取词库中随机一句话回复
-            } else if (Ciku.length > 0 && number < 75 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
-            return e.reply("MD，有种给我管理啊！", true);
-            } else if (Ciku.length > 0 && number < 90 && e.group.is_admin && e.group.is_owner) {  
+            if (data.词库列表==null&&data.词库列表.length==0) {
+            msg = ['文字都没有,你让我怎么骂啊！']
+            e.reply(msg)
+            return true;
+
+            } else if (number < 90) {
+            msg = [ segment.at(e.user_id),词库列表[text_number] ] //艾特然后抽取词库中随机一句话回复
+            e.reply(msg)
+            return true;
+
+            } else if (number < 15 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
+            return e.reply("有种给我管理啊！", true);
+
+            } else if (number < 15 && e.group.is_admin && e.group.is_owner) {  
             let i = 0;
             e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
-            msg = [ segment.at(e.user_id),`你TM继续啊！` ];
+            msg = [ segment.at(e.user_id),`你怎么不骂了？你继续啊！` ];
             e.reply(msg)
             return true;
-            } else {
-            msg = [ segment.at(e.user_id),Ciku[text_number-1] ]
             }
-            /** 最后回复消息 */
-            e.reply(msg)
-            return true;
         }
     } 
 }
-    
-    //读取词库
-    function getread() {
-      try {
-        var fc = fs.readFileSync(path, 'utf8');
-        } catch (e) {
-        console.log(e);
-        return false;
-        }
-        return YAML.parse(fc);
-    }
-  
-    //写入词库
-    function getwrite(data) {
-      try {
-        let yaml = YAML.stringify(data);
-        fs.writeFileSync(path, yaml, 'utf8');
-        return true
-        } catch (e) {
-        console.log(e);
-        return false
-        }
-    }
