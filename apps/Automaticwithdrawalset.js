@@ -48,7 +48,7 @@ export class Automaticwithdrawalset extends plugin {
     let data=await Yaml.getread(path)
     let recalltime=e.msg.replace(/#|设置自动撤回时间|秒/g,'')
     let 时间=recalltime
-    recalltime=recalltime*60
+    recalltime=recalltime*1000
     data.自动撤回时间=recalltime
     await Yaml.getwrite(path,data)
     return e.reply(`自动撤回时间,成功设置为${时间}秒`)
