@@ -118,12 +118,14 @@ async setHitMeapi(e){
     let data=await getread()
         if (!data) data= [];
         if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
-        await data.splice(data.indexOf(api), 1)//位置索引，删除1个
-        await e.reply(`${api}删除成功~`)
+        let num = data.match(api)
+        if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
+        await data.splice(data.indexOf(api), 1)
+        await e.reply(`删除成功~`)
         await getwrite(data)
         return true
         }
-        if (data.length > 0&&e.msg.includes('打我api')){
+        if (data.length > 0&&e.msg.includes('写入打我api')){
         await data.push(api)
         return e.reply("api只能添加一个哦请先删除掉~", true);
         } else if (data.indexOf(api) == -1&&e.msg.includes('打我api')){
@@ -131,7 +133,7 @@ async setHitMeapi(e){
         await e.reply(`添加成功~`)
         }
         if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
-        let num = e.msg.match(/1/)
+        let num = data.match(api)
         if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
         let ht=data[num-1]
         await data.splice(data.indexOf(ht), 1)
