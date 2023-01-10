@@ -114,25 +114,18 @@ async HitMeapi(e){
 
 async setHitMeapi(e){
 
-    let api=e.msg.replace(/#|写入|删除|打我api/g,'')
     let data=await getread()
         if (!data) data= [];
-        if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
-        let num = data.match(api)
-        if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
-        await data.splice(data.indexOf(api), 1)
-        await e.reply(`删除成功~`)
+        if (data.length > 0&&e.msg.includes('写入打我api')){
+        return e.reply("api只能添加一个哦请先删除掉~", true);
+        } else if (e.msg.includes('写入打我api')){
+        let api=e.msg.replace(/#|写入|删除|打我api/g,'')
+        await data.push(api)
+        await e.reply(`添加成功~`)
         await getwrite(data)
         return true
         }
-        if (data.length > 0&&e.msg.includes('写入打我api')){
-        await data.push(api)
-        return e.reply("api只能添加一个哦请先删除掉~", true);
-        } else if (data.indexOf(api) == -1&&e.msg.includes('打我api')){
-        await data.push(api)
-        await e.reply(`添加成功~`)
-        }
-        if (data.indexOf(api)!== -1&&e.msg.includes('删除打我api')){
+        if (e.msg.includes('删除打我api')){
         let num = data.match(api)
         if (!num) { return  e.reply('api都没添加，你删毛线呢？') }
         let ht=data[num-1]
