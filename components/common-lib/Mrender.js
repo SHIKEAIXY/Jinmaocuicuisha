@@ -1,4 +1,4 @@
-import { Data, Version, Plugin_Name} from '../index.js'
+import { Data , Plugin_Name} from '../index.js'
 import fs from 'fs'
 import puppeteer from '../../../../lib/puppeteer/puppeteer.js'
 
@@ -26,7 +26,7 @@ export default async function (path, params, cfg) {
     },
     sys: {
       scale: 1,
-      copyright: `云崽<span class="version">${Version.yunzai}</span> &nbsp 花生<span class="version">${Version.ver}</span>`
+      copyright: `云崽<span class="version">${Version.yunzai}</span> &nbsp 脆脆鲨<span class="version">${Version.ver}</span>`
     },
 	quality: 100
   }
