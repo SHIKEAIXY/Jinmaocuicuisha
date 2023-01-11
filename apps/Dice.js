@@ -6,7 +6,7 @@ import { segment } from "oicq";
 
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
-let Dice = false;
+let cd = false;
 
 export class dice extends plugin {
   constructor () {
@@ -26,8 +26,8 @@ export class dice extends plugin {
 
     async Dice(e){
 
-    if (Dice) return e.reply('每次只能开一局,请等这一局结束！',true);
-    Dice = true;
+    if (cd) return e.reply('每次只能开一局,请等这一局结束！',true);
+    cd = true;
     let k = Math.ceil(Math.random()*6);
     let 一 = 1
     let 二 = 1
@@ -48,7 +48,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
 
         } else if (k < (一 + 二)){
@@ -57,7 +57,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
 
         } else if (k < (一 + 二 + 三)){
@@ -66,7 +66,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
@@ -75,7 +75,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
@@ -84,7 +84,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
@@ -93,10 +93,10 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
-        let Dice = false;
+        cd = false;
         return true;
         }
-        let Dice = false;
+        cd = false;
         return false;
     }
 }
