@@ -49,12 +49,12 @@ export class dice extends plugin {
     }
 
     async DiceZ(e) {
-    await Dice(e.msg)
+    await Dice(e)
     }
 }
 
 
-    function Dice(){
+    function Dice(e){
 
     if (!e.isGroup) return false;
 
