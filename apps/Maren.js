@@ -15,8 +15,8 @@ const tplb_path=path+'/plugins/Jinmaocuicuisha-plugin/Resources/img/骂人图片
 let cd = false
 let source={}
 let MuteTime = 600; // 禁言时间秒(需bot管理员)
-let _path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
-let tp_path='./plugins/Jinmaocuicuisha-plugin/Resources/img/骂人图片/'
+let ck_path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
+let _path='./plugins/Jinmaocuicuisha-plugin/Resources/img/骂人图片/'
 
 if (!fs.existsSync(tplb_path)) {fs.mkdirSync(tplb_path)}
 
@@ -95,7 +95,7 @@ export class Maren extends plugin {
     cd = true
     let msglist = []
         try{
-        let File = fs.readdirSync(tp_path)
+        let File = fs.readdirSync(_path)
             if(File.length==0){
             e.reply('额,一张图都没有呢~可以用指令【上传骂人图片】来上传图片哦~')
             cd = false
@@ -103,7 +103,7 @@ export class Maren extends plugin {
             }
             msglist.push(`骂人图片共${File.length}张，可输入【删除骂人图片+(序号)】进行删除`)
             for (let i = 0; i < File.length; i++) {
-            msglist.push([`${i+1}.`, segment.image(`${tp_path}${File[i]}`)])
+            msglist.push([`${i+1}.`, segment.image(`${_path}${File[i]}`)])
             }
             let msgRsg = await e.reply(await co.makeForwardMsg(e, msglist))
             if (!msgRsg)  e.reply('好像被风控了呢，请私聊试试', true)
@@ -122,8 +122,8 @@ export class Maren extends plugin {
         return  e.reply('序号呢？请先用指令【骂人图片列表】查看下图片对应的序号再来删除！')
         }
         try{
-            let File = fs.readdirSync(tp_path)
-            fs.unlinkSync(`${tp_path}${File[num - 1]}`)
+            let File = fs.readdirSync(_path)
+            fs.unlinkSync(`${_path}${File[num - 1]}`)
             await e.reply('删除成功~')
             } catch(err) {
             e.reply('删除失败，请检查有没有这个序号！')
@@ -165,10 +165,10 @@ export class Maren extends plugin {
         try{
         let savePath
         let File
-        if(!fs.existsSync(tp_path)) fs.mkdirSync(tp_path)
+        if(!fs.existsSync(_path)) fs.mkdirSync(_path)
         for (let i = 0; i < imageMessages.length; i++) {
-        File = fs.readdirSync(tp_path)
-        savePath = `${tp_path}${File.length + 1}.jpg`
+        File = fs.readdirSync(_path)
+        savePath = `${_path}${File.length + 1}.jpg`
         await co.downFile(imageMessages[i], savePath)
         }
         e.reply(`上传骂人图片${imageMessages.length}张成功，可输入【骂人图片列表】查看`)
@@ -198,7 +198,7 @@ export class Maren extends plugin {
         message: '词库列表\n可使用指令【删除文字+(序号)】删除掉对应的文字'
       }
     ]
-    let data=await Yaml.getread(_path)
+    let data=await Yaml.getread(ck_path)
     let msg=[]
     logger.info(data.词库列表)
     if(data.词库列表==null||data.词库列表.length==0){return e.reply('词库还没有文字可以用呢~请用指令【写入文字+(文字)】添加文字')}
@@ -225,13 +225,13 @@ export class Maren extends plugin {
 
     async ciku(e) {
 
-    let data=await Yaml.getread(_path)
+    let data=await Yaml.getread(ck_path)
     if(data.词库列表==null){data.词库列表=[]}
         if(e.msg.includes('写入文字')){
         let 文字 = e.msg.replace(/#|写入文字/g,'')
             if(!文字){return e.reply('嗯？要写入的文字内容呢？'); true;}
             data.词库列表.push(文字)
-            await Yaml.getwrite(_path,data)
+            await Yaml.getwrite(ck_path,data)
             return e.reply(`【${文字}】成功添加进词库可使用指令【词库列表】查看！`); true;
             }
         if(e.msg.includes('删除文字')){
@@ -242,7 +242,7 @@ export class Maren extends plugin {
             let 内容=data.词库列表[num-1]
                 if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！'); true;}
                 await data.词库列表.splice(data.词库列表.indexOf(内容), 1)
-                await Yaml.getwrite(_path,data)
+                await Yaml.getwrite(ck_path,data)
                 await e.reply(`成功把【${内容}】从词库列表中删除~`)
                 }
                 return false;
@@ -256,7 +256,7 @@ export class Maren extends plugin {
         
         if (e.atBot) { //被艾特
             let k = Math.ceil(Math.random()*100)
-            let data = await Yaml.getread(_path)
+            let data = await Yaml.getread(ck_path)
             let 词库列表 = data.词库列表
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let photo_name=await fs.readdirSync(tplb_path)
