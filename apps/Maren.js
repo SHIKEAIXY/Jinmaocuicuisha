@@ -5,14 +5,16 @@ import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
 import { Cfg } from '../components/index.js'
-const _path = process.cwd();
+const path=process.cwd()
+const tplb_path=path+'/plugins/huasheng/config/戳一戳/戳一戳图片/';
 
 let cd = false
+let source={}
 let MuteTime = 600; // 禁言时间秒(需bot管理员)
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
 let tp_path='./plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/'
 
-if (!fs.existsSync(tp_path)) {fs.mkdirSync(tp_path)}
+if (!fs.existsSync(tplb_path)) {fs.mkdirSync(tplb_path)}
 
 export class Maren extends plugin {
     constructor() {
@@ -253,7 +255,7 @@ export class Maren extends plugin {
             let data = await Yaml.getread(path)
             let 词库列表 = data.词库列表
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
-            let photo_name=await fs.readdirSync(tp_path)
+            let photo_name=await fs.readdirSync(tplb_path)
             let photo_number = Math.ceil(Math.random() * photo_name['length'])-1
             let 文字概率 = 50
             let 图片概率 = 35
