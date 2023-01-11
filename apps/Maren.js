@@ -4,6 +4,7 @@ import fetch from 'node-fetch'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
+import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 const tplb_path=path+'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/';
 
