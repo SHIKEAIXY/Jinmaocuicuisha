@@ -65,7 +65,7 @@ export class dice extends plugin {
     async czDice(e){
     cd = false;
     文字开关 = false;
-    e.reply('骰子重置好啦~');
+    e.reply('重置好啦~');
     return false;
     }
 
