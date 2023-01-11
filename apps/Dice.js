@@ -14,7 +14,7 @@ export class dice extends plugin {
         name: '骰子',
         dsc: '骰子',
         event: 'message',
-        priority: 5000,
+        priority: -114514,
         rule: [
               {
                 reg: '^#?骰子|roll',
@@ -35,14 +35,15 @@ export class dice extends plugin {
     let 四 = 1
     let 五 = 1
     let 六 = 1
-    let msg = [segment.image(`file:///${images}/0.gif`)];
+    let roll = [segment.image(`file:///${images}/0.gif`)];
     let msg2 = [`请在1到6之间猜一个数,骰子将在一分钟后停下来。`];
     this.e.reply(msg);
     await common.sleep(2000);
     e.reply(msg2);
-    await common.sleep(60000);
+    await common.sleep(5000);
 
     if(k < 一){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/1.gif`)];
         let msg2 = [`一！`];
         this.e.reply(msg);
@@ -52,6 +53,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二)){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/2.gif`)];
         let msg2 = [`二！`];
         this.e.reply(msg);
@@ -61,6 +63,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三)){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/3.gif`)];
         let msg2 = [`三！`];
         this.e.reply(msg);
@@ -70,6 +73,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/4.gif`)];
         let msg2 = [`四！`];
         this.e.reply(msg);
@@ -79,6 +83,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/5.gif`)];
         let msg2 = [`五！`];
         this.e.reply(msg);
@@ -88,6 +93,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
+        e.recallMsg(roll.message_id);
         let msg = [segment.image(`file:///${images}/6.gif`)];
         let msg2 = [`六！`];
         this.e.reply(msg);
