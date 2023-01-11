@@ -7,7 +7,7 @@ import { segment } from "oicq";
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
 let cd = false;
-let 文字 = ['一','二','三','四','五','六','1','2','3','4','5','6','One','Two','Three','Four','Five','Six','two','three','four','five','six'];
+var 文字 = ["一","二","三","四","五","六","1","2","3","4","5","6","One","Two","Three","Four","Five","Six","two","three","four","five","six"];
 
 export class dice extends plugin {
   constructor () {
