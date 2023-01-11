@@ -37,7 +37,7 @@ export class dice extends plugin {
     let 六 = 1
     let roll = [segment.image(`file:///${images}/0.gif`)];
     let msg2 = [`请在1到6之间猜一个数,骰子将在一分钟后停下来。`];
-    this.e.reply(msg);
+    this.e.reply(roll);
     await common.sleep(2000);
     e.reply(msg2);
     await common.sleep(5000);
