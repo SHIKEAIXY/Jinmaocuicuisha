@@ -18,15 +18,15 @@ export class dice extends plugin {
         priority: -1,
         rule: [
               {
-                reg: '^#?(骰子|roll)使用说明',
+                reg: '^#?((骰子|roll)使用说明)',
                 fnc: 'Dicehelp'
               },
               {
-                reg: '^#?重置骰子',
+                reg: '^#?(重置骰子)',
                 fnc: 'czDice'
               },
               {
-                reg: '^#?骰子|roll',
+                reg: '^#?(骰子|roll)',
                 fnc: 'Dice'
               }
             ]
