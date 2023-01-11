@@ -56,7 +56,7 @@ export class Hitme extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(设置打我机器人名字)(.*)$',
+                    reg: '^#?设置打我机器人名字(.*)$',
                     /** 执行方法 */
                     fnc: 'setBotname',
                     permission: 'master'
@@ -86,7 +86,7 @@ export class Hitme extends plugin {
 async HitMehelp(e) {
 
     await e.reply('使用说明:\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api')
-    return true  
+    return false;  
 }
 
 async HitMeapi(e){
@@ -123,18 +123,18 @@ async setHitMeapi(e){
         await data.push(api)
         await e.reply(`添加成功~`)
         await getwrite(data)
-        return true
+        return true;
         }
         if (e.msg.includes('删除打我api')){
         let data=await getread()
-        if (!data.length > 0) { return  e.reply('api都没添加，你删毛线呢？') }
+        if (!data.length > 0) { return e.reply('api都没添加，你删毛线呢？') , true}
         await data.splice(data.indexOf(data), 1)
         await getwrite(data)
         await e.reply(`删除成功~`)
-        return true
+        return true;
         }
        await getwrite(data)
-    return true
+    return false;
 }
 
 async ofHitMe(e){
@@ -152,6 +152,7 @@ if (!e.isGroup) return false;
     await e.reply(`本群已启用打我功能~`)
     }
     Yaml.getwrite(path1,data)
+    return false;
 }
 
 async setBotname(e){
@@ -175,7 +176,7 @@ async setBotname(e){
         } else {
             await e.reply('已经设置好了～')
             await redis.set(`dw:botnickname:${e.bot_id}`,botname)
-            return true;
+            return false;
         }
     }
 }
@@ -283,6 +284,7 @@ async HitMe(e){
         });
         return true; //返回true 阻挡消息不再往下
         }  
+        return false;
     }
 
 async Hitta(e){
@@ -412,6 +414,7 @@ async Hitta(e){
         });
         return true; //返回true 阻挡消息不再往下
         } 
+        return false;
     }
 }
 
