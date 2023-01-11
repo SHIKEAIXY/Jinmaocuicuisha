@@ -279,7 +279,7 @@ export class Maren extends plugin {
                 return e.reply("有种给我管理啊！", true);
                 }
             
-            } else {
+            } else if (k < (文字概率 + 禁言概率 + 图片概率)){
                 let s = Math.ceil(Math.random()*5)
                 if (!photo_name['length']) {return logger.info('图片目录还没有图片呢,可以用指令【上传骂人图片】来上传图片哦~');true;}
                 if(s==5) {
