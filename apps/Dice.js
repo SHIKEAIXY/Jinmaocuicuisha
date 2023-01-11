@@ -15,7 +15,7 @@ export class dice extends plugin {
         name: '骰子',
         dsc: '骰子',
         event: 'message',
-        priority: -114514,
+        priority: -1,
         rule: [
               {
                 reg: '^#?(骰子|roll)使用说明',
@@ -34,7 +34,7 @@ export class dice extends plugin {
     }
 
     async Dicehelp(e){
-    e.reply('骰子使用说明:\n#重置骰子\n#骰子|roll');
+    e.reply('使用说明:\n#重置骰子\n#骰子|roll');
     return false;
     }
 
@@ -45,6 +45,8 @@ export class dice extends plugin {
     }
 
     async Dice(e){
+
+    if (!e.isGroup) return false;
 
     if (cd) return e.reply('每次只能开一局,请等这一局结束！',true);
     cd = true;
@@ -62,8 +64,13 @@ export class dice extends plugin {
     e.reply(msg2);
     await common.sleep(30000);
     e.group.recallMsg(roll.message_id);
+    e.group.recallMsg(msg2.message_id);
 
-    if(!e.msg.includes(`文字`)){return false;};
+    if(!e.msg.includes(`${文字}`)){
+    cd = false;
+    e.reply(`啊这！看来没人猜呢~`);
+    return false;
+    };
 
     if(k < 一){
 
