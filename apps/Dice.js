@@ -38,7 +38,7 @@ export class dice extends plugin {
     let msg = [segment.image(`file:///${images}/0.gif`)];
     let msg2 = [`骰子开始转动,请在1到6之间猜一个数,骰子将在30秒后停下来！`];
     let roll = await e.reply(msg);
-    await common.sleep(2000);
+    await common.sleep(1000);
     e.reply(msg2);
     await common.sleep(30000);
     e.group.recallMsg(roll.message_id);
