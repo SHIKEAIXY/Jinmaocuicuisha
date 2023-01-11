@@ -54,7 +54,7 @@ export class dice extends plugin {
 }
 
 
-    function Dice(msg){
+    function Dice(){
 
     if (!e.isGroup) return false;
 
