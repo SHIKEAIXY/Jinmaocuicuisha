@@ -1,10 +1,12 @@
 import plugin from "../../../lib/plugins/plugin.js"
 import { segment } from "oicq";
 import fetch from 'node-fetch'
+import schedule from 'node-schedule'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
 import { Cfg } from '../components/index.js'
+import common from'../../../lib/common/common.js'
 const path=process.cwd()
 const tplb_path=path+'/plugins/huasheng/config/戳一戳/戳一戳图片/';
 
