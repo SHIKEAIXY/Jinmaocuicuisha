@@ -41,9 +41,10 @@ export class dice extends plugin {
     await common.sleep(2000);
     e.reply(msg2);
     await common.sleep(5000);
+    e.group.recallMsg(roll.message_id);
 
     if(k < 一){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/1.gif`)];
         let msg2 = [`一！`];
         this.e.reply(msg);
@@ -53,7 +54,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二)){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/2.gif`)];
         let msg2 = [`二！`];
         this.e.reply(msg);
@@ -63,7 +64,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三)){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/3.gif`)];
         let msg2 = [`三！`];
         this.e.reply(msg);
@@ -73,7 +74,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/4.gif`)];
         let msg2 = [`四！`];
         this.e.reply(msg);
@@ -83,7 +84,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/5.gif`)];
         let msg2 = [`五！`];
         this.e.reply(msg);
@@ -93,7 +94,7 @@ export class dice extends plugin {
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
-        e.group.recallMsg(roll.message_id);
+
         let msg = [segment.image(`file:///${images}/6.gif`)];
         let msg2 = [`六！`];
         this.e.reply(msg);
