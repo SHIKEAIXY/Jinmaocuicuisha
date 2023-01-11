@@ -36,16 +36,16 @@ export class dice extends plugin {
     let 五 = 1
     let 六 = 1
     let msg = [segment.image(`file:///${images}/0.gif`)];
-    let msg2 = [`请在1到6之间猜一个数,骰子将在一分钟后停下来。`];
+    let msg2 = [`骰子开始转动,请在1到6之间猜一个数,骰子将在30秒后停下来！`];
     let roll = await e.reply(msg);
     await common.sleep(2000);
     e.reply(msg2);
-    await common.sleep(5000);
+    await common.sleep(30000);
     e.group.recallMsg(roll.message_id);
 
     if(k < 一){
 
-        let msg = [segment.image(`file:///${images}/1.gif`)];
+        let msg = [segment.image(`file:///${images}/1.jpg`)];
         let msg2 = [`一！`];
         this.e.reply(msg);
         await common.sleep(2000);
@@ -55,7 +55,7 @@ export class dice extends plugin {
 
         } else if (k < (一 + 二)){
 
-        let msg = [segment.image(`file:///${images}/2.gif`)];
+        let msg = [segment.image(`file:///${images}/2.jpg`)];
         let msg2 = [`二！`];
         this.e.reply(msg);
         await common.sleep(2000);
@@ -65,7 +65,7 @@ export class dice extends plugin {
 
         } else if (k < (一 + 二 + 三)){
 
-        let msg = [segment.image(`file:///${images}/3.gif`)];
+        let msg = [segment.image(`file:///${images}/3.jpg`)];
         let msg2 = [`三！`];
         this.e.reply(msg);
         await common.sleep(2000);
@@ -75,7 +75,7 @@ export class dice extends plugin {
 
         } else if (k < (一 + 二 + 三 + 四)){
 
-        let msg = [segment.image(`file:///${images}/4.gif`)];
+        let msg = [segment.image(`file:///${images}/4.jpg`)];
         let msg2 = [`四！`];
         this.e.reply(msg);
         await common.sleep(2000);
@@ -85,7 +85,7 @@ export class dice extends plugin {
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
 
-        let msg = [segment.image(`file:///${images}/5.gif`)];
+        let msg = [segment.image(`file:///${images}/5.jpg`)];
         let msg2 = [`五！`];
         this.e.reply(msg);
         await common.sleep(2000);
@@ -95,7 +95,7 @@ export class dice extends plugin {
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
 
-        let msg = [segment.image(`file:///${images}/6.gif`)];
+        let msg = [segment.image(`file:///${images}/6.jpg`)];
         let msg2 = [`六！`];
         this.e.reply(msg);
         await common.sleep(2000);
