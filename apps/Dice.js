@@ -26,11 +26,7 @@ export class dice extends plugin {
                 fnc: 'czDice'
               },
               {
-                reg: '^#?(骰子|roll)',
-                fnc: 'DiceZ'
-              },
-              {
-                reg: '',
+                reg: '^#?(骰子|roll).*',
                 fnc: 'Dice'
               }
             ]
@@ -48,13 +44,7 @@ export class dice extends plugin {
     return false;
     }
 
-    async DiceZ(e) {
-    await Dice(e)
-    }
-}
-
-
-    function Dice(e){
+    async Dice(e){
 
     if (!e.isGroup) return false;
 
@@ -144,3 +134,4 @@ export class dice extends plugin {
         cd = false;
         return false;
     }
+}
