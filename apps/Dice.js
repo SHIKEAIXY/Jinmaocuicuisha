@@ -126,7 +126,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/1.gif`)];
         let msg2 = [`一！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
@@ -137,7 +137,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/2.gif`)];
         let msg2 = [`二！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
@@ -148,7 +148,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/3.gif`)];
         let msg2 = [`三！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
@@ -159,7 +159,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/4.gif`)];
         let msg2 = [`四！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
@@ -170,7 +170,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/5.gif`)];
         let msg2 = [`五！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
@@ -181,7 +181,7 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/6.gif`)];
         let msg2 = [`六！`];
         await e.reply(msg);
-        await common.sleep(2000);
+        await common.sleep(3000);
         await e.reply(msg2);
         cd = false;
         文字开关 = false;
