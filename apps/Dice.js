@@ -7,6 +7,7 @@ import { segment } from "oicq";
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
 let cd = false;
+let 文字 = ['一','二','三','四','五','六','1','2','3','4','5','6','One','Two','Three','Four','Five','Six','two','three','four','five','six'];
 
 export class dice extends plugin {
   constructor () {
@@ -17,11 +18,30 @@ export class dice extends plugin {
         priority: -114514,
         rule: [
               {
+                reg: '^#?(骰子|roll)使用说明',
+                fnc: 'Dicehelp'
+              },
+              {
+                reg: '^#?重置骰子',
+                fnc: 'czDice'
+              },
+              {
                 reg: '^#?骰子|roll',
                 fnc: 'Dice'
               }
             ]
         })
+    }
+
+    async Dicehelp(e){
+    e.reply('骰子使用说明:\n#重置骰子\n#骰子|roll');
+    return false;
+    }
+
+    async czDice(e){
+    cd = false;
+    e.reply('骰子重置好啦~');
+    return false;
     }
 
     async Dice(e){
@@ -42,6 +62,8 @@ export class dice extends plugin {
     e.reply(msg2);
     await common.sleep(30000);
     e.group.recallMsg(roll.message_id);
+
+    if(!e.msg.includes(`文字`)){return false;};
 
     if(k < 一){
 
