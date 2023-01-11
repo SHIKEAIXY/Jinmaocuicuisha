@@ -123,11 +123,11 @@ export class Maren extends plugin {
 
     async Maren(e) {
 
-        if (!e.atBot) { //是否被艾特
+        if (!e.atBot) { //不被艾特
         return false;
         }
         
-        if (e.atBot) { //是否被艾特
+        if (e.atBot) { //被艾特
             let number = Math.ceil(Math.random()*100)
             let data = await Yaml.getread(path)
             let 词库列表 = data.词库列表
@@ -138,18 +138,18 @@ export class Maren extends plugin {
             e.reply(msg)
             return true;
 
-            } else if (number < 100) {
-            msg = [ segment.at(e.user_id),词库列表[text_number] ] //艾特然后抽取词库中随机一句话回复
-            e.reply(msg)
-            return true;
-
-            } else if (number < 50 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
-            return e.reply("有种给我管理啊！", true);
-
-            } else if (number < 30 && e.group.is_admin && e.group.is_owner) {  
+            } else if (number < 10 && e.group.is_admin && e.group.is_owner) {  
             let i = 0;
             e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
             msg = [ segment.at(e.user_id),`你怎么不骂了？你继续啊！` ];
+            e.reply(msg)
+            return true;
+
+            } else if (number < 10 && !e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
+            return e.reply("有种给我管理啊！", true);
+
+            } else if (number < 80) {
+            msg = [ segment.at(e.user_id),词库列表[text_number] ] //艾特对方然后随机回复词库中一句话
             e.reply(msg)
             return true;
             }
