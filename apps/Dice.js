@@ -72,6 +72,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
 
         } else if (k < (一 + 二)){
@@ -80,6 +81,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
 
         } else if (k < (一 + 二 + 三)){
@@ -88,6 +90,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
@@ -96,6 +99,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
@@ -104,6 +108,7 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
@@ -112,8 +117,10 @@ export class dice extends plugin {
         this.e.reply(msg);
         await common.sleep(2000);
         e.reply(msg2);
+        let Dice = false;
         return true;
         }
+        let Dice = false;
         return false;
     }
 }
