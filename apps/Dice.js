@@ -15,7 +15,7 @@ export class dice extends plugin {
         name: '骰子',
         dsc: '骰子',
         event: 'message',
-        priority: -1,
+        priority: 500000,
         rule: [
               {
                 reg: '^#?((骰子|roll)使用说明)',
@@ -27,6 +27,10 @@ export class dice extends plugin {
               },
               {
                 reg: '^#?(骰子|roll)',
+                fnc: 'DiceZ'
+              },
+              {
+                reg: '',
                 fnc: 'Dice'
               }
             ]
@@ -44,7 +48,13 @@ export class dice extends plugin {
     return false;
     }
 
-    async Dice(e){
+    async DiceZ(e) {
+    await Dice(e.msg)
+    }
+}
+
+
+    function Dice(msg){
 
     if (!e.isGroup) return false;
 
@@ -65,7 +75,7 @@ export class dice extends plugin {
     await common.sleep(29000);
     await e.group.recallMsg(roll.message_id);
 
-    if(!文字.some(item => e.message.group.includes(item))){
+    if(e.msg.includes(`${文字}`)){
     cd = false;
     await e.reply(`啊这！看来没人猜呢~`);
     return false;
@@ -134,4 +144,3 @@ export class dice extends plugin {
         cd = false;
         return false;
     }
-}
