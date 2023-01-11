@@ -37,7 +37,7 @@ export class Maren extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^骂人图片列表$',
+                    reg: '^#?骂人图片列表$',
                     /** 执行方法 */
                     fnc: 'mrtplb',
                     permission: 'master'
@@ -51,7 +51,7 @@ export class Maren extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^删除骂人图片(\\d)+$',
+                    reg: '^#?删除骂人图片(\\d)+$',
                     /** 执行方法 */
                     fnc: 'delmrtp',
                     permission: 'master'
@@ -84,7 +84,7 @@ export class Maren extends plugin {
 
     async Marenhelp(e) {
 
-        await e.reply('使用说明:\n#词库列表\n#写入文字+(文字)|删除文字+(序号)\n触发指令艾特机器人然后用不文明文字骂机器人')
+        await e.reply('使用说明:\n#词库列表\n#写入文字+(文字)|删除文字+(序号)\n骂人图片列表\n上传骂人图片+(图片)|删除骂人图片+(序号)\n触发指令艾特机器人然后用不文明文字骂机器人')
         return false;  
     }
 
