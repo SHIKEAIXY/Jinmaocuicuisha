@@ -64,10 +64,8 @@ export class dice extends plugin {
     await e.reply(msg2);
     await common.sleep(29000);
     await e.group.recallMsg(roll.message_id);
-    await common.sleep(1000);
-    await e.group.recallMsg(msg2.message_id);
 
-    if(!文字.some(item => e.msg.includes(item))){
+    if(!文字.some(item => e.message.group.includes(item))){
     cd = false;
     await e.reply(`啊这！看来没人猜呢~`);
     return false;
