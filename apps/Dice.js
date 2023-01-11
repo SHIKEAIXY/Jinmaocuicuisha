@@ -15,7 +15,7 @@ export class dice extends plugin {
         name: '骰子',
         dsc: '骰子',
         event: 'message',
-        priority: 500000,
+        priority: 50,
         rule: [
               {
                 reg: '^#?((骰子|roll)使用说明)',
