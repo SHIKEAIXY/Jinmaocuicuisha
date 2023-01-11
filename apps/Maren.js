@@ -9,7 +9,7 @@ import cfg from'../../../lib/config/config.js'
 import { Cfg } from '../components/index.js'
 import common from'../../../lib/common/common.js'
 const path=process.cwd()
-const tplb_path=path+'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/';
+const tplb_path = +'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/';
 
 let cd = false
 let source={}
