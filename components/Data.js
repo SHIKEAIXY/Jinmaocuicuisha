@@ -1,6 +1,7 @@
 import lodash from 'lodash'
 import fs from 'fs'
 
+const tp_path = process.cwd()
 const _path = process.cwd()
 const plugin = 'Jinmaocuicuisha-plugin'
 const getRoot = (root = '') => {
