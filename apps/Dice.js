@@ -61,14 +61,15 @@ export class dice extends plugin {
     let msg2 = [`骰子开始转动,请在1到6之间猜一个数,骰子将在30秒后停下来！`];
     let roll = await e.reply(msg);
     await common.sleep(1000);
-    e.reply(msg2);
-    await common.sleep(30000);
-    e.group.recallMsg(roll.message_id);
-    e.group.recallMsg(msg2.message_id);
+    await e.reply(msg2);
+    await common.sleep(29000);
+    await e.group.recallMsg(roll.message_id);
+    await common.sleep(1000);
+    await e.group.recallMsg(msg2.message_id);
 
-    if(!e.msg.includes(`${文字}`)){
+    if(!文字.some(item => e.msg.includes(item))){
     cd = false;
-    e.reply(`啊这！看来没人猜呢~`);
+    await e.reply(`啊这！看来没人猜呢~`);
     return false;
     };
 
@@ -76,9 +77,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/1.jpg`)];
         let msg2 = [`一！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
 
@@ -86,9 +87,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/2.jpg`)];
         let msg2 = [`二！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
 
@@ -96,9 +97,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/3.jpg`)];
         let msg2 = [`三！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
 
@@ -106,9 +107,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/4.jpg`)];
         let msg2 = [`四！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
 
@@ -116,9 +117,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/5.jpg`)];
         let msg2 = [`五！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
 
@@ -126,9 +127,9 @@ export class dice extends plugin {
 
         let msg = [segment.image(`file:///${images}/6.jpg`)];
         let msg2 = [`六！`];
-        this.e.reply(msg);
+        await e.reply(msg);
         await common.sleep(2000);
-        e.reply(msg2);
+        await e.reply(msg2);
         cd = false;
         return true;
         }
