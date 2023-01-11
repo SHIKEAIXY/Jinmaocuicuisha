@@ -9,12 +9,12 @@ import cfg from'../../../lib/config/config.js'
 import { Cfg } from '../components/index.js'
 import common from'../../../lib/common/common.js'
 const path=process.cwd()
-const tplb_path = +'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/';
+const tplb_path = path+'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/';
 
 let cd = false
 let source={}
 let MuteTime = 600; // 禁言时间秒(需bot管理员)
-let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
+let _path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
 let tp_path='./plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/'
 
 if (!fs.existsSync(tplb_path)) {fs.mkdirSync(tplb_path)}
@@ -197,7 +197,7 @@ export class Maren extends plugin {
         message: '词库列表\n可使用指令【删除文字+(序号)】删除掉对应的文字'
       }
     ]
-    let data=await Yaml.getread(path)
+    let data=await Yaml.getread(_path)
     let msg=[]
     logger.info(data.词库列表)
     if(data.词库列表==null||data.词库列表.length==0){return e.reply('词库还没有文字可以用呢~请用指令【写入文字+(文字)】添加文字')}
@@ -224,13 +224,13 @@ export class Maren extends plugin {
 
     async ciku(e) {
 
-    let data=await Yaml.getread(path)
+    let data=await Yaml.getread(_path)
     if(data.词库列表==null){data.词库列表=[]}
         if(e.msg.includes('写入文字')){
         let 文字 = e.msg.replace(/#|写入文字/g,'')
             if(!文字){return e.reply('嗯？要写入的文字内容呢？'); true;}
             data.词库列表.push(文字)
-            await Yaml.getwrite(path,data)
+            await Yaml.getwrite(_path,data)
             return e.reply(`【${文字}】成功添加进词库可使用指令【词库列表】查看！`); true;
             }
         if(e.msg.includes('删除文字')){
@@ -241,7 +241,7 @@ export class Maren extends plugin {
             let 内容=data.词库列表[num-1]
                 if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！'); true;}
                 await data.词库列表.splice(data.词库列表.indexOf(内容), 1)
-                await Yaml.getwrite(path,data)
+                await Yaml.getwrite(_path,data)
                 await e.reply(`成功把【${内容}】从词库列表中删除~`)
                 }
                 return false;
@@ -255,7 +255,7 @@ export class Maren extends plugin {
         
         if (e.atBot) { //被艾特
             let k = Math.ceil(Math.random()*100)
-            let data = await Yaml.getread(path)
+            let data = await Yaml.getread(_path)
             let 词库列表 = data.词库列表
             let text_number = Math.ceil(Math.random() * 词库列表['length'])-1
             let photo_name=await fs.readdirSync(tplb_path)
@@ -286,11 +286,11 @@ export class Maren extends plugin {
                 let s = Math.ceil(Math.random()*5)
                 if (!photo_name['length']) {return logger.info('图片目录还没有图片呢,可以用指令【上传骂人图片】来上传图片哦~');true;}
                 if(s==5) {
-                msg = [segment.at(e.user_id),词库列表[text_number],segment.image(tp_path+photo_name[photo_number])]; //艾特对方然后随机回复图片目录中一张图和词库中的文字
+                msg = [segment.at(e.user_id),词库列表[text_number],segment.image(tplb_path+photo_name[photo_number])]; //艾特对方然后随机回复图片目录中一张图和词库中的文字
                 e.reply(msg)
                 return true;
                 }
-                msg = [segment.at(e.user_id),segment.image(tp_path+photo_name[photo_number])]; //艾特对方然后随机回复图片目录中一张图
+                msg = [segment.at(e.user_id),segment.image(tplb_path+photo_name[photo_number])]; //艾特对方然后随机回复图片目录中一张图
                 e.reply(msg)
                 return true;
                 }
