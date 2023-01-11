@@ -9,8 +9,6 @@ const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Di
 let cd = false;
 let 文字开关 = false;
 
-var 文字 = ["一","二","三","四","五","六","1","2","3","4","5","6","One","Two","Three","Four","Five","Six","two","three","four","five","six"];
-
 export class dice extends plugin {
   constructor () {
     super({
@@ -71,12 +69,30 @@ export class dice extends plugin {
     return false;
     }
 
-    async Dice1(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
-    async Dice2(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
-    async Dice3(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
-    async Dice4(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
-    async Dice5(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
-    async Dice6(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice1(e){
+    文字开关 = true;
+    return false
+    }
+    async Dice2(e){
+    文字开关 = true;
+    return false
+    }
+    async Dice3(e){
+    文字开关 = true;
+    return false
+    }
+    async Dice4(e){
+    文字开关 = true;
+    return false
+    }
+    async Dice5(e){
+    文字开关 = true;
+    return false
+    }
+    async Dice6(e){
+    文字开关 = true;
+    return false
+    }
 
     async Dice(e){
 
