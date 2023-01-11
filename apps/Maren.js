@@ -51,7 +51,7 @@ export class Maren extends plugin {
     async Marenhelp(e) {
 
         await e.reply('使用说明:\n#词库列表\n#写入文字+(文字)|删除文字+(序号)\n触发指令艾特机器人输入XX闭嘴XX|XX滚XX|XX傻逼XX|XXsbXX|XXgunXX|XXcnmXX|XX草泥马XX|XX操你妈XX|XX草你妈XX')
-        return true  
+        return false;  
     }
 
     async cikuliebiao(e){
@@ -93,7 +93,7 @@ export class Maren extends plugin {
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
       .replace(/___+/, `<title color="#777777" size="26">词库列表</title>`)
-    return e.reply(forwardMsg)
+    return  e.reply(forwardMsg); false;
   }
 
     async ciku(e) {
@@ -102,22 +102,23 @@ export class Maren extends plugin {
     if(data.词库列表==null){data.词库列表=[]}
         if(e.msg.includes('写入文字')){
         let 文字 = e.msg.replace(/#|写入文字/g,'')
-            if(!文字){return e.reply('嗯？要写入的文字内容呢？')}
+            if(!文字){return e.reply('嗯？要写入的文字内容呢？'); true;}
             data.词库列表.push(文字)
             await Yaml.getwrite(path,data)
-            return e.reply(`【${文字}】成功添加进词库可使用指令【词库列表】查看！`)
+            return e.reply(`【${文字}】成功添加进词库可使用指令【词库列表】查看！`); true;
             }
         if(e.msg.includes('删除文字')){
         let num = e.msg.match(/\d+/)
             if (!num) {
-            return  e.reply('序号呢？要不先用指令【词库列表】查看下文字对应的序号啊')
+            return  e.reply('序号呢？要不先用指令【词库列表】查看下文字对应的序号啊'); true;
             }
             let 内容=data.词库列表[num-1]
-                if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！')}
+                if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！'); true;}
                 await data.词库列表.splice(data.词库列表.indexOf(内容), 1)
                 await Yaml.getwrite(path,data)
                 await e.reply(`成功把【${内容}】从词库列表中删除~`)
                 }
+                return false;
     }
 
     async Maren(e) {
@@ -152,6 +153,7 @@ export class Maren extends plugin {
             e.reply(msg)
             return true;
             }
+            return false;
         }
     } 
 }
