@@ -10,7 +10,7 @@ import fetch from 'node-fetch'
 import common from'../../../lib/common/common.js'
 const _path = process.cwd();
 
-let bot = './config/config/bot.yaml';
+let bot = './config/config/bot.yaml'; //yunzai设置bot.yaml路径
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml';
 let rectime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
@@ -41,19 +41,20 @@ export class Automaticwithdrawal extends plugin {
     }
 
 
-    let cfg = await Yaml.getread(bot)
-    cfg.ignore_self = false;
-    await Yaml.getwrite(bot, cfg)
+    let cfg = await Yaml.getread(bot) //加载bot.yaml
+    cfg.ignore_self = false; //关闭过滤自己消息
+    await Yaml.getwrite(bot, cfg) //重新保存bot.yaml
 
     if (e.user_id == Bot.uin) {
+    let cfg = await Yaml.getread(bot) //加载bot.yaml
+    cfg.ignore_self = true; //开启过滤自己消息
+    await Yaml.getwrite(bot, cfg) //重新保存bot.yaml
+
     let Cfgtime = await Yaml.getread(rectime)
     let 时间 = Cfgtime.自动撤回时间
     let J = (await e.group.getChatHistory(e.My_message, 1))[0].message_id
         await common.sleep(时间);
         await e.group.recallMsg(J);
-        let cfg = await Yaml.getread(bot)
-        cfg.ignore_self = true;
-        await Yaml.getwrite(bot, cfg)
         return true;
         }
         return false;
