@@ -12,7 +12,7 @@ export class help extends plugin {
 			rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?脆脆鲨?帮助|菜单$',
+                    reg: '^#?脆脆鲨(帮助|菜单)$',
                     /** 执行方法 */
                     fnc: 'Marenhelp'
                 }
