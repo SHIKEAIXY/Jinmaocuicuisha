@@ -34,7 +34,7 @@ export class Automaticwithdrawal extends plugin {
     let group = await Yaml.getread(path)
         for (let qqq of group) {
             if(e.group_id == qqq){
-            return false
+            return false;
             }
         }
         }catch (e){}
@@ -56,6 +56,7 @@ export class Automaticwithdrawal extends plugin {
         await Yaml.getwrite(bot, cfg)
         return true;
         }
+        return false;
     }
 }
 
