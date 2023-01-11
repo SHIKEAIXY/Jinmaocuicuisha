@@ -7,6 +7,8 @@ import { segment } from "oicq";
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
 let cd = false;
+let 文字开关 = false;
+
 var 文字 = ["一","二","三","四","五","六","1","2","3","4","5","6","One","Two","Three","Four","Five","Six","two","three","four","five","six"];
 
 export class dice extends plugin {
@@ -18,16 +20,40 @@ export class dice extends plugin {
         priority: 50,
         rule: [
               {
-                reg: '^#?((骰子|roll)使用说明)',
+                reg: '^#?(骰子|roll)使用说明$',
                 fnc: 'Dicehelp'
               },
               {
-                reg: '^#?(重置骰子)',
+                reg: '^#?(重置骰子)$',
                 fnc: 'czDice'
               },
               {
-                reg: '^#?(骰子|roll).*',
+                reg: '^#?(骰子|roll)$',
                 fnc: 'Dice'
+              },
+              {
+                reg: '^#?(1|一|one|One)$',
+                fnc: 'Dice1'
+              },
+              {
+                reg: '^#?(2|二|two|Two)$',
+                fnc: 'Dice2'
+              },
+              {
+                reg: '^#?(3|三|three|Three)$',
+                fnc: 'Dice3'
+              },
+              {
+                reg: '^#?(4|四|four|Four)$',
+                fnc: 'Dice4'
+              },
+              {
+                reg: '^#?(5|五|five|Five)$',
+                fnc: 'Dice5'
+              },
+              {
+                reg: '^#?(6|六|six|Six)$',
+                fnc: 'Dice6'
               }
             ]
         })
@@ -40,9 +66,17 @@ export class dice extends plugin {
 
     async czDice(e){
     cd = false;
+    文字开关 = false;
     e.reply('骰子重置好啦~');
     return false;
     }
+
+    async Dice1(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice2(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice3(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice4(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice5(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
+    async Dice6(e){if(e.msg.includes(`${文字}`)){文字开关 = true;return false}}
 
     async Dice(e){
 
@@ -62,10 +96,10 @@ export class dice extends plugin {
     let roll = await e.reply(msg);
     await common.sleep(1000);
     await e.reply(msg2);
-    await common.sleep(29000);
+    await common.sleep(30000);
     await e.group.recallMsg(roll.message_id);
 
-    if(!e.msg.includes(`${文字}`)){
+    if(!文字开关){
     cd = false;
     await e.reply(`啊这！看来没人猜呢~`);
     return false;
@@ -79,6 +113,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
 
         } else if (k < (一 + 二)){
@@ -89,6 +124,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
 
         } else if (k < (一 + 二 + 三)){
@@ -99,6 +135,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
@@ -109,6 +146,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
@@ -119,6 +157,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
@@ -129,6 +168,7 @@ export class dice extends plugin {
         await common.sleep(2000);
         await e.reply(msg2);
         cd = false;
+        文字开关 = false;
         return true;
         }
         cd = false;
