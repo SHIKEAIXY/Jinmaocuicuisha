@@ -19,30 +19,6 @@ export class dice extends plugin {
               {
                 reg: '^#?骰子|roll',
                 fnc: 'Dice'
-              },
-              {
-                reg: '^#?(我选|r|roll)(1|一)',
-                fnc: 'Dice1'
-              },
-              {
-                reg: '^#?(我选|r|roll)(2|二)',
-                fnc: 'Dice2'
-              },
-              {
-                reg: '^#?(我选|r|roll)(3|三)',
-                fnc: 'Dice3'
-              },
-              {
-                reg: '^#?(我选|r|roll)(4|四)',
-                fnc: 'Dice4'
-              },
-              {
-                reg: '^#?(我选|r|roll)(5|五)',
-                fnc: 'Dice5'
-              },
-              {
-                reg: '^#?(我选|r|roll)(6|六)',
-                fnc: 'Dice6'
               }
             ]
         })
