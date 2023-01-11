@@ -15,8 +15,8 @@ const tplb_path=path+'/plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片
 let cd = false
 let source={}
 let MuteTime = 600; // 禁言时间秒(需bot管理员)
-let _path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
-let tp_path='./plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/'
+let ck_path='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
+let _path='./plugins/Jinmaocuicuisha-plugin/resources/img/骂人图片/'
 
 if (!fs.existsSync(tplb_path)) {fs.mkdirSync(tplb_path)}
 
