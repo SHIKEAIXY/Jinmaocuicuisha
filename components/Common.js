@@ -1,4 +1,4 @@
-import render from './common-lib/Mrender.js'
+import Mrender from './common-lib/Mrender.js'
 
 function sleep (ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
