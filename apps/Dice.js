@@ -74,15 +74,6 @@ export class dice extends plugin {
     return false;
     }
 
-    async Dices(e){
-    let msg = [
-        segment.image(`file:///${images}/0.gif`),
-        await common.sleep(700),
-        `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
-        ]
-    return false;
-    }
-
     async Dice(e){
 
     if (!e.isGroup) return false;
@@ -91,8 +82,12 @@ export class dice extends plugin {
     cd = true;
     开 = true;
 
-    let res = await Dices(e)
-    await e.reply(res);
+    let msg = [
+    segment.image(`file:///${images}/0.gif`),
+    await common.sleep(700),
+    `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
+    ]
+    await e.reply(msg);
     return true;
     };
 
@@ -136,8 +131,12 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开) return e.reply('还没有人猜呢~',true);
-        let res = await Dices(e)
-        await e.group.recallMsg(res);
+        let msg = [
+        segment.image(`file:///${images}/0.gif`),
+        await common.sleep(700),
+        `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
+        ]
+        await e.group.recallMsg(msg);
 
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
