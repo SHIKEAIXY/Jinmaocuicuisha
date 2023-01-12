@@ -42,8 +42,8 @@ export class Admin extends plugin {
     async Masterlb(e) {
 
     let data = await Yaml.getread(path)
-    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(this.e.user_id==data.绝对主人)){
+    if (!data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -92,8 +92,8 @@ export class Admin extends plugin {
     async delMaster(e) {
 
     let data = await Yaml.getread(path)
-    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(this.e.user_id==data.绝对主人)){
+    if (!data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -117,8 +117,8 @@ export class Admin extends plugin {
     async setMaster(e) {
 
     let data = await Yaml.getread(path)
-    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(this.e.user_id==data.绝对主人)){
+    if (!data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -143,8 +143,8 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     let data = await Yaml.getread(path)
-    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(this.e.user_id==data.绝对主人)){
+    if (!data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(e.user_id==data.绝对主人)){
         return false;
         }
     }
