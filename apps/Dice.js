@@ -136,8 +136,8 @@ export class dice extends plugin {
     if (!cd) return false;
     if (!en) return e.reply('还没有人猜呢~',true);
 
-        let msg = e.msg.includes(segment.image(`file:///${images}/0.gif`))
-        await e.group.recallMsg(msg);
+        let msg = e.msg.includes(e.reply(segment.image(`file:///${images}/0.gif`)),e.reply(`请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`))
+        await e.group.recallMsg(msg,message_id);
 
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
