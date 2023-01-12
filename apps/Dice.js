@@ -65,16 +65,16 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开){
-    await e.group.recallMsg(roll.message_id);
-    let k = Math.ceil(Math.random()*6);
-    let 一 = 1
-    let 二 = 1
-    let 三 = 1
-    let 四 = 1
-    let 五 = 1
-    let 六 = 1
-    if(k < 一){
+        await e.group.recallMsg(roll.message_id);
+        let k = Math.ceil(Math.random()*6);
+        let 一 = 1
+        let 二 = 1
+        let 三 = 1
+        let 四 = 1
+        let 五 = 1
+        let 六 = 1
 
+        if(k < 一){
         let msg = [segment.image(`file:///${images}/1.gif`)];
         let msg2 = [`一！`];
         await e.reply(msg);
@@ -140,5 +140,6 @@ export class dice extends plugin {
         return true;
         }
         return false;
+        }
     }
 }
