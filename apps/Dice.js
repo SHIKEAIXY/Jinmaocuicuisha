@@ -80,8 +80,6 @@ export class dice extends plugin {
 
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
-    开 = true;
-
     let msg = [
     segment.image(`file:///${images}/0.gif`),
     `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
@@ -91,36 +89,42 @@ export class dice extends plugin {
     };
 
     async Dice1(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
     };
 
     async Dice2(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
     };
 
     async Dice3(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
     };
 
     async Dice4(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
     };
 
     async Dice5(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
     };
 
     async Dice6(e){
+    if (!cd) return false;
     if (!e.isGroup) return false;
     开 = true;
     return false;
