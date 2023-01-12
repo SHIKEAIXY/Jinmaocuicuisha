@@ -38,12 +38,7 @@ export class Admin extends plugin {
 
     async Mastersetred(e) {
 
-    let Mst = await Yaml.getread(绝对权限);
-    if (!Mst.绝对主人==null) {
-        if (!(e.user_id==Mst.绝对主人)){
-        return false;
-        }
-    }
+
 
     let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
     if(e.message[1]){
