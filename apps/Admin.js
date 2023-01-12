@@ -28,7 +28,7 @@ export class Admin extends plugin {
                     fnc: 'Masterlb',
                 },
                 {
-                    reg: '^#?添加主人.*$',
+                    reg: '^#?增加主人.*$',
                     fnc: 'setMaster',
                 },
                 {
@@ -129,7 +129,7 @@ export class Admin extends plugin {
         }
     }
     
-    let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
+    let G = e.message[0].text.replace(/#|增加主人/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
