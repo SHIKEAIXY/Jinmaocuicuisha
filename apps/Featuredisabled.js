@@ -100,7 +100,7 @@ export class Featuredisabled extends plugin {
                 let 功能 = e.msg.replace(/#|全局禁用|启用/g,'');
                 if(功能==All){return e.reply('该功能已禁用！请不要重复操作！')};
                 if(!功能){return e.reply('要全局禁用的功能呢？')};
-                All.push(文字);
+                All.push(功能);
                 await Yaml.getwrite(禁用, data);
                 let msgres = [segment.at(e.user_id), `【${e.msg}】已成功禁用！如要查看全局禁用功能可以使用指令【全局禁用列表】来查看哦~(如果禁用失败请重启试试)`];
                 await e.reply(msgres);
@@ -181,7 +181,7 @@ export class Featuredisabled extends plugin {
                 let 功能 = e.msg.replace(/#|本群禁用|启用/g,'');
                 if(功能==group){return e.reply('该功能已禁用！请不要重复操作！')};
                 if(!功能){return e.reply('要禁用的功能呢？')};
-                group.push(文字);
+                group.push(功能);
                 await Yaml.getwrite(禁用, data);
                 let msgres = [segment.at(e.user_id), `【${e.msg}】已成功禁用！如要查看本群禁用功能可以使用指令【本群禁用列表】来查看哦~(如果禁用失败请重启试试)`];
                 await e.reply(msgres);
