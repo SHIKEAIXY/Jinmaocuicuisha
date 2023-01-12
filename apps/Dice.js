@@ -59,6 +59,7 @@ export class dice extends plugin {
     let msg = e.reply(segment.image(`file:///${images}/0.gif`));
     await common.sleep(500);
     await e.reply(`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`);
+    let roll = (await e.group.setChatHistory(e.msg.seq, 1))[0].message_id
     return true;
     };
 
