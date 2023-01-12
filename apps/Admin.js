@@ -124,7 +124,7 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     let data = await Yaml.getread(path)
-    let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
+    let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
@@ -133,7 +133,7 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    let uid = e.msg.replace(/#|设置自动撤回时间|秒/g,'')
+    let uid = TA;
     uid = e.user_id
     data.绝对主人=uid
     await Yaml.getwrite(path, data)
