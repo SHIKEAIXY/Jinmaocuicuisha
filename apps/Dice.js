@@ -136,7 +136,7 @@ export class dice extends plugin {
     if (!cd) return false;
     if (!en) return e.reply('还没有人猜呢~',true);
 
-        let msg = e.msg.includes('0.gif')
+        let msg = e.msg.includes(segment.image(`file:///${images}/0.gif`))
         await e.group.recallMsg(msg);
 
         let k = Math.ceil(Math.random()*6);
