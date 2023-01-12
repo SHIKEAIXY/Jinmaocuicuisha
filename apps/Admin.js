@@ -1,36 +1,28 @@
 import plugin from '../../../../lib/plugins/plugin.js';
-import defSet from '../../model/defSet.js';
-export class AdminRobot extends plugin {
+import CfgSet from '../../Cfg/CfgSet.js';
+export class Admin extends plugin {
     constructor() {
         super({
-            name: 'AdminRobot',
-            dsc: 'AdminRobot',
+            name: 'Admin',
+            dsc: 'Admin',
             event: 'message',
-            priority: 400,
+            priority: 1,
             rule: [
                 {
-                    reg: '^#修仙关闭云崽',
+                    reg: '^#关闭云崽',
                     fnc: 'CloseRobot',
                 },
                 {
-                    reg: '^#修仙关闭云崽帮助',
+                    reg: '^#关闭云崽帮助',
                     fnc: 'CloseRobothelp',
                 },
                 {
-                    reg: '^#修仙添加主人.*',
+                    reg: '^#添加主人.*',
                     fnc: 'AddMaster',
                 },
                 {
-                    reg: '^#修仙删除主人.*',
+                    reg: '^#删除主人.*',
                     fnc: 'DeleteMaster',
-                },
-                {
-                    reg: '^#修仙开启云崽私聊',
-                    fnc: 'OnGroup',
-                },
-                {
-                    reg: '^#修仙关闭云崽私聊',
-                    fnc: 'OffGroup',
                 }
             ],
         });
