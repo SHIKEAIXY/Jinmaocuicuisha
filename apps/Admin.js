@@ -124,6 +124,12 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     let data = await Yaml.getread(path)
+    if (!this.data.绝对主人==null) {
+    if (!(this.e.user_id==data.绝对主人)){
+    return false
+    }
+    }
+
     let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
@@ -134,7 +140,6 @@ export class Admin extends plugin {
     let TA = G;
 
     let uid = TA;
-    uid = e.user_id
     data.绝对主人=uid
     await Yaml.getwrite(path, data)
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
