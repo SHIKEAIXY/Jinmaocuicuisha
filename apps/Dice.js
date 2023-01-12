@@ -56,8 +56,10 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     开 = true;
-    let roll = e.reply(segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`);
-    await redis.set(`开:${roll}`)
+    let roll = e.reply(segment.image(`file:///${images}/0.gif`));
+    await common.sleep(1000);
+    await e.reply(`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`);
+    await redis.set('Dice:k', `${roll}`)
     return true;
     };
 
@@ -65,7 +67,7 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开){
-        let roll = await redis.get(`开:${roll}`)
+        let roll = await  redis.get('Dice:k')
         await e.group.recallMsg(roll.message_id);
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
