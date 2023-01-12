@@ -2,6 +2,7 @@ import plugin from '../../../lib/plugins/plugin.js'
 import co from '../../../lib/common/common.js'
 import common from'../../../lib/common/common.js'
 import { Cfg } from '../components/index.js'
+import { Dice } from '../model/Dice.js'
 import { segment } from "oicq";
 
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
@@ -204,13 +205,4 @@ export class dice extends plugin {
         }
 }
 
-    function getread() {
 
-    let msg = [
-        segment.image(`file:///${images}/0.gif`),
-        await common.sleep(700),
-        `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
-        ]
-    await e.reply(msg);
-    return false;
-    }
