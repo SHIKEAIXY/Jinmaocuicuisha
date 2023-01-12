@@ -1,5 +1,5 @@
 import plugin from '../../../lib/plugins/plugin.js';
-import CfgSet from '../../Cfg/CfgSet.js';
+import CfgSet from '../Cfg/CfgSet.js';
 export class Admin extends plugin {
     constructor() {
         super({
