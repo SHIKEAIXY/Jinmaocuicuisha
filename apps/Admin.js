@@ -157,7 +157,7 @@ export class Admin extends plugin {
     }
     }
 
-    let uid = e.user_id; //备注
+    let uid = e.user_id; 
     mst.绝对主人=uid
     await Yaml.getwrite(path, mst)
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
