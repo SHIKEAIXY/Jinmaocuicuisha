@@ -4,7 +4,7 @@ import fs from 'fs'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 
-let 绝对主人='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
+let 绝对权限='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
 let 禁用 = './config/config/group.yaml';
 
@@ -38,7 +38,7 @@ export class Admin extends plugin {
 
     async Mastersetred(e) {
 
-    let Mst = await Yaml.getread(绝对主人);
+    let Mst = await Yaml.getread(绝对权限);
     if (!Mst.绝对主人==null) {
         if (!(e.user_id==Mst.绝对主人)){
         return false;
@@ -55,7 +55,7 @@ export class Admin extends plugin {
     let TA = G;
 
     Mst.绝对主人.push(TA);
-    await Yaml.getwrite(绝对主人, Mst);
+    await Yaml.getwrite(绝对权限, Mst);
     let msg = [segment.at(e.user_id), `绝对主人权限已添加成功~`];
     await e.reply(msg)
     return false;
