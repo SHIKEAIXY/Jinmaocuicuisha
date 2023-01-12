@@ -19,20 +19,20 @@ export class Featuredisabled extends plugin {
             priority: -114514,
             rule: [
                 {
-                    reg: '^#?全局禁用|启用.*$',
-                    fnc: 'Ftdall',
-                },
-                {
                     reg: '^#?全局禁用列表$',
                     fnc: 'Ftdalllb',
                 },
                 {
-                    reg: '^#?本群(禁用|启用).*$',
-                    fnc: 'Ftdgroup',
-                },
-                {
                     reg: '^#?本群禁用列表$',
                     fnc: 'Ftdgroup列表',
+                },
+                {
+                    reg: '^#?全局禁用|启用.*$',
+                    fnc: 'Ftdall',
+                },
+                {
+                    reg: '^#?本群(禁用|启用).*$',
+                    fnc: 'Ftdgroup',
                 }
             ],
         });
