@@ -16,7 +16,7 @@ export class Dice extends plugin {
     this.typeName = 'Yunzai-Bot'
   }
   
-    async  Dices() {
+    async  Dices(e) {
 
     let msg = [
         segment.image(`file:///${images}/0.gif`),
