@@ -58,6 +58,7 @@ export class dice extends plugin {
     开 = true;
     let msg = [segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`];
     let roll = await e.reply(msg);
+    await redis.set(`开:${roll}`)
     return true;
     };
 
@@ -65,7 +66,7 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开){
-        let roll = await Dice(e.msg)
+        let roll = await redis.get(`开:${roll}`)
         await e.group.recallMsg(roll.message_id);
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
