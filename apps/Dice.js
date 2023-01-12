@@ -8,7 +8,8 @@ import { segment } from "oicq";
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
 let cd = false;
-let 开 = false;
+let en = false;
+let on = false;
 
 export class dice extends plugin {
   constructor () {
@@ -69,7 +70,8 @@ export class dice extends plugin {
 
     async czDice(e){
     cd = false;
-    开 = false;
+    en = false;
+    on = false;
     e.reply('重置好啦~');
     return false;
     }
@@ -80,6 +82,7 @@ export class dice extends plugin {
 
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
+    on = true;
     let msg = [
     segment.image(`file:///${images}/0.gif`),
     `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
@@ -89,51 +92,52 @@ export class dice extends plugin {
     };
 
     async Dice1(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Dice2(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Dice3(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Dice4(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Dice5(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Dice6(e){
-    if (!cd) return false;
+    if (on) return false;
     if (!e.isGroup) return false;
-    开 = true;
+    en = true;
     return false;
     };
 
     async Kdice(e){
 
     if (!e.isGroup) return false;
-    if(开) return e.reply('还没有人猜呢~',true);
+    if(en) return e.reply('还没有人猜呢~',true);
+
         let msg = [
         segment.image(`file:///${images}/0.gif`),
         `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
@@ -155,7 +159,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
 
         } else if (k < (一 + 二)){
@@ -166,7 +170,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
 
         } else if (k < (一 + 二 + 三)){
@@ -177,7 +181,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
@@ -188,7 +192,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
@@ -199,7 +203,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
 
         } else {
@@ -210,7 +214,7 @@ export class dice extends plugin {
         await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        开 = false;
+        en = false;
         return true;
         }
         return false;
