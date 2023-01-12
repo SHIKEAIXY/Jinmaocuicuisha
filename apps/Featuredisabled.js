@@ -128,7 +128,7 @@ export class Featuredisabled extends plugin {
 
     let Set='./config/config/group.yaml'
     if(fs.existsSync(Set)) {
-        fs.copycontentadd('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/group.txt',Set,(err)=>{
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/group.txt',Set,(err)=>{
 	if(err){
             logger.info(err)
             }
