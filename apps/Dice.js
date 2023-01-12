@@ -65,6 +65,7 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开){
+        let roll;
         await e.group.recallMsg(roll.message_id);
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
