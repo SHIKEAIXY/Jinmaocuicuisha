@@ -62,7 +62,7 @@ export class Admin extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是Bot主人列表QWQ\n可使用【删除主人+(序号)】删除掉对应的主人'
+        message: '以下是Bot主人列表QWQ\n可使用【删除主人+(序号)】删除掉对应的主人！'
       }
     ]
     let data=await Yaml.getread(主人)
@@ -105,12 +105,12 @@ export class Admin extends plugin {
     let 删除主人 = await Yaml.getread(主人);
     let num = e.msg.match(/\d+/)
     if (!num) {
-    await  e.reply('序号呢？请先发送【主人列表】查看下序号')
+    await  e.reply('序号呢？请先发送【主人列表】查看下序号！')
     return false;
     }
 
     let 序号 = 删除主人.masterQQ[num-1]
-    if(!序号){return e.reply('请检查序号是否输入正确，或者检查【主人列表】是否有这个人')}
+    if(!序号){return e.reply('请检查序号是否输入正确，或者检查【主人列表】是否有这个人！')}
     await 删除主人.masterQQ.splice(删除主人.masterQQ.indexOf(序号), 1)
     await Yaml.getwrite(主人, 删除主人);
     let msg = [segment.at(e.user_id), `已从列表中删除！可以发送【主人列表】查看哦~`];
