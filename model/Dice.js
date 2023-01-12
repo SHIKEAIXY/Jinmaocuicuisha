@@ -5,9 +5,6 @@ import lodash from "lodash";
 
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
-let cd = false;
-let 开 = false;
-
 export default new class Dice {
     constructor() {}
 
