@@ -82,10 +82,10 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     on = true;
-
+    let messageIds = [];
     let res = [segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`];
     let roll = await e.reply(res)
-    res = messageId = [1];
+    messageIds = roll;
     return true;
     };
 
@@ -137,9 +137,10 @@ export class dice extends plugin {
     if (!cd) return false;
     if (!en) return e.reply('还没有人猜呢~',true);
 
-        let messageId = 1;
-
-        e.group.recallMsg(messageId);
+        let messageIds = [];
+        let roll = messageIds.pop();
+        e.group.recallMsg(roll);
+        
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
         let 二 = 1
