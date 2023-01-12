@@ -1,10 +1,11 @@
 import plugin from '../../../lib/plugins/plugin.js';
 import { segment } from "oicq";
 import fetch from 'node-fetch'
+import { execSync } from 'child_process'
 import fs from 'fs'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
-import { Cfg } from '../components/index.js'
+import { Cfg, Common, Plugin_Name } from '../components/index.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
@@ -125,6 +126,17 @@ export class Featuredisabled extends plugin {
     if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
     if (!e.isGroup) {e.reply(`请在要禁用功能的群里使用！`);return false;}
 
+    let Set='./config/config/group.yaml'
+    if(fs.existsSync(Set)) {
+        fs.copycontentadd('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/group.txt',Set,(err)=>{
+	if(err){
+            logger.info(err)
+            }
+        })
+    }
+
+
+
     let nickname = Bot.nickname
     if (this.e.isGroup) {
       let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
@@ -141,7 +153,7 @@ export class Featuredisabled extends plugin {
       }
     ]
     let data=await Yaml.getread(禁用)
-    let groupids = "e.group_id";
+    let groupids = e.group_id;
     let group = data.groupids.disable;
     let msg=[]
     logger.info(group)
