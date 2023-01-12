@@ -7,7 +7,7 @@ import Yaml from '../Yaml/Yaml.js'
 import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
-let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/Upmaster/Upmaster.yaml'
+let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
 let 禁用 = './config/config/group.yaml';
 
@@ -41,8 +41,9 @@ export class Admin extends plugin {
 
     async Masterlb(e) {
 
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==`${Mst}`)){
+    let data = await Yaml.getread(path)
+    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(this.e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -90,8 +91,9 @@ export class Admin extends plugin {
 
     async delMaster(e) {
 
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==`${Mst}`)){
+    let data = await Yaml.getread(path)
+    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(this.e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -114,8 +116,9 @@ export class Admin extends plugin {
 
     async setMaster(e) {
 
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==`${Mst}`)){
+    let data = await Yaml.getread(path)
+    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(this.e.user_id==data.绝对主人)){
         return false;
         }
     }
@@ -139,8 +142,9 @@ export class Admin extends plugin {
 
     async Upmaster(e) {
 
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==`${Mst}`)){
+    let data = await Yaml.getread(path)
+    if (!this.data.绝对主人==null||data.绝对主人.length==0) {
+        if (!(this.e.user_id==data.绝对主人)){
         return false;
         }
     }
