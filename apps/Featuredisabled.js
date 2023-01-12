@@ -19,15 +19,15 @@ export class Featuredisabled extends plugin {
             priority: -114514,
             rule: [
                 {
-                    reg: '^#?全局禁用列表$',
+                    reg: '^#?(全局禁用列表)$',
                     fnc: 'Ftdalllb',
                 },
                 {
-                    reg: '^#?本群禁用列表$',
+                    reg: '^#?(本群禁用列表)$',
                     fnc: 'Ftdgroup列表',
                 },
                 {
-                    reg: '^#?全局禁用|启用.*$',
+                    reg: '^#?全局(禁用|启用).*$',
                     fnc: 'Ftdall',
                 },
                 {
@@ -141,9 +141,8 @@ export class Featuredisabled extends plugin {
       }
     ]
     let data=await Yaml.getread(禁用)
-    let groupids = e.group_id;
+    let groupids = group_id;
     let group = data.groupids.disable;
-    data.groupids.disable=uid
     let msg=[]
     logger.info(group)
     if(group==null||group.length==0){return e.reply('本群没有禁用功能呢~')}
@@ -179,7 +178,7 @@ export class Featuredisabled extends plugin {
         if(group==null){group=[]};
             if(e.msg.includes('本群禁用')){
                 let 功能 = e.msg.replace(/#|本群禁用|启用/g,'');
-                if(功能==group){return e.reply('该功能已禁用！请不要重复操作！')};
+                if(功能==group){return e.reply('该功能本群已禁用！请不要重复操作！')};
                 if(!功能){return e.reply('要禁用的功能呢？')};
                 group.push(功能);
                 await Yaml.getwrite(禁用, data);
