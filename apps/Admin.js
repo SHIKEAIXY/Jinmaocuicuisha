@@ -31,14 +31,14 @@ export class Admin extends plugin {
         if (!e.isMaster) {
             return;
         };
-        e.reply(defSet.OffGroup());
+        e.reply(CfgSet.OffGroup());
         return;
     };
     OnGroup = async (e) => {
         if (!e.isMaster) {
             return;
         };
-        e.reply(defSet.OnGroup());
+        e.reply(CfgSet.OnGroup());
         return;
     };
     AddMaster = async (e) => {
@@ -46,7 +46,7 @@ export class Admin extends plugin {
             return;
         };
         const QQ = e.msg.replace('#修仙添加主人', '');
-        e.reply(defSet.AddMaster(QQ));
+        e.reply(CfgSet.AddMaster(QQ));
         return;
     };
     DeleteMaster = async (e) => {
@@ -54,21 +54,21 @@ export class Admin extends plugin {
             return;
         };
         const QQ = e.msg.replace('#修仙删除主人', '');
-        e.reply(defSet.DeleteMaster(QQ));
+        e.reply(CfgSet.DeleteMaster(QQ));
         return;
     }
     CloseRobot = async (e) => {
         if (!e.isMaster) {
             return;
         };
-        e.reply(defSet.ReadConfig());
+        e.reply(CfgSet.ReadConfig());
         return;
     };
     CloseRobothelp = async (e) => {
         if (!e.isMaster) {
             return;
         };
-        e.reply(defSet.ReadConfighelp());
+        e.reply(CfgSet.ReadConfighelp());
         return;
     }
 };
