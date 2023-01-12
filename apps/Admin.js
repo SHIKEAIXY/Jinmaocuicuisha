@@ -62,7 +62,7 @@ export class Admin extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是Bot主人列表QWQ\n可使用【删除主人+(序号)】删除掉对应的主人！'
+        message: '以下是Bot主人列表QWQ'
       }
     ]
     let data=await Yaml.getread(主人)
