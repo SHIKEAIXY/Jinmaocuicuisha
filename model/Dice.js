@@ -8,15 +8,15 @@ const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Di
 export class Dice extends plugin {
   constructor () {
     super({
-      name: '更新',
-      dsc: '#更新|强制更新',
+      name: 'Dices',
+      dsc: 'Dices',
       event: 'message',
       priority: 5000,
     })
     this.typeName = 'Yunzai-Bot'
   }
-}
-    function Dices() {
+  
+    async  Dices() {
 
     let msg = [
         segment.image(`file:///${images}/0.gif`),
@@ -26,4 +26,5 @@ export class Dice extends plugin {
     await e.reply(msg);
     return false;
     }
+}
 
