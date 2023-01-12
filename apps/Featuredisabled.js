@@ -143,21 +143,14 @@ export class Featuredisabled extends plugin {
     ]
     let data=await Yaml.getread(禁用)
     let groupids = e.group_id;
-    let groupset = {
-    group_id: groupids,
-    groupCD: 500
-    singleCD: 2000
-    onlyReplyAt: 0
-    botAlias:
-      - 云崽
-    imgAddLimit: 2
-    imgMaxSize: 2
-    addPrivate: 0
-    enable:
-    disable:
-    }
-    groupset.push(功能);
+    groupids.push(功能);
     await Yaml.getwrite(禁用, data);
+
+    let disable = disable;
+    disable.push(功能);
+    await Yaml.getwrite(禁用, data);
+    
+    let data=await Yaml.getread(禁用)
     let group = data.groupids.disable;
     let msg=[]
     logger.info(group)
