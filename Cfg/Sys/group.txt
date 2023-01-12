@@ -1,0 +1,11 @@
+"":
+  groupCD: 500
+  singleCD: 2000
+  onlyReplyAt: 0
+  botAlias:
+    - 云崽
+  imgAddLimit: 2
+  imgMaxSize: 2
+  addPrivate: 0
+  enable: null
+  disable:
