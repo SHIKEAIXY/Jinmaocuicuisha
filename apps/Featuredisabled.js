@@ -8,47 +8,42 @@ import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
-let 主人 = './config/config/other.yaml';
 let 禁用 = './config/config/group.yaml';
 
-export class Admin extends plugin {
+export class Featuredisabled extends plugin {
     constructor() {
         super({
-            name: 'Admin',
-            dsc: 'Admin',
+            name: '功能禁用',
+            dsc: '功能禁用',
             event: 'message',
             priority: -114514,
             rule: [
                 {
-                    reg: '^#?设置绝对权限$',
-                    fnc: 'Upmaster',
+                    reg: '^#?全局禁用|启用.*$',
+                    fnc: 'Ftdall',
                 },
                 {
-                    reg: '^#?主人列表$',
-                    fnc: 'Masterlb',
+                    reg: '^#?全局禁用列表$',
+                    fnc: 'Ftdalllb',
                 },
                 {
-                    reg: '^#?增加主人.*$',
-                    fnc: 'setMaster',
+                    reg: '^#?本群(禁用|启用).*$',
+                    fnc: 'Ftdgroup',
                 },
                 {
-                    reg: '^#?删除主人.*$',
-                    fnc: 'delMaster',
+                    reg: '^#?本群禁用列表$',
+                    fnc: 'Ftdgroup列表',
                 }
             ],
         });
     };
 
-    async Masterlb(e) {
+    async Ftdalllb (e) {
 
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==主人权限)){
-            e.reply(`你没有权限！`)
-        return false;
-        }
-    }
+    if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
 
     let nickname = Bot.nickname
     if (this.e.isGroup) {
@@ -62,15 +57,16 @@ export class Admin extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是Bot主人列表QWQ'
+        message: '全局已禁用的功能\n可使用【全局启用+(序号)】启用对应功能'
       }
     ]
-    let data=await Yaml.getread(主人)
+    let data=await Yaml.getread(禁用)
+    let All = data.default.disable;
     let msg=[]
-    logger.info(data.masterQQ)
-    if(data.masterQQ==null||data.masterQQ.length==0){return e.reply('Bot还没有主人呢！')}
-    for (let v = 0; v < data.masterQQ.length; v++) {
-      msg.push(`${v+1}.`+data.masterQQ[v]+'\n')
+    logger.info(All)
+    if(All==null||All.length==0){return e.reply('没有禁用功能呢~')}
+    for (let v = 0; v < All.length; v++) {
+      msg.push(`${v+1}.`+All[v]+'\n')
     }
     forwardMsg.push(
           {
@@ -86,86 +82,123 @@ export class Admin extends plugin {
     forwardMsg.data = forwardMsg.data
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-      .replace(/___+/, `<title color="#777777" size="26">主人列表</title>`)
-    await e.reply(forwardMsg)
-    return false;
+      .replace(/___+/, `<title color="#777777" size="26">全局已禁用的功能</title>`)
+    return e.reply(forwardMsg)
     }
 
-    async delMaster(e) {
+    async Ftdall(e) {
 
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!this.e.user_id==主人权限){
-        e.reply(`你没有权限！`)
-        return false
+    if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
+
+        let data = await Yaml.getread(禁用);
+        let All = data.default.disable;
+        if(All==null){All=[]};
+            if(e.msg.includes('全局禁用')){
+                let 功能 = e.msg.replace(/#|全局禁用|启用/g,'');
+                if(功能==All){return e.reply('该功能已禁用！请不要重复操作！')};
+                if(!功能){return e.reply('要全局禁用的功能呢？')};
+                All.push(文字);
+                await Yaml.getwrite(禁用, data);
+                let msgres = [segment.at(e.user_id), `【${e.msg}】已成功禁用！如要查看全局禁用功能可以使用指令【全局禁用列表】来查看哦~(如果禁用失败请重启试试)`];
+                await e.reply(msgres);
+                return false;
+            }
+
+            if(e.msg.includes('全局启用')){
+            let num = e.msg.match(/\d+/)
+                if (!num) {
+                return  e.reply('序号呢？不知道的话可以通过指令【全局禁用列表】来查看哦~')
+                }
+                let 恢复=All[num-1]
+                if(!恢复){return e.reply('请使用指令【全局禁用列表】，检查序号是否正确，或者检查【全局禁用列表】是否是空的！')}
+                await All.splice(All.indexOf(恢复), 1)
+                await Yaml.getwrite(禁用,data)
+                await e.reply('该功能已成功启用~(如果启用失败请重启试试)')
+            }
     }
 
+    async Ftdgrouplb (e) {
 
-    let 删除主人 = await Yaml.getread(主人);
-    let num = e.msg.match(/\d+/)
-    if (!num) {
-    await  e.reply('序号呢？请先发送【主人列表】查看下序号！')
-    return false;
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
+    if (!e.isGroup) {e.reply(`请在要禁用功能的群里使用！`);return false;}
+
+    let nickname = Bot.nickname
+    if (this.e.isGroup) {
+      let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
+      nickname = info.card ?? info.nickname
+    }
+    let userInfo = {
+      user_id: Bot.uin,
+      nickname
+    }
+    let forwardMsg = [
+      {
+        ...userInfo,
+        message: '本群已禁用的功能\n可使用【本群启用+(序号)】启用对应功能'
+      }
+    ]
+    let data=await Yaml.getread(禁用)
+    let groupids = e.group_id;
+    let group = data.groupids.disable;
+    data.groupids.disable=uid
+    let msg=[]
+    logger.info(group)
+    if(group==null||group.length==0){return e.reply('本群没有禁用功能呢~')}
+    for (let v = 0; v < group.length; v++) {
+      msg.push(`${v+1}.`+group[v]+'\n')
+    }
+    forwardMsg.push(
+          {
+            ...userInfo,
+            message: msg
+          }
+        )
+    if (this.e.isGroup) {
+      forwardMsg = await this.e.group.makeForwardMsg(forwardMsg)
+    } else {
+      forwardMsg = await this.e.friend.makeForwardMsg(forwardMsg)
+    }
+    forwardMsg.data = forwardMsg.data
+      .replace(/\n/g, '')
+      .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
+      .replace(/___+/, `<title color="#777777" size="26">本群已禁用的功能</title>`)
+    return e.reply(forwardMsg)
     }
 
-    let 序号 = 删除主人.masterQQ[num-1]
-    if(!序号){return e.reply('请检查序号是否输入正确，或者检查【主人列表】是否有这个人！')}
-    await 删除主人.masterQQ.splice(删除主人.masterQQ.indexOf(序号), 1)
-    await Yaml.getwrite(主人, 删除主人);
-    let msg = [segment.at(e.user_id), `已从列表中删除！可以发送【主人列表】查看哦~`];
-    await e.reply(msg)
-    return false;
+    async Ftdgroup(e) {
+
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
+    if (!e.isGroup) {e.reply(`请在要禁用功能的群里使用！`);return false;}
+
+        let data = await Yaml.getread(禁用);
+        let groupids = e.group_id;
+        let group = data.groupids.disable;
+        if(group==null){group=[]};
+            if(e.msg.includes('本群禁用')){
+                let 功能 = e.msg.replace(/#|本群禁用|启用/g,'');
+                if(功能==group){return e.reply('该功能已禁用！请不要重复操作！')};
+                if(!功能){return e.reply('要禁用的功能呢？')};
+                group.push(文字);
+                await Yaml.getwrite(禁用, data);
+                let msgres = [segment.at(e.user_id), `【${e.msg}】已成功禁用！如要查看本群禁用功能可以使用指令【本群禁用列表】来查看哦~(如果禁用失败请重启试试)`];
+                await e.reply(msgres);
+                return false;
+            }
+
+            if(e.msg.includes('本群启用')){
+            let num = e.msg.match(/\d+/)
+                if (!num) {
+                return  e.reply('序号呢？不知道的话可以通过指令【本群禁用列表】来查看哦~')
+                }
+                let 恢复=group[num-1]
+                if(!恢复){return e.reply('请使用指令【本群禁用列表】，检查序号是否正确，或者检查【本群禁用列表】是否是空的！')}
+                await group.splice(group.indexOf(恢复), 1)
+                await Yaml.getwrite(禁用,data)
+                await e.reply('该功能已成功启用~(如果启用失败请重启试试)')
+            }
     }
 
-    async setMaster(e) {
-
-    let mst = await Yaml.getread(path)
-    let 主人权限 = mst.绝对主人;
-    if (!this.e.user_id==主人权限){
-        e.reply(`你没有权限！`)
-        return false
-    }
-    
-    let G = e.message[0].text.replace(/#|增加主人/g, "").trim()
-    if(e.message[1]){
-    let atItem = e.message.filter((item) => item.type === "at");
-    G = atItem[0].qq;
-    }else{ G = G.match(/[1-9]\d*/g) }
-    if (!G) return e.reply(`请输入正确的QQ号或者艾特对方！`)
-    G = parseInt(G);
-    let TA = G;
-
-    let 添加主人 = await Yaml.getread(主人);
-    添加主人.masterQQ.push(TA);
-    await Yaml.getwrite(主人, 添加主人);
-    let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
-    await e.reply(msg)
-    return false;
-    }
-
-    async Upmaster(e) {
-
-    if (!e.isMaster) {
-        e.reply(`你没有权限！`)
-        return false;
-    }
-    let mst = await Yaml.getread(path)
-    let 主人权限 = mst.绝对主人;
-    if (!this.主人权限==null) {
-    if (!(this.e.user_id==主人权限)){
-    e.reply(`你没有权限！`)
-    return false
-    }
-    }
-    if (主人权限>null){
-    e.reply(`已经设置过绝对主人权限！请不要重复设置！`)
-    return false
-    }
-    let uid = e.user_id; 
-    mst.绝对主人=uid
-    await Yaml.getwrite(path, mst)
-    let msg = [segment.at(e.user_id), `使用提示：\n绝对主人权限设置成功~你可以使用指令【增加主人+QQ号或者艾特对方】来添加新的主人或使用指令【删除主人+序号】删掉不想给主人权限的QQ,具体请发主人列表查看，增加和删除主人只有绝对主人权限能操作哦。`];
-    await e.reply(msg)
-    return false;
-    }
 };
