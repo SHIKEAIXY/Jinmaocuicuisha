@@ -143,11 +143,11 @@ export class Featuredisabled extends plugin {
     ]
     let data=await Yaml.getread(禁用)
     let groupids = e.group_id;
-    groupids.push(功能);
+    data.push(groupids);
     await Yaml.getwrite(禁用, data);
 
     let disable = disable;
-    disable.push(功能);
+    data.push(disable);
     await Yaml.getwrite(禁用, data);
     
     let data=await Yaml.getread(禁用)
