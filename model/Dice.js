@@ -15,15 +15,15 @@ export class Dice extends plugin {
     })
     this.typeName = 'Yunzai-Bot'
   }
+}
+    function Dices() {
 
-    async Dices(e) {
-
-    let msg;
-        return [segment.image(
-        `file:///${images}/0.gif`),
+    let msg = [
+        segment.image(`file:///${images}/0.gif`),
         await common.sleep(700),
         `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
         ]
-    return msg;
+    await e.reply(msg);
+    return false;
     }
-}
+
