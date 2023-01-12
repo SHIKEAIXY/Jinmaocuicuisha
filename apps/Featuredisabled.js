@@ -142,12 +142,8 @@ export class Featuredisabled extends plugin {
       }
     ]
     let data=await Yaml.getread(禁用)
-    let groupids = e.group_id;
-    data.push(groupids);
-    await Yaml.getwrite(禁用, data);
-
-    let disable = disable;
-    data.push(disable);
+    let uid = e.group_id
+    data = uid;
     await Yaml.getwrite(禁用, data);
 
     let group = data.groupids.disable;
