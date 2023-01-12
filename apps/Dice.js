@@ -92,42 +92,42 @@ export class dice extends plugin {
     };
 
     async Dice1(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
     };
 
     async Dice2(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
     };
 
     async Dice3(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
     };
 
     async Dice4(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
     };
 
     async Dice5(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
     };
 
     async Dice6(e){
-    if (on) return false;
+    if (!on) return false;
     if (!e.isGroup) return false;
     en = true;
     return false;
@@ -136,7 +136,7 @@ export class dice extends plugin {
     async Kdice(e){
 
     if (!e.isGroup) return false;
-    if(en) return e.reply('还没有人猜呢~',true);
+    if (en) return e.reply('还没有人猜呢~',true);
 
         let msg = [
         segment.image(`file:///${images}/0.gif`),
