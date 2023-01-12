@@ -126,17 +126,6 @@ export class Featuredisabled extends plugin {
     if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
     if (!e.isGroup) {e.reply(`请在要禁用功能的群里使用！`);return false;}
 
-    let Set='./config/config/group.yaml'
-    if(fs.existsSync(Set)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/group.txt',Set,(err)=>{
-	if(err){
-            logger.info(err)
-            }
-        })
-    }
-
-
-
     let nickname = Bot.nickname
     if (this.e.isGroup) {
       let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
@@ -154,6 +143,21 @@ export class Featuredisabled extends plugin {
     ]
     let data=await Yaml.getread(禁用)
     let groupids = e.group_id;
+    let groupset = {
+    group_id: groupids,
+    groupCD: 500
+    singleCD: 2000
+    onlyReplyAt: 0
+    botAlias:
+      - 云崽
+    imgAddLimit: 2
+    imgMaxSize: 2
+    addPrivate: 0
+    enable:
+    disable:
+    }
+    groupset.push(功能);
+    await Yaml.getwrite(禁用, data);
     let group = data.groupids.disable;
     let msg=[]
     logger.info(group)
