@@ -81,7 +81,7 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     开 = true;
-    let res = getread()
+    let res = Dices()
     return true;
     };
 
@@ -125,7 +125,7 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开) return e.reply('还没有人猜呢~',true);
-        let res = getread()
+        let res = Dices()
         await e.group.recallMsg(res);
 
         let k = Math.ceil(Math.random()*6);
