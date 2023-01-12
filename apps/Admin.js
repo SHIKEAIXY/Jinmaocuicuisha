@@ -1,8 +1,10 @@
 import plugin from '../../../lib/plugins/plugin.js';
 import { segment } from "oicq";
+import fetch from 'node-fetch'
 import fs from 'fs'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
+const _path = process.cwd();
 
 let 权限 ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
