@@ -5,8 +5,16 @@ import lodash from "lodash";
 
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
-export default new class Dice {
-    constructor() {}
+export class Dice extends plugin {
+  constructor () {
+    super({
+      name: '更新',
+      dsc: '#更新|强制更新',
+      event: 'message',
+      priority: 5000,
+    })
+    this.typeName = 'Yunzai-Bot'
+  }
 
     async Dices(e) {
 
