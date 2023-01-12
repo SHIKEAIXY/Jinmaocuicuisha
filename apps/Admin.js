@@ -56,7 +56,7 @@ export class Admin extends plugin {
     let TA = G;
 
     let 添加主人 = await Yaml.getread(权限);
-    添加主人.masterQQ.push(TA);
+    添加主人.绝对主人.push(TA);
     await Yaml.getwrite(权限, 添加主人);
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
     await e.reply(msg)
