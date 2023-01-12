@@ -14,11 +14,11 @@ export class Admin extends plugin {
             name: 'Admin',
             dsc: 'Admin',
             event: 'message',
-            priority: 1,
+            priority: -114514,
             rule: [
                 {
                     reg: '^#?设置绝对权限.*$',
-                    fnc: 'Mastersetr',
+                    fnc: 'Mastersetred',
                 },
                 {
                     reg: '^#?主人列表$',
@@ -36,10 +36,12 @@ export class Admin extends plugin {
         });
     };
 
-    async Mastersetr(e) {
+    async Mastersetred(e) {
 
-    if (!this.null==`${Mst}`) {
-        if (!(this.e.user_id==`${Mst}`)){
+    let Mastersetred = await Yaml.getread(绝对主人);
+
+    if (!this.Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
+        if (!(this.e.user_id==Mastersetred.绝对主人)){
         return false;
         }
     }
@@ -56,7 +58,7 @@ export class Admin extends plugin {
     let 添加绝对主人 = await Yaml.getread(绝对主人);
     添加绝对主人.绝对主人.push(TA);
     await Yaml.getwrite(绝对主人, 添加绝对主人);
-    return e.reply(segment.at(e.user_id),`绝对主人权限已添加完成~`)
+    return e.reply(segment.at(e.user_id),`绝对主人权限已添加成功~`)
     return false;
     }
 
