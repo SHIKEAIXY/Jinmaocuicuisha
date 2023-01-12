@@ -39,7 +39,8 @@ export class Admin extends plugin {
     async Mastersetred(e) {
 
     let Mastersetred = await Yaml.getread(绝对主人);
-
+    let msg=[]
+    logger.info(Mastersetred.绝对主人)
     if (!Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
         if (!(e.user_id==Mastersetred.绝对主人)){
         return false;
@@ -55,9 +56,8 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    let 添加绝对主人 = await Yaml.getread(绝对主人);
-    添加绝对主人.绝对主人.push(TA);
-    await Yaml.getwrite(绝对主人, 添加绝对主人);
+    Mastersetred.绝对主人.push(TA);
+    await Yaml.getwrite(绝对主人, Mastersetred);
     let msg = [segment.at(e.user_id), `绝对主人权限已添加成功~`];
     await e.reply(msg)
     return false;
