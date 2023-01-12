@@ -79,14 +79,14 @@ export class Featuredisabled extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '全局已禁用的功能\n可使用【全局启用+(序号)】启用对应功能'
+        message: '已设置白名单的功能\n可使用【全局启用+(序号)】启用对应功能'
       }
     ]
     let data=await Yaml.getread(禁用)
     let All = data.default.enable;
     let msg=[]
     logger.info(All)
-    if(All==null||All.length==0){return e.reply('没有禁用功能呢~')}
+    if(All==null||All.length==0){return e.reply('没有白名单功能呢~')}
     for (let v = 0; v < All.length; v++) {
       msg.push(`${v+1}.`+All[v]+'\n')
     }
@@ -104,7 +104,7 @@ export class Featuredisabled extends plugin {
     forwardMsg.data = forwardMsg.data
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-      .replace(/___+/, `<title color="#777777" size="26">全局已禁用的功能</title>`)
+      .replace(/___+/, `<title color="#777777" size="26">已设置白名单的功能</title>`)
     return e.reply(forwardMsg)
     }
 
