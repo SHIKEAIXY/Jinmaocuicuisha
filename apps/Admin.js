@@ -158,7 +158,6 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    let data = await Yaml.getread(path)
     let uid = e.msg.replace(/#|设置自动撤回时间|秒/g,'')
     uid = e.user_id
     data.绝对主人=uid
