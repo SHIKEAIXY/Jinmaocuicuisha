@@ -7,7 +7,7 @@ import { segment } from "oicq";
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 
 let cd = false;
-let 文字开关 = false;
+let 开 = false;
 
 export class dice extends plugin {
   constructor () {
@@ -26,32 +26,12 @@ export class dice extends plugin {
                 fnc: 'czDice'
               },
               {
+                reg: '^#?(开)$',
+                fnc: 'Kdice'
+              },
+              {
                 reg: '^#?(骰子|roll)$',
                 fnc: 'Dice'
-              },
-              {
-                reg: '^#?(1|一|one|One)$',
-                fnc: 'Dice1'
-              },
-              {
-                reg: '^#?(2|二|two|Two)$',
-                fnc: 'Dice2'
-              },
-              {
-                reg: '^#?(3|三|three|Three)$',
-                fnc: 'Dice3'
-              },
-              {
-                reg: '^#?(4|四|four|Four)$',
-                fnc: 'Dice4'
-              },
-              {
-                reg: '^#?(5|五|five|Five)$',
-                fnc: 'Dice5'
-              },
-              {
-                reg: '^#?(6|六|six|Six)$',
-                fnc: 'Dice6'
               }
             ]
         })
@@ -64,42 +44,28 @@ export class dice extends plugin {
 
     async czDice(e){
     cd = false;
-    文字开关 = false;
+    开 = false;
     e.reply('重置好啦~');
     return false;
-    }
-
-    async Dice1(e){
-    文字开关 = true;
-    return false
-    }
-    async Dice2(e){
-    文字开关 = true;
-    return false
-    }
-    async Dice3(e){
-    文字开关 = true;
-    return false
-    }
-    async Dice4(e){
-    文字开关 = true;
-    return false
-    }
-    async Dice5(e){
-    文字开关 = true;
-    return false
-    }
-    async Dice6(e){
-    文字开关 = true;
-    return false
     }
 
     async Dice(e){
 
     if (!e.isGroup) return false;
 
-    if (cd) return e.reply('每次只能开一局,请等这一局结束！',true);
+    if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
+    开 = true;
+    let msg = [segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送开来查看结果！`];
+    let roll = await e.reply(msg);
+    return true;
+    };
+
+    async Kdice(e){
+
+    if (!e.isGroup) return false;
+    if(开){
+    await e.group.recallMsg(roll.message_id);
     let k = Math.ceil(Math.random()*6);
     let 一 = 1
     let 二 = 1
@@ -107,29 +73,15 @@ export class dice extends plugin {
     let 四 = 1
     let 五 = 1
     let 六 = 1
-    let msg = [segment.image(`file:///${images}/0.gif`)];
-    let msg2 = [`骰子开始转动,请在1到6之间猜一个数,骰子将在30秒后停下来！`];
-    let roll = await e.reply(msg);
-    await common.sleep(1000);
-    await e.reply(msg2);
-    await common.sleep(30000);
-    await e.group.recallMsg(roll.message_id);
-
-    if(!文字开关){
-    cd = false;
-    await e.reply(`啊这！看来没人猜呢~`);
-    return false;
-    };
-
     if(k < 一){
 
         let msg = [segment.image(`file:///${images}/1.gif`)];
         let msg2 = [`一！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
 
         } else if (k < (一 + 二)){
@@ -137,10 +89,10 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/2.gif`)];
         let msg2 = [`二！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
 
         } else if (k < (一 + 二 + 三)){
@@ -148,10 +100,10 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/3.gif`)];
         let msg2 = [`三！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四)){
@@ -159,10 +111,10 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/4.gif`)];
         let msg2 = [`四！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
 
         } else if (k < (一 + 二 + 三 + 四  + 五)){
@@ -170,24 +122,23 @@ export class dice extends plugin {
         let msg = [segment.image(`file:///${images}/5.gif`)];
         let msg2 = [`五！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
 
-        } else if (k < (一 + 二 + 三 + 四  + 五  + 六)){
+        } else {
 
         let msg = [segment.image(`file:///${images}/6.gif`)];
         let msg2 = [`六！`];
         await e.reply(msg);
-        await common.sleep(3000);
+        await common.sleep(2200);
         await e.reply(msg2);
         cd = false;
-        文字开关 = false;
+        开 = false;
         return true;
         }
-        cd = false;
         return false;
     }
 }
