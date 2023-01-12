@@ -38,17 +38,14 @@ export class Admin extends plugin {
 
     async Mastersetred(e) {
 
-    let Mastersetred = await Yaml.getread(绝对主人);
-    Mastersetred.绝对主人.push();
-    await Yaml.getwrite(绝对主人, Mastersetred);
-
-    if (!Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
-        if (!(e.user_id==Mastersetred.绝对主人)){
+    let Mst = await Yaml.getread(绝对主人);
+    if (!Mst.绝对主人==null) {
+        if (!(e.user_id==Mst.绝对主人)){
         return false;
         }
     }
 
-    let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
+    let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
@@ -57,8 +54,8 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    Mastersetred.绝对主人.push(TA);
-    await Yaml.getwrite(绝对主人, Mastersetred);
+    Mst.绝对主人.push(TA);
+    await Yaml.getwrite(绝对主人, Mst);
     let msg = [segment.at(e.user_id), `绝对主人权限已添加成功~`];
     await e.reply(msg)
     return false;
