@@ -20,7 +20,7 @@ export class Admin extends plugin {
             priority: -114514,
             rule: [
                 {
-                    reg: '^#?设置绝对权限.*$',
+                    reg: '^#?设置绝对权限$',
                     fnc: 'Upmaster',
                 },
                 {
@@ -157,18 +157,9 @@ export class Admin extends plugin {
     }
     }
 
-    let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
-    if(e.message[1]){
-    let atItem = e.message.filter((item) => item.type === "at");
-    G = atItem[0].qq;
-    }else{ G = G.match(/[1-9]\d*/g) }
-    if (!G) return e.reply(`请输入正确的QQ号或者艾特对方！`)
-    G = parseInt(G);
-    let TA = G;
-
-    let uid = TA;
-    data.绝对主人=uid
-    await Yaml.getwrite(path, data)
+    let uid = e.user_id;
+    mst.绝对主人=uid
+    await Yaml.getwrite(path, mst)
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
     await e.reply(msg)
     return false;
