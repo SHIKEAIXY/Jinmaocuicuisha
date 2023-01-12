@@ -50,7 +50,7 @@ export class Featuredisabled extends plugin {
     let 主人权限 = mst.绝对主人;
     if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
 
-    if(e.msg.includes('#|清空白名单')){
+    if(e.msg.includes('清空白名单')){
         let data=await Yaml.getread(禁用)
         let All = data.default.enable;
         All=[];
@@ -118,7 +118,7 @@ export class Featuredisabled extends plugin {
     let data=await Yaml.getread(禁用)
     let All = data.default.enable;
         if(All==null){All=[]}
-            if(e.msg.includes('#|设置白名单')){
+            if(e.msg.includes('设置白名单')){
             let 功能 = e.msg.replace(/#|设置|删除|白名单/g,'')
             if(功能==All){return e.reply('该功能设置白名单！')}
             if(!功能){return e.reply('要设置白名单的功能名字呢？')}
@@ -127,7 +127,7 @@ export class Featuredisabled extends plugin {
             return e.reply(`功能【${e.msg}】设置白名单成功！`)
             }
 
-            if(e.msg.includes('#|删除白名单')){
+            if(e.msg.includes('删除白名单')){
             let num = e.msg.match(/\d+/)
             if (!num) {return  e.reply('序号呢？不知道的话可以用指令【白名单列表】查看下功能对应的序号哦~')}
             let 恢复=All[num-1]
@@ -196,7 +196,7 @@ export class Featuredisabled extends plugin {
     let data=await Yaml.getread(禁用)
     let All = data.default.disable;
         if(All==null){All=[]}
-            if(e.msg.includes('#|全局禁用')){
+            if(e.msg.includes('全局禁用')){
             let 功能 = e.msg.replace(/#|全局|禁用|启用/g,'')
             if(功能==All){return e.reply('该功能已禁用！')}
             if(!功能){return e.reply('要禁用的功能名字呢？')}
@@ -205,7 +205,7 @@ export class Featuredisabled extends plugin {
             return e.reply(`功能【${e.msg}】禁用成功！`)
             }
 
-            if(e.msg.includes('#|全局启用')){
+            if(e.msg.includes('全局启用')){
             let num = e.msg.match(/\d+/)
             if (!num) {return  e.reply('序号呢？不知道的话可以用指令【全局禁用列表】查看下功能对应的序号哦~')}
             let 恢复=All[num-1]
