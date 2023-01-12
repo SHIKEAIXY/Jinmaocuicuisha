@@ -84,7 +84,8 @@ export class dice extends plugin {
     on = true;
 
     let res = [segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`];
-    let roll = await e.reply(res),messageId = [1];
+    let roll = await e.reply(res)
+    res = messageId = [1];
     return true;
     };
 
