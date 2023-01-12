@@ -33,6 +33,30 @@ export class dice extends plugin {
               {
                 reg: '^#?(骰子|roll)$',
                 fnc: 'Dice'
+              },
+              {
+                reg: '^#?(1|一)$',
+                fnc: 'Dice1'
+              },
+              {
+                reg: '^#?(2|二)$',
+                fnc: 'Dice2'
+              },
+              {
+                reg: '^#?(3|三)$',
+                fnc: 'Dice3'
+              },
+              {
+                reg: '^#?(4|四)$',
+                fnc: 'Dice4'
+              },
+              {
+                reg: '^#?(5|五)$',
+                fnc: 'Dice5'
+              },
+              {
+                reg: '^#?(6|六)$',
+                fnc: 'Dice6'
               }
             ]
         })
@@ -57,18 +81,54 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     开 = true;
-    let msg = e.reply(segment.image(`file:///${images}/0.gif`));
-    await common.sleep(700);
-    await e.reply(`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`);
+    let res = await Dice.Dice(e);
+    await e.reply(res);
     return true;
+    };
+
+    async Dice1(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
+    };
+
+    async Dice2(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
+    };
+
+    async Dice3(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
+    };
+
+    async Dice4(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
+    };
+
+    async Dice5(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
+    };
+
+    async Dice6(e){
+    if (!e.isGroup) return false;
+    开 = true;
+    return false;
     };
 
     async Kdice(e){
 
     if (!e.isGroup) return false;
-    if(开){
-        let roll = (await e.group.getChatHistory(e.msg.seq, 1))[0].message_id
-        await e.group.recallMsg(roll);
+    if(开) return e.reply('还没有人猜呢~',true);
+        let res = await Dice.Dice(e);
+        await e.group.recallMsg(res);
+
         let k = Math.ceil(Math.random()*6);
         let 一 = 1
         let 二 = 1
@@ -144,5 +204,4 @@ export class dice extends plugin {
         }
         return false;
         }
-    }
 }
