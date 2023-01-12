@@ -39,7 +39,9 @@ export class Admin extends plugin {
     async Mastersetred(e) {
 
     let Mastersetred = await Yaml.getread(绝对主人);
-    logger.info(Mastersetred.绝对主人)
+    Mastersetred.绝对主人.push();
+    await Yaml.getwrite(绝对主人, Mastersetred);
+
     if (!Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
         if (!(e.user_id==Mastersetred.绝对主人)){
         return false;
