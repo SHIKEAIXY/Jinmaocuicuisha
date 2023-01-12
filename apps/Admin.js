@@ -40,8 +40,8 @@ export class Admin extends plugin {
 
     let Mastersetred = await Yaml.getread(绝对主人);
 
-    if (!this.Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
-        if (!(this.e.user_id==Mastersetred.绝对主人)){
+    if (!Mastersetred.绝对主人==null||Mastersetred.绝对主人.length==0) {
+        if (!(e.user_id==Mastersetred.绝对主人)){
         return false;
         }
     }
@@ -58,7 +58,8 @@ export class Admin extends plugin {
     let 添加绝对主人 = await Yaml.getread(绝对主人);
     添加绝对主人.绝对主人.push(TA);
     await Yaml.getwrite(绝对主人, 添加绝对主人);
-    return e.reply(segment.at(e.user_id),`绝对主人权限已添加成功~`)
+    let msg = [segment.at(e.user_id), `绝对主人权限已添加成功~`];
+    await e.reply(msg)
     return false;
     }
 
@@ -107,7 +108,8 @@ export class Admin extends plugin {
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
       .replace(/___+/, `<title color="#777777" size="26">主人列表</title>`)
-    return e.reply(forwardMsg)
+    await e.reply(forwardMsg)
+    return false;
     }
 
     async delMaster(e) {
@@ -121,14 +123,16 @@ export class Admin extends plugin {
     let 删除主人 = await Yaml.getread(主人);
     let num = e.msg.match(/\d+/)
     if (!num) {
-    return  e.reply('序号呢？请先发送【主人列表】查看下序号')
+    await  e.reply('序号呢？请先发送【主人列表】查看下序号')
+    return false;
     }
 
     let 序号 = 删除主人.masterQQ[num-1]
     if(!序号){return e.reply('请检查序号是否输入正确，或者检查【主人列表】是否有这个人')}
     await 删除主人.masterQQ.splice(删除主人.masterQQ.indexOf(序号), 1)
     await Yaml.getwrite(主人, 删除主人);
-    return e.reply(segment.at(e.user_id),`已从列表中删除！可以发送【主人列表】查看哦~`)
+    let msg = [segment.at(e.user_id), `已从列表中删除！可以发送【主人列表】查看哦~`];
+    await e.reply(msg)
     return false;
     }
 
@@ -152,7 +156,8 @@ export class Admin extends plugin {
     let 添加主人 = await Yaml.getread(主人);
     添加主人.masterQQ.push(TA);
     await Yaml.getwrite(主人, 添加主人);
-    return e.reply(segment.at(e.user_id),`已添加进主人列表！可以发送【主人列表】查看哦~`)
+    let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
+    await e.reply(msg)
     return false;
     }
 };
