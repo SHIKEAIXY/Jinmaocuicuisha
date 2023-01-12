@@ -56,8 +56,7 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     开 = true;
-    let msg = [segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`];
-    let roll = await e.reply(msg);
+    let roll = e.reply(segment.image(`file:///${images}/0.gif`),`\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`);
     await redis.set(`开:${roll}`)
     return true;
     };
