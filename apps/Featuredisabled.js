@@ -24,7 +24,7 @@ export class Featuredisabled extends plugin {
                 },
                 {
                     reg: '^#?(本群禁用列表)$',
-                    fnc: 'Ftdgroup列表',
+                    fnc: 'Ftdgrouplb',
                 },
                 {
                     reg: '^#?全局(禁用|启用).*$',
