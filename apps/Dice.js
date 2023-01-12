@@ -135,7 +135,8 @@ export class dice extends plugin {
     async Kdice(e){
 
     if (!e.isGroup) return false;
-    if (en) return e.reply('还没有人猜呢~',true);
+    if (!cd) return false;
+    if (!en) return e.reply('还没有人猜呢~',true);
 
         let msg = [
         segment.image(`file:///${images}/0.gif`),
