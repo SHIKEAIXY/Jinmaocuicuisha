@@ -84,7 +84,6 @@ export class dice extends plugin {
 
     let msg = [
     segment.image(`file:///${images}/0.gif`),
-    await common.sleep(700),
     `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
     ]
     await e.reply(msg);
@@ -133,7 +132,6 @@ export class dice extends plugin {
     if(开) return e.reply('还没有人猜呢~',true);
         let msg = [
         segment.image(`file:///${images}/0.gif`),
-        await common.sleep(700),
         `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
         ]
         await e.group.recallMsg(msg);
