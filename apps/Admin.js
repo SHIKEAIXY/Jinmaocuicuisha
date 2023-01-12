@@ -41,6 +41,13 @@ export class Admin extends plugin {
 
     async Masterlb(e) {
 
+    let data = await Yaml.getread(path)
+    let 主人权限 = data.绝对主人;
+    if (!this.e.isMaster) {
+        if (!(this.e.user_id==主人权限)){
+        return false
+        }
+    }
 
     let nickname = Bot.nickname
     if (this.e.isGroup) {
@@ -85,6 +92,13 @@ export class Admin extends plugin {
 
     async delMaster(e) {
 
+    let data = await Yaml.getread(path)
+    let 主人权限 = data.绝对主人;
+    if (!this.e.isMaster) {
+        if (!(this.e.user_id==主人权限)){
+        return false
+        }
+    }
 
     let 删除主人 = await Yaml.getread(主人);
     let num = e.msg.match(/\d+/)
@@ -104,6 +118,14 @@ export class Admin extends plugin {
 
     async setMaster(e) {
 
+    let data = await Yaml.getread(path)
+    let 主人权限 = data.绝对主人;
+    if (!this.e.isMaster) {
+        if (!(this.e.user_id==主人权限)){
+        return false
+        }
+    }
+    
     let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
@@ -125,9 +147,9 @@ export class Admin extends plugin {
 
     let data = await Yaml.getread(path)
     let 主人权限 = data.绝对主人;
-
     if (!this.主人权限==null) {
     if (!(this.e.user_id==主人权限)){
+    e.reply(`你没有权限！`)
     return false
     }
     }
