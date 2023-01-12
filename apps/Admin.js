@@ -4,9 +4,10 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
+import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
-let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
+let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/Upmaster/Upmaster.yaml'
 let 主人 = './config/config/other.yaml';
 let 禁用 = './config/config/group.yaml';
 
@@ -20,7 +21,7 @@ export class Admin extends plugin {
             rule: [
                 {
                     reg: '^#?设置绝对权限.*$',
-                    fnc: 'Mastersetred',
+                    fnc: 'Upmaster',
                 },
                 {
                     reg: '^#?主人列表$',
@@ -136,7 +137,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async Mastersetred(e) {
+    async Upmaster(e) {
 
     if (!this.e.isMaster) {
         if (!(this.e.user_id==`${Mst}`)){
@@ -144,7 +145,7 @@ export class Admin extends plugin {
         }
     }
 
-    let G = e.message[0].text.replace(/#|设置绝对权限/g, "").trim()
+    let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
@@ -153,9 +154,11 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    let data = await Yaml.getread(path);
-    data.绝对主人.push(TA);
-    await Yaml.getwrite(path, data);
+    let data = await Yaml.getread(path)
+    let uid = e.msg.replace(/#|设置自动撤回时间|秒/g,'')
+    uid = e.user_id
+    data.绝对主人=uid
+    await Yaml.getwrite(path, data)
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
     await e.reply(msg)
     return false;
