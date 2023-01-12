@@ -124,6 +124,7 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     let data = await Yaml.getread(path)
+    logger.info(data.masterQQ)
     if (!this.data.绝对主人==null) {
     if (!(this.e.user_id==data.绝对主人)){
     return false
