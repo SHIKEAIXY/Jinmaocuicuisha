@@ -142,7 +142,7 @@ export class Featuredisabled extends plugin {
       }
     ]
     let data=await Yaml.getread(禁用)
-    let group = data.e.group_id.disable;
+    let group = data.group_id.disable;
     let msg=[]
     logger.info(group)
     if(group==null||group.length==0){return e.reply('本群没有禁用功能呢~')}
