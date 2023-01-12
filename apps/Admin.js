@@ -41,12 +41,6 @@ export class Admin extends plugin {
 
     async Masterlb(e) {
 
-    let data = await Yaml.getread(path)
-    if (!data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(e.user_id==data.绝对主人)){
-        return false;
-        }
-    }
 
     let nickname = Bot.nickname
     if (this.e.isGroup) {
@@ -91,12 +85,6 @@ export class Admin extends plugin {
 
     async delMaster(e) {
 
-    let data = await Yaml.getread(path)
-    if (!data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(e.user_id==data.绝对主人)){
-        return false;
-        }
-    }
 
     let 删除主人 = await Yaml.getread(主人);
     let num = e.msg.match(/\d+/)
@@ -115,13 +103,6 @@ export class Admin extends plugin {
     }
 
     async setMaster(e) {
-
-    let data = await Yaml.getread(path)
-    if (!data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(e.user_id==data.绝对主人)){
-        return false;
-        }
-    }
 
     let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
     if(e.message[1]){
@@ -143,12 +124,6 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     let data = await Yaml.getread(path)
-    if (!data.绝对主人==null||data.绝对主人.length==0) {
-        if (!(e.user_id==data.绝对主人)){
-        return false;
-        }
-    }
-
     let G = e.message[0].text.replace(/#|添加主人/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
