@@ -41,10 +41,11 @@ export class Admin extends plugin {
 
     async Masterlb(e) {
 
-    let data = await Yaml.getread(path)
-    let 主人权限 = data.绝对主人;
+    let mst = await Yaml.getread(path)
+    let 主人权限 = mst.绝对主人;
     if (!this.e.isMaster) {
         if (!(this.e.user_id==主人权限)){
+            e.reply(`你没有权限！`)
         return false
         }
     }
@@ -92,10 +93,11 @@ export class Admin extends plugin {
 
     async delMaster(e) {
 
-    let data = await Yaml.getread(path)
-    let 主人权限 = data.绝对主人;
+    let mst = await Yaml.getread(path)
+    let 主人权限 = mst.绝对主人;
     if (!this.e.isMaster) {
         if (!(this.e.user_id==主人权限)){
+            e.reply(`你没有权限！`)
         return false
         }
     }
@@ -118,10 +120,11 @@ export class Admin extends plugin {
 
     async setMaster(e) {
 
-    let data = await Yaml.getread(path)
-    let 主人权限 = data.绝对主人;
+    let mst = await Yaml.getread(path)
+    let 主人权限 = mst.绝对主人;
     if (!this.e.isMaster) {
         if (!(this.e.user_id==主人权限)){
+            e.reply(`你没有权限！`)
         return false
         }
     }
@@ -145,8 +148,8 @@ export class Admin extends plugin {
 
     async Upmaster(e) {
 
-    let data = await Yaml.getread(path)
-    let 主人权限 = data.绝对主人;
+    let mst = await Yaml.getread(path)
+    let 主人权限 = mst.绝对主人;
     if (!this.主人权限==null) {
     if (!(this.e.user_id==主人权限)){
     e.reply(`你没有权限！`)
