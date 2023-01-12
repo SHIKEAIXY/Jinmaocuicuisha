@@ -74,6 +74,15 @@ export class dice extends plugin {
     return false;
     }
 
+    async Dices(e){
+    let msg = [
+        segment.image(`file:///${images}/0.gif`),
+        await common.sleep(700),
+        `\n请在【一】到【六】之间选一个数,然后发送【开】来查看结果！`,
+        ]
+    return false;
+    }
+
     async Dice(e){
 
     if (!e.isGroup) return false;
@@ -81,7 +90,9 @@ export class dice extends plugin {
     if (cd) return e.reply('每次只能开一局,请等这一局结束，或者发送【重置骰子】重新开始游戏。',true);
     cd = true;
     开 = true;
-    let res = Dices()
+
+    let res = await Dices(e)
+    await e.reply(res);
     return true;
     };
 
@@ -125,7 +136,7 @@ export class dice extends plugin {
 
     if (!e.isGroup) return false;
     if(开) return e.reply('还没有人猜呢~',true);
-        let res = Dices()
+        let res = await Dices(e)
         await e.group.recallMsg(res);
 
         let k = Math.ceil(Math.random()*6);
