@@ -9,7 +9,6 @@ const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
-let 禁用 = './config/config/group.yaml';
 
 export class Admin extends plugin {
     constructor() {
