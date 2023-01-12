@@ -6,7 +6,7 @@ import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 const _path = process.cwd();
 
-let 权限 ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
+let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
 let 禁用 = './config/config/group.yaml';
 
@@ -55,9 +55,9 @@ export class Admin extends plugin {
     G = parseInt(G);
     let TA = G;
 
-    let 添加主人 = await Yaml.getread(权限);
-    添加主人.绝对主人.push(TA);
-    await Yaml.getwrite(权限, 添加主人);
+    let data = await Yaml.getread(path);
+    data.绝对主人.push(TA);
+    await Yaml.getwrite(path, data);
     let msg = [segment.at(e.user_id), `绝对主人权限设置成功~`];
     await e.reply(msg)
     return false;
