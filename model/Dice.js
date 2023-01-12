@@ -8,7 +8,7 @@ const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Di
 export default new class Dice {
     constructor() {}
 
-    async Dice(e) {
+    async Dices(e) {
 
     let msg;
         return [segment.image(
