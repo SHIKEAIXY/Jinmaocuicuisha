@@ -42,11 +42,9 @@ export class Admin extends plugin {
 
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!this.e.isMaster) {
-        if (!(this.e.user_id==主人权限)){
-            e.reply(`你没有权限！`)
-        return false;
-        }
+    if (!e.user_id==主人权限){
+    e.reply(`你没有权限！`)
+    return false;
     }
 
     let nickname = Bot.nickname
@@ -120,9 +118,9 @@ export class Admin extends plugin {
 
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!this.e.user_id==主人权限){
-        e.reply(`你没有权限！`)
-        return false
+    if (!e.user_id==主人权限){
+    e.reply(`你没有权限！`)
+    return false
     }
     
     let G = e.message[0].text.replace(/#|增加主人/g, "").trim()
@@ -145,13 +143,13 @@ export class Admin extends plugin {
     async Upmaster(e) {
 
     if (!e.isMaster) {
-        e.reply(`你没有权限！`)
-        return false;
+    e.reply(`你没有权限！`)
+    return false;
     }
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!this.主人权限==null) {
-    if (!(this.e.user_id==主人权限)){
+    if (!主人权限==null) {
+    if (!(e.user_id==主人权限)){
     e.reply(`你没有权限！`)
     return false
     }
