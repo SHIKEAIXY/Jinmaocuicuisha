@@ -382,17 +382,11 @@ async setMaster(e) {
     G = parseInt(G);
     let TA = G;
 
-    let user = await Yaml.getread(主人);
-    try {
-        for (let qqq of user) {
-            if(TA == qqq){
-            e.reply(`该用户已经在主人列表了！请不要重复设置！`);
-            return false;
-            }
-        }
-    }catch (e){}
-    user.masterQQ.push(TA);
-    await Yaml.getwrite(主人, user);
+    let 添加主人 = await Yaml.getread(主人);
+    if(!(TA == 添加主人)){e.reply(`该用户已经在主人列表了！请不要重复设置！`);return false;};
+
+    添加主人.masterQQ.push(TA);
+    await Yaml.getwrite(主人, 添加主人);
     let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
     await e.reply(msg)
     return false;
