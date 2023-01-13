@@ -384,7 +384,7 @@ async setMaster(e) {
 
     let 添加主人 = await Yaml.getread(主人);
     let A = 添加主人.masterQQ;
-    if ((TA==A)){ e.reply(`该用户已经在主人列表了！请不要重复设置！`); return false;};
+    if (!(TA==A)){ e.reply(`该用户已经在主人列表了！请不要重复设置！`); return false;};
     添加主人.masterQQ.push(TA);
     await Yaml.getwrite(主人, 添加主人);
     let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
