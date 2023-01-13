@@ -44,10 +44,10 @@ export class Admin extends plugin {
 
     async Qkmster(e) {
 
-    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
-    let mst = await Yaml.getread(主人)
-    let 主人权限 = mst.主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;};
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){ e.reply(`你没有权限！`); return false;};
 
         if(e.msg.includes('删除所有主人')){
         let data=await Yaml.getread(主人)
