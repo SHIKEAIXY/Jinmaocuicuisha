@@ -53,8 +53,8 @@ export class Admin extends plugin {
     let data=await Yaml.getread(主人)
     let All = [];
     data.masterQQ = All;
-    await Yaml.getwrite(禁用,data)
-    return e.reply(`已清空全局禁用！`)
+    await Yaml.getwrite(主人,data)
+    return e.reply(`已清空全部主人！`)
         }
     }
 
