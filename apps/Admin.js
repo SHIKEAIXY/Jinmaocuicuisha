@@ -66,7 +66,7 @@ export class Admin extends plugin {
         });
     };
 
-    async delblackQQ(e) {
+async delblackQQ(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -92,7 +92,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async setblackQQ(e) {
+async setblackQQ(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -111,6 +111,7 @@ export class Admin extends plugin {
     let TA = G;
 
     let 拉黑 = await Yaml.getread(主人);
+    if (!(TA==拉黑.blackQQ)){ e.reply(`该用户已经拉黑了！请不要重复拉黑！`); return false;};
     拉黑.blackQQ.push(TA);
     await Yaml.getwrite(主人, 拉黑);
     let msg = [segment.at(e.user_id), `已添加进拉黑列表！可以发送【拉黑列表】查看哦~`];
@@ -118,7 +119,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async blackQQlb(e) {
+async blackQQlb(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -168,7 +169,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async delblackGroup(e) {
+async delblackGroup(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -194,7 +195,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async setblackGroup(e) {
+async setblackGroup(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -214,6 +215,7 @@ export class Admin extends plugin {
     let TA = G;
 
     let 拉黑群 = await Yaml.getread(主人);
+    if (!(TA==拉黑群.blackGroup)){ e.reply(`该群已经拉黑过了！请不要重复拉黑！`); return false;};
     拉黑群.blackGroup.push(TA);
     await Yaml.getwrite(主人, 拉黑群);
     let msg = [segment.at(e.user_id), `已添加进群拉黑列表！可以发送【群拉黑列表】查看哦~`];
@@ -221,7 +223,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async blackGrouplb(e) {
+async blackGrouplb(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -271,7 +273,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async Qkmster(e) {
+async Qkmster(e) {
 
     if (!e.isMaster) {e.reply(`你没有权限！`);return false;};
     let mst = await Yaml.getread(path)
@@ -287,7 +289,7 @@ export class Admin extends plugin {
         }
     }
 
-    async Masterlb(e) {
+async Masterlb(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -337,7 +339,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async delMaster(e) {
+async delMaster(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -363,7 +365,7 @@ export class Admin extends plugin {
     return false;
     }
 
-    async setMaster(e) {
+async setMaster(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -382,6 +384,7 @@ export class Admin extends plugin {
     let TA = G;
 
     let 添加主人 = await Yaml.getread(主人);
+    if ((TA==添加主人.masterQQ)){ e.reply(`该用户已经在主人列表了！请不要重复设置！`); return false;};
     添加主人.masterQQ.push(TA);
     await Yaml.getwrite(主人, 添加主人);
     let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
@@ -391,16 +394,18 @@ export class Admin extends plugin {
 
     async Upmaster(e) {
 
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (uid>null){
+    e.reply(`绝对权限已经设置过了！！！`)
+    return false
+    }
+
     if (!e.isMaster) {
     e.reply(`你没有权限！`)
     return false;
     }
-    let mst = await Yaml.getread(path)
-    let uid = mst.绝对主人;
-    if (uid>null){
-    e.reply(`已经设置过绝对主人权限！请不要重复设置！`)
-    return false
-    }
+
     let Atser = e.user_id; 
     mst.绝对主人=Atser
     await Yaml.getwrite(path, mst)
