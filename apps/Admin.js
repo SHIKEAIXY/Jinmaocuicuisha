@@ -19,6 +19,10 @@ export class Admin extends plugin {
             priority: -114514,
             rule: [
                 {
+                    reg: '^#?删除所有主人$',
+                    fnc: 'Qkmster',
+                },
+                {
                     reg: '^#?设置绝对权限$',
                     fnc: 'Upmaster',
                 },
@@ -37,6 +41,22 @@ export class Admin extends plugin {
             ],
         });
     };
+
+    async Qkmster(e) {
+
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
+    let mst = await Yaml.getread(主人)
+    let 主人权限 = mst.主人;
+    if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
+
+        if(e.msg.includes('删除所有主人')){
+        let data=await Yaml.getread(主人)
+        let All = [];
+        data.masterQQ = All;
+        await Yaml.getwrite(禁用,data)
+        return e.reply(`已清空全局禁用！`)
+        }
+    }
 
     async Masterlb(e) {
 
