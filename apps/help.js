@@ -28,11 +28,12 @@ export class help extends plugin {
     async Marenhelp(e) {
 
     if (e.isMaster) {
-    await e.reply(segment.image(`file:///${images}/1.jpg`));
-    return false;
+        await e.reply(segment.image(`file:///${images}/1.jpg`));
+        return false;
     } else {
-    await e.reply(segment.image(`file:///${images}/0.jpg`));
-    return false;
+        await e.reply(segment.image(`file:///${images}/0.jpg`));
+        return false;
+        }
     }
 }
 
