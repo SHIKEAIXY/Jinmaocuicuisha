@@ -157,8 +157,8 @@ export class Admin extends plugin {
     e.reply(`已经设置过绝对主人权限！请不要重复设置！`)
     return false
     }
-    let uid = e.user_id; 
-    mst.绝对主人=uid
+    let Atser = e.user_id; 
+    mst.绝对主人=Atser
     await Yaml.getwrite(path, mst)
     let msg = [segment.at(e.user_id), `使用提示：\n绝对主人权限设置成功~你可以使用指令【增加主人+QQ号或者艾特对方】来添加新的主人或使用指令【删除主人+序号】删掉不想给主人权限的QQ,具体请发主人列表查看，增加和删除主人只有绝对主人权限能操作哦。`];
     await e.reply(msg)
