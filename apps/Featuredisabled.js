@@ -54,12 +54,12 @@ export class Featuredisabled extends plugin {
     let 主人权限 = mst.绝对主人;
     if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
 
-    let data=await Yaml.getread(禁用)
-    let All = data.default.disable;
-            if(e.msg.includes('清空全局禁用')){
-            All=[];
-            await Yaml.getwrite(禁用,data)
-            return e.reply(`已清空全局禁用！`)
+        if(e.msg.includes('清空全局禁用')){
+        let data=await Yaml.getread(禁用)
+        let All = [];
+        data.default.disable = All;
+        await Yaml.getwrite(禁用,data)
+        return e.reply(`已清空全局禁用！`)
         }
     }
 
@@ -70,11 +70,11 @@ export class Featuredisabled extends plugin {
     let 主人权限 = mst.绝对主人;
     if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
 
-    let data=await Yaml.getread(禁用)
-    let All = data.default.enable;
-            if(e.msg.includes('清空白名单')){
-            All=[];
-            await Yaml.getwrite(禁用,data)
+        if(e.msg.includes('清空白名单')){
+        let data=await Yaml.getread(禁用)
+        let All = [];
+        data.default.enable = All;
+        await Yaml.getwrite(禁用,data)
             return e.reply(`已清空白名单！`)
         }
     }
