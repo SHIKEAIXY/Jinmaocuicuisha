@@ -28,6 +28,10 @@ export class Featuredisabled extends plugin {
                     fnc: 'BFtdalllb',
                 },
                 {
+                    reg: '^#?(清空全局禁用)$',
+                    fnc: 'QFtdall',
+                },
+                {
                     reg: '^#?(清空白名单)$',
                     fnc: 'QBFtdall',
                 },
@@ -43,6 +47,22 @@ export class Featuredisabled extends plugin {
         });
     };
 
+    async QFtdall(e) {
+
+    if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
+    let mst = await Yaml.getread(path)
+    let 主人权限 = mst.绝对主人;
+    if (!(this.e.user_id==主人权限)){e.reply(`你没有权限！`);return false;}
+
+    if(e.msg.includes('清空全局禁用')){
+        let data=await Yaml.getread(禁用)
+        let All = data.default.disable;
+        All=[];
+        await Yaml.getwrite(禁用,data)
+        return e.reply(`已清空全局禁用！`)
+        }
+    }
+
     async QBFtdall(e) {
 
     if (!e.isMaster) {e.reply(`你没有权限！`);return false;}
@@ -54,7 +74,6 @@ export class Featuredisabled extends plugin {
         let data=await Yaml.getread(禁用)
         let All = data.default.enable;
         All=[];
-        All.push()
         await Yaml.getwrite(禁用,data)
         return e.reply(`已清空白名单！`)
         }
