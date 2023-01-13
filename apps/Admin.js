@@ -111,7 +111,7 @@ async setblackQQ(e) {
     let TA = G;
 
     let 拉黑 = await Yaml.getread(主人);
-    if (!(TA==拉黑.blackQQ)){ e.reply(`该用户已经拉黑了！请不要重复拉黑！`); return false;};
+    if ((TA==拉黑.blackQQ)){ e.reply(`该用户已经拉黑了！请不要重复拉黑！`); return false;};
     拉黑.blackQQ.push(TA);
     await Yaml.getwrite(主人, 拉黑);
     let msg = [segment.at(e.user_id), `已添加进拉黑列表！可以发送【拉黑列表】查看哦~`];
@@ -210,12 +210,12 @@ async setblackGroup(e) {
     G = atItem[0].qq;
     }else{ G = G.match(/[1-9]\d*/g) }
     if (!G) return e.reply(`请输入正确的QQ群！`)
-    if (!(G==e.group_id)) return e.reply(`请输入正确的QQ群！`)
+    if (!(G==group_id)) return e.reply(`请输入正确的QQ群！`)
     G = parseInt(G);
     let TA = G;
 
     let 拉黑群 = await Yaml.getread(主人);
-    if (!(TA==拉黑群.blackGroup)){ e.reply(`该群已经拉黑过了！请不要重复拉黑！`); return false;};
+    if ((TA==拉黑群.blackGroup)){ e.reply(`该群已经拉黑过了！请不要重复拉黑！`); return false;};
     拉黑群.blackGroup.push(TA);
     await Yaml.getwrite(主人, 拉黑群);
     let msg = [segment.at(e.user_id), `已添加进群拉黑列表！可以发送【群拉黑列表】查看哦~`];
@@ -384,7 +384,7 @@ async setMaster(e) {
     let TA = G;
 
     let 添加主人 = await Yaml.getread(主人);
-    if ((TA==添加主人.masterQQ)){ e.reply(`该用户已经在主人列表了！请不要重复设置！`); return false;};
+    if (!(TA==添加主人.masterQQ)){ e.reply(`该用户已经在主人列表了！请不要重复设置！`); return false;};
     添加主人.masterQQ.push(TA);
     await Yaml.getwrite(主人, 添加主人);
     let msg = [segment.at(e.user_id), `已添加进主人列表！可以发送【主人列表】查看哦~`];
@@ -392,7 +392,7 @@ async setMaster(e) {
     return false;
     }
 
-    async Upmaster(e) {
+async Upmaster(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
