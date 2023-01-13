@@ -91,8 +91,8 @@ export class Admin extends plugin {
     async delMaster(e) {
 
     let mst = await Yaml.getread(path)
-    let 主人权限 = mst.绝对主人;
-    if (!this.e.user_id==主人权限){
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
         e.reply(`你没有权限！`)
         return false
     }
@@ -117,10 +117,10 @@ export class Admin extends plugin {
     async setMaster(e) {
 
     let mst = await Yaml.getread(path)
-    let 主人权限 = mst.绝对主人;
-    if (!e.user_id==主人权限){
-    e.reply(`你没有权限！`)
-    return false
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
     }
     
     let G = e.message[0].text.replace(/#|增加主人/g, "").trim()
@@ -147,13 +147,12 @@ export class Admin extends plugin {
     return false;
     }
     let mst = await Yaml.getread(path)
-    let 主人权限 = mst.绝对主人;
-    if (!主人权限==null) {
-    if (!(e.user_id==主人权限)){
-    e.reply(`你没有权限！`)
-    return false
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
     }
-    }
+
     if (主人权限>null){
     e.reply(`已经设置过绝对主人权限！请不要重复设置！`)
     return false
