@@ -385,7 +385,7 @@ async setMaster(e) {
     let 添加主人 = await Yaml.getread(主人);
     try {
         for (let qqq of 添加主人) {
-            if(!TA == qqq){
+            if(TA == qqq){
             e.reply(`该用户已经在主人列表了！请不要重复设置！`);
             return false;
             }
