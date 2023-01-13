@@ -41,9 +41,8 @@ export class Admin extends plugin {
     async Masterlb(e) {
 
     let data = await Yaml.getread(path)
-    let user = data.绝对主人;
-    let uid = e.user_id; 
-    if(!user == uid){
+    let uid = data.绝对主人;
+    if(!uid == e.user_id){
     e.reply(`你没有权限！`)
     return false;
     }
