@@ -42,7 +42,7 @@ export class Admin extends plugin {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
-    if (!this.e.user_id==uid){
+    if (e.user_id==uid){
         e.reply(`你没有权限！`)
         return false
     }
