@@ -56,10 +56,8 @@ export class Featuredisabled extends plugin {
 
     let data=await Yaml.getread(禁用)
     let All = data.default.disable;
-        if(All==null){All=[];await Yaml.getwrite(禁用,data)}
             if(e.msg.includes('清空全局禁用')){
-            let 功能 = e.msg.replace(/#|清空全局禁用/g,'[]')
-            All.push(功能)
+            All=[];
             await Yaml.getwrite(禁用,data)
             return e.reply(`已清空全局禁用！`)
         }
@@ -74,10 +72,8 @@ export class Featuredisabled extends plugin {
 
     let data=await Yaml.getread(禁用)
     let All = data.default.enable;
-        if(All==null){All=[];await Yaml.getwrite(禁用,data)}
             if(e.msg.includes('清空白名单')){
-            let 功能 = e.msg.replace(/#|清空白名单/g,'[]')
-            All.push(功能)
+            All=[];
             await Yaml.getwrite(禁用,data)
             return e.reply(`已清空白名单！`)
         }
