@@ -5,7 +5,7 @@ import fs from 'fs'
 import { Common, Plugin_Name} from '../components/index.js'
 
 let mst='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
-if(!fs.existsSync(mst)) {
+if(fs.existsSync(mst)) {
         fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/绝对主人.txt',mst,(err)=>{
 	if(err){
             logger.info(err)
