@@ -66,7 +66,7 @@ export class Admin extends plugin {
         });
     };
 
-    async delblackGroup(e) {
+    async delblackQQ(e) {
 
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
@@ -139,7 +139,7 @@ export class Admin extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是已拉黑的列表'
+        message: '以下是已拉黑的用户列表'
       }
     ]
     let data=await Yaml.getread(主人)
@@ -209,7 +209,7 @@ export class Admin extends plugin {
     G = atItem[0].qq;
     }else{ G = G.match(/[1-9]\d*/g) }
     if (!G) return e.reply(`请输入正确的QQ群！`)
-    if (G!==e.group_id) return e.reply(`请输入正确的QQ群！`)
+    if (!(G==e.group_id)) return e.reply(`请输入正确的QQ群！`)
     G = parseInt(G);
     let TA = G;
 
