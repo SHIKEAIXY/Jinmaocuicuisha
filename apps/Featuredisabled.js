@@ -53,7 +53,7 @@ export class Featuredisabled extends plugin {
     if(e.msg.includes('清空白名单')){
         let data=await Yaml.getread(禁用)
         let All = data.default.enable;
-        All=null;
+        All=[];
         All.push()
         await Yaml.getwrite(禁用,data)
         return e.reply(`已清空白名单！`)
@@ -117,7 +117,7 @@ export class Featuredisabled extends plugin {
 
     let data=await Yaml.getread(禁用)
     let All = data.default.enable;
-        if(All==null){All=[]}
+        if(All==null){All=[];await Yaml.getwrite(禁用,data)}
             if(e.msg.includes('设置白名单')){
             let 功能 = e.msg.replace(/#|设置|删除|白名单/g,'')
             if(功能==All){return e.reply('该功能已在白名单列表！')}
@@ -195,7 +195,7 @@ export class Featuredisabled extends plugin {
 
     let data=await Yaml.getread(禁用)
     let All = data.default.disable;
-        if(All==null){All=[]}
+        if(All==null){All=[];await Yaml.getwrite(禁用,data)}
             if(e.msg.includes('全局禁用')){
             let 功能 = e.msg.replace(/#|全局|禁用|启用/g,'')
             if(功能==All){return e.reply('该功能已禁用！')}
