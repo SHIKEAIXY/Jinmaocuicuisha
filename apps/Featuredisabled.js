@@ -122,7 +122,7 @@ export class Featuredisabled extends plugin {
             let 功能 = e.msg.replace(/#|设置|删除|白名单/g,'')
             if(功能==All){return e.reply('该功能已在白名单列表！')}
             if(!功能){return e.reply('要设置白名单的功能名字呢？')}
-            All=功能
+            All.push(功能)
             await Yaml.getwrite(禁用,data)
             return e.reply(`功能【${功能}】设置白名单成功！`)
             }
