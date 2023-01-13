@@ -148,12 +148,7 @@ export class Admin extends plugin {
     }
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
-    if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
-        return false
-    }
-
-    if (主人权限>null){
+    if (uid>null){
     e.reply(`已经设置过绝对主人权限！请不要重复设置！`)
     return false
     }
