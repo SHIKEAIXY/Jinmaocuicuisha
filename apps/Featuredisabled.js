@@ -9,7 +9,7 @@ import { Cfg, Common, Plugin_Name } from '../components/index.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
-const 禁用 = './config/config/group.yaml';
+let 禁用 = './config/config/group.yaml';
 
 export class Featuredisabled extends plugin {
     constructor() {
