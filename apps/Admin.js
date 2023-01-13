@@ -143,6 +143,7 @@ async blackQQlb(e) {
       }
     ]
     let data=await Yaml.getread(主人)
+    if (!data) data= [];
     let msg=[]
     logger.info(data.blackQQ)
     if(data.blackQQ==null||data.blackQQ.length==0){return e.reply('还没有拉黑的人呢！')}
@@ -245,6 +246,7 @@ async blackGrouplb(e) {
       }
     ]
     let data=await Yaml.getread(主人)
+    if (!data) data= [];
     let msg=[]
     logger.info(data.blackGroup)
     if(data.blackGroup==null||data.blackGroup.length==0){return e.reply('没有拉黑的群呢！')}
@@ -311,6 +313,7 @@ async Masterlb(e) {
       }
     ]
     let data=await Yaml.getread(主人)
+    if (!data) data= [];
     let msg=[]
     logger.info(data.masterQQ)
     if(data.masterQQ==null||data.masterQQ.length==0){return e.reply('Bot还没有主人呢！')}
