@@ -19,28 +19,257 @@ export class Admin extends plugin {
             priority: -114514,
             rule: [
                 {
-                    reg: '^#?删除所有主人$',
+                    reg: '^#?(删除所有主人)$',
                     fnc: 'Qkmster',
                 },
                 {
-                    reg: '^#?设置绝对权限$',
+                    reg: '^#?(设置绝对权限)$',
                     fnc: 'Upmaster',
                 },
                 {
-                    reg: '^#?主人列表$',
+                    reg: '^#?(拉黑群列表)$',
+                    fnc: 'blackGrouplb',
+                },
+                {
+                    reg: '^#?(拉黑列表)$',
+                    fnc: 'blackQQlb',
+                },
+                {
+                    reg: '^#?(主人列表)$',
                     fnc: 'Masterlb',
                 },
                 {
-                    reg: '^#?增加主人.*$',
+                    reg: '^#?(增加主人).*$',
                     fnc: 'setMaster',
                 },
                 {
-                    reg: '^#?删除主人.*$',
+                    reg: '^#?(删除主人).*$',
                     fnc: 'delMaster',
+                },
+                {
+                    reg: '^#?(增加拉黑群).*$',
+                    fnc: 'setblackGroup',
+                },
+                {
+                    reg: '^#?(删除拉黑群).*$',
+                    fnc: 'delblackGroup',
+                },
+                {
+                    reg: '^#?(拉黑增加).*$',
+                    fnc: 'setblackQQ',
+                },
+                {
+                    reg: '^#?(删除拉黑).*$',
+                    fnc: 'delblackQQ',
                 }
             ],
         });
     };
+
+    async delblackGroup(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+
+
+    let 拉黑 = await Yaml.getread(主人);
+    let num = e.msg.match(/\d+/)
+    if (!num) {
+    await  e.reply('序号呢？请先发送【拉黑列表】查看下序号！')
+    return false;
+    }
+
+    let 序号 = 拉黑.QQ[num-1]
+    if(!序号){return e.reply('请检查序号是否输入正确，或者检查【拉黑列表】是否有这个QQ！')}
+    await 拉黑.blackQQ.splice(拉黑.blackQQ.indexOf(序号), 1)
+    await Yaml.getwrite(主人, 拉黑);
+    let msg = [segment.at(e.user_id), `已从列表中删除！可以发送【拉黑列表】查看哦~`];
+    await e.reply(msg)
+    return false;
+    }
+
+    async setblackQQ(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+    
+    let G = e.message[0].text.replace(/#|增加拉黑/g, "").trim()
+    if(e.message[1]){
+    let atItem = e.message.filter((item) => item.type === "at");
+    G = atItem[0].qq;
+    }else{ G = G.match(/[1-9]\d*/g) }
+    if (!G) return e.reply(`请输入正确的QQ号,或艾特要拉黑的人！`)
+    G = parseInt(G);
+    let TA = G;
+
+    let 拉黑 = await Yaml.getread(主人);
+    拉黑.blackQQ.push(TA);
+    await Yaml.getwrite(主人, 拉黑);
+    let msg = [segment.at(e.user_id), `已添加进拉黑列表！可以发送【拉黑列表】查看哦~`];
+    await e.reply(msg)
+    return false;
+    }
+
+    async blackQQlb(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+
+    let nickname = Bot.nickname
+    if (this.e.isGroup) {
+      let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
+      nickname = info.card ?? info.nickname
+    }
+    let userInfo = {
+      user_id: Bot.uin,
+      nickname
+    }
+    let forwardMsg = [
+      {
+        ...userInfo,
+        message: '以下是已拉黑的列表'
+      }
+    ]
+    let data=await Yaml.getread(主人)
+    let msg=[]
+    logger.info(data.blackQQ)
+    if(data.blackQQ==null||data.blackQQ.length==0){return e.reply('还没有拉黑的人呢！')}
+    for (let v = 0; v < data.blackQQ.length; v++) {
+      msg.push(`${v+1}.`+data.blackQQ[v]+'\n')
+    }
+    forwardMsg.push(
+          {
+            ...userInfo,
+            message: msg
+          }
+        )
+    if (this.e.isGroup) {
+      forwardMsg = await this.e.group.makeForwardMsg(forwardMsg)
+    } else {
+      forwardMsg = await this.e.friend.makeForwardMsg(forwardMsg)
+    }
+    forwardMsg.data = forwardMsg.data
+      .replace(/\n/g, '')
+      .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
+      .replace(/___+/, `<title color="#777777" size="26">拉黑列表</title>`)
+    await e.reply(forwardMsg)
+    return false;
+    }
+
+    async delblackGroup(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+
+
+    let 拉黑群 = await Yaml.getread(主人);
+    let num = e.msg.match(/\d+/)
+    if (!num) {
+    await  e.reply('序号呢？请先发送【拉黑群列表】查看下序号！')
+    return false;
+    }
+
+    let 序号 = 拉黑群.blackGroup[num-1]
+    if(!序号){return e.reply('请检查序号是否输入正确，或者检查【拉黑群列表】是否有这个群！')}
+    await 拉黑群.blackGroup.splice(拉黑群.blackGroup.indexOf(序号), 1)
+    await Yaml.getwrite(主人, 拉黑群);
+    let msg = [segment.at(e.user_id), `已从列表中删除！可以发送【拉黑群列表】查看哦~`];
+    await e.reply(msg)
+    return false;
+    }
+
+    async setblackGroup(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+    
+    let G = e.message[0].text.replace(/#|增加拉黑群/g, "").trim()
+    if(e.message[1]){
+    let atItem = e.message.filter((item) => item.type === "at");
+    G = atItem[0].qq;
+    }else{ G = G.match(/[1-9]\d*/g) }
+    if (!G) return e.reply(`请输入正确的QQ群！`)
+    if (G!==e.group_id) return e.reply(`请输入正确的QQ群！`)
+    G = parseInt(G);
+    let TA = G;
+
+    let 拉黑群 = await Yaml.getread(主人);
+    拉黑群.blackGroup.push(TA);
+    await Yaml.getwrite(主人, 拉黑群);
+    let msg = [segment.at(e.user_id), `已添加进拉黑群列表！可以发送【拉黑群列表】查看哦~`];
+    await e.reply(msg)
+    return false;
+    }
+
+    async blackGrouplb(e) {
+
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!(e.user_id==uid)){
+        e.reply(`你没有权限！`)
+        return false
+    }
+
+    let nickname = Bot.nickname
+    if (this.e.isGroup) {
+      let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
+      nickname = info.card ?? info.nickname
+    }
+    let userInfo = {
+      user_id: Bot.uin,
+      nickname
+    }
+    let forwardMsg = [
+      {
+        ...userInfo,
+        message: '以下是已拉黑的群列表'
+      }
+    ]
+    let data=await Yaml.getread(主人)
+    let msg=[]
+    logger.info(data.blackGroup)
+    if(data.blackGroup==null||data.blackGroup.length==0){return e.reply('没有拉黑群呢！')}
+    for (let v = 0; v < data.blackGroup.length; v++) {
+      msg.push(`${v+1}.`+data.blackGroup[v]+'\n')
+    }
+    forwardMsg.push(
+          {
+            ...userInfo,
+            message: msg
+          }
+        )
+    if (this.e.isGroup) {
+      forwardMsg = await this.e.group.makeForwardMsg(forwardMsg)
+    } else {
+      forwardMsg = await this.e.friend.makeForwardMsg(forwardMsg)
+    }
+    forwardMsg.data = forwardMsg.data
+      .replace(/\n/g, '')
+      .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
+      .replace(/___+/, `<title color="#777777" size="26">拉黑群列表</title>`)
+    await e.reply(forwardMsg)
+    return false;
+    }
 
     async Qkmster(e) {
 
