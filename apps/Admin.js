@@ -40,11 +40,11 @@ export class Admin extends plugin {
 
     async Masterlb(e) {
 
-    let data = await Yaml.getread(path)
-    let uid = data.绝对主人;
-    if(!uid == e.user_id){
-    e.reply(`你没有权限！`)
-    return false;
+    let mst = await Yaml.getread(path)
+    let uid = mst.绝对主人;
+    if (!this.e.user_id==uid){
+        e.reply(`你没有权限！`)
+        return false
     }
 
     let nickname = Bot.nickname
