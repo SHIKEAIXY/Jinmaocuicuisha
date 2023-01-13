@@ -79,7 +79,7 @@ export class Featuredisabled extends plugin {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '已设置白名单的功能\n可使用【全局启用+(序号)】启用对应功能'
+        message: '已设置白名单的功能\n可使用【删除白名单+(序号)】启用对应功能'
       }
     ]
     let data=await Yaml.getread(禁用)
