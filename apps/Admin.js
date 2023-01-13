@@ -49,12 +49,12 @@ export class Admin extends plugin {
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){ e.reply(`你没有权限！`); return false;};
 
-        if(e.msg.includes('删除所有主人')){
-        let data=await Yaml.getread(主人)
-        let All = [];
-        data.masterQQ = All;
-        await Yaml.getwrite(禁用,data)
-        return e.reply(`已清空全局禁用！`)
+    if(e.msg.includes('删除所有主人')){
+    let data=await Yaml.getread(主人)
+    let All = [];
+    data.masterQQ = All;
+    await Yaml.getwrite(禁用,data)
+    return e.reply(`已清空全局禁用！`)
         }
     }
 
