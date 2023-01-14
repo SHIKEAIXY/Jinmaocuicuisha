@@ -8,6 +8,7 @@ import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
+let Cfgsys ='./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml'
 let 主人 = './config/config/other.yaml';
 
 export class Admins extends plugin {
@@ -405,6 +406,10 @@ async Upmaster(e) {
     return false;
     }
 
+    let data = await Yaml.getread(Cfgsys)
+    Loadhelp=true;
+    Yaml.getwrite(Cfgsys,data)
+    
     let Atser = e.user_id; 
     mst.绝对主人=Atser
     await Yaml.getwrite(path, mst)
