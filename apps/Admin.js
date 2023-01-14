@@ -10,11 +10,11 @@ const _path = process.cwd();
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let 主人 = './config/config/other.yaml';
 
-export class Admin extends plugin {
+export class Admins extends plugin {
     constructor() {
         super({
-            name: 'Admin',
-            dsc: 'Admin',
+            name: '超级用户管理',
+            dsc: '增加主人删除主人拉黑某人等等...',
             event: 'message',
             priority: -114514,
             rule: [
