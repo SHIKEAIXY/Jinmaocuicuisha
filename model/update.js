@@ -262,7 +262,7 @@ export class update extends plugin {
     if (log.length <= 0) return ''
 
     let end = ''
-    end = '如果更新后遇到未知bug，请加金毛脆脆鲨QQ群反馈：657142904'
+    end = '有任何本插件BUG解决不了的可以加金毛脆脆鲨QQ群反馈：657142904，会尽力解决，如果实在解决不了的话就删库跑路！！！'
 
     log = await this.makeForwardMsg(`${plugin || 'Yunzai-Bot'}更新日志，共${line}条`, log, end)
 
