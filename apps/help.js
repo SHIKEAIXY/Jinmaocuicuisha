@@ -1,7 +1,7 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import lodash from 'lodash'
 import { Common, Data} from '../components/index.js'
-import Theme from './model/theme.js'
+import Theme from '../model/theme.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
