@@ -7,9 +7,6 @@ import fs from 'fs'
 import moment from 'moment'
 const _path = process.cwd();
 
-//原插件榴莲的打我
-//金毛脆脆鲨改动：增加了一点东西
-
 let hit = ['一拳!','两拳!', '三拳!', '四拳!', '五拳!', '六拳!', '七拳!', '八拳!', '九拳!', '十拳!'];
 let MuteTime = 60; // 禁言时间秒(需bot管理员)
 let banword = ["rbq","RBQ","肉便器","吃精","请中出我","精子"]
@@ -20,52 +17,54 @@ let HitMe_time = 10;
 
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
 let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
+let path2='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml'
 
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 if (!fs.existsSync(path1)) {fs.writeFileSync(path1,'')}
 
-export class Hitme extends plugin {
+export class HitmeandTa extends plugin {
     constructor() {
 		super({
-			name: '打我',
-			dsc: '打我',
+			name: '打我and打他',
+			dsc: '打我打他',
 			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			priority: 5000,
 			rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?本群(禁用|启用)打我$',
+                    reg: '^#?打他(仅我|所有人)可用$',
+                    /** 执行方法 */
+                    fnc: 'Hitmaster',
+                    permission: 'master'
+                },
+                {
+                    /** 命令正则匹配 */
+                    reg: '^#?本群(禁用|启用)打人$',
                     /** 执行方法 */
                     fnc: 'ofHitMe',
                     permission: 'master'
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?查看打我api$',
+                    reg: '^#?查看打人api$',
                     /** 执行方法 */
                     fnc: 'HitMeapi',
                     permission: 'master'
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(写入|删除)打我api(.*)$',
+                    reg: '^#?(写入|删除)打人api(.*)$',
                     /** 执行方法 */
                     fnc: 'setHitMeapi',
                     permission: 'master'
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?设置打我机器人名字(.*)$',
+                    reg: '^#?设置打人(Bot|bot|BOT)名字(.*)$',
                     /** 执行方法 */
                     fnc: 'setBotname',
                     permission: 'master'
-                },
-                {
-                    /** 命令正则匹配 */
-                    reg: '^#?打我使用说明$',
-                    /** 执行方法 */
-                    fnc: 'HitMehelp'
                 },
                 {
                     /** 命令正则匹配 */
@@ -83,11 +82,22 @@ export class Hitme extends plugin {
         })
     }
 
-async HitMehelp(e) {
+async Hitmaster(e) {
 
-    await e.reply('使用说明:\n(打|hit|HIT|da|DA)(我|me|ME|wo|WO)\n(打|hit|HIT|da|DA)(他|ta|TA|he|HE)艾特\n#设置打我机器人名字+名字\n#本群(禁用|启用)打我\n#写入|删除打我api\n#查看打我api')
-    return false;  
-}
+    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
+    let data = await Yaml.getread(path2)
+    if (!data) data= [];
+    if (e.msg.includes('打他仅我可用')){
+    data.Hitmaster = false;
+    await e.reply(`好的${botname}知道了~`)
+    }
+    if (e.msg.includes('打他所有人可用')){
+    data.Hitmaster = true;
+    await e.reply(`${botname}终于可以大展身手啦~`)
+    }
+    Yaml.getwrite(path2,data)
+    return false;
+    }
 
 async HitMeapi(e){
     let data = getread()
@@ -110,6 +120,7 @@ async HitMeapi(e){
         .replace(/___+/, `<title color="#777777" size="26">api:</title>`)
     //发送消息
     e.reply(forwardMsg)
+    return false;
 }
 
 async setHitMeapi(e){
@@ -237,7 +248,7 @@ async HitMe(e){
 		e.group.muteMember(e.user_id, MuteTime*(i+1));
 		await sleep(2000);
     } 
-    if (random > 6){
+    if (random > 7){
         let data = getread()
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
@@ -252,29 +263,7 @@ async HitMe(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        // 如果涩图发送失败则返回美图
-        } else if (!e.message[1] && random > 6){
-        let msg = [
-        segment.image(`${api}`),
-        segment.at(e.user_id),`额涩图不见了呢,${botname}给你一张美图吧`,
-        ];
-        e.reply(msg); //发送消息
-        redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
-            EX: parseInt(60 * HitMe_time)
-        });
-        return true; //返回true 阻挡消息不再往下
-
-        } else if (random > 6){
-        let msg = [
-        segment.at(e.user_id),`QWQ好像都寄了呢~`,
-        ];
-        e.reply(msg); //发送消息
-        redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
-            EX: parseInt(60 * HitMe_time)
-        });
-        return true; //返回true 阻挡消息不再往下
-
-        } else if (random < 6){
+        } else {
         let msg = [
         segment.at(e.user_id),`够了吗！`,
         ];
@@ -288,6 +277,15 @@ async HitMe(e){
     }
 
 async Hitta(e){
+
+
+    let data = await Yaml.getread(path2)
+    let Hitmaster = data.Hitmaster
+    if (!e.isMaster) {
+        if (!(Hitmaster == true)){
+        return false
+        }
+    }
 
     if (!e.isGroup) return false;
 
@@ -323,7 +321,7 @@ async Hitta(e){
 
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
-    if (e.atMaster){ e.reply(`${botname}不能打主人！`); return true; }
+    if (!e.Master){ e.reply(`${botname}不能打主人！`); return true; }
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
     if (data) {
@@ -358,7 +356,7 @@ async Hitta(e){
 		e.group.muteMember(TA, MuteTime*(i+1));
 		await sleep(2000);
     } 
-    if (random > 6){
+    if (random > 7){
         let data = getread()
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
@@ -373,29 +371,7 @@ async Hitta(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        // 如果涩图发送失败则返回美图
-        } else if (!e.message[1] && random > 6){
-        let msg = [
-        segment.image(`${api}`),
-        segment.at(TA),`额涩图不见了呢,${botname}给你一张美图吧`,
-        ];
-        e.reply(msg); //发送消息
-        redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
-            EX: parseInt(60 * HitMe_time)
-        });
-        return true; //返回true 阻挡消息不再往下
-
-        } else if (random > 6){
-        let msg = [
-        segment.at(TA),`QWQ好像都寄了呢~`,
-        ];
-        e.reply(msg); //发送消息
-        redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
-            EX: parseInt(60 * HitMe_time)
-        });
-        return true; //返回true 阻挡消息不再往下
-
-        } else if (e.isMaster && random < 6){
+        } else if (e.isMaster){
         let msg = [
         `主人${botname}打完啦！快奖励${botname}(っ●ω●)っ~`,];
         e.reply(msg); //发送消息
@@ -404,7 +380,7 @@ async Hitta(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        } else if (random < 6){
+        } else {
         let msg = [
         `打完啦！`,
         ];
