@@ -1,7 +1,12 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import lodash from 'lodash'
-import { Common, Data} from '../components/index.js'
+import fetch from 'node-fetch'
+import fs from 'fs'
+import YAML from 'yaml'
+import Yaml from '../Yaml/Yaml.js'
 import Theme from '../model/theme.js'
+import { Common, Data} from '../components/index.js'
+import { Cfg } from '../components/index.js'
 const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
