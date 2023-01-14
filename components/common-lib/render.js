@@ -26,7 +26,7 @@ export default async function (path, params, cfg) {
     },
     sys: {
       scale: 1,
-      copyright: `云崽<span class="version">${Version.yunzai}</span> &nbsp 脆脆鲨<span class="version">${Version.ver}</span>`
+      copyright: `云崽<span class="version">${Version.yunzai}</span> &nbsp 脆脆鲨<span class="version"></span>`
     },
 	quality: 100
   }
