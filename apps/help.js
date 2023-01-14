@@ -41,8 +41,8 @@ export class Jmccshelp extends plugin {
     let uid = mst.绝对主人;
     let Loadhelp = data.Loadhelp;
     if (!(Loadhelp==true)){
-    if (!(e.user_id==uid)){
-        e.reply(`请先给Bot发送设置绝对权限！！！`);
+    if (!(this.e.user_id==uid)){
+        this.e.reply(`请先给Bot发送设置绝对权限！！！`);
         return false;
         }
     }
