@@ -279,8 +279,8 @@ async HitMe(e){
 async Hitta(e){
 
 
-    let data = await Yaml.getread(path2)
-    let Hitmaster = data.Hitmaster
+    let setdata = await Yaml.getread(path2)
+    let Hitmaster = setdata.Hitmaster
     if (!e.isMaster) {
         if (!(Hitmaster == true)){
         return false
