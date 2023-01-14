@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'YS';
-  src: url("../common/font/HYWH-65W.woff") format('woff'), url("./font/HYWH-65W.ttf") format('truetype');
+  src: url("../img/common/font/HYWH-65W.woff") format('woff'), url("./font/HYWH-65W.ttf") format('truetype');
 }
 .font-YS {
   font-family: Number, "汉仪文黑-65W", YS, PingFangSC-Medium, "PingFang SC", sans-serif;
 }
 @font-face{
-font-family:'花生';
+font-family:'脆脆鲨';
 src:url('主.ttf')format('truetype');
 }
 body {
   transform: scale(1);
   width: 830px;
-  background: url("../common/theme/bg-01.jpg");
+  background: url("../img/common/theme/bg-01.jpg");
 }
 .container {
-  background: url(../common/theme/main-01.png) top left no-repeat;
+  background: url(../img/common/theme/main-01.png) top left no-repeat;
   background-size: 100% auto;
   width: 830px;
 }
