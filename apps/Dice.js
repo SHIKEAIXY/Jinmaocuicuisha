@@ -13,8 +13,8 @@ let on = false;
 export class dice extends plugin {
   constructor () {
     super({
-        name: '骰子',
-        dsc: '骰子',
+        name: '乐色骰子',
+        dsc: '骰子游戏',
         event: 'message',
         priority: 50,
         rule: [
