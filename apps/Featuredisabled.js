@@ -17,7 +17,7 @@ export class Featuredisabled extends plugin {
             name: '云崽功能管理',
             dsc: '功能禁用启用管理',
             event: 'message',
-            priority: -114514,
+            priority: 3000,
             rule: [
                 {
                     reg: '^#?(全局禁用列表)$',
