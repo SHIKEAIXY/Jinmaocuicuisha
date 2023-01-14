@@ -98,7 +98,7 @@ let Data = {
   },
 
   async importCfg (key) {
-    let sysCfg = await Data.importModule(`Cfg/Sys/${key}_system.js`)
+    let sysCfg = await Data.importModule(`Cfg/Sys/${key}_sys.js`)
     let diyCfg = await Data.importModule(`Cfg/${key}.js`)
     return {
       sysCfg,
