@@ -13,7 +13,7 @@ export class help extends plugin {
 			dsc: '0v0v0',
 			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
-			priority: 1000,
+			priority: 5000,
 			rule: [
                 {
                     /** 命令正则匹配 */
