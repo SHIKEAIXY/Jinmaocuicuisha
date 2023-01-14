@@ -40,6 +40,15 @@ if(!fs.existsSync(Hitmaster)) {
   })
 }
 
+let Loadhelp='./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml'
+if(!fs.existsSync(Loadhelp)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Loadhelp.txt',Loadhelp,(err)=>{
+	if(err){
+            logger.info(err)
+       }
+  })
+}
+
 export class jmccs_update extends plugin {
 	constructor () {
 		super({
