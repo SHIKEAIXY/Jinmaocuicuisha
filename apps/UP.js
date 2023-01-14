@@ -31,6 +31,15 @@ if(!fs.existsSync(c)) {
   })
 }
 
+let Hitmaster='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml'
+if(!fs.existsSync(Hitmaster)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Hitmaster.txt',Hitmaster,(err)=>{
+	if(err){
+            logger.info(err)
+       }
+  })
+}
+
 export class jmccs_update extends plugin {
 	constructor () {
 		super({
