@@ -129,14 +129,14 @@ async setHitMeapi(e){
         if (!data) data= [];
         if (data.length > 0&&e.msg.includes('写入打我api')){
         return e.reply("api只能添加一个哦请先删除掉~", true);
-        } else if (e.msg.includes('写入打我api')){
-        let api=e.msg.replace(/#|写入|删除|打我api/g,'')
+        } else if (e.msg.includes('写入打人api')){
+        let api=e.msg.replace(/#|写入|删除|打人api/g,'')
         await data.push(api)
         await e.reply(`添加成功~`)
         await getwrite(data)
         return true;
         }
-        if (e.msg.includes('删除打我api')){
+        if (e.msg.includes('删除打人api')){
         let data=await getread()
         if (!data.length > 0) { return e.reply('api都没添加，你删毛线呢？') , true}
         await data.splice(data.indexOf(data), 1)
@@ -156,18 +156,18 @@ if (!e.isGroup) return false;
     if (!data) data= [];
     if (data.indexOf(e.group_id) == -1&&e.msg.includes('禁用')){
     await data.push(e.group_id)
-    await e.reply(`本群已禁用打我功能~`)
+    await e.reply(`本群已禁用打人功能~`)
     }
     if (data.indexOf(e.group_id)!== -1&&e.msg.includes('启用')){
     await data.splice(data.indexOf(e.group_id), 1)
-    await e.reply(`本群已启用打我功能~`)
+    await e.reply(`本群已启用打人功能~`)
     }
     Yaml.getwrite(path1,data)
     return false;
 }
 
 async setBotname(e){
-    let botname = e.msg.replace(/#?设置打我机器人名字/g, "").trim();
+    let botname = e.msg.replace(/#?设置打人|Bot|bot|BOT|名字/g, "").trim();
     for (let ban of banword) {
         if (botname.length > 20) {
             let msg= [
@@ -221,7 +221,7 @@ async HitMe(e){
 
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
     if (!botname){
-        await e.reply('我还没有名字,可以发送#设置打我机器人名字+名字给我设置名字哦~')
+        await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
             await e.reply('这什么主人啊连名字都不给我~')
         return true;
@@ -303,7 +303,7 @@ async Hitta(e){
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
-        await e.reply('我还没有名字,可以发送#设置打我机器人名字+名字给我设置名字哦~')
+        await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
             await e.reply('这什么主人啊连名字都不给我~')
         return true;
