@@ -248,7 +248,7 @@ async HitMe(e){
 		e.group.muteMember(e.user_id, MuteTime*(i+1));
 		await sleep(2000);
     } 
-    if (random > 7){
+    if (random => 7){
         let data = getread()
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
@@ -263,7 +263,7 @@ async HitMe(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        } else {
+        } else if (random <= 7){
         let msg = [
         segment.at(e.user_id),`够了吗！`,
         ];
@@ -321,7 +321,6 @@ async Hitta(e){
 
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
-    if (!e.Master){ e.reply(`${botname}不能打主人！`); return true; }
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
     if (data) {
@@ -356,7 +355,7 @@ async Hitta(e){
 		e.group.muteMember(TA, MuteTime*(i+1));
 		await sleep(2000);
     } 
-    if (random > 7){
+    if (random => 7){
         let data = getread()
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
@@ -371,7 +370,7 @@ async Hitta(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        } else if (e.isMaster){
+        } else if (random <= 7 && e.isMaster){
         let msg = [
         `主人${botname}打完啦！快奖励${botname}(っ●ω●)っ~`,];
         e.reply(msg); //发送消息
@@ -380,7 +379,7 @@ async Hitta(e){
         });
         return true; //返回true 阻挡消息不再往下
 
-        } else {
+        } else if (random <= 7){
         let msg = [
         `打完啦！`,
         ];
