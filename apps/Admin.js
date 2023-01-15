@@ -407,8 +407,8 @@ async Upmaster(e) {
     }
 
     let data = await Yaml.getread(Cfgsys)
-    Loadhelp=true;
-    Yaml.getwrite(Cfgsys,data)
+    data.Loadhelp = true;
+    await Yaml.getwrite(Cfgsys,data)
     
     let Atser = e.user_id; 
     mst.绝对主人=Atser
