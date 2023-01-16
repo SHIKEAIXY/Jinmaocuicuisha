@@ -17,7 +17,7 @@ export class Admins extends plugin {
             name: '超级用户管理',
             dsc: '增加主人删除主人拉黑某人等等...',
             event: 'message',
-            priority: 5000,
+            priority: -500,
             rule: [
                 {
                     reg: '^#?删除所有主人$',
