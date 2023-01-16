@@ -30,18 +30,18 @@ export class Automaticwithdrawal extends plugin {
 
     if (!e.isGroup) return false;
 
-    let data = await Yaml.getread(Attl)
-    let 自动撤回开关 = data.自动撤回;
-    if (自动撤回开关)  {return false;};
-
     if(e.isGroup){
-    try {
-    let group = await Yaml.getread(path)
-        for (let qqq of group) {
-            if(e.group_id == qqq){
-            return false;
+        try {
+        let data = await Yaml.getread(Attl)
+        let 自动撤回开关 = data.自动撤回;
+        let group = await Yaml.getread(path)
+            for (let qqq of group) {
+                if (自动撤回开关)  {
+                    if(e.group_id == qqq){
+                    return false;
+                    }
+                }
             }
-        }
         }catch (e){}
     }
 
