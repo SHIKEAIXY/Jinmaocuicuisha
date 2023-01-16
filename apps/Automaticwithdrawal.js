@@ -13,6 +13,7 @@ const _path = process.cwd();
 let bot = './config/config/bot.yaml'; //yunzai设置bot.yaml路径
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml';
 let rectime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
+let Attl='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml'
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 
 export class Automaticwithdrawal extends plugin {
@@ -28,6 +29,10 @@ export class Automaticwithdrawal extends plugin {
     async accept(e) {
 
     if (!e.isGroup) return false;
+
+    let data = await Yaml.getread(Attl)
+    let 自动撤回开关 = data.自动撤回;
+    if (自动撤回开关)  {return false;};
 
     if(e.isGroup){
     try {
