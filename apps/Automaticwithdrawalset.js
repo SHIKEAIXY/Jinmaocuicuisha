@@ -20,7 +20,7 @@ export class Automaticwithdrawalset extends plugin {
 			dsc: '自动撤回开关',
 			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
-			priority: 5000,
+			priority: 50,
 			rule: [
                 {   /** 命令正则匹配 */
                     reg: '^#?设置自动撤回时间(\\d)+(秒)?$',
