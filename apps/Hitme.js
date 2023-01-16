@@ -86,12 +86,11 @@ async Hitmaster(e) {
 
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
     let data = await Yaml.getread(path2)
-    if (!data) data= [];
-    if (e.msg.includes('打他仅我可用')){
+    if (data.Hitmaster && e.msg.includes('打他仅我可用')){
     data.Hitmaster = false;
     await e.reply(`好的${botname}知道了~`)
     }
-    if (e.msg.includes('打他所有人可用')){
+    if (!data.Hitmaster && e.msg.includes('打他所有人可用')){
     data.Hitmaster = true;
     await e.reply(`${botname}终于可以大展身手啦~`)
     }
