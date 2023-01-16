@@ -79,13 +79,13 @@ export class Automaticwithdrawalset extends plugin {
     if (!e.isMaster)  {return false}
      
         let data = await Yaml.getread(Attl)
-        if (e.msg.includes('开启自动撤回')){
-        data.自动撤回 = true;
-        await e.reply(`已开启自动撤回~`)
-        }
         if (e.msg.includes('关闭自动撤回')){
-        data.自动撤回 = false;
+        data.自动撤回 = true;
         await e.reply(`已关闭自动撤回~`)
+        }
+        if (e.msg.includes('开启自动撤回')){
+        data.自动撤回 = false;
+        await e.reply(`已开启自动撤回~`)
         }
         Yaml.getwrite(Attl,data)
         return false;
