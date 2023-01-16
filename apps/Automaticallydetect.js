@@ -1,7 +1,11 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq'
-
+const _path = process.cwd();
 const Automaticwithdrawalbot = 3; //检测消息数\/小于2会失效
+
+let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml'
+let rectime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
+let Attl='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml'
 
 export class Automaticwithdrawal extends plugin {
     constructor() {
@@ -26,6 +30,24 @@ export class Automaticwithdrawal extends plugin {
     }
 
     async Automaticwithdrawal(e) {
+
+        let data = await Yaml.getread(Attl)
+        let 自动撤回开关 = data.自动撤回;
+        if (自动撤回开关)  {return false;};
+
+        if (!e.isGroup) return false;
+
+        if(e.isGroup){
+        try {
+        let group = await Yaml.getread(path)
+            for (let qqq of group) {
+                if(e.group_id == qqq){
+                return false;
+                }
+            }
+            }catch (e){}
+        }
+
 
         let key = `Yunzai:Automaticwithdrawal:${e.group_id}`;
         let res = await global.redis.get(key);
