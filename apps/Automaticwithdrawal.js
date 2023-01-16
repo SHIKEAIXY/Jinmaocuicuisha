@@ -32,7 +32,7 @@ export class Automaticwithdrawal extends plugin {
 
     let data = await Yaml.getread(Attl)
     let 自动撤回开关 = data.自动撤回;
-    if (自动撤回开关)  {return false;};
+    if (!自动撤回开关)  {return false;};
 
     if(e.isGroup){
     try {
