@@ -6,8 +6,6 @@ import fs from 'fs'
 const _path = process.cwd();
 const Automaticwithdrawalbot = 3; //检测消息数\/小于2会失效
 
-let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/qq.yaml'
-let rectime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
 let Attl='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml'
 
 export class Automaticwithdrawal extends plugin {
@@ -20,7 +18,7 @@ export class Automaticwithdrawal extends plugin {
             /** https://oicqjs.github.io/oicq/#eveAnts */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 3000,
+            priority: 5000,
             rule: [
                 {
                     /** 命令正则匹配 */
@@ -36,7 +34,7 @@ export class Automaticwithdrawal extends plugin {
 
         let data = await Yaml.getread(Attl)
         let 自动撤回开关 = data.自动撤回;
-        if (自动撤回开关)  {return false;};
+        if (!自动撤回开关)  {return false;};
 
         if (!e.isGroup) return false;
 
