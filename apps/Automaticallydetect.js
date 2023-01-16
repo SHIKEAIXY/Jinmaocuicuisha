@@ -1,5 +1,8 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq'
+import YAML from 'yaml'
+import Yaml from '../Yaml/Yaml.js'
+import fs from 'fs'
 const _path = process.cwd();
 const Automaticwithdrawalbot = 3; //检测消息数\/小于2会失效
 
