@@ -13,6 +13,15 @@ if(!fs.existsSync(mst)) {
   })
 }
 
+let Attl='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml'
+if(!fs.existsSync(Attl)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回.txt',Attl,(err)=>{
+	if(err){
+            logger.info(err)
+       }
+  })
+}
+
 let chtime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
 if(!fs.existsSync(chtime)) {
         fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt',chtime,(err)=>{
