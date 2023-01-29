@@ -18,6 +18,7 @@ let HitMe_time = 10;
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
 let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
 let path2='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml'
+let 主人 = './config/config/other.yaml';
 
 if (!fs.existsSync(path)) {fs.writeFileSync(path,'')}
 if (!fs.existsSync(path1)) {fs.writeFileSync(path1,'')}
@@ -320,10 +321,12 @@ async Hitta(e){
     G = parseInt(G);
     let TA = G
 
+    let MasterQQ = await Yaml.getread(主人)
+    try {for (let qqq of MasterQQ) {
+    if(TA == qqq){e.reply(`${botname}不能打主人！`);return false}}}catch (e){}
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
-    if (e.atisMaster){ e.reply(`${botname}不能打主人！`); return true; }
-
+    
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
     if (data) {
       console.log(data)
