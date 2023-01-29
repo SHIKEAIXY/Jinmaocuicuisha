@@ -299,9 +299,11 @@ async Hitta(e){
         }
         }catch (e){}
     }
-    
-    if (!e.at) return false;
 
+    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
+    if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
+    if (!e.at) return false;
+    
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
@@ -321,13 +323,11 @@ async Hitta(e){
     G = parseInt(G);
     let TA = G
 
-    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
-    if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
     try {
     let QH = await Yaml.getread(主人)
     let userQQ = QH.masterQQ;
     for (let qqq of userQQ) {
-    if(TA == qqq){e.reply(`${botname}不能打自己主人！`);return false}}
+    if(TA == qqq){e.reply(`${botname}不能打主人！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
