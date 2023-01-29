@@ -324,8 +324,9 @@ async Hitta(e){
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
     try {
-    let MasterQQ = await Yaml.getread(主人)
-    for (let qqq of MasterQQ) {
+    let QH = await Yaml.getread(主人)
+    let userQQ = QH.masterQQ;
+    for (let qqq of userQQ) {
     if(TA == qqq){e.reply(`${botname}不能打自己主人！`);return false}}
     }catch (e){}
 
