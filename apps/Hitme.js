@@ -323,8 +323,12 @@ async Hitta(e){
 
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
-    if((e.isMaster == TA)){ e.reply(`${botname}不能打自己主人！`);return false}
-    
+    try {
+    let MasterQQ = await Yaml.getread(主人)
+    for (let qqq of MasterQQ) {
+    if(e.TA == qqq){e.reply(`${botname}不能打自己主人！`);return false}}
+    }catch (e){}
+
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
     if (data) {
       console.log(data)
