@@ -326,7 +326,7 @@ async Hitta(e){
     try {
     let MasterQQ = await Yaml.getread(主人)
     for (let qqq of MasterQQ) {
-    if(e.TA == qqq){e.reply(`${botname}不能打自己主人！`);return false}}
+    if(TA == qqq){e.reply(`${botname}不能打自己主人！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
