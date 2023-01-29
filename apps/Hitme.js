@@ -54,7 +54,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(写入|删除)打人api(.*)$',
+                    reg: '^#?(写入|删除)打人api$',
                     /** 执行方法 */
                     fnc: 'setHitMeapi',
                     permission: 'master'
@@ -68,7 +68,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(打|hit|HIT|da|DA)(他|ta|TA|he|HE).*$',
+                    reg: '^#?(.*)(打|hit|HIT|da|DA)(他|ta|TA|he|HE)(.*)$',
                     /** 执行方法 */
                     fnc: 'Hitta'
                 },
@@ -299,6 +299,8 @@ async Hitta(e){
         }catch (e){}
     }
     
+    if (!e.at) return false;
+
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
@@ -320,6 +322,7 @@ async Hitta(e){
 
     if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
+    if (e.atisMaster){ e.reply(`${botname}不能打主人！`); return true; }
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
     if (data) {
