@@ -22,7 +22,13 @@ export const helpCfg = {
   }
 }
 
-export const helpList = [{
+export const helpList = [
+
+    {
+    "group": "提示:本插件所有功能都可以不需要加#就可以触发",
+    },
+
+    {
     "group": "打人",
     "list":  [
     {
