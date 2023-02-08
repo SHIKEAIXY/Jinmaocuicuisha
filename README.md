@@ -10,15 +10,6 @@
 
 #### 安装教程
 
-// 使用gitee
-git clone https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
-pnpm add image-size -w
-
-// 使用github
-git clone https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
-pnpm add image-size -w
-```
-
 `git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin`
 
 #### 使用说明
