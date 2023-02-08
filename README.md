@@ -4,17 +4,15 @@
 
 1.基于 [Yunzai-Bot V3](https://github.com/Le-niao/Yunzai-Bot) 的功能插件
 
-2.QAQ抄的各位大佬的
+2.QAQ抄的各位大佬的.感觉没啥用的样子
 
-3.感觉没啥用的样子
-
-4.非常重要！非常重要！非常重要！使用本插件后请第一时间给机器人发设置绝对权限(如果被别人设置了别人可以删除你主人权限然后添加自己权限使用你机器人的所有功能)
+3.非常重要！非常重要！非常重要！使用本插件后请第一时间给机器人发设置绝对权限(如果被别人设置了别人可以删除你主人权限然后添加自己权限使用你机器人的所有功能)
 
 #### 安装教程
 
 进入 Yunzai 根目录执行 :
 
-  git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+  `git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin`
 
 #### 使用说明
 
