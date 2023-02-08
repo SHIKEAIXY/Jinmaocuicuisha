@@ -10,7 +10,7 @@
 
 #### 安装教程
 ```
-`git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin`
+git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
 #### 使用说明
 
