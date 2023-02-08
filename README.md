@@ -9,6 +9,9 @@
 3.非常重要！非常重要！非常重要！使用本插件后请第一时间给机器人发设置绝对权限(如果被别人设置了别人可以删除你主人权限然后添加自己权限使用你机器人的所有功能)
 
 #### 安装教程
+
+@到云崽再输入以下
+
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
