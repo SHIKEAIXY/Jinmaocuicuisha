@@ -10,7 +10,7 @@
 
 #### 安装教程
 
-@到云崽再输入以下
+cd至云崽根目录再输入下面的内容
 
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
