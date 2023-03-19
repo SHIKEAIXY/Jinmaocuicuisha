@@ -55,7 +55,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(写入|删除)打人api$',
+                    reg: '^#?(写入|删除)打人api(.*)$',
                     /** 执行方法 */
                     fnc: 'setHitMeapi',
                     permission: 'master'
