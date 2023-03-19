@@ -127,7 +127,7 @@ async setHitMeapi(e){
 
     let data=await getread()
         if (!data) data= [];
-        if (data.length > 0&&e.msg.includes('写入打我api')){
+        if (data.length > 0&&e.msg.includes('写入打人api')){
         return e.reply("api只能添加一个哦请先删除掉~", true);
         } else if (e.msg.includes('写入打人api')){
         let api=e.msg.replace(/#|写入|删除|打人api/g,'')
