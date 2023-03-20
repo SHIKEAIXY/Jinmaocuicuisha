@@ -3,8 +3,6 @@
 
 # 脆脆鲨插件-jinmaocuicuisha
 
-
-[![脆脆鲨插件访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha/.git)
 </div>
 
 
