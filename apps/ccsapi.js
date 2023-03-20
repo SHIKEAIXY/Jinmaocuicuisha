@@ -4,7 +4,7 @@ import { segment } from "oicq";
 import fetch from 'node-fetch'
 
  
-let ciku = ["不想自己找api？使用以下动漫图片api全部可用 https://api.ixiaowai.cn/api/api.php                     http://www.dmoe.cc/random.php     https://api.ixiaowai.cn/mcapi/mcapi.php     http://api.caonm.net/api/dm/index.php     https://img.paulzzh.tech/touhou/random      https://img.xjh.me/random_img.php?return=302        #写入打人api+上面的随便一个api即可                                                   后续会更新更多api列表----jinmocuicuisha-plugin "
+let ciku = ["不想自己找api？使用以下动漫图片api全部可用 https://api.ixiaowai.cn/api/api.php                     http://www.dmoe.cc/random.php     https://api.ixiaowai.cn/mcapi/mcapi.php     http://api.caonm.net/api/dm/index.php     https://img.paulzzh.tech/touhou/random      https://img.xjh.me/random_img.php?return=302                                                    #写入打人api+上面的随便一个api即可----jinmocuicuisha-plugin "
 ]
 
 export class ccsapi extends plugin {
