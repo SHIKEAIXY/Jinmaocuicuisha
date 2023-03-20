@@ -25,7 +25,7 @@ export const helpCfg = {
 export const helpList = [
 
     {
-    "group": "提示:本插件大部分功能都不需要加#就可以触发",
+    "group": "小提示:本插件大部分功能都不需要加#就可以触发",
     },
 
     {
@@ -33,7 +33,7 @@ export const helpList = [
     "list":  [
     {
       "icon": 118,
-      "title": "#设置打人Bot名字", "desc": "打人打自己需要先设置Bot名字"
+      "title": "#设置打人Bot名字", "desc": "设置机器人打人回复的名字"
     },
     {
       "icon": 116,
@@ -41,15 +41,19 @@ export const helpList = [
     }, 
     {
       "icon": 115,
-      "title": "#打他(仅我|所有人)可用", "desc": "打他功能设置仅我或者所有人可用"
+      "title": "#打他(仅我|所有人)可用", "desc": "打他功能设置仅我或者所有人可以使用"
     },
     {
       "icon": 117,
       "title": "#(写入|删除)打人api", "desc": "打人结束会发图片没有api就发不了，自己给bot发写入api+(地址)设置"
     },
     {
+      "icon": 118,
+      "title": "api参考", "desc": "查看6个动漫图片api"
+    },
+    {
       "icon": 119,
-      "title": "#打他|#打我", "desc": "打他+(艾特)"
+      "title": "#打他|#打我", "desc": "打他+(艾特要打的人)"
     }
     ]
     },
