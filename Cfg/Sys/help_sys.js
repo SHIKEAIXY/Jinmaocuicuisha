@@ -53,7 +53,7 @@ export const helpList = [
     },
     {
       "icon": 99,
-      "title": "参考api", "desc": "这个主要是在群里触发好看私聊没反应 私聊用上面的（"
+      "title": "参考api", "desc": "这个主要是在群里触发好看私聊没反应 私聊用左边的指令（"
     },
     {
       "icon": 119,
