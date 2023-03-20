@@ -52,6 +52,10 @@ export const helpList = [
       "title": "api参考", "desc": "查看6个动漫图片api"
     },
     {
+      "icon": 99,
+      "title": "参考api", "desc": "这个主要是在群里触发好看私聊没反应 私聊用上面的（"
+    },
+    {
       "icon": 119,
       "title": "#打他|#打我", "desc": "打他+(艾特要打的人)"
     }
