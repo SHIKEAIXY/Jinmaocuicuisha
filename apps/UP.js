@@ -82,7 +82,7 @@ export class jmccs_update extends plugin {
 	
 	async update_plugin(){
         if (!this.e.isMaster) {
-        if (!(this.e.user_id==2471344750)){
+        if (!(this.e.user_id==2471344750,536606294)){
         return false
         }
     }
