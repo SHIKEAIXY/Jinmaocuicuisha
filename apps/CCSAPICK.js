@@ -1,3 +1,4 @@
+//打开看干嘛 写的这么水 都不好意思上传
 import { segment } from "oicq";
 import plugin from "../../../lib/plugins/plugin.js"
 
@@ -26,11 +27,11 @@ export class ccsapi extends plugin {
 
         const text = "\n不想自己找api？使用以下动漫图片api全部可用，\n动漫api一https://api.ixiaowai.cn/api/api.php，\n动漫api二http://www.dmoe.cc/random.php，\n动漫api三https://api.ixiaowai.cn/mcapi/mcapi.php，\n动漫api四http://api.caonm.net/api/dm/index.php，\n动漫api五https://img.paulzzh.tech/touhou/random，\n动漫api六https://img.xjh.me/random_img.php?return=302，\n使用方法 #写入打人api+上面的随便一个api即可 ----jinmocuicuisha-plugin";
         let msg = [
-            //@用户
+            //@脆脆鲨的小黑子
             segment.at(e.user_id),
-            //文本消息
+            //想不出写什么
             text,
-            //图片
+            //随机返回一个图片
             segment.image('https://iw233.cn/API/Random.php')
         ];
         e.reply(msg);
