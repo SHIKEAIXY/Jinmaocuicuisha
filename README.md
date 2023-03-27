@@ -44,7 +44,9 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 #### 插件报错解决方法
 1.从plugins中删除jinmaocuicuisha-plugin重新下载脆脆鲨插件
+
 2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
+
 3.如果是更新插件后报错了 请耐心等待会修复
 
 还是无法解决请加群发送后台截图进行询问
