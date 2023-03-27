@@ -1,5 +1,4 @@
 import plugin from "../../../lib/plugins/plugin.js"
-import { segment } from "oicq";
 import fetch from 'node-fetch'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
@@ -28,7 +27,6 @@ export class HitmeandTa extends plugin {
 		super({
 			name: '打我and打他',
 			dsc: '打我打他',
-			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			priority: 5000,
 			rule: [

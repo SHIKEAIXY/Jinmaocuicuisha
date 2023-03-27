@@ -1,5 +1,4 @@
 //打开看干嘛 写的这么水 都不好意思上传
-import { segment } from "oicq";
 import plugin from "../../../lib/plugins/plugin.js"
 
 export class ccsapi extends plugin {
@@ -7,7 +6,6 @@ export class ccsapi extends plugin {
         super({
             name: "CCSAPICK",
             dsc: "CCSAPICK",
-            /** https://oicqjs.github.io/oicq/#events */
             event: "message.group",
             priority: 1000,
             rule: [

@@ -1,5 +1,4 @@
 import plugin from "../../../lib/plugins/plugin.js"
-import { segment } from "oicq";
 import fetch from 'node-fetch'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
@@ -18,7 +17,6 @@ export class Automaticwithdrawalset extends plugin {
 		super({
 			name: '自动撤回开关',
 			dsc: '自动撤回开关',
-			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			priority: 50,
 			rule: [

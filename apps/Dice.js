@@ -2,7 +2,6 @@ import plugin from '../../../lib/plugins/plugin.js'
 import co from '../../../lib/common/common.js'
 import common from'../../../lib/common/common.js'
 import { Cfg } from '../components/index.js'
-import { segment } from "oicq";
 
 const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
 

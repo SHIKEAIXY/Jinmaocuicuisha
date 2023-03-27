@@ -19,7 +19,6 @@ export class Jmccshelp extends plugin {
 			name: '脆脆鲨帮助',
 			/** 功能描述 */
 			dsc: '脆脆鲨使用说明',
-			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			/** 优先级，数字越小等级越高 */
 			priority: 3000,

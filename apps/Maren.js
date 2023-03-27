@@ -1,5 +1,4 @@
 import plugin from "../../../lib/plugins/plugin.js"
-import { segment } from "oicq";
 import fetch from 'node-fetch'
 import schedule from 'node-schedule'
 import YAML from 'yaml'
@@ -25,7 +24,6 @@ export class Maren extends plugin {
 		super({
 			name: 'Maren',
 			dsc: 'Maren',
-			/** https://oicqjs.github.io/oicq/#events */
 			event: 'message',
 			priority: 5000,
 			rule: [

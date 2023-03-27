@@ -1,5 +1,4 @@
 import plugin from '../../../lib/plugins/plugin.js'
-import { segment } from 'oicq'
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
@@ -15,7 +14,6 @@ export class Automaticwithdrawal extends plugin {
             name: 'Bot检测中...',
             /** 功能描述 */
             dsc: 'emmmmm',
-            /** https://oicqjs.github.io/oicq/#eveAnts */
             event: 'message',
             /** 优先级，数字越小等级越高 */
             priority: 5000,

@@ -1,6 +1,5 @@
 //太水了
 import plugin from "../../../lib/plugins/plugin.js"
-import { segment } from "oicq";
 import fetch from 'node-fetch'
 
  
@@ -14,7 +13,6 @@ export class ccsapi extends plugin {
       name: 'ccsapi',
       /** 功能描述 */
       dsc: 'ccsapi',
-      /** https://oicqjs.github.io/oicq/#events */
       event: 'message',
       /** 优先级，数字越小等级越高 */
       priority: 5000,

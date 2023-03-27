@@ -1,5 +1,4 @@
 import plugin from '../../../lib/plugins/plugin.js';
-import { segment } from "oicq";
 import fetch from 'node-fetch'
 import { execSync } from 'child_process'
 import fs from 'fs'

@@ -2,7 +2,6 @@ import plugin from "../../../lib/plugins/plugin.js"
 import co from '../../../lib/common/common.js'
 import cfg from'../../../lib/config/config.js'
 import schedule from 'node-schedule'
-import { segment } from "oicq";
 import YAML from 'yaml'
 import Yaml from '../Yaml/Yaml.js'
 import fs from 'fs'
@@ -21,7 +20,6 @@ export class Automaticwithdrawal extends plugin {
           super({
             name: 'Automaticwithdrawal',
             dsc: 'Automaticwithdrawal',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             priority: -5000000,
         })
