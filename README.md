@@ -32,7 +32,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 ```
 如果您下载的zip文件，请解压后把-master去掉放进plugins文件中
 <br>
-    <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
+    <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
 #### 使用说明
 
 1. · `#脆脆鲨帮助` | 查看
