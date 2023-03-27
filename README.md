@@ -22,8 +22,13 @@
 
 cd至云崽根目录再输入下面的内容
 
+gitee下载
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+```
+github下载（可能更新不及时...反正摆烂了）
+```
+git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
 #### 使用说明
 
