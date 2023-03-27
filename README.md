@@ -9,6 +9,7 @@
 <p align="center">
 <img width = "600" src="Resources/肾虚的脆脆鲨/可爱.png">
 </p>
+[![脆脆鲨插件访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
 
 #### 介绍
 
@@ -39,6 +40,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
+
 
 ### 免责声明
 
