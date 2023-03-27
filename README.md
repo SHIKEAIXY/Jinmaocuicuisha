@@ -42,6 +42,14 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
+#### 插件报错解决方法
+1.从plugins中删除jinmaocuicuisha-plugin重新下载脆脆鲨插件
+2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
+3.如果是更新插件后报错了 请耐心等待会修复
+
+还是无法解决请加群发送后台截图进行询问
+ 
+
 
 ### 免责声明
 
