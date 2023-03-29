@@ -14,7 +14,7 @@
 
 #### 介绍
 
-1.基于 [Yunzai-Bot V3](https://github.com/Le-niao/Yunzai-Bot) 的功能插件
+1.基于 [Yunzai-Bot V3](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 的功能插件
 
 2.QAQ抄的各位大佬的，感觉没啥用的样子
 
