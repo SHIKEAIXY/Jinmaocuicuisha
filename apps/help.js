@@ -41,7 +41,7 @@ export class Jmccshelp extends plugin {
     let Loadhelp = data.Loadhelp;
     if (!(Loadhelp==true)){
     if (!(this.e.user_id==uid)){
-        this.e.reply(`请先给Bot发送 #设置绝对权限 再使用帮助！！！`);
+        this.e.reply(`呜哇哇哇能不能先让主人给Bot发 #设置绝对权限 再使用帮助啊~`);
         return false;
         }
     }
