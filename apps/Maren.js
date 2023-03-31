@@ -95,16 +95,16 @@ export class Maren extends plugin {
         try{
         let File = fs.readdirSync(_path)
             if(File.length==0){
-            e.reply('额,一张图都没有呢~可以用指令【上传骂人图片】来上传图片哦~')
+            e.reply('呜一张图都没有鸭~请先使用指令【上传骂人图片】来上传图片吧~')
             cd = false
             return true
             }
-            msglist.push(`骂人图片共${File.length}张，可输入【删除骂人图片+(序号)】进行删除`)
+            msglist.push(`嘿嘿骂人图片共${File.length}张，可输入【删除骂人图片+(序号)】进行删除`)
             for (let i = 0; i < File.length; i++) {
             msglist.push([`${i+1}.`, segment.image(`${_path}${File[i]}`)])
             }
             let msgRsg = await e.reply(await co.makeForwardMsg(e, msglist))
-            if (!msgRsg)  e.reply('好像被风控了呢，请私聊试试', true)
+            if (!msgRsg)  e.reply('貌似被风控了，请私聊再试试吧~', true)
         }catch(err) {
         logger.error(err)
         }
@@ -117,7 +117,7 @@ export class Maren extends plugin {
     //获取序号
     let num = e.msg.match(/\d+/)
         if (!num) {
-        return  e.reply('序号呢？请先用指令【骂人图片列表】查看下图片对应的序号再来删除！')
+        return  e.reply('请带上要删除的序号 请先使用指令【骂人图片列表】查看下图片对应的序号再来删除！')
         }
         try{
             let File = fs.readdirSync(_path)
@@ -235,7 +235,7 @@ export class Maren extends plugin {
         if(e.msg.includes('删除文字')){
         let num = e.msg.match(/\d+/)
             if (!num) {
-            return  e.reply('序号呢？要不先用指令【词库列表】查看下文字对应的序号啊'); true;
+            return  e.reply('请带上序号啊！要不先用指令【词库列表】查看下文字对应的序号啊'); true;
             }
             let 内容=data.词库列表[num-1]
                 if(!内容){return e.reply('删除失败了呢，请检查序号是否正确，或检查词库列表是不是空的！'); true;}
@@ -273,12 +273,12 @@ export class Maren extends plugin {
                 if (e.group.is_admin && e.group.is_owner) {  
                 let i = 0;
                 e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
-                msg = [segment.at(e.user_id),`你怎么不骂了？你继续啊！`];
+                msg = [segment.at(e.user_id),`吊毛你怎么不骂了？你继续啊！`];
                 e.reply(msg)
                 return true;
                 }
                 if (!e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
-                return e.reply("有种给我管理啊！", true);
+                return e.reply("你个吊毛有种给我管理啊！", true);
                 }
             
             } else if (k < (文字概率 + 禁言概率 + 图片概率)){
