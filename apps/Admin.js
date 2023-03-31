@@ -71,7 +71,7 @@ async delblackQQ(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -97,7 +97,7 @@ async setblackQQ(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
     
@@ -123,7 +123,7 @@ async blackQQlb(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -139,7 +139,7 @@ async blackQQlb(e) {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是已拉黑的用户列表'
+        message: '以下是已被我拉黑用户的列表'
       }
     ]
     let data=await Yaml.getread(主人)
@@ -174,7 +174,7 @@ async delblackGroup(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -200,7 +200,7 @@ async setblackGroup(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
     
@@ -226,7 +226,7 @@ async blackGrouplb(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -242,7 +242,7 @@ async blackGrouplb(e) {
     let forwardMsg = [
       {
         ...userInfo,
-        message: '以下是已拉黑的群列表'
+        message: '以下是已被我拉黑的群列表'
       }
     ]
     let data=await Yaml.getread(主人)
@@ -274,10 +274,10 @@ async blackGrouplb(e) {
 
 async Qkmster(e) {
 
-    if (!e.isMaster) {e.reply(`你没有权限！`);return false;};
+    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;};
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
-    if (!(e.user_id==uid)){ e.reply(`你没有权限！`); return false;};
+    if (!(e.user_id==uid)){ e.reply(`对不起你没有权限！`); return false;};
 
     if(e.msg.includes('删除所有主人')){
     let data=await Yaml.getread(主人)
@@ -293,7 +293,7 @@ async Masterlb(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -344,7 +344,7 @@ async delMaster(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
 
@@ -370,7 +370,7 @@ async setMaster(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (!(e.user_id==uid)){
-        e.reply(`你没有权限！`)
+        e.reply(`对不起你没有权限！`)
         return false
     }
     
@@ -396,12 +396,12 @@ async Upmaster(e) {
     let mst = await Yaml.getread(path)
     let uid = mst.绝对主人;
     if (uid>null){
-    e.reply(`绝对权限已经设置过了！！！`)
+    e.reply(`你干嘛呢绝对权限已经设置过了 还想干什么？`)
     return false
     }
 
     if (!e.isMaster) {
-    e.reply(`你没有权限！`)
+    e.reply(`对不起你没有权限！`)
     return false;
     }
 
@@ -412,7 +412,7 @@ async Upmaster(e) {
     let Atser = e.user_id; 
     mst.绝对主人=Atser
     await Yaml.getwrite(path, mst)
-    let msg = [segment.at(e.user_id), `使用提示：\n绝对主人权限设置成功~你可以使用指令【增加主人+QQ号或者艾特对方】来添加新的主人或使用指令【删除主人+序号】删掉不想给主人权限的QQ,具体请发主人列表查看，增加和删除主人只有绝对主人权限能操作哦。`];
+    let msg = [segment.at(e.user_id), `脆脆酱温馨提示：\n绝对主人权限设置成功~您可以使用指令【增加主人+QQ号或者艾特对方】来添加新的主人或使用指令【删除主人+序号】删掉不想给主人权限的QQ,具体请发主人列表查看，增加和删除主人只有绝对主人权限能操作~`];
     await e.reply(msg)
     return false;
     }
