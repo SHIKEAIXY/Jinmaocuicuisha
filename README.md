@@ -26,7 +26,7 @@ cd至云崽根目录再输入下面的内容
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-github下载（可能更新不及时）---个人原因暂时无法hub拉取
+github下载（可能更新不及时）如果hub下载的报错了请联系我 我会尽快解决
 ```
 git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
