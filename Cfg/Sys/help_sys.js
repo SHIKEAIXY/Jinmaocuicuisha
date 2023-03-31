@@ -5,7 +5,7 @@
 * */
 
 export const helpCfg = {
-  title: '脆脆鲨使用指南',
+  title: '脆脆鲨食用指南',
   subTitle: 'Yunzai-Bot V3 && Jinmaocuicuisha-plugin',
   columnCount: 3,
   colWidth: 300,
@@ -25,7 +25,7 @@ export const helpCfg = {
 export const helpList = [
 
     {
-    "group": "小提示:本插件大部分功能都不需要加#就可以触发",
+    "group": "鲨鲨酱小提示:本插件的指令大部分触发不需要加#",
     },
 
     {
@@ -102,7 +102,7 @@ export const helpList = [
     "list": [
     {
       "icon": 114,
-      "title": "#(写入|删除)文字+(文字)", "desc": "写入或者删除骂人文字，删除按序号删，bot回骂时会调用，词库空的需要自己写入"
+      "title": "#(写入|删除)文字+(文字)", "desc": "写入或者删除骂人文字，删除按序号删，bot回骂时会调用，词库没有写需要自己写入"
     },
     {
       "icon": 125,
@@ -110,7 +110,7 @@ export const helpList = [
     },
     {
       "icon": 126,
-      "title": "#(上传|删除)骂人图片", "desc": "上传或者删除骂人图片，删除按序号删，bot回骂时会调用，也是空的需要自己上传"
+      "title": "#(上传|删除)骂人图片", "desc": "上传或者删除骂人图片，删除按序号删，bot回骂时会调用，没有写需要自己上传"
     },
     {
       "icon": 127,
