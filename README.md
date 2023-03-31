@@ -10,8 +10,6 @@
 <img width = "600" src="Resources/肾虚的脆脆鲨/可爱.png">
 </p>
 
-[![脆脆鲨插件访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
-
 #### 介绍
 
 1.基于 [Yunzai-Bot V3](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 的功能插件
