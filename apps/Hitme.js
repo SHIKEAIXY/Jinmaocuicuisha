@@ -87,7 +87,7 @@ async Hitmaster(e) {
     let data = await Yaml.getread(path2)
     if (data.Hitmaster && e.msg.includes('打他仅我可用')){
     data.Hitmaster = false;
-    await e.reply(`好的主人大大${botname}知道了~`)
+    await e.reply(`主人大大${botname}知道了~`)
     }
     if (!data.Hitmaster && e.msg.includes('打他所有人可用')){
     data.Hitmaster = true;
@@ -298,7 +298,7 @@ async Hitta(e){
         }catch (e){}
     }
 
-    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
+    if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
     if (!e.at) return false;
     
@@ -325,7 +325,7 @@ async Hitta(e){
     let QH = await Yaml.getread(主人)
     let userQQ = QH.masterQQ;
     for (let qqq of userQQ) {
-    if(TA == qqq){e.reply(`你干嘛${botname}不会打主人大大的！`);return false}}
+    if(TA == qqq){e.reply(`你干嘛${botname}不能打主人哒！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
