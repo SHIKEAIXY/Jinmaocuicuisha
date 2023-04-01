@@ -1,22 +1,29 @@
+
+<div align="center">
+  <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
+
+  
+<h1>jinmaocuicuisha-plugin</h1>
+
+
+
+脆脆鲨插件是一个Yunzai-Bot的扩展插件，给bot提供一些便携管理和一些娱乐功能
+
+
 </div>
 <div align="center">
-
-# 脆脆鲨插件-jinmaocuicuisha
-
-</div>
-
-
-<p align="center">
-<img width = "600" src="Resources/肾虚的脆脆鲨/可爱.png">
-</p>
 
 #### 介绍
 
 1.基于 [Yunzai-Bot V3](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 的功能插件
 
-2.QAQ抄的各位大佬的，感觉没啥用的样子
+2.脆脆鲨插件支持[时雨](https://gitee.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://gitee.com/TimeRainStarSky/Yunzai)
 
-3.使用本插件后请第一时间给机器人发 #设置绝对权限 
+3.脆脆鲨插件仅支持云崽v3版本v2请勿下载
+
+4.QAQ抄的各位大佬的，感觉没啥用的样子
+
+5.使用本插件后请第一时间给机器人发 #设置绝对权限 
 
 #### 安装教程
 
