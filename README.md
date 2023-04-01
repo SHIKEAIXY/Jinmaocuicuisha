@@ -13,6 +13,8 @@
 </div>
 <div align="center">
 
+[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha-plugin/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
+
 </div>
 
 #### 介绍
