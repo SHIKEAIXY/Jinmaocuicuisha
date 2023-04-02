@@ -147,9 +147,9 @@ export class Featuredisabled extends plugin {
 
             if(e.msg.includes('删除白名单')){
             let num = e.msg.match(/\d+/)
-            if (!num) {return  e.reply('序号呢？不知道的话可以用指令【白名单列表】查看下功能对应的序号哦~')}
+            if (!num) {return  e.reply('序号呢？不知道的话可以用指令【全局禁用列表】查看下功能对应的序号吧~')}
             let 恢复=All[num-1]
-            if(!恢复){return e.reply('错误序号，请使用指令【白名单列表】查看一下序号是否正确，或者检查【白名单列表】是否为空！')}
+            if(!恢复){return e.reply('序号输入错误，请使用指令【全局禁用列表】来查看具体序号，或者检查【全局禁用列表】是否为空！')}
             await All.splice(All.indexOf(恢复), 1)
             await Yaml.getwrite(禁用,data)
             await e.reply('删除成功~')
