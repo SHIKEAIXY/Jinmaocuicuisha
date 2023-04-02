@@ -19,7 +19,7 @@ export class ccsapi extends plugin {
       rule: [
         {
           /** 命令正则匹配 */
-          reg: '^api参考$',
+          reg: '^#?参考$',
           /** 执行方法 */
           fnc: 'apick'
         }
