@@ -27,9 +27,9 @@ export class ccsapi extends plugin {
         let msg = [
             //@脆脆鲨的小黑子
             segment.at(e.user_id),
-            //想不出写什么
+            //返回
             text,
-            //随机返回一个图片
+            ////返回一张图 下面的api如果寄了可以发送 #参考api 查看更多api自行更改或等更新 一般1-2周我会检查所有api
             segment.image('https://iw233.cn/API/Random.php')
         ];
         e.reply(msg);
