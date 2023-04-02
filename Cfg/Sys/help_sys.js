@@ -25,7 +25,7 @@ export const helpCfg = {
 export const helpList = [
 
     {
-    "group": "鲨鲨酱小提示:本插件的指令大部分触发不需要加#",
+    "group": "脆脆酱小提示:没有反应可以尝试去掉 # 发送",
     },
 
     {
@@ -49,11 +49,7 @@ export const helpList = [
     },
     {
       "icon": 118,
-      "title": "api参考", "desc": "查看6个动漫图片api"
-    },
-    {
-      "icon": 99,
-      "title": "参考api", "desc": "这个主要是在群里触发好看私聊没反应 私聊用左边的指令（"
+      "title": "#api参考", "desc": "查看找好的动漫图片api，夹杂着正经api？"
     },
     {
       "icon": 119,
@@ -119,12 +115,9 @@ export const helpList = [
     ]
     },
   
+    
     {
-    "group": "绝对权限",
-    "auth": "master",
-    "list":  [{"title": "可使用超级用户所有功能"
-    }
-    ]
+    "group": "设置绝对权限的人可用",
     },
 
     {
