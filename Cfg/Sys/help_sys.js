@@ -117,7 +117,8 @@ export const helpList = [
   
     
     {
-    "group": "下面指令设置绝对权限的人可用",
+    "group": "绝对主人可用",
+    "auth": "master",
     },
 
     {
