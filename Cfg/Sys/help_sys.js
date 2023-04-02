@@ -117,7 +117,7 @@ export const helpList = [
   
     
     {
-    "group": "设置绝对权限的人可用",
+    "group": "                下面指令设置绝对权限的人可用",
     },
 
     {
