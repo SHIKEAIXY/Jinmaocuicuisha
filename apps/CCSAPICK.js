@@ -11,7 +11,7 @@ export class ccsapi extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^[\\s\\S]*(参考api)$",
+                    reg: "^#?[\\s\\S]*(参考api)$",
                     /** 执行方法 */
                     fnc: "jmccsapick"
                 }
