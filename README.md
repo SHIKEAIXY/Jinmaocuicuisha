@@ -3,7 +3,7 @@
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
   
-<h1>Jinmaocuicuisha-plugin</h1>
+<h1>jinmaocuicuisha-plugin</h1>
 
 
 
@@ -13,7 +13,7 @@
 </div>
 <div align="center">
 
-[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
+[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://github.com/xiaoyun123452/jinmaocuicuisha.git)
 
 </div>
 
@@ -21,7 +21,7 @@
 
 1.基于 [Yunzai-Bot V3](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 的功能插件
 
-2.脆脆鲨插件支持[时雨](https://gitee.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://gitee.com/TimeRainStarSky/Yunzai)
+2.脆脆鲨插件支持[时雨](https://github.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://github.com/TimeRainStarSky/Yunzai)
 
 3.脆脆鲨插件仅支持云崽v3版本v2请勿下载
 
@@ -31,7 +31,7 @@
 
 #### 安装教程
 
-cd至云崽根目录再输入下面的内容
+注意:一定要CD至云崽根目录再输入下面的内容
 
 强烈推荐gitee下载
 ```
@@ -44,6 +44,8 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 如果您下载的zip文件，请解压后把-master去掉放进plugins文件中
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
+    
+    如果您是直接打开的plugins文件进行clone+本仓库拉取的 请将plugins/jinmaocuicuisha改名为Jinmaocuicuisha-plugin
 #### 使用说明
 
 1. · `#脆脆鲨帮助` | 查看
@@ -52,7 +54,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
 #### 插件报错解决方法
-1.从plugins中删除jinmaocuicuisha-plugin重新下载脆脆鲨插件
+1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件（适用于大多数情况）
 
 2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
 
