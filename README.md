@@ -45,7 +45,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
     
-    如果您是直接打开的plugins文件进行clone+本仓库拉取的 请将plugins/jinmaocuicuisha改名为Jinmaocuicuisha-plugin
+    如果您是直接打开的plugins文件进行clone+本仓库拉取的 请将plugins/Jinmaocuicuisha改名为Jinmaocuicuisha-plugin
 #### 使用说明
 
 1. · `#脆脆鲨帮助` | 查看
@@ -60,7 +60,10 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
-4.如果报错显示的是jinmaocuicuisha而不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到jinmaocuicuisha改成Jinmaocuicuisha-plugin
+4.如果报错显示的是Jinmaocuicuisha而不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到Jinmaocuicuisha改成Jinmaocuicuisha-plugin
+如：    图片来自群友
+<br>
+    <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="40%">
 
 还是无法解决请加群发送后台截图进行询问
  
