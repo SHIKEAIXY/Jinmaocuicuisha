@@ -60,10 +60,12 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
-4.如果报错显示的是Jinmaocuicuisha而不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到Jinmaocuicuisha改成Jinmaocuicuisha-plugin
+4.如果报错显示的不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
 如：    图片来自群友
 <br>
-    <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="40%">
+    <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
+
+注意大小写
 
 还是无法解决请加群发送后台截图进行询问
  
