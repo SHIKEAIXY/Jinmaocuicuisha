@@ -3,7 +3,7 @@
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
   
-<h1>jinmaocuicuisha-plugin</h1>
+<h1>Jinmaocuicuisha-plugin</h1>
 
 
 
@@ -58,7 +58,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
-4.如果报错显示的是jinmaocuicuisha而不是jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到jinmaocuicuisha改成jinmaocuicuisha-plugin
+4.如果报错显示的是jinmaocuicuisha而不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到jinmaocuicuisha改成Jinmaocuicuisha-plugin
 
 还是无法解决请加群发送后台截图进行询问
  
