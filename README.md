@@ -45,7 +45,6 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
     
-    如果您是直接打开的plugins文件进行clone+本仓库拉取的 请将plugins/Jinmaocuicuisha改名为Jinmaocuicuisha-plugin
 #### 使用说明
 
 1. · `#脆脆鲨帮助` | 查看
