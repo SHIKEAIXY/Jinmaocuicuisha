@@ -3,7 +3,7 @@
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
   
-<h1>jinmaocuicuisha-plugin</h1>
+<h1>Jinmaocuicuisha-plugin</h1>
 
 
 
