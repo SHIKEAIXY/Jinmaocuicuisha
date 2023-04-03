@@ -58,6 +58,8 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
+4.如果报错显示的是jinmaocuicuisha而不是jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到jinmaocuicuisha改成jinmaocuicuisha-plugin
+
 还是无法解决请加群发送后台截图进行询问
  
 
