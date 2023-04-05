@@ -50,7 +50,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
     
 #### 使用说明
 
-1. · `#脆脆鲨帮助` | 查看
+1. · 发送 `#脆脆鲨帮助` 查看脆脆鲨食用说明（第一次使用需先 #设置绝对权限 ）
 
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
