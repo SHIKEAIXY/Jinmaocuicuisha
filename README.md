@@ -70,6 +70,9 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 注意大小写
 
 还是无法解决请加群发送后台截图进行询问
+
+
+[云崽Bot问题点击此处跳转查看解决问题](https://www.wolai.com/bVJh7bXVrubjDyioVf9mmR)
  
 
 
