@@ -13,7 +13,7 @@
 </div>
 <div align="center">
 
-[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://github.com/xiaoyun123452/jinmaocuicuisha.git)
+[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
 
 </div>
 
