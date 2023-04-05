@@ -13,6 +13,9 @@
 </div>
 <div align="center">
 
+<a href='https://gitee.com/JMCCS/jinmaocuicuisha/stargazers'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/star.svg?theme=dark' alt='star'></img></a>
+<a href='https://gitee.com/JMCCS/jinmaocuicuisha/members'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/fork.svg?theme=dark' alt='fork'></img></a>
+
 [![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
 
 </div>
