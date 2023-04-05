@@ -21,7 +21,7 @@
 
 1.基于 [Yunzai-Bot V3](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 的功能插件
 
-2.脆脆鲨插件支持[时雨](https://github.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://github.com/TimeRainStarSky/Yunzai)
+2.脆脆鲨插件支持[时雨](https://gitee.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://gitee.com/TimeRainStarSky/Yunzai)
 
 3.脆脆鲨插件仅支持云崽v3版本v2请勿下载
 
