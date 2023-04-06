@@ -81,6 +81,10 @@ export const helpList = [
       "icon": 128,
       "title": "#随机恋爱", "desc": "不能让他们恋爱 快去阻止他们！！！"
     },
+        {
+      "icon": 129,
+      "title": "#原神轮盘赌", "desc": "开始你的op之旅"
+    },
     ]
     },
 
