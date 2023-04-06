@@ -75,6 +75,15 @@ export const helpList = [
     ]
     },
 
+        {
+    "group": "娱乐功能",
+    "list": [{
+      "icon": 128,
+      "title": "#随机恋爱", "desc": "不能让他们恋爱 快去阻止他们！！！"
+    },
+    ]
+    },
+
     {
     "group": "自动撤回功能",
     "list": [
