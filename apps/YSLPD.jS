@@ -7,7 +7,7 @@ import YAML from 'yaml'
 
 let game = {}  //游戏房间
 const _path = process.cwd().replace(/\\/g,"/");
-const data = _path + '\/Cfg\/Jinmaocuicuisha_Cfg\/YSLPD\/user_Cfg.yaml'; //这里定义数据存储路径
+const data = _path + '\/Cfg\/Jinmaocuicuisha_Cfg\/YSLPD\user_data.yaml'; //这里定义数据存储路径
 
 export class Roulette extends plugin {
   constructor () {
