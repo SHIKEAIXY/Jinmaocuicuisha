@@ -2,9 +2,10 @@ import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq';
 import fetch from 'node-fetch'
 
-//是否开启游戏 false关闭 true开启
-let isGame = true
+//是否开启 false关闭 true开启
+let isGame = false
 export class SJBZ extends plugin {
+
   constructor () {
     super({
       name: 'SJBZ',
@@ -32,7 +33,7 @@ export class SJBZ extends plugin {
   async guess (e) {
     let guessConfig = getGuessConfig(e)
   if (guessConfig.gameing) {
-    e.reply('随机恋爱正在被身经百战的佬游玩呢')
+    e.reply('随机恋爱正在进行哦!')
     return false;
   }
   
@@ -51,7 +52,7 @@ export class SJBZ extends plugin {
       guessConfig.gameing = false;
       isGame = false
       guessConfig.current =''
-      e.reply('怎么还不玩 都超时了请再次发送#随机恋爱');
+      e.reply('随机恋爱游戏超时，已结束');
     }
   }, 5 * 60000)//分
 
@@ -69,7 +70,7 @@ export class SJBZ extends plugin {
   }
     if(isGame){
       if(e.msg == "拯救"||e.msg == "拆散"){
-      e.reply("请回答应该 或 不应该",true)
+      e.reply("请回答应该或不应该",true)
       return true
       }
     } 
@@ -79,10 +80,10 @@ export class SJBZ extends plugin {
     
   
     for(let opt of res.data.opt){
-      if(opt == null || opt !== "再次挑战随机恋爱"){
+      if(opt == null || opt !== "再次挑战"){
         continue;
       }
-      if(opt.includes("身经百战的陌生人加油哦")){
+      if(opt.includes("再次挑战")){
         e.reply([res.data.title,"\n" + res.data.text])
         guessConfig.gameing = false;
         guessConfig.current = ''
