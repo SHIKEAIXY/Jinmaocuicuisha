@@ -1,25 +1,25 @@
-//打开看干嘛 写的这么水 都不好意思上传
+//太水了
 import plugin from "../../../lib/plugins/plugin.js"
 
 export class ccsapi extends plugin {
     constructor() {
         super({
-            name: "CCSAPICK",
-            dsc: "CCSAPICK",
+            name: "Garbageccsapick",
+            dsc: "Garbageccsapick",
             event: "message.group",
             priority: 1000,
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?[\\s\\S]*(参考api|api参考)$",
+                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao)$",
                     /** 执行方法 */
-                    fnc: "jmccsapick"
+                    fnc: "Garbageccsapicklaile"
                 }
             ]
         });
     }
 
-    async jmccsapick(e) {
+    async Garbageccsapicklaile(e) {
         //获取项目运行路径
         const _path = process.cwd();
 
