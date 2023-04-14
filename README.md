@@ -133,6 +133,8 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 
     - 清理白名单
 
+</details>
+
 #### 使用说明
 
 1. · 发送 `#脆脆鲨帮助` 查看脆脆鲨食用说明（第一次使用需先 #设置绝对权限 ）
