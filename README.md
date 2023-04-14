@@ -52,10 +52,10 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
 
-## 功能介绍
+## 功能介绍&使用说明
 
 > Jinmaocuicuisha-plugin提供以下功能
-> 详细内容请使用 **脆脆鲨帮助**  查看
+> 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
 
 <details>
@@ -136,10 +136,6 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
     - 清理白名单
 
 </details>
-
-#### 使用说明
-
-1. · 发送 `#脆脆鲨帮助` 查看脆脆鲨食用说明（第一次使用需先 #设置绝对权限 ）
 
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
