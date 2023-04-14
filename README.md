@@ -58,8 +58,8 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 > 详细内容请使用 **脆脆鲨帮助**  查看
 
 
-
 <details>
+
   <summary>娱乐类</summary>
 
 - 打人功能
@@ -94,7 +94,9 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
     
     - 骂人图片列表 
 
+</details>
 <details>
+
   <summary>管理类（绝对权限）</summary>
 
 - 自动撤回功能（撤回一切？）
