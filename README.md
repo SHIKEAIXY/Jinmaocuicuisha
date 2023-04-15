@@ -46,7 +46,7 @@ git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-
 ```
 github下载（可能更新不及时）
 ```
-git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha/import.git ./plugins/Jinmaocuicuisha-plugin
 ```
 如果您下载的zip文件，请解压后把-master去掉放进plugins文件中
 <br>
