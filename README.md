@@ -157,6 +157,7 @@ git clone https://github.com/xiaoyun123452/jinmaocuicuisha.git ./plugins/Jinmaoc
 还是无法解决请加群发送后台截图进行询问
 
 
+| `关于版本`|
 | ------------- |
 |[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/CHANGELOG.md)|
  
