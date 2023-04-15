@@ -26,7 +26,7 @@ export default async function (path, params, cfg) {
     },
     sys: {
       scale: 1,
-      copyright: `Yunzai-Bot<span class="version">${Version.yunzai}</span> &nbsp 脆脆鲨插件 1.4 <span class="version"></span>`
+      copyright: `Yunzai-Bot<span class="version">${Version.yunzai}</span> &nbsp 脆脆鲨插件 1.3 <span class="version"></span>`
     },
 	quality: 100
   }
