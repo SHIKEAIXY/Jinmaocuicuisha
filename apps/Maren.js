@@ -273,12 +273,12 @@ export class Maren extends plugin {
                 if (e.group.is_admin && e.group.is_owner) {  
                 let i = 0;
                 e.group.muteMember(e.user_id, MuteTime*(i+1));  //禁言
-                msg = [segment.at(e.user_id),`吊毛你怎么不骂了？你继续啊！`];
+                msg = [segment.at(e.user_id),`你怎么不骂了？你继续啊！`];
                 e.reply(msg)
                 return true;
                 }
                 if (!e.group.is_admin && !e.group.is_owner && !e.member.is_owner && !e.member.is_admin) {  
-                return e.reply("你个吊毛有种给我管理啊！", true);
+                return e.reply("有种给我管理啊！", true);
                 }
             
             } else if (k < (文字概率 + 禁言概率 + 图片概率)){
