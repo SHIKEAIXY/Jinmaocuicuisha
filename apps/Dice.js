@@ -18,7 +18,7 @@ export class dice extends plugin {
         priority: 5000,
         rule: [
               {
-                reg: '^#?(骰子|roll)使用说明$',
+                reg: '^#?(骰子||roll)使用说明$',
                 fnc: 'Dicehelp'
               },
               {
@@ -38,11 +38,11 @@ export class dice extends plugin {
                 fnc: 'Dice1'
               },
               {
-                reg: '^#?(2|二)$',
+                reg: '^#?(2|二|俩)$',
                 fnc: 'Dice2'
               },
               {
-                reg: '^#?(3|三)$',
+                reg: '^#?(3|三|仨)$',
                 fnc: 'Dice3'
               },
               {
