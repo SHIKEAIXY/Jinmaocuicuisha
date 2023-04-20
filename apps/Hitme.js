@@ -7,12 +7,14 @@ import moment from 'moment'
 const _path = process.cwd();
 
 let hit = ['一拳!','两拳!', '三拳!', '四拳!', '五拳!', '六拳!', '七拳!', '八拳!', '九拳!', '十拳!'];
-let MuteTime = 60; // 禁言时间秒(需bot管理员)
+let MuteTime = 60; // 禁言时间 单位秒(需bot管理员)
 let banword = ["rbq","RBQ","肉便器","吃精","请中出我","精子"]
-// 设置是否开启CD，填true则有CD，false无CD
+// 不可以设置bot名字的词
 let HitMeCD = false;
-// CD时长，单位分钟
+// 默认关闭
+// 设置是否开启CD，填true则有CD，false无CD
 let HitMe_time = 10;
+// CD时长，单位分钟
 
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
 let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
