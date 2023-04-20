@@ -50,7 +50,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 ```
 如果您下载的zip文件，请解压后把-master去掉放进plugins文件中
 <br>
-    <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="20%">
+    <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
 
 ## 功能介绍&使用说明
 
