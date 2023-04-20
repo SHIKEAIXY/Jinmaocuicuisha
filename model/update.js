@@ -309,7 +309,7 @@ export class update extends plugin {
     forwardMsg.data = forwardMsg.data
       .replace(/\n/g, '')
       .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-      .replace(/___+/, `<title color="#777777" size="26">脆脆鲨更新日志Σ(°Д°;</title>`)
+      .replace(/___+/, `<title color="#777777" size="26">脆脆鲨插件更新日志૮₍ ˃ ⤙ ˂ ₎ა</title>`)
 
     return forwardMsg
   }
