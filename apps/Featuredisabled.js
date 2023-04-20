@@ -220,7 +220,7 @@ export class Featuredisabled extends plugin {
             if(!功能){return e.reply('要禁用的功能名字呢？')}
             All.push(功能)
             await Yaml.getwrite(禁用,data)
-            return e.reply(`功能【${功能}】禁用成功！`)
+            return e.reply(`功能【${功能}】已经成功禁用！`)
             }
 
             if(e.msg.includes('全局启用')){
