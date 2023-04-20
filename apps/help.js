@@ -25,7 +25,7 @@ export class Jmccshelp extends plugin {
 			rule: [
 				{
 					/** 命令正则匹配 */
-					reg: '^#?脆脆鲨(帮助|菜单|使用说明)$',
+					reg: '^#?脆脆鲨(帮助|菜单|食用菜单|使用说明|介绍)$',
 					/** 执行方法 */
 					fnc: 'msg'
 				}
