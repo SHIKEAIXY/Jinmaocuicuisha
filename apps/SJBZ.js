@@ -1,9 +1,9 @@
-//某个秋刀鱼的
+// 某个秋刀鱼的
 import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq';
 import fetch from 'node-fetch'
 
-//是否开启 false关闭 true开启
+// 是否开启 false关闭 true开启
 let isGame = false
 export class SJBZ extends plugin {
 
