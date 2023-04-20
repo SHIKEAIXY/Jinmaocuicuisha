@@ -10,8 +10,8 @@ export class ccsapi extends plugin {
             priority: 1000,
             rule: [
                 {
-                    /** 命令正则匹配 */
-                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao)$",
+                    /** 命令正则匹配（此处可以自行更改） */
+                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$",
                     /** 执行方法 */
                     fnc: "Garbageccsapicklaile"
                 }
@@ -29,8 +29,8 @@ export class ccsapi extends plugin {
             segment.at(e.user_id),
             //返回
             text,
-            ////返回一张图 下面的api如果寄了可以发送 #参考api 查看更多api自行更改或等更新 一般1-2周我会检查所有api
-            segment.image('https://iw233.cn/API/Random.php')
+            ////返回一张图 （返回的图显示过期？请自行更换下面的api）
+            segment.image('https://img.paulzzh.tech/touhou/random')
         ];
         e.reply(msg);
 
