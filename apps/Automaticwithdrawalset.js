@@ -62,11 +62,11 @@ export class Automaticwithdrawalset extends plugin {
         if (!data) data = [];
         if (data.indexOf(e.group_id) == -1&&e.msg.includes('本群禁用自动撤回')){
         await data.push(e.group_id)
-        await e.reply(`本群已禁用自动撤回~`)
+        await e.reply(`本群已禁用自动撤回ฅ( ̳• · • ̳ฅ)`)
         }
         if (data.indexOf(e.group_id)!== -1&&e.msg.includes('本群启用自动撤回')){
         await data.splice(data.indexOf(e.group_id), 1)
-        await e.reply(`本群已启用自动撤回~`)
+        await e.reply(`本群已启用自动撤回ฅ( ̳• · • ̳ฅ)`)
         }
         Yaml.getwrite(path,data)
         return false;
@@ -79,11 +79,11 @@ export class Automaticwithdrawalset extends plugin {
         let data = await Yaml.getread(Attl)
         if (data.自动撤回 && e.msg.includes('开启自动撤回')){
         data.自动撤回 = false;
-        await e.reply(`已开启自动撤回~`)
+        await e.reply(`已开启自动撤回( ̳• · • ̳ฅ)`)
         }
         if (!data.自动撤回 && e.msg.includes('关闭自动撤回')){
         data.自动撤回 = true;
-        await e.reply(`已关闭自动撤回~`)
+        await e.reply(`已关闭自动撤回( ̳• · • ̳ฅ)`)
         }
         Yaml.getwrite(Attl,data)
         return false;
