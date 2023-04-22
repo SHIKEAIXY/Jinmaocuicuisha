@@ -57,9 +57,15 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 > Jinmaocuicuisha-plugin提供以下功能
 > 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
+<details>
+
+  <summary>帮助图：</summary>
+<br>
+    <img src="Resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
 
 <details>
 
+details>
   <summary>娱乐类</summary>
 
 - 打人功能
