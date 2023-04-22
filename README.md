@@ -69,7 +69,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 	
 </details>
 <details>
-  summary>娱乐类</summary>
+  <summary>娱乐类</summary>
 
 - 打人功能
 
