@@ -1,4 +1,4 @@
-
+# 脆脆鲨插件 使用介绍
 
 <details>
   <summary>帮助图：</summary>
