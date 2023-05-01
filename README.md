@@ -81,7 +81,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 | `关于版本`|
 | ------------- |
-|[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/CHANGELOG.md)|
+|[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin version.md)|
  
 
 ### 免责声明
