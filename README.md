@@ -57,8 +57,10 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 > Jinmaocuicuisha-plugin提供以下功能
 > 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
-[点击此处查看](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/syhelp.md)
-
+| `食用帮助`|
+| ------------- |
+|[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/syhelp.md)|
+ 
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
@@ -81,7 +83,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 | `关于版本`|
 | ------------- |
-|[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin version.md)|
+|[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20version.md)|
  
 
 ### 免责声明
