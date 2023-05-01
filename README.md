@@ -57,6 +57,8 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 > Jinmaocuicuisha-plugin提供以下功能
 > 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
+[点击此处查看](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/syhelp.md)
+
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
