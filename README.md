@@ -26,7 +26,7 @@
 
 2.脆脆鲨插件支持[时雨](https://gitee.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://gitee.com/TimeRainStarSky/Yunzai)
 
-3.脆脆鲨插件仅支持云崽v3版本v2请勿下载
+3.脆脆鲨插件仅支持 云崽v3 版本 v2版本 请勿下载
 
 4.QAQ抄的各位大佬的，感觉没啥用的样子
 
