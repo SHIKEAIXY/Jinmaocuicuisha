@@ -5,56 +5,23 @@ import fs from 'fs'
 import { Common, Plugin_Name} from '../components/index.js'
 
 let mst='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
-if(!fs.existsSync(mst)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/绝对主人.txt',mst,(err)=>{
-	if(err){
-            logger.info(err)
-       }
-  })
-}
-
 let Attl='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml'
-if(!fs.existsSync(Attl)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回.txt',Attl,(err)=>{
-	if(err){
-            logger.info(err)
-       }
-  })
-}
-
 let chtime='./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml'
-if(!fs.existsSync(chtime)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt',chtime,(err)=>{
-	if(err){
-            logger.info(err)
-       }
-  })
-}
-
 let c='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
-if(!fs.existsSync(c)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/词库.txt',c,(err)=>{
-	if(err){
-            logger.info(err)
-       }
-  })
-}
-
 let Hitmaster='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml'
-if(!fs.existsSync(Hitmaster)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Hitmaster.txt',Hitmaster,(err)=>{
-	if(err){
-            logger.info(err)
-       }
-  })
-}
-
 let Loadhelp='./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml'
-if(!fs.existsSync(Loadhelp)) {
-        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Loadhelp.txt',Loadhelp,(err)=>{
+
+if(!fs.existsSync(mst)) {
+        fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/绝对主人.txt',mst,
+                    './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回.txt',Attl,
+                    './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt',chtime,
+                    './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/词库.txt',c,
+                    './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Hitmaster.txt',Hitmaster,
+                    './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Loadhelp.txt',Loadhelp,
+                    (err)=>{
 	if(err){
-            logger.info(err)
-       }
+    logger.info(err)
+    }
   })
 }
 
@@ -81,11 +48,12 @@ export class jmccs_update extends plugin {
 	
     // 下面的qq是更新权限
 	async update_plugin(){
-        if (!this.e.isMaster) {
+
+
         if (!(this.e.user_id==2471344750 && 536606294));{
         return false;
         }
-    }
+    
 
 		let Update_Plugin = new update();
 		Update_Plugin.e = this.e;
