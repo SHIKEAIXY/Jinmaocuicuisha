@@ -97,7 +97,7 @@ export class HitmeandTa extends plugin {
             segment.at(e.user_id),
             text,
             // 返回一张图 （返回的图显示过期？请自行更换下面的api）
-            segment.image('https://img.xjh.me/random_img.php')
+            segment.image('http://api.caonm.net/api/dm/index.php')
         ];
         e.reply(msg);
         return true;
