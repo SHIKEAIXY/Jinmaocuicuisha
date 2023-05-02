@@ -319,11 +319,11 @@ async Hitta(e){
         }catch (e){}
     }
 
+    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
+    
     if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
     if (!e.at) return false;
-    
-    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
