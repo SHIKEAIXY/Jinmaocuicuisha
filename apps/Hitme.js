@@ -34,7 +34,7 @@ export class HitmeandTa extends plugin {
 			rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?打他(仅我|所有人)可用$',
+                    reg: NEGnt,
                     /** 执行方法 */
                     fnc: 'Hitmaster',
                     permission: 'master'
@@ -69,7 +69,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(.*)?(打|hit|HIT|da|DA)(他|ta|TA|he|HE)?(.*)$',
+                    reg: NEGnts,
                     /** 执行方法 */
                     fnc: 'Hitta'
                 },
