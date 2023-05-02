@@ -34,13 +34,6 @@ export class HitmeandTa extends plugin {
 			rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: NEGnt,
-                    /** 执行方法 */
-                    fnc: 'Hitmaster',
-                    permission: 'master'
-                },
-                {
-                    /** 命令正则匹配 */
                     reg: '^#?本群(禁用|启用)打人$',
                     /** 执行方法 */
                     fnc: 'ofHitMe',
@@ -66,12 +59,6 @@ export class HitmeandTa extends plugin {
                     /** 执行方法 */
                     fnc: 'setBotname',
                     permission: 'master'
-                },
-                {
-                    /** 命令正则匹配 */
-                    reg: NEGnts,
-                    /** 执行方法 */
-                    fnc: 'Hitta'
                 },
                 {
                     /** 命令正则匹配 */
