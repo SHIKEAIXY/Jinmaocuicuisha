@@ -11,7 +11,7 @@ let c='./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml'
 let Hitmaster='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml'
 let Loadhelp='./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml'
 
-if(!fs.existsSync(mst)) {
+if(!fs.existsSync(mst,Attl,chtime,c,Hitmaster,Loadhelp)) {
         fs.copyFile('./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/绝对主人.txt',mst,
                     './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回.txt',Attl,
                     './plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt',chtime,
