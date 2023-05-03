@@ -1,3 +1,10 @@
+# 5.3更新日志 
+
+# 目前不可用打他功能
+
+# 原因： bug暂时未找到
+
+# 请及时更新脆脆鲨插件
 
 <div align="center">
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
