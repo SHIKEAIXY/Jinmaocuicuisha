@@ -7,14 +7,12 @@ import moment from 'moment'
 const _path = process.cwd();
 
 let hit = ['一拳!','两拳!', '三拳!', '四拳!', '五拳!', '六拳!', '七拳!', '八拳!', '九拳!', '十拳!'];
-let MuteTime = 60; // 禁言时间 单位秒(需bot管理员)
+let MuteTime = 60; // 禁言时间秒(需bot管理员)
 let banword = ["rbq","RBQ","肉便器","吃精","请中出我","精子"]
-// 不可以设置bot名字的词
-let HitMeCD = false;
-// 默认关闭
 // 设置是否开启CD，填true则有CD，false无CD
-let HitMe_time = 10;
+let HitMeCD = false;
 // CD时长，单位分钟
+let HitMe_time = 10;
 
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
 let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
@@ -32,6 +30,20 @@ export class HitmeandTa extends plugin {
 			event: 'message',
 			priority: 5000,
 			rule: [
+                {
+                    /** 命令正则匹配 */
+                    reg: '^#?(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$',
+                    /** 执行方法 */
+                    fnc: 'Hitapi',
+                    permission: 'master'
+                },
+                {
+                    /** 命令正则匹配 */
+                    reg: '^#?打他(仅我|所有人)可用$',
+                    /** 执行方法 */
+                    fnc: 'Hitmaster',
+                    permission: 'master'
+                },
                 {
                     /** 命令正则匹配 */
                     reg: '^#?本群(禁用|启用)打人$',
@@ -62,9 +74,9 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$",
-                        /** 执行方法 */
-                     fnc: "Garbageccsapicklaile"
+                    reg: '^#?(.*)(打|hit|HIT|da|DA)(他|ta|TA|he|HE)(.*)$',
+                    /** 执行方法 */
+                    fnc: 'Hitta'
                 },
                 {
                     /** 命令正则匹配 */
@@ -76,17 +88,17 @@ export class HitmeandTa extends plugin {
         })
     }
 
-    async Garbageccsapicklaile(e) {
+async Hitapi(e) {
 
-        let text = "不想自己找api？使用以下动漫图片api全部可用\n动漫api一http://www.dmoe.cc/random.php\n动漫api二https://api.ayao.ltd/Mobile/api.php\n动漫api三http://api.caonm.net/api/dm/index.php\n动漫api四https://img.xjh.me/random_img.php?return=302\n动漫api五https://img.xjh.me/random_img.php\n动漫api六https://api.ayao.ltd/head-portrait/api.php \napi不正经的https://api.btstu.cn/sjbz/api.php\n动漫api七https://api.vvhan.com/api/acgimg\n动漫api八http://www.dmoe.cc/random.php\n动漫api九http://img.xjh.me/random_img.php\n动漫api十https://api.yimian.xyz/img\n动漫api十一https://api.ghser.com/random/api.php\n动漫api十二https://api.yimian.xyz/img \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
-        let msg = [
-            segment.at(e.user_id),
-            text,
-            // 返回一张图 （返回的图显示过期？请自行更换下面的api）
-            segment.image(`http://api.caonm.net/api/dm/index.php`)
-        ];
-        e.reply(msg);
-        return false;
+    let text = "不想自己找api？使用以下动漫图片api全部可用\n动漫api一http://www.dmoe.cc/random.php\n动漫api二https://api.ayao.ltd/Mobile/api.php\n动漫api三http://api.caonm.net/api/dm/index.php\n动漫api四https://img.xjh.me/random_img.php?return=302\n动漫api五https://img.xjh.me/random_img.php\n动漫api六https://api.ayao.ltd/head-portrait/api.php \napi不正经的https://api.btstu.cn/sjbz/api.php\n动漫api七https://api.vvhan.com/api/acgimg\n动漫api八http://www.dmoe.cc/random.php\n动漫api九http://img.xjh.me/random_img.php\n动漫api十https://api.yimian.xyz/img\n动漫api十一https://api.ghser.com/random/api.php\n动漫api十二https://api.yimian.xyz/img \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
+    let msg = [
+    segment.at(e.user_id),
+    text,
+    // 返回一张图 （返回的图显示过期？请自行更换下面的api）
+    segment.image(`http://api.caonm.net/api/dm/index.php`)
+    ];
+    e.reply(msg);
+    return false;
     }    
 
 async Hitmaster(e) {
@@ -306,11 +318,11 @@ async Hitta(e){
         }catch (e){}
     }
 
-    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
-    
     if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
     if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
     if (!e.at) return false;
+    
+    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
@@ -429,3 +441,4 @@ async Hitta(e){
         return false
         }
     }
+
