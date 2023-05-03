@@ -69,7 +69,7 @@ export class HitmeandTa extends plugin {
                     /** 命令正则匹配 */
                     reg: '^#?(.*)(打|hit|HIT|da|DA)(他|ta|TA|he|HE)(.*)$',
                     /** 执行方法 */
-                    fnc: 'Hitta取消'
+                    fnc: 'Hitta'
                 },
                 {
                     /** 命令正则匹配 */
@@ -87,11 +87,11 @@ async Hitmaster(e) {
     let data = await Yaml.getread(path2)
     if (data.Hitmaster && e.msg.includes('打他仅我可用')){
     data.Hitmaster = false;
-    await e.reply(`主人大大${botname}知道了~`)
+    await e.reply(`好的${botname}知道了~`)
     }
     if (!data.Hitmaster && e.msg.includes('打他所有人可用')){
     data.Hitmaster = true;
-    await e.reply(`嘿嘿${botname}终于可以大展身手啦~`)
+    await e.reply(`${botname}终于可以大展身手啦~`)
     }
     Yaml.getwrite(path2,data)
     return false;
@@ -126,7 +126,7 @@ async setHitMeapi(e){
     let data=await getread()
         if (!data) data= [];
         if (data.length > 0&&e.msg.includes('写入打人api')){
-        return e.reply("api只能添加一个哦请先#删除打人api 鸭~", true);
+        return e.reply("api只能添加一个哦请先删除掉~", true);
         } else if (e.msg.includes('写入打人api')){
         let api=e.msg.replace(/#|写入|删除|打人api/g,'')
         await data.push(api)
@@ -136,7 +136,7 @@ async setHitMeapi(e){
         }
         if (e.msg.includes('删除打人api')){
         let data=await getread()
-        if (!data.length > 0) { return e.reply('我说你api都没添加，你删微生物呢？') , true}
+        if (!data.length > 0) { return e.reply('api都没添加，你删毛线呢？') , true}
         await data.splice(data.indexOf(data), 1)
         await getwrite(data)
         await e.reply(`删除成功~`)
@@ -169,17 +169,17 @@ async setBotname(e){
     for (let ban of banword) {
         if (botname.length > 20) {
             let msg= [
-                '名字太长了吧...',
+                '名字太长了...',
             ]
             await e.reply(msg)
         } else if (botname.length == 0) {
             let msg= [
-                '呜呜呜我就不配有名字吗',
+                '我就不配有名字吗...',
             ]
             await e.reply(msg)
         } else if (ban === botname){
             let msg = [
-                `对不起 你不可以改我的名字！`,
+                `你是坏人！`,
             ]
             await e.reply(msg)
         } else {
@@ -221,7 +221,7 @@ async HitMe(e){
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
-            await e.reply('这什么主人啊连名字都不给我 生气')
+            await e.reply('这什么主人啊连名字都不给我~')
         return true;
         }
     }
@@ -230,9 +230,9 @@ async HitMe(e){
     let msgRes;
  	msg = [
    		segment.at(e.user_id),
-           `\n今天你的人品是【`,
+           `\n今天的人品是【`,
 		 (random+1).toString(),
-         `】，啊这 让${botname}满足你吧~`
+         `】，让${botname}满足你！`
   	];
     async function sleep(time) {
         return new Promise(resolve => {
@@ -251,7 +251,7 @@ async HitMe(e){
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
         segment.image(`${api}`),
-        segment.at(e.user_id),`今天人品太漂亮了,${botname}奖励你一张涩图,快说感谢${botname}吧！`,
+        segment.at(e.user_id),`今天人品爆炸,${botname}奖励你一张涩图,快说感谢${botname}！`,
         ];
         let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
         forwardMsg = await e.group.makeForwardMsg(forwardMsg)
@@ -263,7 +263,7 @@ async HitMe(e){
 
         } else if (random <= 7){
         let msg = [
-        segment.at(e.user_id),`够了吗?`,
+        segment.at(e.user_id),`够了吗！`,
         ];
         e.reply(msg); //发送消息
         redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
@@ -298,8 +298,8 @@ async Hitta(e){
         }catch (e){}
     }
 
-    if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
-    if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
+    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
+    if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
     if (!e.at) return false;
     
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
@@ -307,7 +307,7 @@ async Hitta(e){
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
-            await e.reply('这什么主人啊连名字都不给我 生气')
+            await e.reply('这什么主人啊连名字都不给我~')
         return true;
         }
     }
@@ -317,7 +317,7 @@ async Hitta(e){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
     }else{ G = G.match(/[1-9]\d*/g) }
-    if (!G) return e.reply(`奇怪${botname}找不到这个人 再试一次吧`)
+    if (!G) return e.reply(`额,${botname}找不到这个人呢。`)
     G = parseInt(G);
     let TA = G
 
@@ -325,7 +325,7 @@ async Hitta(e){
     let QH = await Yaml.getread(主人)
     let userQQ = QH.masterQQ;
     for (let qqq of userQQ) {
-    if(TA == qqq){e.reply(`你干嘛${botname}不能打主人哒！`);return false}}
+    if(TA == qqq){e.reply(`${botname}不能打主人！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
@@ -345,9 +345,9 @@ async Hitta(e){
     let msgRes;
  	msg = [
    		segment.at(TA),
-           `\n今天你的人品是【`,
+           `\n今天的人品是【`,
 		 (random+1).toString(),
-         `】，${botname}现在就打他吧~`
+         `】，${botname}现在就打他！`
   	];
     async function sleep(time) {
         return new Promise(resolve => {
@@ -366,7 +366,7 @@ async Hitta(e){
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
         segment.image(`${api}`),
-        segment.at(TA),`今天人品太漂亮了,${botname}奖励你一张涩图,快说感谢${botname}吧！`,
+        segment.at(TA),`今天人品爆炸,${botname}奖励你一张涩图,快说感谢${botname}！`,
         ];
         let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
         forwardMsg = await e.group.makeForwardMsg(forwardMsg)
@@ -421,4 +421,3 @@ async Hitta(e){
         return false
         }
     }
-
