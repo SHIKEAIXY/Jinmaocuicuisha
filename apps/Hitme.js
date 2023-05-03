@@ -7,12 +7,14 @@ import moment from 'moment'
 const _path = process.cwd();
 
 let hit = ['一拳!','两拳!', '三拳!', '四拳!', '五拳!', '六拳!', '七拳!', '八拳!', '九拳!', '十拳!'];
-let MuteTime = 60; // 禁言时间秒(需bot管理员)
+let MuteTime = 60; // 禁言时间 单位秒(需bot管理员)
 let banword = ["rbq","RBQ","肉便器","吃精","请中出我","精子"]
-// 设置是否开启CD，填true则有CD，false无CD
+// 不可以设置bot名字的词
 let HitMeCD = false;
-// CD时长，单位分钟
+// 默认关闭
+// 设置是否开启CD，填true则有CD，false无CD
 let HitMe_time = 10;
+// CD时长，单位分钟
 
 let path='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/api.yaml'
 let path1='./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/qq.yaml'
@@ -33,6 +35,7 @@ export class HitmeandTa extends plugin {
                 {
                     /** 命令正则匹配 */
                     reg: '^#?打他(仅我|所有人)可用$',
+                    reg: NEGnt,
                     /** 执行方法 */
                     fnc: 'Hitmaster',
                     permission: 'master'
@@ -67,9 +70,15 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(.*)(打|hit|HIT|da|DA)(他|ta|TA|he|HE)(.*)$',
+                    reg: '^#?(.*)?(打|hit|HIT|da|DA)(他|ta|TA|he|HE)?(.*)$',
                     /** 执行方法 */
-                    fnc: 'Hitta'
+                    fnc: 'Hitta暂停'
+                },
+                {
+                    /** 命令正则匹配 */
+                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$",
+                        /** 执行方法 */
+                     fnc: "Garbageccsapicklaile"
                 },
                 {
                     /** 命令正则匹配 */
@@ -81,17 +90,30 @@ export class HitmeandTa extends plugin {
         })
     }
 
+    async Garbageccsapicklaile(e) {
+
+        let text = "不想自己找api？使用以下动漫图片api全部可用\n动漫api一http://www.dmoe.cc/random.php\n动漫api二https://api.ayao.ltd/Mobile/api.php\n动漫api三http://api.caonm.net/api/dm/index.php\n动漫api四https://img.xjh.me/random_img.php?return=302\n动漫api五https://img.xjh.me/random_img.php\n动漫api六https://api.ayao.ltd/head-portrait/api.php \napi不正经的https://api.btstu.cn/sjbz/api.php\n动漫api七https://api.vvhan.com/api/acgimg\n动漫api八http://www.dmoe.cc/random.php\n动漫api九http://img.xjh.me/random_img.php\n动漫api十https://api.yimian.xyz/img\n动漫api十一https://api.ghser.com/random/api.php\n动漫api十二https://api.yimian.xyz/img \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
+        let msg = [
+            segment.at(e.user_id),
+            text,
+            // 返回一张图 （返回的图显示过期？请自行更换下面的api）
+            segment.image(`http://api.caonm.net/api/dm/index.php`)
+        ];
+        e.reply(msg);
+        return false;
+    }    
+
 async Hitmaster(e) {
 
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
     let data = await Yaml.getread(path2)
     if (data.Hitmaster && e.msg.includes('打他仅我可用')){
     data.Hitmaster = false;
-    await e.reply(`好的${botname}知道了~`)
+    await e.reply(`主人大大${botname}知道了~`)
     }
     if (!data.Hitmaster && e.msg.includes('打他所有人可用')){
     data.Hitmaster = true;
-    await e.reply(`${botname}终于可以大展身手啦~`)
+    await e.reply(`嘿嘿${botname}终于可以大展身手啦~`)
     }
     Yaml.getwrite(path2,data)
     return false;
@@ -126,7 +148,7 @@ async setHitMeapi(e){
     let data=await getread()
         if (!data) data= [];
         if (data.length > 0&&e.msg.includes('写入打人api')){
-        return e.reply("api只能添加一个哦请先删除掉~", true);
+        return e.reply("api只能添加一个哦请先#删除打人api 鸭~", true);
         } else if (e.msg.includes('写入打人api')){
         let api=e.msg.replace(/#|写入|删除|打人api/g,'')
         await data.push(api)
@@ -136,7 +158,7 @@ async setHitMeapi(e){
         }
         if (e.msg.includes('删除打人api')){
         let data=await getread()
-        if (!data.length > 0) { return e.reply('api都没添加，你删毛线呢？') , true}
+        if (!data.length > 0) { return e.reply('我说你api都没添加，你删微生物呢？') , true}
         await data.splice(data.indexOf(data), 1)
         await getwrite(data)
         await e.reply(`删除成功~`)
@@ -169,17 +191,17 @@ async setBotname(e){
     for (let ban of banword) {
         if (botname.length > 20) {
             let msg= [
-                '名字太长了...',
+                '名字太长了吧...',
             ]
             await e.reply(msg)
         } else if (botname.length == 0) {
             let msg= [
-                '我就不配有名字吗...',
+                '呜呜呜我就不配有名字吗',
             ]
             await e.reply(msg)
         } else if (ban === botname){
             let msg = [
-                `你是坏人！`,
+                `对不起 你不可以改我的名字！`,
             ]
             await e.reply(msg)
         } else {
@@ -191,7 +213,7 @@ async setBotname(e){
 }
 
 async HitMe(e){
-
+ 
     if (!e.isGroup) return false;
 
     if(e.isGroup){
@@ -221,7 +243,7 @@ async HitMe(e){
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
-            await e.reply('这什么主人啊连名字都不给我~')
+            await e.reply('这什么主人啊连名字都不给我 生气')
         return true;
         }
     }
@@ -230,9 +252,9 @@ async HitMe(e){
     let msgRes;
  	msg = [
    		segment.at(e.user_id),
-           `\n今天的人品是【`,
+           `\n今天你的人品是【`,
 		 (random+1).toString(),
-         `】，让${botname}满足你！`
+         `】，啊这 让${botname}满足你吧~`
   	];
     async function sleep(time) {
         return new Promise(resolve => {
@@ -251,7 +273,7 @@ async HitMe(e){
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
         segment.image(`${api}`),
-        segment.at(e.user_id),`今天人品爆炸,${botname}奖励你一张涩图,快说感谢${botname}！`,
+        segment.at(e.user_id),`今天人品太漂亮了,${botname}奖励你一张涩图,快说感谢${botname}吧！`,
         ];
         let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
         forwardMsg = await e.group.makeForwardMsg(forwardMsg)
@@ -263,7 +285,7 @@ async HitMe(e){
 
         } else if (random <= 7){
         let msg = [
-        segment.at(e.user_id),`够了吗！`,
+        segment.at(e.user_id),`够了吗?`,
         ];
         e.reply(msg); //发送消息
         redis.set(`dw:HitMe:${e.user_id}_cds`, `{"num":1,"booltime":${HitMeCD}}`, { 
@@ -298,26 +320,26 @@ async Hitta(e){
         }catch (e){}
     }
 
-    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
-    if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
-    if (!e.at) return false;
-    
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
+    
+    if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
+    if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
+    if (!e.at) return false;
 
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
-            await e.reply('这什么主人啊连名字都不给我~')
+            await e.reply('这什么主人啊连名字都不给我 生气')
         return true;
         }
     }
-
+ 
     let G = e.message[0].text.replace(/打|hit|HIT|da|DA|他|ta|TA|he|HE/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
     }else{ G = G.match(/[1-9]\d*/g) }
-    if (!G) return e.reply(`额,${botname}找不到这个人呢。`)
+    if (!G) return e.reply(`奇怪${botname}找不到这个人 再试一次吧`)
     G = parseInt(G);
     let TA = G
 
@@ -325,7 +347,7 @@ async Hitta(e){
     let QH = await Yaml.getread(主人)
     let userQQ = QH.masterQQ;
     for (let qqq of userQQ) {
-    if(TA == qqq){e.reply(`${botname}不能打主人！`);return false}}
+    if(TA == qqq){e.reply(`你干嘛${botname}不能打主人哒！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
@@ -345,9 +367,9 @@ async Hitta(e){
     let msgRes;
  	msg = [
    		segment.at(TA),
-           `\n今天的人品是【`,
+           `\n今天你的人品是【`,
 		 (random+1).toString(),
-         `】，${botname}现在就打他！`
+         `】，${botname}现在就打他吧~`
   	];
     async function sleep(time) {
         return new Promise(resolve => {
@@ -366,7 +388,7 @@ async Hitta(e){
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
         segment.image(`${api}`),
-        segment.at(TA),`今天人品爆炸,${botname}奖励你一张涩图,快说感谢${botname}！`,
+        segment.at(TA),`今天人品太漂亮了,${botname}奖励你一张涩图,快说感谢${botname}吧！`,
         ];
         let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
         forwardMsg = await e.group.makeForwardMsg(forwardMsg)
