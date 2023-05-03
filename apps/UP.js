@@ -4,39 +4,39 @@ import { update } from '../model/update.js'
 import fs from 'fs'
 import { Common, Plugin_Name} from '../components/index.js'
 
-let mst=`./plugins/${Plugin_Name}/Cfg/绝对主人/绝对主人.yaml`
-let Attl=`./plugins/${Plugin_Name}/Cfg/Automaticwithdrawalset/自动撤回.yaml`
-let chtime=`./plugins/${Plugin_Name}/Cfg/Automaticwithdrawalset/自动撤回时间.yaml`
-let c=`./plugins/${Plugin_Name}/Cfg/Ciku/词库.yaml`
-let Hitmaster=`./plugins/${Plugin_Name}/Cfg/Hitme/Hitmaster.yaml`
-let Loadhelp=`./plugins/${Plugin_Name}/Cfg/Loadhelp.yaml`
+let mst=`./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml`
+let Attl=`./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回.yaml`
+let chtime=`./plugins/Jinmaocuicuisha-plugin/Cfg/Automaticwithdrawalset/自动撤回时间.yaml`
+let c=`./plugins/Jinmaocuicuisha-plugin/Cfg/Ciku/词库.yaml`
+let Hitmaster=`./plugins/Jinmaocuicuisha-plugin/Cfg/Hitme/Hitmaster.yaml`
+let Loadhelp=`./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml`
 
 if(!fs.existsSync(mst)) {
-    fs.copyFile(`./plugins/${Plugin_Name}/Cfg/Sys/绝对主人.txt`,mst,(err)=>{
+    fs.copyFile(`./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/绝对主人.txt`,mst,(err)=>{
 	if(err){
     logger.info(err)}
     })
 }
 if(!fs.existsSync(Attl)) {
-    fs.copyFile(`./plugins/${Plugin_Name}/Cfg/Sys/自动撤回.txt`,Attl,(err)=>{
+    fs.copyFile(`./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回.txt`,Attl,(err)=>{
 	if(err){
     logger.info(err)}
     })
 }
 if(!fs.existsSync(chtime)) {
-    fs.copyFile(`./plugins/${Plugin_Name}/Cfg/Sys/自动撤回时间.txt`,chtime,(err)=>{
+    fs.copyFile(`./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/自动撤回时间.txt`,chtime,(err)=>{
 	if(err){
     logger.info(err)}
     })
 }
 if(!fs.existsSync(c)) {
-    fs.copyFile(`./plugins/${Plugin_Name}/Cfg/Sys/词库.txt`,c,(err)=>{
+    fs.copyFile(`./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/词库.txt`,c,(err)=>{
 	if(err){
     logger.info(err)}
     })
 }
 if(!fs.existsSync(Hitmaster)) {
-    fs.copyFile(`./plugins/${Plugin_Name}/Cfg/Sys/Hitmaster.txt`,Hitmaster,(err)=>{
+    fs.copyFile(`./plugins/Jinmaocuicuisha-plugin/Cfg/Sys/Hitmaster.txt`,Hitmaster,(err)=>{
 	if(err){
     logger.info(err)}
     })
