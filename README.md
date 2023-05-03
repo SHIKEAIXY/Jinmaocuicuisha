@@ -1,6 +1,4 @@
 
-# 请及时更新脆脆鲨插件
-
 <div align="center">
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
@@ -21,6 +19,9 @@
 [![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
 
 </div>
+
+
+# 请及时更新脆脆鲨插件
 
 #### 介绍
 
