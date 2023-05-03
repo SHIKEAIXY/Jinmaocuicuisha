@@ -69,7 +69,7 @@ export class HitmeandTa extends plugin {
                     /** 命令正则匹配 */
                     reg: '^#?(.*)(打|hit|HIT|da|DA)(他|ta|TA|he|HE)(.*)$',
                     /** 执行方法 */
-                    fnc: 'Hitta'
+                    fnc: 'Hitta取消'
                 },
                 {
                     /** 命令正则匹配 */
