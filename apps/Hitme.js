@@ -320,26 +320,26 @@ async Hitta(e){
         }catch (e){}
     }
 
-    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
-    
-    if (e.atall){ e.reply(`人太多了${botname}打不过！告辞`); return true; }
-    if (e.atme){ e.reply(`${botname}不能打自己呢！`); return true; }
+    if (e.atall){ e.reply(`${botname}打不过那么多人QAQ`); return true; }
+    if (e.atme){ e.reply(`${botname}不能打自己！`); return true; }
     if (!e.at) return false;
+    
+    let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
 
     if (!botname){
         await e.reply('我还没有名字,可以发送#设置打人bot名字+名字给我设置名字哦~')
         if (botname.length == 0){
-            await e.reply('这什么主人啊连名字都不给我 生气')
+            await e.reply('这什么主人啊连名字都不给我~')
         return true;
         }
     }
- 
+
     let G = e.message[0].text.replace(/打|hit|HIT|da|DA|他|ta|TA|he|HE/g, "").trim()
     if(e.message[1]){
     let atItem = e.message.filter((item) => item.type === "at");
     G = atItem[0].qq;
     }else{ G = G.match(/[1-9]\d*/g) }
-    if (!G) return e.reply(`奇怪${botname}找不到这个人 再试一次吧`)
+    if (!G) return e.reply(`额,${botname}找不到这个人呢。`)
     G = parseInt(G);
     let TA = G
 
@@ -347,7 +347,7 @@ async Hitta(e){
     let QH = await Yaml.getread(主人)
     let userQQ = QH.masterQQ;
     for (let qqq of userQQ) {
-    if(TA == qqq){e.reply(`你干嘛${botname}不能打主人哒！`);return false}}
+    if(TA == qqq){e.reply(`${botname}不能打主人！`);return false}}
     }catch (e){}
 
     let data = await redis.get(`dw:HitMe:${e.user_id}_cds`); 
@@ -367,9 +367,9 @@ async Hitta(e){
     let msgRes;
  	msg = [
    		segment.at(TA),
-           `\n今天你的人品是【`,
+           `\n今天的人品是【`,
 		 (random+1).toString(),
-         `】，${botname}现在就打他吧~`
+         `】，${botname}现在就打他！`
   	];
     async function sleep(time) {
         return new Promise(resolve => {
@@ -388,7 +388,7 @@ async Hitta(e){
         let api = await data.splice(data.indexOf() * 1)
         let msg = [
         segment.image(`${api}`),
-        segment.at(TA),`今天人品太漂亮了,${botname}奖励你一张涩图,快说感谢${botname}吧！`,
+        segment.at(TA),`今天人品爆炸,${botname}奖励你一张涩图,快说感谢${botname}！`,
         ];
         let forwardMsg = { message: msg, nickname: Bot.nickname, user_id: Bot.uin }
         forwardMsg = await e.group.makeForwardMsg(forwardMsg)
