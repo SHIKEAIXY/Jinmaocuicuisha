@@ -69,12 +69,6 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: '^#?(.*)?(打|hit|HIT|da|DA)(他|ta|TA|he|HE)?(.*)$',
-                    /** 执行方法 */
-                    fnc: 'Hitta'
-                },
-                {
-                    /** 命令正则匹配 */
                     reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$",
                         /** 执行方法 */
                      fnc: "Garbageccsapicklaile"
