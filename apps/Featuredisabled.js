@@ -78,14 +78,14 @@ export class Featuredisabled extends plugin {
             console.log(data)
             data[e.group_id] = { enable: ["云崽功能管理", ], disable: null };
             await Yaml.getwrite(禁用,data)
-            return e.reply(`已清空本群禁用！`)
+            return e.reply(`已清空本群禁用功能！`)
         }
         if(e.msg.includes('本群启用禁用')){
             let data=await Yaml.getread(禁用)
             console.log(data)
             data[e.group_id] = { enable: null, disable: [] };
             await Yaml.getwrite(禁用,data)
-            return e.reply(`已清空本群白名单！`)
+            return e.reply(`已清空本群白名单功能！`)
         }
     }
 
