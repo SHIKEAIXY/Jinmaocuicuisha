@@ -39,21 +39,26 @@
 <br>
     <img src="Resources/肾虚的脆脆鲨/可爱吗.gif" width="10%">
 
+---
+
 #### 安装教程
 
 注意:一定要CD至云崽根目录再输入下面的内容
 
-强烈推荐gitee下载
+### gitee下载（强烈推荐）
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-github下载（可能更新不及时）
+### github下载（可能更新不及时）
 ```
 git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-如果您下载的zip文件，请解压后把-master去掉放进plugins文件中
+### zip下载（不推荐）
+后把-master去掉放进plugins文件中
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
+
+---
 
 ## 功能介绍&使用说明
 
@@ -63,9 +68,13 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 | `食用帮助`|
 | ------------- |
 |[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/syhelp.md)|
+
+---
  
 #### 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
+
+---
 
 #### 插件报错解决方法
 1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件（适用于大多数情况）
@@ -87,6 +96,8 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 | `关于版本`|
 | ------------- |
 |[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20version.md)|
+
+---
  
 
 ### 免责声明
