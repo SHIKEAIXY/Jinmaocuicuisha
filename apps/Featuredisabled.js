@@ -75,7 +75,7 @@ export class Featuredisabled extends plugin {
 
     async Featuredisabled() {
 
-    if(!this.e.isMaster){ return this.reply('对不起你没有权限！');}
+    if(!this.e.isMaster){ return this.reply('对不起你没有权限！！');}
         let pluginList = []
         let plugins = []
         loader.priority.forEach(v => {
