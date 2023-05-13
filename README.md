@@ -67,8 +67,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 | `食用帮助`|
 | ------------- |
-|[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/
-Plugin function.md)|
+|[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20function.md)|
 
 ---
  
