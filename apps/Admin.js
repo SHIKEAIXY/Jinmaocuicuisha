@@ -410,8 +410,8 @@ async Upmaster(e) {
 };
 
 async function initfile() {
-    if (!fs.existsSync(`masterhes`)) {
+    if (!fs.existsSync(`msr00`)) {
     Bot.pickUser(cfg.masterQQ[0]).sendMsg("请先发送 \n#设置绝对权限\n不然用不了这个插件的帮助！！！\n\n本功能只发一次")
-    fs.writeFileSync(`masterhessave`, "utf8");
+    fs.writeFileSync(`msr00`, "utf8");
     }
 }
