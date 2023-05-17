@@ -75,7 +75,7 @@ export class Featuredisabled extends plugin {
 
     async Featuredisabled() {
 
-    if(!this.e.isMaster){ return this.reply('对不起你没有权限！！');}
+    if(!this.e.isMaster){ return true;}
         let pluginList = []
         let plugins = []
         loader.priority.forEach(v => {
@@ -126,10 +126,10 @@ export class Featuredisabled extends plugin {
 
     async BqallTs(e) {
 
-        if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+        if (!e.isMaster) {return false;}
         let mst = await Yaml.getread(path)
         let 主人权限 = mst.绝对主人;
-        if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+        if (!(this.e.user_id==主人权限)){return false;}
     
         if(e.msg.includes('本群启用白名单')){
             let data=await Yaml.getread(禁用)
@@ -149,10 +149,10 @@ export class Featuredisabled extends plugin {
 
     async Bqaslllb (e) {
 
-        if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+        if (!e.isMaster) {return false;}
         let mst = await Yaml.getread(path)
         let 主人权限 = mst.绝对主人;
-        if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+        if (!(this.e.user_id==主人权限)){return false;}
     
         let nickname = Bot.nickname
         if (this.e.isGroup) {
@@ -197,10 +197,10 @@ export class Featuredisabled extends plugin {
     
     async Bqasll(e) {
     
-        if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+        if (!e.isMaster) {return false;}
         let mst = await Yaml.getread(path)
         let 主人权限 = mst.绝对主人;
-        if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+        if (!(this.e.user_id==主人权限)){return false;}
     
         let data=await Yaml.getread(禁用)
         if (!data[e.group_id]) {data[e.group_id] = { disable: [] }}
@@ -309,10 +309,10 @@ export class Featuredisabled extends plugin {
 
     async QFtdall(e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
         if(e.msg.includes('清空全局禁用')){
         let data=await Yaml.getread(禁用)
@@ -326,10 +326,10 @@ export class Featuredisabled extends plugin {
 
     async QBFtdall(e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
         if(e.msg.includes('全局清空白名单')){
         let data=await Yaml.getread(禁用)
@@ -343,10 +343,10 @@ export class Featuredisabled extends plugin {
 
     async BFtdalllb (e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
     let nickname = Bot.nickname
     if (this.e.isGroup) {
@@ -391,10 +391,10 @@ export class Featuredisabled extends plugin {
 
     async BFtdall(e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
     let data=await Yaml.getread(禁用)
     console.log(data)
@@ -422,10 +422,10 @@ export class Featuredisabled extends plugin {
 
     async Ftdalllb (e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
     let nickname = Bot.nickname
     if (this.e.isGroup) {
@@ -470,10 +470,10 @@ export class Featuredisabled extends plugin {
 
     async Ftdall(e) {
 
-    if (!e.isMaster) {e.reply(`对不起你没有权限！`);return false;}
+    if (!e.isMaster) {return false;}
     let mst = await Yaml.getread(path)
     let 主人权限 = mst.绝对主人;
-    if (!(this.e.user_id==主人权限)){e.reply(`对不起你没有权限！`);return false;}
+    if (!(this.e.user_id==主人权限)){return false;}
 
     let data=await Yaml.getread(禁用)
     console.log(data)
