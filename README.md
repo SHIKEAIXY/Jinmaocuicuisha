@@ -20,7 +20,7 @@
 
 </div>
 
-
+# [脆脆鲨插件官网（随时会寄 未完善）](https://shikeaixy.github.io/jinmaocuicuisha.github.io/)
 
 ## 介绍
 
