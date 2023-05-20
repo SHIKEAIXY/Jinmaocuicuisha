@@ -22,7 +22,7 @@
 
 
 
-# 介绍
+## 介绍
 
 1.基于 [Yunzai-Bot V3](https://gitee.com/Le-niao/Yunzai-Bot) 的功能插件
 
@@ -40,26 +40,26 @@
 
 ---
 
-# 安装教程
+## 安装教程
 
 注意:一定要CD至云崽根目录再输入下面的内容
 
-## gitee下载（强烈推荐）
+### gitee下载（强烈推荐）
 ```
 git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-## github下载（可能更新不及时）
+### github下载（可能更新不及时）
 ```
 git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-## zip下载（不推荐）
+### zip下载（不推荐）
 后把-master去掉放进plugins文件中
 <br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
 
 ---
 
-# 功能介绍&使用说明
+## 功能介绍&使用说明
 
 > Jinmaocuicuisha-plugin提供以下功能
 > 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
@@ -70,12 +70,12 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 ---
  
-# 宣一下群
+## 宣一下群
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
 ---
 
-# 插件报错解决方法
+## 插件报错解决方法
 1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件（适用于大多数情况）
 
 2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
@@ -99,7 +99,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 ---
  
 
-### 免责声明
+## 免责声明
 
 1. 功能仅限内部交流与小范围使用，请勿将 `Yunzai-Bot` 及 `Jinmaocuicuisha-plugin` 用于任何以盈利为目的的场景；
 2. 素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除。
