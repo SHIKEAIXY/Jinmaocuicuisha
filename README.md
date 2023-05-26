@@ -6,7 +6,7 @@
 <h1>Jinmaocuicuisha-plugin</h1>
 
 
-# [脆脆鲨网页（win访问效果最佳）](https://jmccs.netlify.app)
+# [脆脆鲨网页（win访问效果最佳）](https://jmccs2.netlify.app/)
 脆脆鲨插件是一个Yunzai-Bot的扩展插件，给bot提供一些便携管理和一些娱乐功能
 
 
