@@ -39,6 +39,10 @@ export const helpList = [
       "icon": 116,
       "title": "`#打我` `#打他`", "desc": "打我或者打他"
     }, 
+        {
+      "icon": 114,
+      "title": "`#写入打人api` `#查看打人api``#查看打人api``#删除打人api`", "desc": "打人api"
+    }, 
     {
       "icon": 120,
       "title": "`#骰子` `#重置骰子` `#一到六` `#开`", "desc": "发送#一到六 后再发送#开"
