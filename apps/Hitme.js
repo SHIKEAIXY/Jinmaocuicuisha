@@ -75,7 +75,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?(欧尼酱壁纸|onjbz|ONJBZ|真寻壁纸|ZXBZ|zxbz)$",
+                    reg: "^#?(欧尼酱壁纸|真寻壁纸|onjbz|ONJBZ|ZXBZ|zxbz)$",
                     /** 执行方法 */
                     fnc: 'zxbz'
                 },    
@@ -114,8 +114,7 @@ export class HitmeandTa extends plugin {
         //感谢冀安2675712883部署的api
         //api中的图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载
         let url = `https://mahiro.tianyisama.tk`;
-        let res = await fetch(url).catch((err) => logger.error(err));
-        let msg = [segment.image(res.url)];
+        let msg = [segment.image(url)];
         e.reply(msg);
         return true; 
     }
