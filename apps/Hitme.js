@@ -115,7 +115,7 @@ export class HitmeandTa extends plugin {
         //api中的图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载
         let url = `https://mahiro.tianyisama.tk`;
         let res = await fetch(url).catch((err) => logger.error(err));
-        let msg = [segment.at(e.user_id), segment.image(res.url)];
+        let msg = [segment.image(res.url)];
         e.reply(msg);
         return true; 
     }
