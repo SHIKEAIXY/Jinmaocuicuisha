@@ -75,7 +75,7 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?(欧尼酱壁纸|真寻壁纸|onjbz|ONJBZ|ZXBZ|zxbz)$",
+                    reg: "^#?欧尼酱|真寻(酱)?(壁纸|壁纸|Bz|bZ|BZ|bz)$",
                     /** 执行方法 */
                     fnc: 'zxbz'
                 },    
