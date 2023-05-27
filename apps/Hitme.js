@@ -109,8 +109,6 @@ export class HitmeandTa extends plugin {
     }    
 
     async zxbz(e) {
-        console.log("用户命令：", e.msg);
-       
         //感谢冀安2675712883部署的api
         //api中的图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载
         let url = `https://mahiro.tianyisama.tk`;
