@@ -41,7 +41,11 @@ export const helpList = [
     }, 
         {
       "icon": 114,
-      "title": "`#写入打人api` `#查看打人api``#查看打人api``#删除打人api`", "desc": "打人api"
+      "title": "`#写入打人api` `#查看打人api``#删除打人api`", "desc": "打人api"
+    }, 
+    {
+      "icon": 115,
+      "title": "`#参考api` `#真寻壁纸`", "desc": "没用的小功能"
     }, 
     {
       "icon": 120,
