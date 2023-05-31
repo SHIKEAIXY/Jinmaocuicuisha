@@ -60,7 +60,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 [点击此处下载](https://gitee.com/JMCCS/jinmaocuicuisha/repository/archive/master.zip)
 
 下好后把-master去掉放进plugins文件中
-<br>inmaocuicuisha/blob/master/Plugin%20function.md
+<br>
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
 
 ---
