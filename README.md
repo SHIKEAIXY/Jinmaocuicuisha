@@ -56,8 +56,10 @@ git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-
 git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
 ### zip下载（不推荐）
-后把-master去掉放进plugins文件中
-<br>
+
+[点击此处下载](https://gitee.com/JMCCS/jinmaocuicuisha/repository/archive/master.zip)
+把-master去掉放进plugins文件中
+<br>inmaocuicuisha/blob/master/Plugin%20function.md
     <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
 
 ---
