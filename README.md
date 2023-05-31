@@ -14,9 +14,9 @@
 <div align="center">
 
 [![](https://img.shields.io/badge/version-v1.4-LightPink)](https://gitee.com/JMCCS/jinmaocuicuisha)
-[![](https://img.shields.io/badge/Author-脆脆鲨-DeepSkyBlue)](https://gitee.com/JMCCS/jinmaocuicuisha)
-[![](https://img.shields.io/badge/Author-小雨-red)](https://gitee.com/JMCCS/jinmaocuicuisha)
-[![](https://img.shields.io/badge/Yunzai-3.0-yellow)](https://gitee.com/JMCCS/jinmaocuicuisha)
+[![](https://img.shields.io/badge/Author-脆脆鲨-DeepSkyBlue)](https://gitee.com/JMCCS)
+[![](https://img.shields.io/badge/Author-小雨-red)](https://gitee.com/SHIKEAIXY)
+[![](https://img.shields.io/badge/Yunzai-3.0-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
 <a href='https://gitee.com/JMCCS/jinmaocuicuisha/stargazers'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/star.svg?theme=dark' alt='star'></img></a>
 <a href='https://gitee.com/JMCCS/jinmaocuicuisha/members'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/fork.svg?theme=dark' alt='fork'></img></a>
 
