@@ -45,7 +45,11 @@ export const helpList = [
     }, 
     {
       "icon": 115,
-      "title": "`#参考api` `#真寻壁纸`", "desc": "没用的小功能"
+      "title": "`#参考api`", "desc": "没用的小功能"
+    }, 
+        {
+      "icon": 112,
+      "title": " `#真寻壁纸`", "desc": "发送一张欧尼酱图片图片"
     }, 
     {
       "icon": 120,
