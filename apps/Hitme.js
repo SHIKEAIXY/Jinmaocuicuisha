@@ -48,6 +48,12 @@ export class HitmeandTa extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
+                    reg: "^#?(参考api|api参考)$",
+                        /** 执行方法 */
+                     fnc: "Hitmeckapi"
+                },
+                {
+                    /** 命令正则匹配 */
                     reg: '^#?查看打人api$',
                     /** 执行方法 */
                     fnc: 'HitMeapi',
@@ -66,12 +72,6 @@ export class HitmeandTa extends plugin {
                     /** 执行方法 */
                     fnc: 'setBotname',
                     permission: 'master'
-                },
-                {
-                    /** 命令正则匹配 */
-                    reg: "^#?[\\s\\S]*(参考api|api参考|apick|APICK|APIcank|apick|ckAPI|CKapi|cankaoapi|CANKAOAPI|apicankao|APIcankao|apicankao|ccsapi|ccsapick|CCSAPICK|CCSAPI)$",
-                        /** 执行方法 */
-                     fnc: "Hitmeckapi"
                 },
                 {
                     /** 命令正则匹配 */
@@ -95,18 +95,16 @@ export class HitmeandTa extends plugin {
         })
     }
 
-    //隐藏功能 才不是太水不好意思写
     async Hitmeckapi(e) {
 
-        let text = "动漫http://www.dmoe.cc/random.php\n \n二次元https://api.ayao.ltd/Mobile/api.php\n \n二次元http://api.caonm.net/api/dm/index.php\n \n动漫https://img.xjh.me/random_img.php\n \n不正经的https://api.btstu.cn/sjbz/api.php\n \n动漫https://api.yimian.xyz/img\n \n动漫https://api.ghser.com/random/api.php\n \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
+        let text = "\n二次元壁纸https://t.lizi.moe/pc\n \n二次元风景https://t.lizi.moe/pc\n \n原神https://api.dujin.org/pic/yuanshen\n \n动漫http://www.dmoe.cc/random.php\n  \n动漫https://api.ghser.com/random/api.php\n \n二次元http://api.caonm.net/api/dm/index.php\n \n人物https://api.btstu.cn/sjbz/api.php\n \n随机图https://api.yimian.xyz/img\n  \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
         let msg = [
-            segment.at(e.user_id),
             text,
             segment.image(`http://api.caonm.net/api/dm/index.php`)
         ];
         e.reply(msg);
-        return false;
-    }    
+        return true; 
+    };
 
     async zxbz(e) {
         console.log("用户命令: ", e.msg);
