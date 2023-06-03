@@ -69,11 +69,13 @@ export class jmccs_update extends plugin {
 		});
 	}
 	
-    // 下面的qq是更新权限
+    
 	async update_plugin(){
 
 
         if (!this.e.isMaster){
+            //判断qq 不是主人也可以更新
+            //有意见的可以自行更改
             if (!(this.e.user_id==2471344750)){
                 if (!(this.e.user_id==536606294)){
                 return false;
