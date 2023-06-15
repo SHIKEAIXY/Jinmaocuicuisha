@@ -73,12 +73,7 @@ export class HitmeandTa extends plugin {
                     fnc: 'setBotname',
                     permission: 'master'
                 },
-                {
-                    /** 命令正则匹配 */
-                    reg: "^#?(真寻|欧尼)(酱)?(壁纸|壁纸|Bz|bZ|BZ|bz)$",
-                    /** 执行方法 */
-                    fnc: 'zxbz'
-                },    
+  
                 {
                     /** 命令正则匹配 */
                     reg: '^#?(打|hit|HIT|da|DA)(他|ta|TA|he|HE).*$',
@@ -95,7 +90,7 @@ export class HitmeandTa extends plugin {
         })
     }
 
-    async Hitmeckapi(e) {
+async Hitmeckapi(e) {
 
         let text = "\n真寻https://mahiro.tianyisama.tk\n \n二次元http://api.caonm.net/api/dm/index.php\n \n二次元壁纸https://t.lizi.moe/pc\n \n二次元风景https://t.lizi.moe/pc\n \n原神https://api.dujin.org/pic/yuanshen\n \n动漫http://www.dmoe.cc/random.php\n  \n动漫https://api.ghser.com/random/api.php\n  \n人物https://api.btstu.cn/sjbz/api.php\n \n随机图https://api.yimian.xyz/img\n  \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
         let msg = [
@@ -106,17 +101,7 @@ export class HitmeandTa extends plugin {
         return true; 
     };
 
-    async zxbz(e) {
-        console.log("用户命令: ", e.msg);
-        //感谢冀安2675712883部署的api
-        //api中的图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载
-        let url = `https://mahiro.tianyisama.tk`;
-        let res = await fetch(url).catch((err) => logger.error(err));
-        let msg = [segment.image(res.url)];
-        e.reply(msg);
-        return true; 
-    };
-
+    
 async Hitmaster(e) {
 
     let botname = await redis.get(`dw:botnickname:${e.bot_id}`)
