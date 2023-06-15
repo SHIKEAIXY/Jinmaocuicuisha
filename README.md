@@ -13,7 +13,7 @@
 </div>
 <div align="center">
 
-[![](https://img.shields.io/badge/version-v1.4-LightPink)](https://gitee.com/JMCCS/jinmaocuicuisha)
+[![](https://img.shields.io/badge/version-v1.5-LightPink)](https://gitee.com/JMCCS/jinmaocuicuisha)
 [![](https://img.shields.io/badge/Author-脆脆鲨-DeepSkyBlue)](https://gitee.com/JMCCS)
 [![](https://img.shields.io/badge/Author-小雨-red)](https://gitee.com/SHIKEAIXY)
 [![](https://img.shields.io/badge/Yunzai-3.0-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
@@ -37,7 +37,9 @@
 
 5.在这里说一下在`apps/UP.js`中写了2个作者的`更新权限` 可以自行删除
 
-6.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
+6.壁纸功能由于触发词条与部分插件类似可能会被强
+
+7.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
 
   如果佬们 有什么问题请务必pr
 <br>
