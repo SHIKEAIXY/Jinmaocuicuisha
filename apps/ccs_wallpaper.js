@@ -240,7 +240,7 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
       e.reply(msg);
       return true; 
   }
-  async bq_BZ(e) {
+  async BZhelp(e) {
     const imgreply = 'plugins/Jinmaocuicuisha-plugin/Resources/help/BZhelp.jpg';
     logger.info('[BZhelp]', e.msg)
     let msg = [
