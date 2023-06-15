@@ -3,7 +3,8 @@
 - [x] 合并 xiaoyu-plugin的壁纸功能
 - [x] 删除 Hitme.js的壁纸添加至ccs_wallpaper.js
 - [x] 修改 触发词条
-- [ ] 新增 壁纸帮助
+- [x] 新增 本地壁纸帮助
+- [x] 修改 帮助内容
 
 # 1.4
 
