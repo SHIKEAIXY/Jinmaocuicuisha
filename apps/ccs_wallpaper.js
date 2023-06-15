@@ -78,10 +78,13 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
         {
           reg: "^#?(小姐姐)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
           fnc: 'xjjbz'          
-        },           
-      ]
+        }, 
+        {
+              reg: '^#?(脆脆鲨扩展)(壁纸)?(帮助|help|菜单|使用说明)$',
+              fnc: 'BZhelp'         
+        }]
     })
-  }
+}
 
 	async sjtp(e) {
         console.log("用户命令：", e.msg);
@@ -236,5 +239,14 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
       let msg = [segment.image(res.url)];
       e.reply(msg);
       return true; 
+  }
+  async bq_BZ(e) {
+    const imgreply = 'plugins/Jinmaocuicuisha-plugin/Resources/help/BZhelp.jpg';
+    logger.info('[BZhelp]', e.msg)
+    let msg = [
+      imgreply ? segment.image(imgreply) : "",
+    ]
+    e.reply(msg)
+    return true;
   }     
 }
