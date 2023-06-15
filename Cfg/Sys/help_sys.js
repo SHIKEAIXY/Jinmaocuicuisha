@@ -29,6 +29,20 @@ export const helpList = [
     },
 
     {
+    "group": "微功能",
+    "list":  [
+    {
+      "icon": 118,
+      "title": "`#脆脆鲨更新` `#脆脆鲨强制更新`", "desc": "插件更新"
+    }, 
+    {
+      "icon": 120,
+      "title": "`#脆脆鲨扩展帮助`", "desc": "脆脆鲨插件扩展帮助"
+    }
+    ]
+    },
+
+    {
     "group": "乐子img",
     "list":  [
     {
@@ -46,10 +60,6 @@ export const helpList = [
     {
       "icon": 115,
       "title": "`#参考api`", "desc": "没用的小功能"
-    }, 
-        {
-      "icon": 112,
-      "title": " `#真寻壁纸`", "desc": "发送一张欧尼酱图片图片"
     }, 
     {
       "icon": 120,
