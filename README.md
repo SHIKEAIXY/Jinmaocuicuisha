@@ -35,7 +35,7 @@
 
 4.QAQ抄的各位大佬的，感觉没啥用的样子
 
-5.在这里说一下在`apps/UP.js`中写了2个作者的`更新权限` 可以自行删除
+5.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
 
 6.壁纸功能由于触发词条与部分插件类似可能会被抢
 
