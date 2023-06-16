@@ -92,7 +92,9 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
-4.如果报错显示的不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
+4.trss崽目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找 
+
+5.如果报错显示的不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
 如：    图片来自群友
 <br>
     <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
