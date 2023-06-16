@@ -11,6 +11,16 @@
 	
 </details>
 <details>
+  <summary>扩展帮助图：</summary>
+
+- 有点懒先这样吧
+- 脆脆鲨插件扩展帮助图
+
+<br>
+    <img src="Resources/肾虚的脆脆鲨/脆脆鲨扩展帮助图.png" width="70%">
+	
+</details>
+<details>
   <summary>娱乐类</summary>
 
 |       打人功能       |      使用示例      |            介绍            |
