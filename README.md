@@ -37,7 +37,7 @@
 
 5.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
 
-6.壁纸功能由于触发词条与部分插件类似可能会被抢
+6.[`壁纸功能`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/ccs_wallpaper.js)由于触发词条与部分插件类似可能会被抢
 
 7.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
 
@@ -92,7 +92,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 3.如果是更新插件后报错了 请耐心等待会修复
 
-4.trss崽目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找 
+4.6.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找 
 
 5.如果报错显示的不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
 如：    图片来自群友
