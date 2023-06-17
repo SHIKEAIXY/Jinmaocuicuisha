@@ -17,8 +17,8 @@ body:
           required: true
   - type: textarea
     attributes:
-      label: 如何复现
-      description: 请详细告诉我们如何复现你遇到的问题，如涉及代码，可提供一个最小代码示例，并使用反引号```附上它
+      label: 详细问题
+      description: 请详细告诉我们你遇到的问题，如涉及代码，可提供一个最小代码示例，并使用反引号```附上它
       placeholder: |
         1. ...
         2. ...
