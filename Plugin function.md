@@ -1,5 +1,9 @@
-# 脆脆鲨插件 使用介绍
-## 点击下方△展开即可查看
+# 这里是插件使用指南~
+
+<details>
+  <summary> **插件使用指南** </summary>
+
+---
 
 <details>
   <summary>帮助图：</summary>
@@ -10,6 +14,9 @@
     <img src="Resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
 	
 </details>
+
+---
+
 <details>
   <summary>扩展帮助图：</summary>
 
@@ -20,6 +27,9 @@
     <img src="Resources/肾虚的脆脆鲨/脆脆鲨扩展帮助图.png" width="70%">
 	
 </details>
+
+---
+
 <details>
   <summary>娱乐类</summary>
 
@@ -66,6 +76,9 @@
 
 	
 </details>
+
+---
+
 <details>
   <summary>管理类（绝对权限）</summary>
 
@@ -103,5 +116,23 @@
 
 ---
 
+
+</details>
+
+---
+
+</details>
+
+# 这里是插件报错与问题~
+
+<details>
+  <summary> **插件问题帮助** </summary>
+
+---
+
+<details>
+  <summary>问题一：功能</summary>
+
+---
 
 </details>
