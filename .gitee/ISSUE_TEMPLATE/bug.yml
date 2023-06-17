@@ -46,9 +46,8 @@ body:
     id: version
     attributes:
       label: 版本
-      description: 你当前正在使用我们软件的哪个版本/分支？
+      description: 你当前正在使用我们软件的哪个分支/版本？
       options:
-        - 1.0.2 (默认)
-        - 1.0.3 (最新)
+        - master分支 & v1.5
     validations:
       required: false
