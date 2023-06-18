@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>脆脆鲨</title>
+    </head>
+    <body> 
+        <div class="container">
+            <br>
+            <h1 style="text-align: center; font-size: 36px; margin-top: 20px;">脆脆鲨食用指南</h1> 
+            <div class="general">
+                <div class="title"><img src="{{pluResPath}}/common/cont/star.png" style="width: 36px">
+                    <div>
+                        骰子Game功能                       
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #骰子|#roll                       
+                        </div>
+                        <div class="general-inner-block-title">
+                            选其中一个触发游戏                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #1#2#3#4#5#6
+                        </div>
+                        <div class="general-inner-block-title">
+                            选其中一个继续游戏                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #开                         
+                        </div>
+                        <div class="general-inner-block-title">
+                            发送开结束游戏                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #重置骰子                         
+                        </div>
+                        <div class="general-inner-block-title">
+                            游戏直接结束                         
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title"><img src="{{pluResPath}}/common/cont/star.png" style="width: 36px">
+                    <div>
+                        打人功能                        
+                    </div>
+                </div>
+                <div class="general-inner">                    
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #设置打人Bot名字                        
+                        </div>
+                        <div class="general-inner-block-title">
+                            设置机器人名字PS(不设置不能用这个功能)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群禁用|启用打人                       
+                        </div>
+                        <div class="general-inner-block-title">
+                            分群开关                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #打他仅我|所有人可用
+                        </div>
+                        <div class="general-inner-block-title">
+                            打其他人开关                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #写入|删除|查看打人api                          
+                        </div>
+                        <div class="general-inner-block-title">
+                            设置了这个打人结束会发图片                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #参考api
+                        </div>
+                        <div class="general-inner-block-title">
+                            可以用的api                         
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+                
+            <div class="general">
+                <div class="title"><img src="{{pluResPath}}/common/cont/star.png" style="width: 36px">
+                    <div>
+                        骂人功能
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #写入|删除文字
+                        </div>
+                        <div class="general-inner-block-title">
+                            需要自己写入文字(默认无文字)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #词库列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看已经写入的文字(无文字看不了)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #上传|删除骂人图片
+                        </div>
+                        <div class="general-inner-block-title">
+                            需要自己写入文字(默认无图片)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #骂人图片列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            需要自己上传图片                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        自己发的消息自动撤回
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #开启|关闭自动撤回
+                        </div>
+                        <div class="general-inner-block-title">
+                            自动撤回总开关(默认关闭)(只有群聊能使用)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群禁用|启用自动撤回
+                        </div>
+                        <div class="general-inner-block-title">
+                            分群开关(需要开启总开关才能用)                         
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #设置自动撤回时间?秒
+                        </div>
+                        <div class="general-inner-block-title">
+                            设置自动撤回时间(不能超过群限制时间)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        超级用户(主人)管理
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #增加|删除主人
+                        </div>
+                        <div class="general-inner-block-title">
+                            主人管理
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #主人列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看所有主人
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #删除所有主人
+                        </div>
+                        <div class="general-inner-block-title">
+                            删除主人列表的所有主人(包括自己)
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        超级用户(拉黑)管理
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #拉黑用户
+                        </div>
+                        <div class="general-inner-block-title">
+                            拉黑指定用户
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #拉黑解除
+                        </div>
+                        <div class="general-inner-block-title">
+                            解除拉黑的用户
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #拉黑列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看所有拉黑的人
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        超级用户(群拉黑)管理
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #拉黑群
+                        </div>
+                        <div class="general-inner-block-title">
+                            拉黑指定群
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #解除拉黑群
+                        </div>
+                        <div class="general-inner-block-title">
+                            解除拉黑的群
+                        </div>                    
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #群拉黑列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看所有拉黑的群
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        超级用户(禁用)管理
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #插件名
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看所有已安装的插件名字(感觉没啥用)
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群启用禁用
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群启用禁用功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #全局启用|禁用+插件名字
+                        </div>
+                        <div class="general-inner-block-title">
+                            全局启用|禁用某个功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #全局禁用列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            全局禁用列表
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #清空全局禁用
+                        </div>
+                        <div class="general-inner-block-title">
+                            清空全局禁用功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群启用|禁用+插件名字
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群启用|禁用某个功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群禁用列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群禁用列表
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        超级用户(白名单)管理
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #插件名
+                        </div>
+                        <div class="general-inner-block-title">
+                            查看所有已安装的插件名字(感觉没啥用)
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群启用白名单
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群启用白名单功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #全局设置|删除白名单+插件名字
+                        </div>
+                        <div class="general-inner-block-title">
+                            全局设置|删除某个功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #全局白名单列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            全局白名单列表
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #全局清空白名单
+                        </div>
+                        <div class="general-inner-block-title">
+                            全局清空白名单功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群设置|删除本群白名单+插件名字
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群设置|删除某个功能
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #本群白名单列表
+                        </div>
+                        <div class="general-inner-block-title">
+                            本群禁用列表
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="general">
+                <div class="title" style="margin-top: 20px"><img src="{{pluResPath}}/common/cont/star.png" alt="SVG image" style="width: 36px">
+                    <div>
+                        插件更新
+                    </div>
+                </div>
+                <div class="general-inner">
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #脆脆鲨更新
+                        </div>
+                    </div>
+                    <div class="general-inner-block">
+                        <div class="general-inner-block-value">
+                            #脆脆鲨强制更新
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                Created By Yunzai-Bot &amp; Jinmaocuicuisha-plugin
+            </div>
+        </div>
+<style>
+    .general-inner-block {
+        width: 140px;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-right: 10px;
+    }
+    .general-inner-block-value {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .general-inner-block-title {
+        margin-top: 3px;
+        font-size: 20px;
+        color: #575757;
+    }
+    .title {
+        padding-top: 10px;
+        display: flex;
+        margin-bottom: 10px;
+
+    }
+    .title div {
+        margin-left: 3px;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    .general {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 15px;
+
+        background-color: rgba(255,255,255, 0.7);
+        border-radius: 5px 20px 5px 5px;
+        box-shadow: 5px 5px 5px rgb(140, 100, 0);
+    }
+    .general-inner {
+        position: relative;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 5px 20px 5px 5px;
+        border: #d0ba94 2px solid;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .avatar-element img {
+        transform: rotate(-45deg);
+        width: 32px;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+    body {
+        font-family: FZB, sans-serif;
+        width: 800px;
+        /* height: 1720px; */
+    }
+    .container {
+        font-family: "FZB",;
+        opacity: 1;
+        padding-bottom: 30px;
+        /* https://img.xjh.me/random_img.php?return=302 */
+        background-image: url('{{pluResPath}}/help/x.jpg');
+        /* background-image: url(https://gchat.qpic.cn/gchatpic_new/0/0-0-E2C953F4C115DAF6186F6677448B97AF/0); */
+        background-size: cover; /* 设置背景图片尺寸 */
+        background-position: center center; /* 设置背景图片位置 */
+        backdrop-filter: blur(50px);
+    }
+    @font-face {
+        font-family: "FZB";
+        src: url("{{pluResPath}}/common/font/FZB.ttf");
+        font-weight: normal;
+        font-style: normal;
+    }
+    .logo {
+        font-size: 24px;
+        font-family: "FZB";
+        text-align: center;
+        margin-top: 30px;
+         padding-bottom: 10px;
+    }
+    .role-name {
+        position: absolute;
+        top: 90px;
+        left: 50px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .region {
+        font-size: 24px;
+        color: #818180;
+        position: absolute;
+        top: 130px;
+        left: 260px;
+    }
+    @font-face {
+        font-family: FZB;
+        src: url('{{pluResPath}}/common/fonts/FZB.ttf') format('truetype');
+    }
+</style>
+    </body>
+</html>
