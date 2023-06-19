@@ -28,7 +28,7 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
           fnc: 'hltp'
         }, 
         {
-          reg: "^#?(胡桃)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(小胡桃)(图片||tp|TP|Tp|tP)$",
           fnc: 'http'
         },
         {
