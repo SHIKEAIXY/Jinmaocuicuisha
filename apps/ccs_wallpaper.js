@@ -84,10 +84,6 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
           fnc: 'xjjbz'          
         }, 
         {
-          reg: "^#?(三次元cos)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
-          fnc: 'scycosbz'          
-        }, 
-        {
           reg: "^#?(三次元白丝)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
           fnc: 'scybsbz'          
         }, 
@@ -251,15 +247,6 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
       console.log("用户命令：", e.msg);
      
       let url = `https://api.btstu.cn/sjbz/api.php`;
-      let res = await fetch(url).catch((err) => logger.error(err));
-      let msg = [segment.image(res.url)];
-      e.reply(msg);
-      return true; 
-  }
-  async scycosbz(e) {
-      console.log("用户命令：", e.msg);
-     
-      let url = `https://api.vvhan.com/api/girl`;
       let res = await fetch(url).catch((err) => logger.error(err));
       let msg = [segment.image(res.url)];
       e.reply(msg);
