@@ -24,7 +24,7 @@
 - 脆脆鲨插件扩展帮助图
 
 <br>
-    <img src="Resources/肾虚的脆脆鲨/脆脆鲨扩展帮助图.png" width="70%">
+    <img src="Resources/help/BZhelp.jpg" width="70%">
 	
 </details>
 
