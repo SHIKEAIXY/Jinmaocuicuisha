@@ -55,6 +55,10 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
           reg: "^#?(原神)(壁纸2|壁纸2|Bz2|bZ2|BZ2|bz2)$",
           fnc: 'ysbz2'          
         }, 
+                {
+          reg: "^#?(原神)(壁纸3|壁纸3|Bz3|bZ3|BZ3|bz3)$",
+          fnc: 'ysbz3'          
+        }, 
         {
           reg: "^#?(萌版)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
           fnc: 'mbbz'          
@@ -78,6 +82,18 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
         {
           reg: "^#?(小姐姐)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
           fnc: 'xjjbz'          
+        }, 
+        {
+          reg: "^#?(三次元cos)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
+          fnc: 'scycosbz'          
+        }, 
+        {
+          reg: "^#?(三次元白丝)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
+          fnc: 'scybsbz'          
+        }, 
+        {
+          reg: "^#?(三次元黑丝)(壁纸|壁纸|Bz|bZ|BZ|bz)$",
+          fnc: 'scyhsbz'          
         }, 
         {
               reg: '^#?(脆脆鲨扩展)(壁纸)?(帮助|help|菜单|使用说明)$',
@@ -240,6 +256,42 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
       e.reply(msg);
       return true; 
   }
+  async scycosbz(e) {
+      console.log("用户命令：", e.msg);
+     
+      let url = `https://api.vvhan.com/api/girl`;
+      let res = await fetch(url).catch((err) => logger.error(err));
+      let msg = [segment.image(res.url)];
+      e.reply(msg);
+      return true; 
+  }
+  async ysbz3(e) {
+      console.log("用户命令：", e.msg);
+     
+      let url = `https://api.dujin.org/pic/yuanshen`;
+      let res = await fetch(url).catch((err) => logger.error(err));
+      let msg = [segment.image(res.url)];
+      e.reply(msg);
+      return true; 
+  }
+  async scybsbz(e) {
+      console.log("用户命令：", e.msg);
+     
+      let url = `https://api.caonm.net/api/bhs/b.php`;
+      let res = await fetch(url).catch((err) => logger.error(err));
+      let msg = [segment.image(res.url)];
+      e.reply(msg);
+      return true; 
+  }
+  async scyhsbz(e) {
+      console.log("用户命令：", e.msg);
+     
+      let url = `https://api.caonm.net/api/bhs/h.php`;
+      let res = await fetch(url).catch((err) => logger.error(err));
+      let msg = [segment.image(res.url)];
+      e.reply(msg);
+      return true; 
+  }  
   async BZhelp(e) {
     const imgreply = 'plugins/Jinmaocuicuisha-plugin/Resources/help/BZhelp.jpg';
     logger.info('[BZhelp]', e.msg)
@@ -248,5 +300,5 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
     ]
     e.reply(msg)
     return true;
-  }     
+}
 }
