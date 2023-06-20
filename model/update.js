@@ -262,7 +262,7 @@ export class update extends plugin {
     if (log.length <= 0) return ''
 
     let end = ''
-    end = '如果有README.md中报错解决方法 未提及/无法解决的请加脆脆鲨群：657142904 发送后台报错截图询问'
+    end = '如果有Plugin function.md中报错与问题 未提及/无法解决的请加脆脆鲨群：657142904 发送后台报错截图询问'
 
     log = await this.makeForwardMsg(`${plugin || 'Yunzai-Bot'}更新日志，共${line}条`, log, end)
 
