@@ -1,5 +1,4 @@
 import plugin from '../../../lib/plugins/plugin.js'
-import runtime from '../../../lib/plugins/runtime.js'
 import lodash from 'lodash'
 import fetch from 'node-fetch'
 import fs from 'fs'
@@ -51,5 +50,5 @@ export class Jmccshelp extends plugin {
 }
 
 async function help(e){
-    await e.runtime('/help/help.html')
+    await e.runtime.render('./plugins/Jinmaocuicuisha-plugin//help/help.html')
 }
