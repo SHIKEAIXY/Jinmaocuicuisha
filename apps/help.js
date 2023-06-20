@@ -51,5 +51,5 @@ export class Jmccshelp extends plugin {
 }
 
 async function help(e){
-    await e.reply('help')
+    await e.runtime.render('')
 }
