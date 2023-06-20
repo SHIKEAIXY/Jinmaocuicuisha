@@ -50,5 +50,5 @@ export class Jmccshelp extends plugin {
 }
 
 async function help(e){
-    await e.runtime.render('./plugins/Jinmaocuicuisha-plugin//help/help.html')
+    await e.runtime.render('./plugins/Jinmaocuicuisha-plugin/Resources/help/help.html')
 }
