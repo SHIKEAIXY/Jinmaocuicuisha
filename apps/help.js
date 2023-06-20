@@ -11,7 +11,6 @@ const _path = process.cwd();
 
 let path ='./plugins/Jinmaocuicuisha-plugin/Cfg/绝对主人/绝对主人.yaml'
 let Cfgsys ='./plugins/Jinmaocuicuisha-plugin/Cfg/Loadhelp.yaml'
-let help ='./plugins/Jinmaocuicuisha-plugin/Resources/help/help.html'
 
 export class Jmccshelp extends plugin {
 	constructor () {
@@ -51,5 +50,5 @@ export class Jmccshelp extends plugin {
 }
 
 async function help(e){
-    await e.runtime.render('Jinmaocuicuisha-plugin', '/help/help.html')
+    await e.runtime.render('Jinmaocuicuisha-plugin')
 }
