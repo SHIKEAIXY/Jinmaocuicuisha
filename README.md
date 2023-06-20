@@ -1,152 +1,98 @@
-# 这里是插件使用指南~
 
- **插件使用指南** 
-<details>
-  <summary>啦啦啦~</summary>
+<div align="center">
+  <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
-> ---
+  
+<h1>Jinmaocuicuisha-plugin</h1>
 
-<details>
-  <summary>①帮助图：</summary>
 
-- 脆脆鲨插件帮助图
+# [脆脆鲨网页（首次访问加载时间较长）](https://xyccs.netlify.app)
+脆脆鲨插件是一个Yunzai-Bot的扩展插件，给bot提供一些便携管理和一些娱乐功能
 
+
+</div>
+<div align="center">
+
+[![](https://img.shields.io/badge/version-v1.5-LightPink)](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20version.md)
+[![](https://img.shields.io/badge/Author-脆脆鲨-red)](https://gitee.com/JMCCS)
+[![](https://img.shields.io/badge/Author-小雨-red)](https://gitee.com/SHIKEAIXY)
+[![](https://img.shields.io/badge/Yunzai-3.0-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
+<a href='https://gitee.com/JMCCS/jinmaocuicuisha/stargazers'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/star.svg?theme=dark' alt='star'></img></a>
+<a href='https://gitee.com/JMCCS/jinmaocuicuisha/members'><img src='https://gitee.com/JMCCS/jinmaocuicuisha/badge/fork.svg?theme=dark' alt='fork'></img></a>
+
+[![访问量](https://profile-counter.glitch.me/jinmaocuicuisha/count.svg)](https://gitee.com/JMCCS/jinmaocuicuisha.git)
+
+</div>
+
+
+## 介绍
+
+1.基于 [Yunzai-Bot V3](https://gitee.com/Le-niao/Yunzai-Bot) 的功能插件
+
+2.脆脆鲨插件支持[时雨](https://gitee.com/TimeRainStarSky)的[go-cqhttp 版 Yunzai](https://gitee.com/TimeRainStarSky/Yunzai)
+
+3.脆脆鲨插件仅支持 云崽v3 版本 v2版本 请勿下载
+
+4.QAQ抄的各位大佬的，感觉没啥用的样子
+
+5.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
+
+6.[`壁纸功能`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/ccs_wallpaper.js)由于触发词条与部分插件类似可能会被抢
+
+7.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
+
+  如果佬们 有什么问题请务必pr
 <br>
-    <img src="Resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
-	
-</details>
+    <img src="Resources/肾虚的脆脆鲨/可爱吗.gif" width="10%">
 
-> ---
+---
 
-<details>
-  <summary>②扩展帮助图：</summary>
+## 安装教程
 
-- 有点懒先这样吧
-- 脆脆鲨插件扩展帮助图
+注意:一定要CD至云崽根目录再输入下面的内容
 
+### gitee下载（强烈推荐）
+```
+git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+```
+### github下载（可能更新不及时）
+```
+git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+```
+### zip下载（不推荐）
+
+[点击此处下载](https://gitee.com/JMCCS/jinmaocuicuisha/repository/archive/master.zip)
+
+下好后把-master去掉放进plugins文件中
 <br>
-    <img src="Resources/help/BZhelp.jpg" width="70%">
-	
-</details>
-
-> ---
-
-<details>
-  <summary>③娱乐类</summary>
-
-|       打人功能       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|设置打人Bot名字|#设置打人Bot名字脆脆鲨|添加bot的名字 |
-|本群【启用/禁用】打人|#本群启用打人|是否开启群内打人功能 |
-|打他【仅我/所有人】可用|#打他所有人可用|主人不受限制|
-|【写入/删除】打人api|#写入打人apihttp://www.dmoe.cc/random.php|添加api|
-|查看打人api|#查看打人api|查看你的api|
-|api参考|#api参考|查看找好的api 仅限群内使用|
-|打他/打我|#打他@金毛脆脆鲨 |打他并禁言|
+    <img src="Resources/肾虚的脆脆鲨/ljjc.png" width="50%">
 
 ---
 
+## 功能介绍&报错解决
 
-|       骰子功能       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|骰子/roll|#骰子|随机骰子游戏|
-|重置骰子|#重置骰子|重置你的记录|
-|一到六|#一到六|不知道|
-|开|#开|开骰子|
+> Jinmaocuicuisha-plugin提供以下功能
+> 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
+
+| `功能介绍/报错解决`|
+| ------------- |
+|[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20function.md)|
+
+---
+ 
+## 宣一下群
+欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
 ---
 
-
-|       骂人功能       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|【写入/删除】文字+内容|#写入文字哈？|添加骂人回复功能|
-|词库列表|#词库列表|查看你写入的词库|
-|【上传/删除】骂人图片|#上传骂人图片|添加骂人回复的图片|   
-|骂人图片列表|#骂人图片列表|查看你写入的图片|   
+| `关于版本`|
+| ------------- |
+|[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20version.md)|
 
 ---
+ 
 
+## 免责声明
 
-|       壁纸功能       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|脆脆鲨扩展壁纸功能|#脆脆鲨扩展壁纸|查看一张壁纸壁纸图|
-
-	
-</details>
-
----
-
-<details>
-  <summary>④管理类（绝对权限）</summary>
-
-|       自动撤回功能（撤回一切？）       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|【开启/关闭】自动撤回|#开启自动撤回|是否开启群撤回|
-|本群【启用/禁用】自动撤回|#本群启用自动撤回|是否开启群撤回 进限该群|
-|设置自动撤回时间【时间】+秒|#设置自动撤回时间15秒|撤回时间|   
-
----
-     
-|       云崽主人管理       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|【增加/删除】主人|#增加主人123456789|添加删除主人|
-|主人列表|#主人列表|查看bot的所有主人|
-|删除所有主人|#删除所有主人|删除bot的全部主人|
-|拉黑用户|#拉黑用户 @金毛脆脆鲨 |拉黑这个人|
-|拉黑解除|#拉黑解除1|解除对这个人的拉黑（使用拉黑列表查看）|
-|拉黑列表|#拉黑列表|查看拉黑的人| 
-|拉黑群+群号|#拉黑群123456789|拉黑群| 
-|解除拉黑群|#解除拉黑群123456789|解除对这个群的拉黑（使用群拉黑列表查看）|
-|群拉黑列表|#群拉黑列表|查看拉黑的群|
-
----
-
-|       云崽管理       |      使用示例      |            介绍            |
-| :--------------: | :------------: | :------------------------: |
-|插件名|#插件名|查看你安装的插件使用帮助|
-|全局【禁用/启用】+功能名字|#全局禁用戳一戳 |停用这个功能|
-|全局禁用列表|#全局禁用列表|查看你禁用的功能|
-|清空全局禁用|#清空全局禁用|删除全部禁用的功能| 
-|全局【设置/删除】白名单+插件名字|#设置白名单戳一戳|添加白名单| 
-|白名单列表|#白名单列表|查看添加的白名单|
-|清理白名单|#清理白名单|删除全部白名单|
-
-
-</details>
-
-</details>
-
----
-
-# 这里是插件报错与问题~
-
- **插件问题/报错解决办法** 
-<details>
-  <summary>哒哒哒~</summary>
-
----
-
-<details>
-  <summary>常见报错解决办法</summary>
- &nbsp;
- &nbsp;
-
-> 1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件 **（适用于大多数情况）** 
-> 
-> 2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
-> 
-> 3.如果是更新插件后报错了 请耐心等待会修复
-> 
-> 4.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找
-> 
-> 5.插件名错误导致载入插件错误 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
-> 
-> 如：&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  **注意大小写** 
-> <br>
-       <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
-
-</details> 
-
-</details> 
-
----
+1. 功能仅限内部交流与小范围使用，请勿将 `Yunzai-Bot` 及 `Jinmaocuicuisha-plugin` 用于任何以盈利为目的的场景；
+2. 素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除。
