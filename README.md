@@ -74,9 +74,9 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 > Jinmaocuicuisha-plugin提供以下功能
 > 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
-| `食用帮助`|
+| `食用帮助/问题解决`|
 | ------------- |
-|[点击此处查看脆脆鲨使用帮助](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20function.md)|
+|[点击此处查看](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20function.md)|
 
 ---
  
@@ -84,25 +84,6 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 欢迎各位大佬萌新进群玩：`脆脆鲨群:` [657142904](https://jq.qq.com/?_wv=1027&k=PrOc8Qp4)
 
 ---
-
-## 插件报错解决方法
-1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件（适用于大多数情况）
-
-2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
-
-3.如果是更新插件后报错了 请耐心等待会修复
-
-4.6.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找 
-
-5.如果报错显示的不是Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
-如：    图片来自群友
-<br>
-    <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
-
-注意大小写
-
-还是无法解决请加群发送后台截图进行询问
-
 
 | `关于版本`|
 | ------------- |
