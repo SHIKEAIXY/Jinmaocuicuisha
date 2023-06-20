@@ -1,4 +1,3 @@
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 <div align="center">
   <img src="Resources/肾虚的脆脆鲨/可爱.png" alt="脆脆鲨" width = "600">
 
