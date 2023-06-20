@@ -1,12 +1,13 @@
 # 这里是插件使用指南~
 
+ **插件使用指南** 
 <details>
-  <summary> **插件使用指南** </summary>
+  <summary>啦啦啦~</summary>
 
 ---
 
 <details>
-  <summary>帮助图：</summary>
+  <summary>①帮助图：</summary>
 
 - 脆脆鲨插件帮助图
 
@@ -18,7 +19,7 @@
 ---
 
 <details>
-  <summary>扩展帮助图：</summary>
+  <summary>②扩展帮助图：</summary>
 
 - 有点懒先这样吧
 - 脆脆鲨插件扩展帮助图
@@ -31,7 +32,7 @@
 ---
 
 <details>
-  <summary>娱乐类</summary>
+  <summary>③娱乐类</summary>
 
 |       打人功能       |      使用示例      |            介绍            |
 | :--------------: | :------------: | :------------------------: |
@@ -70,17 +71,13 @@
 | :--------------: | :------------: | :------------------------: |
 |脆脆鲨扩展壁纸功能|#脆脆鲨扩展壁纸|查看一张壁纸壁纸图|
 
----
-
-  
-
 	
 </details>
 
 ---
 
 <details>
-  <summary>管理类（绝对权限）</summary>
+  <summary>④管理类（绝对权限）</summary>
 
 |       自动撤回功能（撤回一切？）       |      使用示例      |            介绍            |
 | :--------------: | :------------: | :------------------------: |
@@ -114,25 +111,42 @@
 |白名单列表|#白名单列表|查看添加的白名单|
 |清理白名单|#清理白名单|删除全部白名单|
 
----
 
+</details>
 
 </details>
 
 ---
-
-</details>
 
 # 这里是插件报错与问题~
 
+ **插件问题/报错解决办法** 
 <details>
-  <summary> **插件问题帮助** </summary>
+  <summary>哒哒哒~</summary>
 
 ---
 
 <details>
-  <summary>问题一：功能</summary>
+  <summary>常见报错解决办法</summary>
+ &nbsp;
+ &nbsp;
+
+> 1.从plugins中删除Jinmaocuicuisha-plugin重新下载脆脆鲨插件（适用于大多数情况）
+> 
+> 2.请查看你的崽是不是v3 脆脆鲨插件只支持v3
+> 
+> 3.如果是更新插件后报错了 请耐心等待会修复
+> 
+> 4.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找
+> 
+> 5.Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
+> 
+> 如：&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  **注意大小写** 
+> <br>
+       <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
+
+</details> 
+
+</details> 
 
 ---
-
-</details>
