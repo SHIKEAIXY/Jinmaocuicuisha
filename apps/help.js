@@ -44,11 +44,11 @@ export class Jmccshelp extends plugin {
         return false;
         }
     }
-	 return await help(this.e,'./plugins/Jinmaocuicuisha-plugin/Resources/help/help.html');
+	 return await help(this.e);
 	}
 
 }
 
 async function help(e){
-    await e.runtime.render('Jinmaocuicuisha-plugin', '/help/help.html')
+    await e.runtime.render('./plugins/Jinmaocuicuisha-plugin/Resources/help/help.html')
 }
