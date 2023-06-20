@@ -3,7 +3,7 @@ import co from '../../../lib/common/common.js'
 import common from'../../../lib/common/common.js'
 import { Cfg } from '../components/index.js'
 
-const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/Resources/img/Dice/';
+const images = process.cwd() + '/plugins/Jinmaocuicuisha-plugin/resources/img/Dice/';
 
 let cd = false;
 let en = false;
