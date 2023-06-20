@@ -12,7 +12,7 @@
 - 脆脆鲨插件帮助图
 
 <br>
-    <img src="Resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
+    <img src="resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
 	
 </details>
 
@@ -25,7 +25,7 @@
 - 脆脆鲨插件扩展帮助图
 
 <br>
-    <img src="Resources/help/BZhelp.jpg" width="70%">
+    <img src="resources/help/BZhelp.jpg" width="70%">
 	
 </details>
 
@@ -143,7 +143,7 @@
 > 
 > 如：&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  **注意大小写** 
 > <br>
-       <img src="Resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
+       <img src="resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
 
 </details> 
 
