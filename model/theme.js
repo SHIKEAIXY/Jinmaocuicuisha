@@ -3,7 +3,7 @@ import fs from 'fs'
 import { Data , Plugin_Name} from '../components/index.js'
 let Theme = {
   async getThemeCfg (theme, exclude) {
-    let dirPath = `./plugins/${Plugin_Name}/Resources/help/theme/`
+    let dirPath = `./plugins/${Plugin_Name}/resources/help/theme/`
     let ret = []
     let names = []
     let dirs = fs.readdirSync(dirPath)
@@ -28,7 +28,7 @@ let Theme = {
     return {
       main: `${resPath}${name}/main.png`,
       bg: fs.existsSync(`${dirPath}${name}/bg.jpg`) ? `${resPath}${name}/bg.jpg` : `${resPath}default/bg.jpg`,
-      style: (await Data.importModule(`Resources/help/theme/${name}/config.js`)).style || {}
+      style: (await Data.importModule(`resources/help/theme/${name}/config.js`)).style || {}
     }
   },
   async getThemeData (diyStyle, sysStyle) {
