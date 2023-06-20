@@ -69,10 +69,10 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 ---
 
-## 功能介绍&使用说明
+## 功能介绍&插件问题解决
 
 > Jinmaocuicuisha-plugin提供以下功能
-> 详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
+> 功能方面详细内容请使用 **脆脆鲨帮助（第一次使用需先 #设置绝对权限 ）**  查看
 
 | `食用帮助/问题解决`|
 | ------------- |
