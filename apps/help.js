@@ -44,7 +44,7 @@ export class Jmccshelp extends plugin {
         return false;
         }
     }
-	 return await help(this.e,'/help/help.html');
+	 return await help(this.e,'./plugins/Jinmaocuicuisha-plugin/Resources/help/help.html');
 	}
 
 }
