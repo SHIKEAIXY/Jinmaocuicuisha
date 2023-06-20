@@ -1,4 +1,5 @@
 import plugin from '../../../lib/plugins/plugin.js'
+import runtime from '../../../lib/plugins/runtime.js'
 import lodash from 'lodash'
 import fetch from 'node-fetch'
 import fs from 'fs'
