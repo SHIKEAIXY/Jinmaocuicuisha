@@ -157,7 +157,7 @@
 
 > 1.脆脆鲨插件可能会与带有打人的插件产生冲突,如有发生冲突问题，删就对辣
 > 
-> 2.本插件与互殴插件[(fisticuffs plugin)](https://gitee.com/JK_An0nymou5/fisticuffs-plugin)会造成严重冲突，互殴插件是被这个作者叫为脆脆鲨二开的插件，出问题请找[互殴插件作者](https://gitee.com/JK_An0nymou5)
+> 2.本插件与[互殴插件(fisticuffs plugin)](https://gitee.com/JK_An0nymou5/fisticuffs-plugin)会造成严重冲突，互殴插件是被这个作者叫为脆脆鲨二开的插件，出问题请找[互殴插件作者](https://gitee.com/JK_An0nymou5)
 
 </details> 
 
