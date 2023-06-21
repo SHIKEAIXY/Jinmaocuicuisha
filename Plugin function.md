@@ -145,6 +145,9 @@
 > <br>
        <img src="resources/肾虚的脆脆鲨/dxxbc.png" width="70%">
 
+
+</details> 
+
 ---
 
 <details>
