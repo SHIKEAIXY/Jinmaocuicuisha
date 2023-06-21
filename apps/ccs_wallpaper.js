@@ -12,35 +12,35 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
              //优先级 注：数字越大优先级越低
       rule: [
         {
-          reg: "^#?(随机)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(随机)(图片|tp|TP|Tp|tP)$",
           fnc: 'sjtp'
         },
         {
-          reg: "^#?(萌版)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(萌版)(图片|tp|TP|Tp|tP)$",
           fnc: 'mbtp'
         },
         {
-          reg: "^#?(原神)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(原神)(图片|tp|TP|Tp|tP)$",
           fnc: 'ystp'          
         },
         {
-          reg: "^#?(小狐狸)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(小狐狸)(照片|zp|ZP|Zp|zP)$",
           fnc: 'hltp'
         }, 
         {
-          reg: "^#?(小胡桃)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(小胡桃)(照片|zp|ZP|Zp|zP)$",
           fnc: 'http'
         },
         {
-          reg: "^#?(头像)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(头像)(图片|tp|TP|Tp|tP)$",
           fnc: 'txttp'
         }, 
         {
-          reg: "^#?(随机米哈游)(图片||tp|TP|Tp|tP)$",
+          reg: "^#?(随机原崩)(图片|tp|TP|Tp|tP)$",
           fnc: 'sjmhytp'
         },
         {
-          reg: "^#?(真寻|欧尼|zx|ZX|Zx|zX)(酱|j|J)?(壁纸|壁纸|Bz|bZ|BZ|bz)$",
+          reg: "^#?(真寻|欧尼|zx|ZX|Zx|zX)(酱|j|J)?(壁纸|图片|照片)$",
           fnc: 'zxbz'
         },
         {
