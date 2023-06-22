@@ -127,7 +127,7 @@
 ---
 
 <details>
-  <summary>常见报错解决办法</summary>
+  <summary>①常见报错解决办法</summary>
  &nbsp;
  &nbsp;
 
@@ -151,7 +151,7 @@
 ---
 
 <details>
-  <summary>插件冲突问题</summary>
+  <summary>②插件冲突问题</summary>
  &nbsp;
  &nbsp;
 
@@ -159,7 +159,25 @@
 > 
 > 2.本插件与[互殴插件(fisticuffs plugin)](https://gitee.com/JK_An0nymou5/fisticuffs-plugin)会造成严重冲突，互殴插件是被这个作者叫为脆脆鲨二开的插件，出问题请找[互殴插件作者](https://gitee.com/JK_An0nymou5)
 
-</details> 
+</details>
+
+--- 
+
+<details>
+  <summary>③关于脆脆鲨扩展功能的问题</summary>
+ &nbsp;
+ &nbsp;
+
+> 1.脆脆鲨插件的扩展功能也就是壁纸功能
+> 
+> 2.壁纸功能为了减少内存占用使用的全部为api，所以会出现什么问题大家都知道吧！
+> 
+> 3.api用的是别人随时会寄na! 如果出现这个问题会及时解决哒！要是寄的太多就只能移除此功能了，或者将壁纸的功能缩减大半
+> 
+> 4.用于部分api图片有石粒是大大哒！所以发送会较慢，比如原神壁纸的一个api每张都是高清
+> 
+> 5.还是api问题，如果佬们有自己搭建的api要是愿意可以提供我们！
+</details>
 
 </details> 
 
