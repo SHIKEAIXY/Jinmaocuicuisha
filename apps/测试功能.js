@@ -44,20 +44,24 @@ export class 脆脆鲨测试功能 extends plugin {
                 fnc: '脆脆鲨测试功能小c'         
               },
               {
-                reg: '^#?(测试功能日期)$',
-                fnc: '脆脆鲨测试功能日期'         
+                reg: '^#?(测试功能滑稽)$',
+                fnc: '脆脆鲨测试功能滑稽'         
               },
               {
                 reg: '^#?(测试功能猫猫)$',
                 fnc: '脆脆鲨测试功能猫猫'         
               },
               {
-                reg: '^#?(测试功能滑稽)$',
-                fnc: '脆脆鲨测试功能滑稽'         
+                reg: '^#?(测试功能日期)$',
+                fnc: '脆脆鲨测试功能日期'         
               },
               {
                 reg: '^#?(测试功能爱坤)$',
                 fnc: '脆脆鲨测试功能爱坤'         
+              },
+                            {
+                reg: '^#?(测试功能龙图)$',
+                fnc: '脆脆鲨测试功能龙图'         
               },]
     })
 }
@@ -101,7 +105,7 @@ async 脆脆鲨测试功能白丝(e) {
   return true; 
 }
 
-async 脆脆鲨测试功能日历(e) {
+async 脆脆鲨测试功能日期(e) {
   console.log("用户命令：", e.msg);
  
   let url = `http://api.caonm.net/api/ri/li?key=${key}`;
@@ -131,7 +135,7 @@ async 脆脆鲨测试功能小c(e) {
   return true; 
 }
 
-async 脆脆鲨测试功能日期(e) {
+async 脆脆鲨测试功能滑稽(e) {
   console.log("用户命令：", e.msg);
  
   let url = `http://api.caonm.net/api/huac/h?key=${key}`;
@@ -151,7 +155,7 @@ async 脆脆鲨测试功能猫猫(e) {
   return true; 
 }
 
-async 脆脆鲨测试功能滑稽(e) {
+async 脆脆鲨测试功能龙图(e) {
   console.log("用户命令：", e.msg);
  
   let url = `http://api.caonm.net/api/long/l?key=${key}`;
@@ -165,6 +169,16 @@ async 脆脆鲨测试功能爱坤(e) {
   console.log("用户命令：", e.msg);
  
   let url = `http://api.caonm.net/api/kun/k?key=${key}`;
+  let res = await fetch(url).catch((err) => logger.error(err));
+  let msg = [segment.image(res.url)];
+  e.reply(msg);
+  return true; 
+}
+
+async 脆脆鲨测试功能黑丝(e) {
+  console.log("用户命令：", e.msg);
+ 
+  let url = `http://api.caonm.net/api/bhs/h?key=${key}`;
   let res = await fetch(url).catch((err) => logger.error(err));
   let msg = [segment.image(res.url)];
   e.reply(msg);
