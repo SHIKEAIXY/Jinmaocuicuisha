@@ -1,5 +1,5 @@
 //api使用的是第三方的寄了就删掉这个功能
-import plugin from '../../lib/plugins/plugin.js';
+import plugin from '../../../lib/plugins/plugin.js';
 import fetch from 'node-fetch';
 import lodash from 'lodash'
 const key = 'UDXaG8Th9jS28HOFPrzkjtOvoY';//可以使用你自己申请的key，http://api.caonm.net登录账号-控制台-申请即可（免费）
