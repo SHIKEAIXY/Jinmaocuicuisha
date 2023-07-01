@@ -105,14 +105,6 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
                 reg: "^#?(三次元姐姐)(美图|mt|MT|Mt|mT)$",
                 fnc: '三次元姐姐美图'          
               }, 
-              {
-                reg: "^#?(三次元白丝)(美图|mt|MT|Mt|mT)$",
-                fnc: '三次元白丝美图'          
-              }, 
-              {
-                reg: "^#?(三次元黑丝)(美图|mt|MT|Mt|mT)$",
-                fnc: '三次元黑丝美图'          
-              }, 
         //-----------------------------------------------------------------------//  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 348-356行
          //   扩展帮助      扩展帮助     扩展帮助      扩展帮助      扩展帮助     //     ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 348-356行
           //   扩展帮助      扩展帮助     扩展帮助      扩展帮助      扩展帮助   //       ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 348-356行
@@ -315,26 +307,6 @@ async 三次元姐姐美图(e) {
   console.log("用户命令：", e.msg);
   
   let url = `https://api.btstu.cn/sjbz/api.php`;
-  let res = await fetch(url).catch((err) => logger.error(err));
-  let msg = [segment.image(res.url)];
-  e.reply(msg);
-  return true; 
-}
-
-async 三次元白丝美图(e) {
-  console.log("用户命令：", e.msg);
-  
-  let url = `https://api.caonm.net/api/bhs/b.php`;
-  let res = await fetch(url).catch((err) => logger.error(err));
-  let msg = [segment.image(res.url)];
-  e.reply(msg);
-  return true; 
-}
-
-async 三次元黑丝美图(e) {
-  console.log("用户命令：", e.msg);
-  
-  let url = `https://api.caonm.net/api/bhs/h.php`;
   let res = await fetch(url).catch((err) => logger.error(err));
   let msg = [segment.image(res.url)];
   e.reply(msg);
