@@ -89,7 +89,41 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 |[点击查看脆脆鲨版本](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/Plugin%20version.md)|
 
 ---
- 
+
+## 关于表情包制作
+
+为什么不把这个放在问题中呢
+
+- 主要还是认为这个功能需要key 万一自己的寄了或者什么的能让大家第一时间看见
+
+### api问题
+
+- 1.表情包制作使用的第三方api 能用多久听从天命
+- 2.部分表情包可能是裂图（应该不会太多吧 回头看看）
+
+### key问题
+
+- 1.此制作功能需要key才能用（已经填写过了）
+- 2.这个key`完全免费` `完全免费` `完全免费`！ ！ ！
+- 3.key用的自己的 万一被提供商删掉了就不能用了 所以还是发一下申请教程
+
+#### key申请教程
+
+1.打开网站并登录
+
+[点击此处打开](https://api.caonm.net/user/register)
+
+<br>
+    <img src="resources/肾虚的脆脆鲨/注册.png" width="50%">
+
+注册完成后登录即可
+
+2.点击密钥管理然后进行获取key
+
+<br>
+    <img src="resources/肾虚的脆脆鲨/管理.png" width="50%">
+
+获取完成替换掉原来`Emojis.js`中第4行的key 保存后重启机器人即可
 
 ## 免责声明
 
