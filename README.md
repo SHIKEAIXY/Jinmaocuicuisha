@@ -112,9 +112,8 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 1.打开网站并登录
 
 [点击此处打开](https://api.caonm.net/user/register)
-
 <br>
-    <img src="resources/肾虚的脆脆鲨/注册.png" width="50%">
+    <img src="resources/肾虚的脆脆鲨/注册.png" width="25%">
 
 注册完成后登录即可
 
