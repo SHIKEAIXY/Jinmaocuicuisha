@@ -112,10 +112,6 @@ export class Jinmaocuicuisha_Emojis extends plugin {
                 fnc: 'ljt'         
               },
               {
-                reg: '^#?望远镜(.*)$',
-                fnc: 'wyj'         
-              },
-              {
                 reg: '^#?芙蓉王(.*)$',
                 fnc: 'frw'         
               },
@@ -499,19 +495,6 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           e.reply(msg);
           return true; 
         }
-        async wyj(e) {
-          console.log("用户命令：", e.msg);
-          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
-          if (lodash.isEmpty(qq)) {
-            qq = e.msg.match(/\d+/g)
-          }
-          if (!qq) qq = e.user_id;
-          let url = `http://api.caonm.net/api/wyj/w?qq=${qq}&key=${key}`;
-          let res = await fetch(url).catch((err) => logger.error(err));
-          let msg = [segment.image(res.url)];
-          e.reply(msg);
-          return true; 
-        }
         async frw(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
@@ -689,6 +672,19 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           }
           if (!qq) qq = e.user_id;
           let url = `http://api.caonm.net/api/asc/c3?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async gkdk(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/kapian/c5?qq=${qq}&key=${key}`;
           let res = await fetch(url).catch((err) => logger.error(err));
           let msg = [segment.image(res.url)];
           e.reply(msg);
