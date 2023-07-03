@@ -373,7 +373,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
               },
               {
                 reg: '^#?按钮(.*)$',
-                fnc: 'ann'         
+                fnc: 'anniu'         
               },
               {
                 reg: '^#?乱亲(.*)$',
@@ -1559,7 +1559,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           e.reply(msg);
           return true; 
         }
-        async vwe50(e) {
+        async vme50(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
           if (lodash.isEmpty(qq)) {
@@ -1605,7 +1605,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
             qq = e.msg.match(/\d+/g)
           }
           if (!qq) qq = e.user_id;
-          let url = `http://api.caonm.net/api/jqxy/j?q=${qq}&key=${key}`;
+          let url = `http://api.caonm.net/api/jqxy/j?qq=${qq}&key=${key}`;
           let res = await fetch(url).catch((err) => logger.error(err));
           let msg = [segment.image(res.url)];
           e.reply(msg);
