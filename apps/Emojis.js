@@ -308,10 +308,6 @@ export class Jinmaocuicuisha_Emojis extends plugin {
                 fnc: 'chi'         
               },
               {
-                reg: '^#?我好弱(.*)$',
-                fnc: 'whruo'         
-              },
-              {
                 reg: '^#?广告牌(.*)$',
                 fnc: 'ggpai'         
               },
@@ -408,7 +404,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
         }
 
         async ccsbqb(e) {
-          let text = "脆脆鲨表情包使用介绍：\n\n\n#功能+at人\n如：#坤斗罗@脆脆鲨\n\n以下是可用的功能\n#坤斗罗，#没业务， #坤坤打篮球，#美女电视，#处男证，#泡妞证，#好夫妻证，#女汉子证，#光棍证，#老司机证，#屌丝证，#美女证，#帅哥证, #首富证, #订婚证, #白富美证, #犯毒, #哭, #卧倒, #彩遗，#精神支柱，#踹门，#需要他，#垃圾桶，#芙蓉王，#女同，#报警，#疯狂星期四，#包夜多少钱，#体操服举牌，#技能, #GKD卡，#沙雕，#来床上，#啊不要，#男同，#陪睡券，#动漫画画，#每次都有你，#不要靠近我，#看见我的狗了吗，#演员证，#大佬，#发生了什么，#原神启动，#安全感，#摄影师，#汤姆看电视，#榨精卡，#坤巴卡，#涩涩卡，#完美，#骗子，#撸管冠军，#踢足球，#诈尸，#紫砂，#回旋踢，#撕，#注意身份，#ikun勋章，#猛男举牌，#抱枕头，#舔冰激凌，#画画，#烧火，#什么东东，#要钱钱，#勾引，#罗小黑，#变魔术，#坤投球，#吃，#我好弱，#广告牌，#黑化，#绿帽子，#我老婆，#我女儿，#我拒绝，#这我儿子，#gui，#ok，#换脸，#心碎，#寄，#哥的花，#v我50，#按钮，#乱亲，#进群协议，#女装协议，#走路，#蜜雪冰城，#名片，#美女抱";
+          let text = "脆脆鲨表情包使用介绍：\n\n\n#功能+at人\n如：#坤斗罗@脆脆鲨\n\n以下是可用的功能\n#坤斗罗，#没业务， #坤坤打篮球，#美女电视，#处男证，#泡妞证，#好夫妻证，#女汉子证，#光棍证，#老司机证，#屌丝证，#美女证，#帅哥证, #首富证, #订婚证, #白富美证, #犯毒, #哭, #卧倒, #彩遗，#精神支柱，#踹门，#需要他，#垃圾桶，#芙蓉王，#女同，#报警，#疯狂星期四，#包夜多少钱，#体操服举牌，#技能, #GKD卡，#沙雕，#来床上，#啊不要，#男同，#陪睡券，#动漫画画，#每次都有你，#不要靠近我，#看见我的狗了吗，#演员证，#大佬，#发生了什么，#原神启动，#安全感，#摄影师，#汤姆看电视，#榨精卡，#坤巴卡，#涩涩卡，#完美，#骗子，#撸管冠军，#踢足球，#诈尸，#紫砂，#回旋踢，#撕，#注意身份，#ikun勋章，#猛男举牌，#抱枕头，#舔冰激凌，#画画，#烧火，#什么东东，#要钱钱，#勾引，#罗小黑，#变魔术，#坤投球，#吃，#广告牌，#黑化，#绿帽子，#我老婆，#我女儿，#我拒绝，#这我儿子，#gui，#ok，#换脸，#心碎，#寄，#哥的花，#v我50，#按钮，#乱亲，#进群协议，#女装协议，#走路，#蜜雪冰城，#名片，#美女抱";
           let msg = [
           text
         ];
@@ -1377,19 +1373,6 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           e.reply(msg);
           return true; 
         }
-        async whruo(e) {
-          console.log("用户命令：", e.msg);
-          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
-          if (lodash.isEmpty(qq)) {
-            qq = e.msg.match(/\d+/g)
-          }
-          if (!qq) qq = e.user_id;
-          let url = `http://api.caonm.net/api/cuir/c?qq=${qq}`;
-          let res = await fetch(url).catch((err) => logger.error(err));
-          let msg = [segment.image(res.url)];
-          e.reply(msg);
-          return true; 
-        }
         async ggpai(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
@@ -1559,7 +1542,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           e.reply(msg);
           return true; 
         }
-        async vme50(e) {
+async vme50(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
           if (lodash.isEmpty(qq)) {
@@ -1671,6 +1654,19 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           }
           if (!qq) qq = e.user_id;
           let url = `http://api.caonm.net/api/jupai/d?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+                async lmzi(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/lmz/l?qq=${qq}&key=${key}`;
           let res = await fetch(url).catch((err) => logger.error(err));
           let msg = [segment.image(res.url)];
           e.reply(msg);
