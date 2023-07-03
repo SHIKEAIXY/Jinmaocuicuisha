@@ -251,12 +251,164 @@ export class Jinmaocuicuisha_Emojis extends plugin {
                 reg: '^#?撕(.*)$',
                 fnc: 'si'         
               },
+              {
+                reg: '^#?注意身份(.*)$',
+                fnc: 'zysf'         
+              },
+              {
+                reg: '^#?ikun勋章(.*)$',
+                fnc: 'ikun'         
+              },
+              {
+                reg: '^#?猛男举牌(.*)$',
+                fnc: 'mnjpai'         
+              },
+              {
+                reg: '^#?抱枕头(.*)$',
+                fnc: 'baozt'         
+              },
+              {
+                reg: '^#?舔冰激凌(.*)$',
+                fnc: 'tbjl'         
+              },
+              {
+                reg: '^#?画画(.*)$',
+                fnc: 'huahua'         
+              },
+              {
+                reg: '^#?烧火(.*)$',
+                fnc: 'shaohuo'         
+              },
+              {
+                reg: '^#?什么东东(.*)$',
+                fnc: 'smdd'         
+              },
+              {
+                reg: '^#?要钱钱(.*)$',
+                fnc: 'yqqian'         
+              },
+              {
+                reg: '^#?勾引(.*)$',
+                fnc: 'goyin'         
+              },
+              {
+                reg: '^#?罗小黑(.*)$',
+                fnc: 'luoxh'         
+              },
+              {
+                reg: '^#?变魔术(.*)$',
+                fnc: 'bianms'         
+              },
+              {
+                reg: '^#?坤投球(.*)$',
+                fnc: 'kuntq'         
+              },
+              {
+                reg: '^#?吃(.*)$',
+                fnc: 'chi'         
+              },
+              {
+                reg: '^#?我好弱(.*)$',
+                fnc: 'whruo'         
+              },
+              {
+                reg: '^#?广告牌(.*)$',
+                fnc: 'ggpai'         
+              },
+              {
+                reg: '^#?耍帅(.*)$',
+                fnc: 'shuashuai'         
+              },
+              {
+                reg: '^#?黑化(.*)$',
+                fnc: 'heihua'         
+              },
+              {
+                reg: '^#?绿帽子(.*)$',
+                fnc: 'lmzi'         
+              },
+              {
+                reg: '^#?我老婆(.*)$',
+                fnc: 'wlpo'         
+              },
+              {
+                reg: '^#?我女儿(.*)$',
+                fnc: 'wner'         
+              },
+              {
+                reg: '^#?我拒绝(.*)$',
+                fnc: 'wojj'         
+              },
+              {
+                reg: '^#?这我儿子(.*)$',
+                fnc: 'zhewez'         
+              },
+              {
+                reg: '^#?gui(.*)$',
+                fnc: 'gui'         
+              },
+              {
+                reg: '^#?ok(.*)$',
+                fnc: 'okk'         
+              },
+              {
+                reg: '^#?换脸(.*)$',
+                fnc: 'huanlian'         
+              },
+              {
+                reg: '^#?心碎(.*)$',
+                fnc: 'xinsui'         
+              },
+              {
+                reg: '^#?寄(.*)$',
+                fnc: 'jilene'         
+              },
+              {
+                reg: '^#?哥的花(.*)$',
+                fnc: 'gedehua'         
+              },
+              {
+                reg: '^#?v我50(.*)$',
+                fnc: 'vme50'         
+              },
+              {
+                reg: '^#?按钮(.*)$',
+                fnc: 'ann'         
+              },
+              {
+                reg: '^#?乱亲(.*)$',
+                fnc: 'luanqin'         
+              },
+              {
+                reg: '^#?进群协议(.*)$',
+                fnc: 'jinqunxy'         
+              },
+              {
+                reg: '^#?女装协议(.*)$',
+                fnc: 'nuzhuangxy'         
+              },
+              {
+                reg: '^#?走路(.*)$',
+                fnc: 'zolu'         
+              },
+              {
+                reg: '^#?蜜雪冰城(.*)$',
+                fnc: 'mxbc'         
+              },
+              {
+                reg: '^#?名片(.*)$',
+                fnc: 'mingpian'         
+              },
+              {
+                reg: '^#?美女抱(.*)$',
+                fnc: 'mnbao'         
+              },
             ]
             })
         }
 
         async ccsbqb(e) {
-          let text = "脆脆鲨表情包使用介绍：\n\n\n#功能+at人\n如：#坤斗罗@脆脆鲨\n\n以下是可用的功能\n#坤斗罗，#没业务， #坤坤打篮球，#美女电视，#处男证，#泡妞证，#好夫妻证，#女汉子证，#光棍证，#老司机证，#屌丝证，#美女证，#帅哥证, #首富证, #订婚证, #白富美证, #犯毒, #哭, #卧倒, #彩遗，#精神支柱，#踹门，#需要他，#垃圾桶，#芙蓉王，#女同，#报警，#疯狂星期四，#包夜多少钱，#体操服举牌，#技能, #GKD卡，#沙雕，#来床上，#啊不要，#男同，#陪睡券，#动漫画画，#每次都有你，#不要靠近我，#看见我的狗了吗，#演员证，#大佬，#发生了什么，#原神启动，#安全感，#摄影师，#汤姆看电视，#榨精卡，#坤巴卡，#涩涩卡，#完美，#骗子，#撸管冠军，#踢足球，#诈尸，#紫砂，#回旋踢，#撕";
+          let text = "脆脆鲨表情包使用介绍：\n\n\n#功能+at人\n如：#坤斗罗@脆脆鲨\n\n以下是可用的功能\n#坤斗罗，#没业务， #坤坤打篮球，#美女电视，#处男证，#泡妞证，#好夫妻证，#女汉子证，#光棍证，#老司机证，#屌丝证，#美女证，#帅哥证, #首富证, #订婚证, #白富美证, #犯毒, #哭, #卧倒, #彩遗，#精神支柱，#踹门，#需要他，#垃圾桶，#芙蓉王，#女同，#报警，#疯狂星期四，#包夜多少钱，#体操服举牌，#技能, #GKD卡，#沙雕，#来床上，#啊不要，#男同，#陪睡券，#动漫画画，#每次都有你，#不要靠近我，#看见我的狗了吗，#演员证，#大佬，#发生了什么，#原神启动，#安全感，#摄影师，#汤姆看电视，#榨精卡，#坤巴卡，#涩涩卡，#完美，#骗子，#撸管冠军，#踢足球，#诈尸，#紫砂，#回旋踢，#撕，#注意身份，#ikun勋章，#猛男举牌，#抱枕头，#舔冰激凌，#画画，#烧火，#什么东东，#要钱钱，#勾引，#罗小黑，#变魔术，#坤投球，#吃，#我好弱，#广告牌，#黑化，#绿帽子，#我老婆，#我女儿，#我拒绝，#这我儿子，#gui，#ok，#换脸，#心碎，#寄，#哥的花，#v我50，#按钮，#乱亲，#进群协议，#女装协议，#走路，#蜜雪冰城，#名片，#美女抱";
           let msg = [
           text
         ];
@@ -1038,6 +1190,487 @@ export class Jinmaocuicuisha_Emojis extends plugin {
           }
           if (!qq) qq = e.user_id;
           let url = `http://api.caonm.net/api/sit/s?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async zysf(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/zynsf/z?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async ikun(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/ikz/i?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async mnjpai(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/nanrjp/c?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async baozt(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/zhent/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async tbjl(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/chixg/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async huahua(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/huaa/h?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async shaohuo(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/huos/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async smdd(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/peng/p?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async yqqian(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/wyqq/q?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async goyin(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/gouy/g?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async luoxh(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/xmmz/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async bianms(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/tax/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async kuntq(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/kunk/k?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async chi(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/chi2/c?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async whruo(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/cuir/c?qq=${qq}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async ggpai(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/dal/l?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async shuashuai(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/zhua/h?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async heihua(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/whh/h?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+          async wlpo(e) {
+            console.log("用户命令：", e.msg);
+            let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+            if (lodash.isEmpty(qq)) {
+              qq = e.msg.match(/\d+/g)
+            }
+            if (!qq) qq = e.user_id;
+            let url = `http://api.caonm.net/api/nmy/n?qq=${qq}&qq2=${qq}&key=${key}`;
+            let res = await fetch(url).catch((err) => logger.error(err));
+            let msg = [segment.image(res.url)];
+            e.reply(msg);
+            return true; 
+          }
+        async wner(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/wnr/n?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async wojj(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/wjj/j?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async zhewez(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/wrz/r?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async gui(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+       }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/gund/g?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async okk(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/okk/k?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async huanlian(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/huanl/h?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async xinsui(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/xins/x?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async jilene(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/jim/j?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async gedehua(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/shoux/h?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async vwe50(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/v50/b?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async anniu(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/anniu/a?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async luanqin(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/ddqq/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async jinqunxy(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/jqxy/j?q=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async nuzhuangxy(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/jqxy/n?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async zolu(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/zoul/y?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async mxbc(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/mxbc/m?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async mingpian(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/tp/m?qq=${qq}&key=${key}`;
+          let res = await fetch(url).catch((err) => logger.error(err));
+          let msg = [segment.image(res.url)];
+          e.reply(msg);
+          return true; 
+        }
+        async mnbao(e) {
+          console.log("用户命令：", e.msg);
+          let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
+          if (lodash.isEmpty(qq)) {
+            qq = e.msg.match(/\d+/g)
+          }
+          if (!qq) qq = e.user_id;
+          let url = `http://api.caonm.net/api/jupai/d?qq=${qq}&key=${key}`;
           let res = await fetch(url).catch((err) => logger.error(err));
           let msg = [segment.image(res.url)];
           e.reply(msg);
