@@ -101,7 +101,7 @@ git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicu
 
 - 1.此制作功能需要key才能用（已经填写过了）
 - 2.这个key`完全免费` `完全免费` `完全免费`！ ！ ！
-- 3.key用的自己的 有频率限制 建议各位申请自己的
+- 3.key用的自己的 有频率限制 强烈建议各位申请自己的（不然可能会出现裂图）
 
 #### key申请教程
 
