@@ -657,19 +657,6 @@ async hfqz(e) {
           e.reply(msg);
           return true; 
         }
-          async hfqz(e) {
-            console.log("用户命令：", e.msg);
-            let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
-            if (lodash.isEmpty(qq)) {
-              qq = e.msg.match(/\d+/g)
-            }
-            if (!qq) qq = e.user_id;
-            let url = `http://api.caonm.net/api/zhen/c13?qq=${qq}&qq2=${qq}&key=${key}`;
-            let res = await fetch(url).catch((err) => logger.error(err));
-            let msg = [segment.image(res.url)];
-            e.reply(msg);
-            return true; 
-          }
         async nhzz(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
