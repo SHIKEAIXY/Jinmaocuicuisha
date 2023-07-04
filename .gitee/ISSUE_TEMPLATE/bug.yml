@@ -31,6 +31,7 @@ body:
       label: 版本
       description: 你当前正在使用我们软件的哪个分支/版本？
       options:
-        - master分支 & v1.5
+        - master分支 & v1.5(未更新)
+        - master分支 & v1.5.1(已更新)
     validations:
       required: false
