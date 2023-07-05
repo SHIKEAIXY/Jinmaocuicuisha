@@ -399,6 +399,22 @@ export class Jinmaocuicuisha_Emojis extends plugin {
                 reg: '^#?美女抱$',
                 fnc: 'mnbao'         
               },
+                            {
+                reg: '^#?企鹅超$',
+                fnc: 'qechao'         
+              },
+              {
+                reg: '^#?超市你$',
+                fnc: 'csni'         
+              },
+              {
+                reg: '^#?击剑$',
+                fnc: 'jijianla'         
+              },
+              {
+                reg: '^#?结婚证$',
+                fnc: 'jiehunzheng'         
+              },
             ]
             })
         }
@@ -1671,4 +1687,48 @@ async vme50(e) {
           e.reply(msg);
           return true; 
         }
+        async qechao(e) {
+        console.log("用户命令：", e.msg);
+        let qq2 = e.message.find(item => item.type == 'at')?.qq
+        if (!qq2) return e.reply('请艾特要超的企鹅！')
+        let qq = e.user_id;
+        let url = `http://api.caonm.net/api/chao/api?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let res = await fetch(url).catch((err) => logger.error(err));
+        let msg = [segment.image(res.url)];
+        e.reply(msg);
+        return true; 
+    }
+    async csni(e) {
+        console.log("用户命令：", e.msg);
+        let qq2 = e.message.find(item => item.type == 'at')?.qq
+        if (!qq2) return e.reply('请艾特要超的人！')
+        let qq = e.user_id;
+        let url = `http://api.caonm.net/api/chaop/j?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let res = await fetch(url).catch((err) => logger.error(err));
+        let msg = [segment.image(res.url)];
+        e.reply(msg);
+        return true; 
+    }
+    async jijianla(e) {
+        console.log("用户命令：", e.msg);
+        let qq2 = e.message.find(item => item.type == 'at')?.qq
+        if (!qq2) return e.reply('请艾特要超的人！')
+        let qq = e.user_id;
+        let url = `http://api.caonm.net/api/jijian/j?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let res = await fetch(url).catch((err) => logger.error(err));
+        let msg = [segment.image(res.url)];
+        e.reply(msg);
+        return true; 
+    }
+    async jiehunzheng(e) {
+        console.log("用户命令：", e.msg);
+        let qq2 = e.message.find(item => item.type == 'at')?.qq
+        if (!qq2) return e.reply('请艾特要结婚的人！')
+        let qq = e.user_id;
+        let url = `http://api.caonm.net/api/jhzz/j?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let res = await fetch(url).catch((err) => logger.error(err));
+        let msg = [segment.image(res.url)];
+        e.reply(msg);
+        return true; 
+    }
 }
