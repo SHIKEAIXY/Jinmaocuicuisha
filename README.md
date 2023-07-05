@@ -36,9 +36,7 @@
 
 5.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
 
-6.[`壁纸功能`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/ccs_wallpaper.js)由于触发词条与部分插件类似可能会被抢
-
-7.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
+6.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
 
   如果佬们 有什么问题请务必pr
 <br>
