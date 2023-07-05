@@ -1,7 +1,7 @@
 import plugin from "../../../lib/plugins/plugin.js"
 import fetch from 'node-fetch';
 import lodash from 'lodash'
-const key = 'UDXaG8Th9jS28HOFPrzkjtOvoY';//可以使用你自己申请的key，http://api.caonm.net登录账号-控制台-申请即可（免费）
+const key = 'UDXaG8Th9jS28HOFPrzkjtOvoY';//可以使用你自己申请的key，教程请查看md介绍，简单描述：http://api.caonm.net登录账号-控制台-申请即可
 
 export class Jinmaocuicuisha_Emojis extends plugin {
     constructor () {
@@ -12,391 +12,391 @@ export class Jinmaocuicuisha_Emojis extends plugin {
         priority: -5000,
         rule: [
           {
-            reg: '^#?脆脆鲨表情包帮助(.*)',
+            reg: '^#?脆脆鲨表情包帮助',
             fnc: 'ccsbqb'         
           },
               {
-                reg: '^#?坤斗罗(.*)',
+                reg: '^#?坤斗罗',
                 fnc: 'kdl'         
               },
               {
-                reg: '^#?没业务(.*)',
+                reg: '^#?没业务',
                 fnc: 'myw'         
               },
               {
-                reg: '^#?坤坤打篮球(.*)',
+                reg: '^#?坤坤打篮球',
                 fnc: 'kkdlq'         
               },
               {
-                reg: '^#?美女电视(.*)',
+                reg: '^#?美女电视',
                 fnc: 'mnds'         
               },
               {
-                reg: '^#?处男证(.*)',
+                reg: '^#?处男证',
                 fnc: 'cnz'         
               },
               {
-                reg: '^#?泡妞证(.*)',
+                reg: '^#?泡妞证',
                 fnc: 'pnz'         
               },
               {
-                reg: '^#?好夫妻证(.*)',
+                reg: '^#?好夫妻证',
                 fnc: 'hfqz'         
               },
               {
-                reg: '^#?女汉子证(.*)',
+                reg: '^#?女汉子证',
                 fnc: 'nhzz'         
               },
               {
-                reg: '^#?光棍证(.*)',
+                reg: '^#?光棍证',
                 fnc: 'ggz'         
               },
               {
-                reg: '^#?老司机证(.*)',
+                reg: '^#?老司机证',
                 fnc: 'lsjz'         
               },
               {
-                reg: '^#?屌丝证(.*)',
+                reg: '^#?屌丝证',
                 fnc: 'dsz'         
               },
               {
-                reg: '^#?美女证(.*)',
+                reg: '^#?美女证',
                 fnc: 'mnz'         
               },
               {
-                reg: '^#?帅哥证(.*)',
+                reg: '^#?帅哥证',
                 fnc: 'sgz'         
               },
               {
-                reg: '^#?首富证(.*)',
+                reg: '^#?首富证',
                 fnc: 'sfz'         
               },
               {
-                reg: '^#?订婚证(.*)',
+                reg: '^#?订婚证',
                 fnc: 'dhz'         
               },
               {
-                reg: '^#?白富美证(.*)',
+                reg: '^#?白富美证',
                 fnc: 'bfmz'         
               },
               {
-                reg: '^#?犯毒(.*)',
+                reg: '^#?犯毒',
                 fnc: 'fd'         
               },
               {
-                reg: '^#?哭(.*)',
+                reg: '^#?哭',
                 fnc: 'k'         
               },
               {
-                reg: '^#?卧倒(.*)',
+                reg: '^#?卧倒',
                 fnc: 'wd'         
               },
               {
-                reg: '^#?彩遗(.*)',
+                reg: '^#?彩遗',
                 fnc: 'cy'         
               },
               {
-                reg: '^#?精神支柱(.*)',
+                reg: '^#?精神支柱',
                 fnc: 'jszz'         
               },
               {
-                reg: '^#?踹门(.*)',
+                reg: '^#?踹门',
                 fnc: 'cm'         
               },
               {
-                reg: '^#?需要他(.*)',
+                reg: '^#?需要他',
                 fnc: 'xyt'         
               },
               {
-                reg: '^#?垃圾桶(.*)',
+                reg: '^#?垃圾桶',
                 fnc: 'ljt'         
               },
               {
-                reg: '^#?芙蓉王(.*)',
+                reg: '^#?芙蓉王',
                 fnc: 'frw'         
               },
               {
-                reg: '^#?女同(.*)',
+                reg: '^#?女同',
                 fnc: 'nt'         
               },
               {
-                reg: '^#?报警(.*)',
+                reg: '^#?报警',
                 fnc: 'bj'         
               },
               {
-                reg: '^#?疯狂星期四(.*)',
+                reg: '^#?疯狂星期四',
                 fnc: 'fkxqs'         
               },
               {
-                reg: '^#?包夜多少钱(.*)',
+                reg: '^#?包夜多少钱',
                 fnc: 'by'         
               },
               {
-                reg: '^#?体操服举牌(.*)',
+                reg: '^#?体操服举牌',
                 fnc: 'tcfjp'         
               },
               {
-                reg: '^#?技能(.*)',
+                reg: '^#?技能',
                 fnc: 'jn'         
               },
               {
-                reg: '^#?(GKD卡|gkd卡)(.*)',
+                reg: '^#?(GKD卡|gkd卡)',
                 fnc: 'gkdk'         
               },
               {
-                reg: '^#?沙雕(.*)',
+                reg: '^#?沙雕',
                 fnc: 'sdl'         
               },
               {
-                reg: '^#?来床上(.*)',
+                reg: '^#?来床上',
                 fnc: 'lcs'         
               },
               {
-                reg: '^#?啊不要(.*)',
+                reg: '^#?啊不要',
                 fnc: 'aby'         
               },
               {
-                reg: '^#?男同(.*)',
+                reg: '^#?男同',
                 fnc: 'nant'         
               },
               {
-                reg: '^#?陪睡券(.*)',
+                reg: '^#?陪睡券',
                 fnc: 'sjq'         
               },
               {
-                reg: '^#?动漫画画(.*)',
+                reg: '^#?动漫画画',
                 fnc: 'dmhh'         
               },
               {
-                reg: '^#?每次都有你(.*)',
+                reg: '^#?每次都有你',
                 fnc: 'lsdmcdyn'         
               },
                             {
-                reg: '^#?不要靠近我(.*)',
+                reg: '^#?不要靠近我',
                 fnc: 'nokj'         
               },
               {
-                reg: '^#?看见我的狗了吗(.*)',
+                reg: '^#?看见我的狗了吗',
                 fnc: 'kjwdglm'         
               },
               {
-                reg: '^#?演员证(.*)',
+                reg: '^#?演员证',
                 fnc: 'yanyz'         
               },
               {
-                reg: '^#?大佬(.*)',
+                reg: '^#?大佬',
                 fnc: 'dalao'         
               },
               {
-                reg: '^#?发生了什么(.*)',
+                reg: '^#?发生了什么',
                 fnc: 'fslsm'         
               },
               {
-                reg: '^#?原神启动(.*)',
+                reg: '^#?原神启动',
                 fnc: 'ysqd'         
               },
               {
-                reg: '^#?安全感(.*)',
+                reg: '^#?安全感',
                 fnc: 'anqg'         
               },
               {
-                reg: '^#?摄影师(.*)',
+                reg: '^#?摄影师',
                 fnc: 'sysgzz'         
               },
               {
-                reg: '^#?汤姆看电视(.*)',
+                reg: '^#?汤姆看电视',
                 fnc: 'tmkds'         
               },
               {
-                reg: '^#?榨精卡(.*)',
+                reg: '^#?榨精卡',
                 fnc: 'zhajk'         
               },
               {
-                reg: '^#?坤巴卡(.*)',
+                reg: '^#?坤巴卡',
                 fnc: 'kunbk'         
               },
               {
-                reg: '^#?涩涩卡(.*)',
+                reg: '^#?涩涩卡',
                 fnc: 'sesk'         
               },
               {
-                reg: '^#?完美(.*)',
+                reg: '^#?完美',
                 fnc: 'wanmei'         
               },
               {
-                reg: '^#?骗子(.*)',
+                reg: '^#?骗子',
                 fnc: 'pianzi'         
               },
               {
-                reg: '^#?撸管冠军(.*)',
+                reg: '^#?撸管冠军',
                 fnc: 'lggjun'         
               },
               {
-                reg: '^#?踢足球(.*)',
+                reg: '^#?踢足球',
                 fnc: 'tizq'         
               },
               {
-                reg: '^#?诈尸(.*)',
+                reg: '^#?诈尸',
                 fnc: 'zhashi'         
               },
               {
-                reg: '^#?紫砂(.*)',
+                reg: '^#?紫砂',
                 fnc: 'zisha'         
               },
               {
-                reg: '^#?回旋踢(.*)',
+                reg: '^#?回旋踢',
                 fnc: 'hxti'         
               },
               {
-                reg: '^#?撕(.*)',
+                reg: '^#?撕',
                 fnc: 'si'         
               },
               {
-                reg: '^#?注意身份(.*)',
+                reg: '^#?注意身份',
                 fnc: 'zysf'         
               },
               {
-                reg: '^#?ikun勋章(.*)',
+                reg: '^#?ikun勋章',
                 fnc: 'ikun'         
               },
               {
-                reg: '^#?猛男举牌(.*)',
+                reg: '^#?猛男举牌',
                 fnc: 'mnjpai'         
               },
               {
-                reg: '^#?抱枕头(.*)',
+                reg: '^#?抱枕头',
                 fnc: 'baozt'         
               },
               {
-                reg: '^#?舔冰激凌(.*)',
+                reg: '^#?舔冰激凌',
                 fnc: 'tbjl'         
               },
               {
-                reg: '^#?画画(.*)',
+                reg: '^#?画画',
                 fnc: 'huahua'         
               },
               {
-                reg: '^#?烧火(.*)',
+                reg: '^#?烧火',
                 fnc: 'shaohuo'         
               },
               {
-                reg: '^#?什么东东(.*)',
+                reg: '^#?什么东东',
                 fnc: 'smdd'         
               },
               {
-                reg: '^#?要钱钱(.*)',
+                reg: '^#?要钱钱',
                 fnc: 'yqqian'         
               },
               {
-                reg: '^#?勾引(.*)',
+                reg: '^#?勾引',
                 fnc: 'goyin'         
               },
               {
-                reg: '^#?罗小黑(.*)',
+                reg: '^#?罗小黑',
                 fnc: 'luoxh'         
               },
               {
-                reg: '^#?变魔术(.*)',
+                reg: '^#?变魔术',
                 fnc: 'bianms'         
               },
               {
-                reg: '^#?坤投球(.*)',
+                reg: '^#?坤投球',
                 fnc: 'kuntq'         
               },
               {
-                reg: '^#?吃(.*)',
+                reg: '^#?吃',
                 fnc: 'chi'         
               },
               {
-                reg: '^#?广告牌(.*)',
+                reg: '^#?广告牌',
                 fnc: 'ggpai'         
               },
               {
-                reg: '^#?耍帅(.*)',
+                reg: '^#?耍帅',
                 fnc: 'shuashuai'         
               },
               {
-                reg: '^#?黑化(.*)',
+                reg: '^#?黑化',
                 fnc: 'heihua'         
               },
               {
-                reg: '^#?绿帽子(.*)',
+                reg: '^#?绿帽子',
                 fnc: 'lmzi'         
               },
               {
-                reg: '^#?我老婆(.*)',
+                reg: '^#?我老婆',
                 fnc: 'wlpo'         
               },
               {
-                reg: '^#?我女儿(.*)',
+                reg: '^#?我女儿',
                 fnc: 'wner'         
               },
               {
-                reg: '^#?我拒绝(.*)',
+                reg: '^#?我拒绝',
                 fnc: 'wojj'         
               },
               {
-                reg: '^#?这我儿子(.*)',
+                reg: '^#?这我儿子',
                 fnc: 'zhewez'         
               },
               {
-                reg: '^#?gui(.*)',
+                reg: '^#?gui',
                 fnc: 'gui'         
               },
               {
-                reg: '^#?ok(.*)',
+                reg: '^#?ok',
                 fnc: 'okk'         
               },
               {
-                reg: '^#?换脸(.*)',
+                reg: '^#?换脸',
                 fnc: 'huanlian'         
               },
               {
-                reg: '^#?心碎(.*)',
+                reg: '^#?心碎',
                 fnc: 'xinsui'         
               },
               {
-                reg: '^#?寄(.*)',
+                reg: '^#?寄',
                 fnc: 'jilene'         
               },
               {
-                reg: '^#?哥的花(.*)',
+                reg: '^#?哥的花',
                 fnc: 'gedehua'         
               },
               {
-                reg: '^#?v我50(.*)',
+                reg: '^#?v我50',
                 fnc: 'vme50'         
               },
               {
-                reg: '^#?按钮(.*)',
+                reg: '^#?按钮',
                 fnc: 'anniu'         
               },
               {
-                reg: '^#?乱亲(.*)',
+                reg: '^#?乱亲',
                 fnc: 'luanqin'         
               },
               {
-                reg: '^#?进群协议(.*)',
+                reg: '^#?进群协议',
                 fnc: 'jinqunxy'         
               },
               {
-                reg: '^#?女装协议(.*)',
+                reg: '^#?女装协议',
                 fnc: 'nuzhuangxy'         
               },
               {
-                reg: '^#?走路(.*)',
+                reg: '^#?走路',
                 fnc: 'zolu'         
               },
               {
-                reg: '^#?蜜雪冰城(.*)',
+                reg: '^#?蜜雪冰城',
                 fnc: 'mxbc'         
               },
               {
-                reg: '^#?名片(.*)',
+                reg: '^#?名片',
                 fnc: 'mingpian'         
               },
               {
-                reg: '^#?美女抱(.*)',
+                reg: '^#?美女抱',
                 fnc: 'mnbao'         
               },
             ]
