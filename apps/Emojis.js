@@ -1295,19 +1295,6 @@ async hfqz(e) {
           e.reply(msg);
           return true; 
         }
-          async yijiao(e) {
-            console.log("用户命令：", e.msg);
-            let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
-            if (lodash.isEmpty(qq)) {
-              qq = e.msg.match(/\d+/g)
-            }
-            if (!qq) qq = e.user_id;
-            let url = `http://api.caonm.net/api/zjyj/y?qq=${qq}&qq2=${qq}&key=${key}`;
-            let res = await fetch(url).catch((err) => logger.error(err));
-            let msg = [segment.image(res.url)];
-            e.reply(msg);
-            return true; 
-          }
         async hxti(e) {
           console.log("用户命令：", e.msg);
           let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
@@ -1562,7 +1549,7 @@ async hfqz(e) {
               qq = e.msg.match(/\d+/g)
             }
             if (!qq) qq = e.user_id;
-            let url = `http://api.caonm.net/api/nmy/n?qq=${qq}&qq2=${qq}&key=${key}`;
+            let url = `http://api.caonm.net/api/nmy/n?qq=${qq}&key=${key}`;
             let res = await fetch(url).catch((err) => logger.error(err));
             let msg = [segment.image(res.url)];
             e.reply(msg);
@@ -1820,7 +1807,7 @@ async vme50(e) {
         let qq2 = e.message.find(item => item.type == 'at')?.qq
         if (!qq2) return e.reply('请艾特要超的企鹅！')
         let qq = e.user_id;
-        let url = `http://api.caonm.net/api/chao/api?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let url = `http://api.caonm.net/api/chao/api?qq=${qq}&qq2=${qq2}&key=${key}`;
         let res = await fetch(url).catch((err) => logger.error(err));
         let msg = [segment.image(res.url)];
         e.reply(msg);
@@ -1831,7 +1818,7 @@ async vme50(e) {
         let qq2 = e.message.find(item => item.type == 'at')?.qq
         if (!qq2) return e.reply('请艾特要超的人！')
         let qq = e.user_id;
-        let url = `http://api.caonm.net/api/chaop/j?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let url = `http://api.caonm.net/api/chaop/j?qq=${qq}&qq2=${qq2}&key=${key}`;
         let res = await fetch(url).catch((err) => logger.error(err));
         let msg = [segment.image(res.url)];
         e.reply(msg);
@@ -1840,9 +1827,9 @@ async vme50(e) {
     async jijianla(e) {
         console.log("用户命令：", e.msg);
         let qq2 = e.message.find(item => item.type == 'at')?.qq
-        if (!qq2) return e.reply('请艾特要超的人！')
+        if (!qq2) return e.reply('请艾特要打的人！')
         let qq = e.user_id;
-        let url = `http://api.caonm.net/api/jijian/j?qq=${qq2}&qq2=${qq}&key=${key}`;
+        let url = `http://api.caonm.net/api/jijian/j?qq=${qq}&qq2=${qq2}&key=${key}`;
         let res = await fetch(url).catch((err) => logger.error(err));
         let msg = [segment.image(res.url)];
         e.reply(msg);
@@ -1854,17 +1841,6 @@ async vme50(e) {
         if (!qq2) return e.reply('请艾特要结婚的人！')
         let qq = e.user_id;
         let url = `http://api.caonm.net/api/jhzz/j?qq=${qq2}&qq2=${qq}&key=${key}`;
-        let res = await fetch(url).catch((err) => logger.error(err));
-        let msg = [segment.image(res.url)];
-        e.reply(msg);
-        return true; 
-    }
-    async baka(e) {
-        console.log("用户命令：", e.msg);
-        let qq2 = e.message.find(item => item.type == 'at')?.qq
-        if (!qq2) return e.reply('请艾特！')
-        let qq = e.user_id;
-        let url = `qq=${qq2}&qq2=${qq}&key=${key}`;
         let res = await fetch(url).catch((err) => logger.error(err));
         let msg = [segment.image(res.url)];
         e.reply(msg);
@@ -1935,7 +1911,7 @@ async vme50(e) {
       e.reply(msg);
       return true; 
     }
-    async 谢谢(e) {//懒得打拼音和记了
+    async 谢谢(e) {
       console.log("用户命令：", e.msg);
       let qq = e.message.filter(item => item.type == 'at')?.map(item => item?.qq)
       if (lodash.isEmpty(qq)) {
