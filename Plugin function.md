@@ -33,7 +33,7 @@
 ---
 
 <details>
-  <summary>②表情包帮助图：</summary>
+  <summary>③表情包帮助图：</summary>
 
 - 有点懒先这样吧
 - 脆脆鲨插件表情包帮助图
