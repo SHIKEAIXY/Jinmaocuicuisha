@@ -53,11 +53,11 @@
 
 ### gitee下载（强烈推荐）
 ```
-git clone https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+git clone --depth 1 https://gitee.com/JMCCS/jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
-### github下载（可能更新不及时）
+### github下载
 ```
-git clone https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
+git clone --depth 1 https://github.com/SHIKEAIXY/Jinmaocuicuisha.git ./plugins/Jinmaocuicuisha-plugin
 ```
 ### zip下载（不推荐）
 
