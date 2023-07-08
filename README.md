@@ -32,11 +32,13 @@
 
 3.脆脆鲨插件仅支持 云崽v3 版本 v2版本 请勿下载
 
-4.QAQ抄的各位大佬的，感觉没啥用的样子
+4.脆脆鲨插件只谦融喵崽，云崽，gocq版trss崽 并不谦融trss崽的其他协议端 也包括频道
 
-5.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
+5.QAQ抄的各位大佬的，感觉没啥用的样子
 
-6.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
+6.在这里说一下在[`apps/UP.js`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/apps/UP.js)中写了2个作者的[`更新权限`](https://gitee.com/JMCCS/jinmaocuicuisha/blob/master/resources/%E8%82%BE%E8%99%9A%E7%9A%84%E8%84%86%E8%84%86%E9%B2%A8/up%E6%9D%83%E9%99%90.png)可以自行删除
+
+7.注意！注意！注意！安装本插件后请第一时间给机器人发 `#设置绝对权限`
 
   如果佬们 有什么问题请务必pr
 <br>
