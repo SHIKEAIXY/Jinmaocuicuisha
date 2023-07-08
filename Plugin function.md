@@ -137,7 +137,7 @@
 > 
 > 3.如果是更新插件后报错了 请耐心等待会修复
 > 
-> 4.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持7个协议端 可能不谦融吧（没看过） 报错了与本插件无关不要来找
+> 4.[`trss崽`](https://gitee.com/TimeRainStarSky/Yunzai)目前支持的协议端只有go-cqhttp 其他的都不谦融！！！ 报错了与本插件无关不要来找
 > 
 > 5.Jinmaocuicuisha-plugin插件载入失败 请手动打开plugins文件找到脆脆鲨插件改成Jinmaocuicuisha-plugin
 > 
