@@ -94,7 +94,7 @@ async Hitmeckapi(e) {
         let text = "真寻https://mahiro.tianyi.one\n \n二次元壁纸https://t.lizi.moe/pc\n \n二次元风景https://t.lizi.moe/pc\n \n原神https://api.dujin.org/pic/yuanshen\n \n动漫http://www.dmoe.cc/random.php\n  \n人物https://api.btstu.cn/sjbz/api.php\n \n随机图https://api.yimian.xyz/img\n  \n使用方法 #写入打人api+上面的随便一个api即可 \n注意每次更换api时请先 #删除打人api 再写入api";
         let msg = [
             text,
-            segment.image(`https://pic.tianyi.one`)
+            segment.image(`https://api.caonm.net/api/dm/index?key=UDXaG8Th9jS28HOFPrzkjtOvoY`)
         ];
         e.reply(msg);
         return true; 
