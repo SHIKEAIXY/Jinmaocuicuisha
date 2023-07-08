@@ -9,10 +9,11 @@
 <details>
   <summary>①帮助图：</summary>
 
+- 有点懒先这样吧
 - 脆脆鲨插件帮助图
 
 <br>
-    <img src="resources/肾虚的脆脆鲨/脆脆鲨帮助参考图.png" width="70%">
+    <img src="resources/肾虚的脆脆鲨/JMCCShelp.jpg" width="70%">
 	
 </details>
 
@@ -25,14 +26,27 @@
 - 脆脆鲨插件扩展帮助图
 
 <br>
-    <img src="resources/help/BZhelp.jpg" width="70%">
+    <img src="resources/肾虚的脆脆鲨/BZhelp.jpg" width="70%">
 	
 </details>
 
 ---
 
 <details>
-  <summary>③娱乐类</summary>
+  <summary>②表情包帮助图：</summary>
+
+- 有点懒先这样吧
+- 脆脆鲨插件表情包帮助图
+
+<br>
+    <img src="resources/肾虚的脆脆鲨/BQBhelp.jpg" width="70%">
+	
+</details>
+
+---
+
+<details>
+  <summary>④娱乐类</summary>
 
 |       打人功能       |      使用示例      |            介绍            |
 | :--------------: | :------------: | :------------------------: |
@@ -83,7 +97,7 @@
 ---
 
 <details>
-  <summary>④管理类（绝对权限）</summary>
+  <summary>⑤管理类（绝对权限）</summary>
 
 |       自动撤回功能（撤回一切？）       |      使用示例      |            介绍            |
 | :--------------: | :------------: | :------------------------: |
