@@ -548,7 +548,7 @@ export class Jinmaocuicuisha_Emojis extends plugin {
         }
 
  async ccsbqb(e) {
-  const imgreply = 'plugins/Jinmaocuicuisha-plugin/resources/肾虚的脆脆鲨/help.jpg';
+  const imgreply = 'plugins/Jinmaocuicuisha-plugin/resources/肾虚的脆脆鲨/BQBhelp.jpg';
   logger.info('[BQBhelp]', e.msg)
   let msg = [
   imgreply ? segment.image(imgreply) : "",
