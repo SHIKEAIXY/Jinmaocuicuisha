@@ -372,7 +372,7 @@ async 二次元美图(e) {
 //--------------------------------------------------------------------------------------------------------------------// ↓↓↓↓↓↓↓↓
 
 async 脆脆鲨扩展帮助(e) {
-  const imgreply = 'plugins/Jinmaocuicuisha-plugin/resources/help/BZhelp.jpg';
+  const imgreply = 'plugins/Jinmaocuicuisha-plugin/resources/肾虚的脆脆鲨/BZhelp.jpg';
   logger.info('[BZhelp]', e.msg)
   let msg = [
   imgreply ? segment.image(imgreply) : "",
