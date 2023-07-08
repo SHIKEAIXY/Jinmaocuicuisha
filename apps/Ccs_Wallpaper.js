@@ -48,12 +48,16 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
               }, 
               {
                 reg: "^#?(随机白底)(壁纸|Bz|bZ|BZ|bz)$",
-                fnc: '随机白底'          
-              },  
+                fnc: '随机白底壁纸'          
+              }, 
+              {
+                reg: "^#?(ai|AI)(壁纸|Bz|bZ|BZ|bz)$",
+                fnc: 'AI壁纸'          
+              }, 
         //-----------------------------------------------------------------------// 
-         //   竖版图片      竖版图片      竖版图片      竖版图片      竖版图片    //    
-          //   竖版图片      竖版图片     竖版图片      竖版图片      竖版图片   //      
-           //   竖版图片      竖版图片      竖版图片     竖版图片      竖版图片 //         
+         //   竖版图片      竖版图片      竖版图片      竖版图片      竖版图片     //    
+          //   竖版图片      竖版图片      竖版图片      竖版图片      竖版图片   //      
+           //   竖版图片      竖版图片      竖版图片      竖版图片      竖版图片 //         
             //---------------------------------------------------------------//        
             {
               reg: "^#?(随机)(图片|tp|TP|Tp|tP)$",
@@ -96,6 +100,10 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
                 reg: "^#?(真寻|欧尼)(酱)?(照片|壁纸|图片)$",
                 fnc: '真寻照片'
               },
+              {
+                reg: "^#?(真寻|欧尼)(酱)?(照片2|壁纸2|图片2)$",
+                fnc: '真寻照片2'
+              },
         //-----------------------------------------------------------------------//  
          //   美图美图      美图美图     美图美图      美图美图      美图美图     //    
           //   美图美图      美图美图     美图美图      美图美图      美图美图   //   
@@ -111,7 +119,7 @@ export class Jinmaocuicuisha_wallpaper extends plugin {
               },
               {
                 reg: "^#?(二次元)(美图|mt|MT|Mt|mT)$",
-                fnc: '二次元'          
+                fnc: '二次元美图'          
               },
         //----------------------------------------------------------------------//
          //   扩展帮助      扩展帮助     扩展帮助      扩展帮助      扩展帮助     //    
@@ -207,6 +215,16 @@ async 随机白底壁纸(e) {
   let msg = [segment.image(res.url)];
   e.reply(msg);
   return true; 
+}
+
+async AI壁纸(e) {
+  console.log("用户命令：", e.msg);
+ 
+  let url = `https://t.mwm.moe/ai`;
+  let res = await fetch(url).catch((err) => logger.error(err));
+  let msg = [segment.image(res.url)];
+  e.reply(msg);
+  return true; 
 }   
 
 //--------------------------------------------------------------------------------------------------------------------// ↓↓↓↓↓↓↓↓
@@ -298,6 +316,16 @@ async 随机原神崩坏照片(e) {
 }
 
 async 真寻照片(e) {
+  console.log("用户命令：", e.msg);
+  
+  let url = `https://mahiro.tianyi.one`;  //此api由 冀安(2675712883) 部署 ----- //图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载//
+  let res = await fetch(url).catch((err) => logger.error(err));
+  let msg = [segment.image(res.url)];
+  e.reply(msg);
+  return true; 
+}
+
+async 真寻照片2(e) {
   console.log("用户命令：", e.msg);
   
   let url = `https://mahiro.tianyisama.tk`;  //此api由 冀安(2675712883) 部署 ----- //图片可以前往 https://gitee.com/SHIKEAIXY/zhenxun-wallpaper-picture 下载//
