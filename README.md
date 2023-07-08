@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="resources/肾虚的脆脆鲨/可爱.git" alt="脆脆鲨" width = "800">
+  <br>
+    <img src="resources/肾虚的脆脆鲨/可爱.gif" width="80%">
 
   
 <h1>Jinmaocuicuisha-plugin</h1>
